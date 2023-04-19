@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loginstyle.css">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-register">
+            <div class="form" id="login-form">
+                <h1>Login</h1>
+                <form>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                    <button type="submit">Login</button>
+                </form>
+                <p class="message">Not registered? <a href="#" onclick="toggleForm()">Create an account</a></p>
+            </div>
+            <div class="form" id="register-form">
+                <h1>Register</h1>
+                <form>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter a username">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter a password">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password"
+                        placeholder="Confirm your password">
+                    <button type="submit">Register</button>
+                </form>
+                <p class="message">Already registered? <a href="#" onclick="toggleForm()">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
