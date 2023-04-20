@@ -6,16 +6,17 @@ body{
     height: 10px;
     width: 100%;
     padding-bottom: 40px;
-}
-#logonmenu{
-    height: 110px;
+  }
+  #logonmenu{
+    padding: 8px;
+    height: 60px;
     padding-left: 6%;
     background-color: rgba(22, 21, 31, 0.934);
-}
-#login{
+  }
+  #login{
     margin-right: 1%;
     float: right;
     text-align: center;
     border: 1px black solid;
     margin-bottom: px;
-}
+  }
