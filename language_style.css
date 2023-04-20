@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+}
+#topline{
+    background-color: rgb(255, 187, 0);
+    height: 50px;
+    width: 100%;
+}
+#Secondline{
+    height: 110px;
+    background-color: rgba(22, 21, 31, 0.934);
+    color: white;
+}
+#textpart{
+    align-content: center;
+}

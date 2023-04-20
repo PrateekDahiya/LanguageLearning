@@ -1,5 +1,6 @@
 function speak(a) {
-    var msg = new SpeechSynthesisUtterance(a);
-    window.speechSynthesis.speak(msg);
-  }
-  
+  var msg = new SpeechSynthesisUtterance(a);
+  msg.lang = "fr"
+  window.speechSynthesis.speak(msg);
+}
+
