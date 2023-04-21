@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="language_style.css">
+    <title>Hindi Advance</title>
 </head>
 <body>
-    
+    <div id="topline"></div>
+    <div id="Secondline">
+        Hindi Learning(Advance)
+    </div>
+    <hr>
+    <div id="textpart">
+        <div id="continue" onclick="nextword()">
+            <p>Continue</p>
+        </div>
+        <p class="lanname">HINDI</p>
+        <strong class="word" id="lang">Mujhe samajh mein nahi aa rha hai ki main kya karoon</strong>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">I am not sure what to do</strong><br>
+        <img src="Images/volume.png" onclick="speak('hi')" width="30px">
+    </div>
+    <hr>
 </body>
+<script>
+    let otherlang = ['Mujhe samajh mein nahi aa raha hai ki main kya karoon. ', 'Agar tum apne kaam mein lagaoge to safalta zaroor milegi. ', 'Main yahan aane se pahle kabhi nahin aaya tha. ', 'Aapne jo bhi kaha hai, main uske saath poori tarah sehmat nahi hoon. ', 'Mainne tumhare liye itni mehnat ki hai, kripaya ise barbaad na karo. ', 'Kya tumne apni zimmedari se bhagna shuru kar diya hai? ', 'Mainne apna kaam poora kiya hai, ab aapki baari hai. ', 'Uske andar bahut sahas aur dridh sankalp hai. ', 'Main kuch dinon ke liye shahar se bahar ja raha hoon. ', 'Jis tarah se tum apni zindagi guzaar rahe ho, usse mujhe badi khushi milti hai. ', '']
+    let english = [' I am not sure what to do.', ' If you work hard, you will definitely succeed.', ' I had never been here before coming here.', " I don't completely agree with everything you said.", " I have worked so hard for you, please don't ruin it.", ' Have you started to run away from your responsibilities?', " I have completed my work, now it's your turn.", ' He has a lot of courage and determination inside him.', ' I am going out of the city for a few days.', ' I am very happy with the way you are living your life.']
+</script>
+<script src="language_script.js"></script>
 </html>

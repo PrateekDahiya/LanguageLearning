@@ -1,23 +1,15 @@
-a = '''Wie geht es dir? - How are you?
-Mir geht es gut, danke. - I'm fine, thank you.
-Ich spreche kein Deutsch. - I don't speak German.
-Kannst du das bitte wiederholen? - Can you please repeat that?
-Ich verstehe nicht. - I don't understand.
-Wo ist die Toilette? - Where is the toilet?
-Was ist das? - What is that?
-Ich heiße (Name). - My name is (Name).
-Wie spät ist es? - What time is it?
-Entschuldigung - Excuse me/I'm sorry.
-Ich komme aus Deutschland. - I'm from Germany.
-Ich lerne Deutsch. - I'm learning German.
-Was möchtest du trinken? - What would you like to drink?
-Kannst du mir helfen, bitte? - Can you help me, please?
-Ich liebe dich. - I love you.
-Das ist fantastisch! - That's fantastic!
-Ich bin müde. - I'm tired.
-Wo ist der Bahnhof? - Where is the train station?
-Ich habe eine Frage. - I have a question.
-Wie heißt das auf Deutsch? - What is that called in German?'''
+a = '''
+Mujhe samajh mein nahi aa raha hai ki main kya karoon. - I am not sure what to do.
+Agar tum apne kaam mein lagaoge to safalta zaroor milegi. - If you work hard, you will definitely succeed.
+Main yahan aane se pahle kabhi nahin aaya tha. - I had never been here before coming here.
+Aapne jo bhi kaha hai, main uske saath poori tarah sehmat nahi hoon. - I don't completely agree with everything you said.
+Mainne tumhare liye itni mehnat ki hai, kripaya ise barbaad na karo. - I have worked so hard for you, please don't ruin it.
+Kya tumne apni zimmedari se bhagna shuru kar diya hai? - Have you started to run away from your responsibilities?
+Mainne apna kaam poora kiya hai, ab aapki baari hai. - I have completed my work, now it's your turn.
+Uske andar bahut sahas aur dridh sankalp hai. - He has a lot of courage and determination inside him.
+Main kuch dinon ke liye shahar se bahar ja raha hoon. - I am going out of the city for a few days.
+Jis tarah se tum apni zindagi guzaar rahe ho, usse mujhe badi khushi milti hai. - I am very happy with the way you are living your life.
+'''
 
 z = []
 y = []
