@@ -17,3 +17,11 @@ function nextword() {
   }
 }
 
+function backword() {
+  if (i > 0) {
+    i = i - 1;
+    document.getElementById("lang").innerHTML = otherlang[i];
+    document.getElementById("eng").innerHTML = english[i];
+  }
+}
+
