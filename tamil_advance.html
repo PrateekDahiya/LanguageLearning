@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logolion.png">
+    <link rel="stylesheet" href="language_style.css">
+    <title>Tamil Advance</title>
+</head>
+
+<body>
+    <div id="topline"></div>
+    <div id="Secondline">
+        Tamil Learning(Advance)
+    </div>
+    <hr>
+    <div id="backward" onclick="backword()">
+        <img src="Images/Backward Button.png" width="70px">
+    </div>
+    <div id="continue" onclick="nextword()">
+        <img src="Images/Continue Button.png" width="70px">
+    </div>
+    <div id="textpart">
+        <p class="lanname">TAMIL</p>
+        <strong class="word" id="lang">எங்கள் ஊருக்கு வருகிறேன்</strong>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speak('zh')" width="30px">
+        </div>
+        <p class="lanname">TAMIL</p>
+        <strong class="word" id="romaji">Engaḷ ūrukku varugireṉ</strong><br>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng"> I am coming to our town.</strong><br>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+    </div>
+    <script>
+        let english = [' I am coming to our town.', ' Your thoughts are in my heart.', ' She is coming to my house.', ' Your love fills my life.', ' I am trying to tell you what I have known so far.', ' Can you write in Tamil?', ' I am sure.', ' He loves me with anger.', ' You cannot keep me from sleeping.', ' His dehydration has continued until death.', ' We must not delay anywhere.', ' I am thinking of ways to act.', ' You are calling many good people.']
+        let otherlang = ['எங்கள் ஊருக்கு வருகிறேன் ', 'என் மனதில் உங்கள் நினைவுகள் உள்ளன ', 'அவள் என் வீட்டில் வருகிறாள் ', 'என் உயிரினத்தை உன் காதல் நிறைக்கிறது ', 'நான் இதுவரை அறிந்ததை உங்களுக்கு சொல்ல முயற்சிக்கிறேன் ', 'தமிழில் உரை எழுத முடியுமா? ', 'நான் கட்டாயம் கொடுத்துக்கொண்டிருக்கிறேன். ', 'அவர் கோபமுடன் என்னை நேசிக்கிறார். ', 'நீங்கள் என்னை உறங்கத் தவிர்க்க முடியாது. ', 'அவர் மரணம் துடிக்கும் வரை பரிசுகளின் நீர்த்தேக்கம் செலுத்தியிருக்கிறது. ', 'எங்கும் துரத்திக் காக்க வேண்டாம். ', 'நான் நடந்துகொள்ள வேண்டிய முறைகளை நினைக்கிறேன். ', 'நீ பலர் நல்லவர்களை அழைக்கிறாய். ']
+        let romaji = ['Engaḷ ūrukku varugireṉ', 'En manathil uṅgaḷ ninaiṉkal uḷḷaṉa', 'Avaḷ eṉ vīṭṭil varugiṟāḷ', 'En uyiriṉattai uṉ kādal niṟaikkiraṯu', 'Nāṉ ituvarai aṟintadhai uṅkaḷukku solla muyaṟcikkiṟēṉ', 'Tamilil urai ezhutha mudiyuma?', 'Nān kattāyam koவடிthukkoவடிṉṟukkiṟēṉ', 'Avar kōpamudan ennai nēchikkiṟār', 'Nīṅkaḷ ennai uṟangat tavirkka muṭiyātu', 'Avar maraṇam tuṭikkum varai paricukaḷiṉ nīrttēkkam celuttirukkiṟadhu', 'Eṅkum turattik kākka vēṇṭām', 'Nān naṭantukolla veṇṭiya muṟaikaḷai niṉaikkirēṉ', 'Nī palar nallavargalai aḻaikkiṟāy']
+    </script>
+    <script src="language_script.js"></script>
+</body>
+    
+</html>

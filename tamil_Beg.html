@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logolion.png">
+    <link rel="stylesheet" href="language_style.css">
+    <title>Tamil Beginner</title>
+</head>
+
+<body>
+    <div id="topline"></div>
+    <div id="Secondline">
+        Tamil Learning(Beginner)
+    </div>
+    <hr>
+    <div id="backward" onclick="backword()">
+        <img src="Images/Backward Button.png" width="70px">
+    </div>
+    <div id="continue" onclick="nextword()">
+        <img src="Images/Continue Button.png" width="70px">
+    </div>
+    <div id="textpart">
+        <p class="lanname">TAMIL</p>
+        <strong class="word" id="lang">வணக்கம்</strong>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speak('zh')" width="30px">
+        </div>
+        <p class="lanname">TAMIL</p>
+        <strong class="word" id="romaji">vanakkam</strong><br>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">Hello</strong><br>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+    </div>
+    <script>
+        let english =[' Hello', ' Sorry', ' Thank you', " Let's go", " Let's enjoy", ' I agree', ' Avoid', " Don't stop", ' I know', ' No', ' Okay', " Let's welcome", ' Guests', ' Lunch', ' Cooking', ' Cleanliness', ' Mealtime', ' Small', ' Big', ' Life growth', ' Tamil', ' Happiness', ' Attention', ' Opinion', ' Hand washing time', ' Food', ' Mother tongue', ' Nickname']
+        let otherlang = ['வணக்கம் ', 'அண்மையில் ', 'நன்றி ', 'போக்குவோம் ', 'மகிழுவோம் ', 'தங்கிக் கொண்டேன் ', 'விலகியவை ', 'அடிக்காதே ', 'தெரியும் ', 'இல்லை ', 'சரி ', 'வந்துகொள்ளோம் ', 'கூடியவர்கள் ', 'பருத்தி ', 'சமையல் ', 'சுத்தம் ', 'கழிக்கும் நேரம் ', 'சிறுமி ', 'பெரிய ', 'வாழ்க்கை வளர்ப்பு ', 'தமிழ் ', 'மகிழ்ச்சி ', 'கவனம் ', 'கருத்து ', 'கைகளை கட்டும் நேரம் ', 'உணவு ', 'தாய்மொழி ', 'பிரியாத பெயர் ', '']
+        let romaji = ['vaṇakkam', 'aṇmai yil', 'naṉṟi', 'pōkkuvōm', 'makiluvōm', 'taṅgik koṇṭēn', 'vilakiyavai', 'aṭikkāthē', 'teriyum', 'illai', 'sari', 'vantukollōm', 'kūṭiyavarkaḷ', 'parutti', 'samaiyal', 'sutham', 'kaḻikkum nēram', 'siṟumi', 'periya', 'vāḻkai vaḷarpup', 'tamiḻ', 'makilcci', 'kavanam', 'karuttu', 'kaikaḷai kaṭṭum nēram', 'uṇavu', 'tāy moḻi', 'piriyātha peyar']
+    </script>
+    <script src="language_script.js"></script>
+</body>
+
+</html>
