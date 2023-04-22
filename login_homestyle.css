@@ -15,8 +15,7 @@ body{
   }
   #login{
     margin-right: 1%;
-    float: right;
-    text-align: center;
+    text-align: right;
     border: 1px black solid;
-    margin-bottom: px;
+    position: relative;
   }
