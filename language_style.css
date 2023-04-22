@@ -1,12 +1,14 @@
-body{
+body {
     margin: 0;
 }
-#topline{
+
+#topline {
     background-color: rgb(255, 187, 0);
     height: 50px;
     width: 100%;
 }
-#Secondline{
+
+#Secondline {
     padding-top: 3%;
     height: 90px;
     background-color: rgba(22, 21, 31, 0.934);
@@ -14,23 +16,26 @@ body{
     font-size: 30px;
     padding-left: 7%;
 }
-#textpart{
+
+#textpart {
     padding-top: 1%;
-    width: 900px;
+    width: 400px;
     height: 310px;
-    /* border: 2px solid black; */
+    border: 2px solid black;
     margin-top: 20px;
     margin-left: 25%;
-    padding-left: 19%;
+    padding-left: 18%;
 }
-.word{
+
+.word {
     font-size: 25px;
 }
-.lanname{
+
+.lanname {
     font-size: 15px;
 }
 
-#continue{
+#continue {
     width: 150px;
     height: 40px;
     float: right;
@@ -38,11 +43,11 @@ body{
     padding-bottom: 15px;
 }
 
-.vol_icon{
+.vol_icon {
     padding-left: 15px;
 }
 
-#backward{
+#backward {
     width: 150px;
     height: 40px;
     float: left;
