@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logolion.png">
+    <link rel="stylesheet" href="language_style.css">
+    <title>Japanese Beginner</title>
+</head>
+
+<body>
+    <div id="topline"></div>
+    <div id="Secondline">
+        Japanese Learning(Beginners)
+    </div>
+    <hr>
+    <div id="backward" onclick="backword()">
+        <img src="Images/Backward Button.png" width="70px">
+    </div>
+    <div id="continue" onclick="nextword()">
+        <img src="Images/Continue Button.png" width="70px">
+    </div>
+    <div id="textpart">
+        <p class="lanname">JAPANESE</p>
+        <strong class="word" id="lang">こんにちは</strong>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speak('ja')" width="30px">
+        </div>
+        <p class="lanname">ROMAJI</p>
+        <strong class="word" id="romaji">Konnichiwa</strong><br>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">Hello</strong><br>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+    </div>
+    <script>
+        let english = [' Hello', ' Thank you', ' Excuse me', ' Good morning', ' Good evening', ' Yes', ' No', ' Please', " I'm sorry", ' Goodbye', ' Cat', ' Dog', ' Fish', ' Flower', ' Mountain', ' River', ' Weather', ' School', ' Book', ' Train', ' Airplane', ' Travel', ' Foreigner', ' Food', ' Drink', ' Family', ' Friend', ' Language', ' History', ' Culture']
+        let otherlang = ['こんにちは ', 'ありがとう ', 'すみません ', 'おはようございます ', 'こんばんは ', 'はい ', 'いいえ ', 'お願いします ', 'ごめんなさい ', 'さようなら ', '猫 ', '犬 ', '魚 ', '花 ', '山 ', '川 ', '天気 ', '学校 ', '本 ', '電車 ', '飛行機 ', '旅行 ', '外国人 ', '食べ物 ', '飲み物 ', '家族 ', '友達 ', '言語 ', '歴史 ', '文化 ']
+        let romaji = ['Konnichiwa', 'Arigatou', 'Sumimasen', 'Ohayou gozaimasu', 'Konbanwa', 'Hai', 'Iie', 'Onegaishimasu', 'Gomen nasai', 'Sayonara', 'Neko', 'Inu', 'Sakana', 'Hana', 'Yama', 'Kawa', 'Tenki', 'Gakkou', 'Hon', 'Densha', 'Hikouki', 'Ryokou', 'Gaikokujin', 'Tabemono', 'Nomimono', 'Kazoku', 'Tomodachi', 'Gengo', 'Rekishi', 'Bunka']
+    </script>
+    <script src="language_script.js"></script>
+</body>
+
+</html>

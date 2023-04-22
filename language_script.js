@@ -14,6 +14,7 @@ function nextword() {
     i = i + 1;
     document.getElementById("lang").innerHTML = otherlang[i];
     document.getElementById("eng").innerHTML = english[i];
+    document.getElementById("romaji").innerHTML = romaji[i];
   }
 }
 
@@ -22,6 +23,7 @@ function backword() {
     i = i - 1;
     document.getElementById("lang").innerHTML = otherlang[i];
     document.getElementById("eng").innerHTML = english[i];
+    document.getElementById("romaji").innerHTML = romaji[i];
   }
 }
 

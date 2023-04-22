@@ -16,5 +16,5 @@ for _ in y:
         french.append(_)
     count += 1
 
-print(english)
-print(french)
+print("let english =", english)
+print("let otherlang =", french)

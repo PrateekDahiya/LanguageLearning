@@ -20,11 +20,12 @@ body {
 #textpart {
     padding-top: 1%;
     width: 400px;
-    height: 310px;
-    border: 2px solid black;
+    height: 450px;
+    /* border: 2px solid black; */
     margin-top: 20px;
     margin-left: 25%;
-    padding-left: 18%;
+    padding-left: 15%;
+    padding-right: 5%;
 }
 
 .word {
