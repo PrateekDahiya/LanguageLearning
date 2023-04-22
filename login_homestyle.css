@@ -1,21 +1,59 @@
-body{
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+*{
+  margin: 0;
+  font-family: "Bruno Ace SC",sans-serif;
 }
-#topline{
-    background-color: rgb(255, 187, 0);
-    height: 10px;
-    width: 100%;
-    padding-bottom: 40px;
-  }
-  #logonmenu{
-    padding: 8px;
-    height: 60px;
-    padding-left: 6%;
-    background-color: rgba(22, 21, 31, 0.934);
-  }
-  #login{
-    margin-right: 1%;
-    text-align: right;
-    border: 1px black solid;
-    position: relative;
-  }
+
+header{
+  position: fixed;
+  width: 100%;
+  background: rgba(22, 21, 31, 0.934);
+}
+
+#page_area{
+  padding-top: 200px;
+}
+
+#topline {
+  background-color: rgb(255, 187, 0);
+  height: 10px;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+#logonmenu {
+  color: white;
+  font-size: large;
+  font-weight: 500;
+  padding: 8px;
+  height: 50px;
+  background-color: rgba(22, 21, 31, 0.934);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+}
+
+#login {
+  margin-right: 1%;
+  text-align: right;
+  position: relative;
+  float: right;
+  padding-top: 5px;
+}
+
+.nav_links{
+  list-style: none;
+}
+
+.nav_links li{
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.nav_links li a:hover{
+  color: yellow;
+}
+
+
