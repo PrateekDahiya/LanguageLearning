@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="language_style.css">
+    <title>German moderator</title>
 </head>
 <body>
-    
+    <div id="topline"></div>
+    <div id="Secondline">
+        German Learning(Moderate level)
+    </div>
+    <hr>
+    <div id="textpart">
+        <div id="continue" onclick="nextword()">
+            <p>Continue</p>
+        </div>
+        <p class="lanname">GERMAN</p>
+        <strong class="word" id="lang">How are you?</strong>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">Wie gehts es dir?</strong><br>
+        <img src="Images/volume.png" onclick="speak('de')" width="30px">
+    </div>
+    <hr>
 </body>
+<script>
+      let english = [' How are you?', " I'm fine, thank you.", " I don't speak German.", ' Can you please repeat that?', " I don't understand.", ' Where is the toilet?', ' What is that?', ' My name is (Name).', ' What time is it?', " Excuse me/I'm sorry.", " I'm from Germany.", " I'm learning German.", ' What would you like to drink?', ' Can you help me, please?', ' I love you.', " That's fantastic!", " I'm tired.", ' Where is the train station?', ' I have a question.', ' What is that called\xa0in\xa0German?']
+      let otherlang = ['Wie geht es dir? ', 'Mir geht es gut, danke. ', 'Ich spreche kein Deutsch. ', 'Kannst du das bitte wiederholen? ', 'Ich verstehe nicht. ', 'Wo ist die Toilette? ', 'Was ist das? ', 'Ich heiße (Name). ', 'Wie spät ist es? ', 'Entschuldigung ', 'Ich komme aus Deutschland. ', 'Ich lerne Deutsch. ', 'Was möchtest du trinken? ', 'Kannst du mir helfen, bitte? ', 'Ich liebe dich. ', 'Das ist fantastisch! ', 'Ich bin müde. ', 'Wo ist der Bahnhof? ', 'Ich habe eine Frage. ', 'Wie heißt das auf Deutsch? ']
+</script>
+<script src="language_script.js"></script>
 </html>

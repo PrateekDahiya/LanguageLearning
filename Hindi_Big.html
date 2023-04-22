@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="language_style.css">
+    <title>Hindi Beginners</title>
 </head>
-
 <body>
-    <button onclick="speak('haryana')">Speak</button>
-    <br>
-    <script>
-        function speak(a) {
-            for (let i = 0; i < 100; i++) {
-                var msg = new SpeechSynthesisUtterance(a);
-            window.speechSynthesis.speak(msg);
-                
-            }
-            
-        }
-    </script>
+    <div id="topline"></div>
+    <div id="Secondline">
+        Hindi Learning(Beginners)
+    </div>
+    <hr>
+    <div id="textpart">
+        <div id="continue" onclick="nextword()">
+            <p>Continue</p>
+        </div>
+        <p class="lanname">HINDI</p>
+        <strong class="word" id="lang">Namaste</strong>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">Hello(greeting)</strong><br>
+        <img src="Images/volume.png" onclick="speak('hi')" width="30px">
+    </div>
+    <hr>
 </body>
-
+<script>
+    let english = [' Hello (greeting)', ' Thank you', ' Yes', ' No', ' Food', ' Water', ' Book', ' Friend', ' Happiness', ' Home', ' Peace', ' Auspicious', ' Color', ' Lover', ' Self', ' What', ' Always', ' Dream', ' World', ' Health']
+    let otherlang = ['Namaste ', 'Shukriya ', 'Haan ', 'Nahin ', 'Khana ', 'Pani ', 'Kitab ', 'Saathi ', 'Khushi ', 'Ghar ', 'Shanti ', 'Shubh ', 'Rang ', 'Aashiq ', 'Khud ', 'Kya ', 'Hamesha ', 'Sapna ', 'Duniya ', 'Sehat ', '']
+</script>
+<script src="language_script.js"></script>
 </html>

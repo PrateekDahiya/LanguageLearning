@@ -1,23 +1,4 @@
-a = '''Hola - Hello
-Adiós - Goodbye
-Gracias - Thank you
-Por favor - Please
-Sí - Yes
-No - No
-Amigo/amiga - Friend
-Casa - House
-Perro - Dog
-Gato - Cat
-Agua - Water
-Comida - Food
-Feliz - Happy
-Triste - Sad
-Pequeño/pequeña - Small
-Grande - Big
-Caliente - Hot
-Frío - Cold
-Rojo - Red
-Azul - Blue'''
+a = ''''''
 
 z = []
 y = []

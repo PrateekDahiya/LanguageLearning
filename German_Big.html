@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="language_style.css">
+    <title>German Beginners</title>
 </head>
 <body>
-    
+    <div id="topline"></div>
+    <div id="Secondline">
+        German Learning(Beginners)
+    </div>
+    <hr>
+    <div id="textpart">
+        <div id="continue" onclick="nextword()">
+            <p>Continue</p>
+        </div>
+        <p class="lanname">GERMAN</p>
+        <strong class="word" id="lang">Hallo</strong>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">Hello</strong><br>
+        <img src="Images/volume.png" onclick="speak('de')" width="30px">
+    </div>
+    <hr>
 </body>
+<script>
+    let english = [' Hello', ' Good morning', ' Good day', ' Goodbye', ' Thank you', ' Please', ' Yes', ' No', ' I', ' You (singular)', ' He', ' She', ' It', ' We', ' You (plural)', ' They/You (formal)', ' Food', ' Drink', ' Water', ' Bread', ' Milk', ' Coffee', ' Tea', ' Apple', ' Banana', ' Car', ' House', ' School', ' Clock/watch', '\xa0Time']
+    let otherlang = ['Hallo ', 'Guten Morgen ', 'Guten Tag ', 'Auf Wiedersehen ', 'Danke ', 'Bitte ', 'Ja ', 'Nein ', 'Ich ', 'Du ', 'Er ', 'Sie ', 'Es ', 'Wir ', 'Ihr ', 'Sie ', 'Essen ', 'Trinken ', 'Wasser ', 'Brot ', 'Milch ', 'Kaffee ', 'Tee ', 'Apfel ', 'Banane ', 'Auto ', 'Haus ', 'Schule ', 'Uhr ', 'Zeit\xa0']
+</script>
+<script src="language_script.js"></script>
 </html>
