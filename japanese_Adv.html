@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logolion.png">
+    <link rel="stylesheet" href="language_style.css">
+    <title>Japanese Beginner</title>
+</head>
+
+<body>
+    <div id="topline"></div>
+    <div id="Secondline">
+        Japanese Learning(Beginners)
+    </div>
+    <hr>
+    <div id="backward" onclick="backword()">
+        <img src="Images/Backward Button.png" width="70px">
+    </div>
+    <div id="continue" onclick="nextword()">
+        <img src="Images/Continue Button.png" width="70px">
+    </div>
+    <div id="textpart">
+        <p class="lanname">JAPANESE</p>
+        <strong class="word" id="lang">彼女は日本語を上手に話せます。 </strong>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speak('ja')" width="30px">
+        </div>
+        <p class="lanname">ROMAJI</p>
+        <strong class="word" id="romaji">Kanojo wa nihongo o jouzu ni hanasemasu.</strong><br>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">She can speak Japanese fluently.</strong><br>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+    </div>
+    <script>
+        let english = [' She can speak Japanese fluently.', ' Japan is a country with four seasons.', ' I am planning to travel to Kyoto next week.', ' He is studying abroad in Japan.', ' I am interested in Japanese culture.', ' Tokyo is one of the cities with a large population.', ' There are many beautiful shrines and temples in Japan.', ' The number of foreigners studying Japanese is increasing.', ' Japanese anime and manga are famous worldwide.', ' Japanese cuisine is delicious, especially sushi is recommended.', " Japan's transportation system is highly developed.", ' Japanese high school students are enthusiastic about studying.', ' Japanese companies are famous worldwide.', ' Japanese public facilities are clean and easy to use.', " Japan's nature is beautiful.", ' Japanese houses are built with strong structures that can withstand earthquakes.', " Japan's education system boasts a high level of excellence.", " Japan's traditional culture is being carefully preserved.", ' Japan is a very safe country.', " Japan's medical technology is among the world's top level."]
+        let otherlang = ['彼女は日本語を上手に話せます。 ', '日本は四季がある国です。 ', '私は来週、京都に旅行に行く予定です。 ', '彼は日本に留学しています。 ', '日本の文化に興味があります。 ', '東京は人口が多い都市の一つです。 ', '日本にはたくさんの美しい神社や寺院があります。 ', '日本語を勉強している外国人が増えています。 ', '日本のアニメや漫画は世界的に有名です。 ', '日本料理は美味しいです。特に寿司はおすすめです。 ', '日本の交通機関は非常に発展しています。 ', '日本の高校生は勉強に熱心です。 ', '日本の企業は世界的に有名です。 ', '日本の公共施設は清潔で使いやすいです。 ', '日本の自然は美しいです。 ', '日本の住宅は地震に強い構造になっています。 ', '日本の教育制度は高いレベルを誇っています。 ', '日本の伝統文化は大切に守られています。 ', '日本は非常に安全な国です。 ', '日本の医療技術は世界トップレベルです。 ']
+        let romaji = ['Kanojo wa nihongo o jouzu ni hanasemasu.', 'Nihon wa shiki ga aru kuni desu.', 'Watashi wa raishuu, Kyoto ni ryokou ni iku yotei desu.', 'Kare wa Nihon ni ryuugaku shiteimasu.', 'Nihon no bunka ni kyoumi ga arimasu.', 'Tokyo wa jinkou ga ooi toshi no hitotsu desu.', 'Nihon ni wa takusan no utsukushii jinja ya jiin ga arimasu.', 'Nihongo o benkyou shiteiru gaikokujin ga fuete imasu.', 'Nihon no anime ya manga wa sekaiteki ni yuumei desu.', 'Nihon ryouri wa oishii desu. Tokuni sushi wa osusume desu.', 'Nihon no koutsuu kikan wa hijou ni hatten shiteimasu.', 'Nihon no koukousei wa benkyou ni nesshin desu.', 'Nihon no kigyou wa sekaiteki ni yuumei desu.', 'Nihon no koukyou shisetsu wa seiketsu de tsukaiyasui desu.', 'Nihon no shizen wa utsukushii desu.', 'Nihon no juutaku wa jishin ni tsuyoi kouzou ni natteimasu.', 'Nihon no kyouiku seido wa takai reberu o hokotteimasu.', 'Nihon no dentou bunka wa taisetsu ni mamorareteimasu.', 'Nihon wa hijou ni anzen na kuni desu.', 'Nihon no iryou gijutsu wa sekai toppu reberu desu.']
+    </script>
+    <script src="language_script.js"></script>
+</body>
+
+</html>

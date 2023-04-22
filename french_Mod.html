@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logolion.png">
+    <link rel="stylesheet" href="language_style.css">
+    <title>French Moderate</title>
+</head>
+
+<body>
+    <div id="topline"></div>
+    <div id="Secondline">
+        French Learning(Moderate)
+    </div>
+    <hr>
+    <div id="backward" onclick="backword()">
+        <img src="Images/Backward Button.png" width="70px">
+    </div>
+    <div id="continue" onclick="nextword()">
+        <img src="Images/Continue Button.png" width="70px">
+    </div>
+    <div id="textpart">
+        <p class="lanname">FRENCH</p>
+        <strong class="word" id="lang">Bonjour!</strong>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speak('de')" width="30px">
+        </div>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">Hello!</strong><br>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+    </div>
+    <script>
+         let english = [' Hello!', ' How are you?', ' My name is Sophie.', ' What is your name?', ' I am happy.', ' I am tired.', ' Thank you very much.', " You're welcome.", ' Yes, I understand.', " No, I don't understand.", ' Excuse me.', ' Goodbye!', " I don't know.", ' I like music.', " I don't like vegetables.", ' What time is it?', ' How much does it cost?', ' I am going to the cinema.', " It's nice weather today.", ' I am hungry.'];
+        let otherlang = ['Bonjour! ', 'Comment ça va? ', "Je m'appelle Sophie. ", "Comment t'appelles tu? ", 'Je suis content(e). ', 'Je suis fatigué(e). ', 'Merci beaucoup. ', 'De rien. ', 'Oui, je comprends. ', 'Non, je ne comprends pas. ', 'Excusez moi. ', 'Au revoir! ', 'Je ne sais pas. ', "J'aime la musique. ", "Je n'aime pas les légumes. ", 'Quelle heure est il? ', 'Combien ça coûte? ', 'Je vais au cinéma. ', "Il fait beau aujourd'hui. ", "J'ai faim. "];
+        
+    </script>
+    <script src="language_script.js"></script>
+</body>
+
+</html>
