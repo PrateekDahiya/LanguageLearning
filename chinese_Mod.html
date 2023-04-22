@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logolion.png">
+    <link rel="stylesheet" href="language_style.css">
+    <title>Chinese Moderate</title>
+</head>
+
+<body>
+    <div id="topline"></div>
+    <div id="Secondline">
+        Chinese Learning(Moderate)
+    </div>
+    <hr>
+    <div id="backward" onclick="backword()">
+        <img src="Images/Backward Button.png" width="70px">
+    </div>
+    <div id="continue" onclick="nextword()">
+        <img src="Images/Continue Button.png" width="70px">
+    </div>
+    <div id="textpart">
+        <p class="lanname">CHINESE</p>
+        <strong class="word" id="lang">你好吗？</strong>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speak('zh')" width="30px">
+        </div>
+        <p class="lanname">PINYIN</p>
+        <strong class="word" id="romaji">Nǐ hǎo ma?</strong><br>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">How are you?</strong><br>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+    </div>
+    <script>
+        let english = [' How are you?', ' Thank you.', ' Sorry.', " It's okay.", ' Goodbye.', ' Good morning.', ' Good evening.', ' My name is...', " What's your name?", ' Nice to meet you.', " Sorry, I don't speak Chinese.", ' Please speak slower.', " I don't know.", ' Okay.', ' Another cup of tea, please.', " I'm glad to meet you.", ' What would you like to drink?', " Let's go eat.", ' You speak Chinese very well.', ' Excuse me, how do I get to the restroom?']
+        let otherlang = ['你好吗？', '谢谢。', '对不起。', '没关系。', '再见。', '早上好。', '晚上好。', '我叫…', '你叫什么名字？', '很高兴认识你。', '对不起，我不会说中文。', '请说慢一点。', '我不知道。', '好的。', '再来一杯茶。', '我很高兴认识你。', '你想要喝什么？', '我们去吃饭吧。', '你的中文说得很好。', '请问去洗手间怎么走？']
+        let romaji = ['Nǐ hǎo ma?', 'Xièxiè.', 'Duìbùqǐ.', 'Méiguānxi.', 'Zàijiàn.', 'Zǎoshang hǎo.', 'Wǎnshàng hǎo.', 'Wǒ jiào…', 'Nǐ jiào shénme míngzi?', 'Hěn gāoxìng rènshì nǐ.', 'Duìbùqǐ, wǒ bù huì shuō zhōngwén.', 'Qǐng shuō màn yīdiǎn.', 'Wǒ bù zhīdào.', 'Hǎo de.', 'Zài lái yī bēi chá.', 'Wǒ hěn gāoxìng rènshí nǐ.', 'Nǐ xiǎng yào hē shénme?', 'Wǒmen qù chīfàn ba.', 'Nǐ de zhōngwén shuō dé hěn hǎo.', 'Qǐngwèn qù xǐshǒujiān zěnme zǒu?']
+    </script>
+    <script src="language_script.js"></script>
+</body>
+
+</html>
