@@ -56,18 +56,50 @@ header {
   color: rgb(255, 187, 0);
 }
 
-.lang_list:visited{
+.lang_list:visited {
   color: rgb(255, 187, 0);
 }
 
-#languages_list{
-  /* display: none; */
-  border: 2px white solid;
-  padding: 10px;
-  width: 480px;
-  position: absolute;
-  position: 0 1000px;
+.langmenu {
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+
+}
+
+
+.languages_list {
+  height: auto;
+  width: 110%;
   background-color: rgba(22, 21, 31, 0.934);
-  backface-visibility: 80%;
+  position: relative;
+  /* left: 0; */
+  font-size: medium;
+  /* box-sizing: border-box; */
+  padding: 10px;
+  position: absolute;
+  /* backface-visibility: 80%; */
   word-spacing: 20px;
+}
+
+.lang_list {
+  padding: 5px;
+  display:none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.lang_list:hover {
+  background-color: rgba(57, 57, 59, 0.934);
+
+}
+
+.langmenu:hover .lang_list{
+  display: flex;
+}
+
+.flags{
+  padding-top: 8px;
 }
