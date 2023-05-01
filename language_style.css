@@ -55,3 +55,29 @@ body {
     padding-bottom: 15px;
     margin-left: 20%;
 }
+
+#nextdivision{
+    position: absolute;
+    top: 300px;
+    right: 310px;
+}
+
+#prevdivision{
+    position: absolute;
+    top: 300px;
+    left: 150px;
+}
+
+#ndivision{
+    position: relative;
+    text-align: center;
+    top: -38px;
+    font-size: 20px;
+}
+
+#pdivision{
+    position: relative;
+    text-align: center;
+    top: -38px;
+    font-size: 20px;
+}

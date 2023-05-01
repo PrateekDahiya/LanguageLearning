@@ -1,6 +1,5 @@
 var i = 0;
 var divisions = ['Beginner', 'Moderate', 'Advanced'];
-var levels = ['Level 1', 'Level 2', 'Level 3'];
 
 document.getElementById('backward').style.display = "none";
 function speak(b) {
@@ -49,24 +48,31 @@ function backword() {
   }
 }
 
-function change_level(level) {
-  for (let j = 0; j < level.length; j++) {
-    if (level == level[j]) {
-      if (i == english.length - 1) {
+// Division change
+var pre_div = divisions[div_num - 1];
+var nxtdiv = divisions[div_num + 1];
+document.getElementById('ndivision').innerHTML = nxtdiv;
+document.getElementById('pdivision').innerHTML = pre_div;
 
-      }
-    }
-  }
+if (i == english.length - 1 && div_num < 2) {
+  document.getElementById('nextdivision').style.display = "block";
+}
+else {
+  document.getElementById('nextdivision').style.display = "none";
+}
+if (i == 0 && div_num > 0) {
+  document.getElementById('prevdivision').style.display = "block";
+}
+else {
+  document.getElementById('prevdivision').style.display = "none";
+}
+
+function nextdiv() {
+  
 
 }
 
-function change_division(division) {
-  for (let j = 0; j < division.length; j++) {
-    if (division == division[j]) {
-      if (i == english.length - 1) {
-        
-      }
-    }
-  }
+function prevdiv() {
+
 }
 
