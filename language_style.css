@@ -58,13 +58,13 @@ body {
 
 #nextdivision{
     position: absolute;
-    top: 300px;
-    right: 310px;
+    top: 200px;
+    right: 450px;
 }
 
 #prevdivision{
     position: absolute;
-    top: 300px;
+    top: 200px;
     left: 150px;
 }
 
