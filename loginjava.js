@@ -1,27 +1,4 @@
 
-function register() {
-    let a = document.getElementById("use").value;
-    let b = document.getElementById("pass").value;
-
-    if (a != "" && b != "") {
-        localStorage.setItem(a, b);
-        alert("Signed Up");
-    }
-}
-
-function login() {
-    let a = document.getElementById("username").value;
-    let b = document.getElementById("password").value;
-
-    if (localStorage.getItem(a) == b) {
-        alert("Signed it");
-    }
-    else {
-        alert("Invalid");
-    }
-}
-
-
 function toggleForm(a) {
     if (a == 'R') {
         document.getElementById('register-form').style.display = "block";
@@ -32,6 +9,25 @@ function toggleForm(a) {
         document.getElementById('register-form').style.display = "none";
     }
 }
+
+
+// function register() {
+//     let a = document.getElementById("use").value;
+//     let b = document.getElementById("pass").value;
+
+//     if (a != "" && b != "") {
+//         createUser(a, b);
+//         // console.log("UserCreated");
+//     }
+// }
+
+// function login() {
+//     let a = document.getElementById("username").value;
+//     let b = document.getElementById("password").value;
+
+//     authenticateUser(a,b);
+//     // console.log("Data Matched");
+// }
 
 
 
