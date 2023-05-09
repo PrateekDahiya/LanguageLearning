@@ -11,10 +11,47 @@
 </head>
 
 <body>
-    <div id="topline"></div>
-    <div id="Secondline">
+
+    <!-- Common Header -->
+    <div id="topline">
+    </div>
+    <div id="logonmenu">
+        <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a id="home" href="home.html">Home</a></li>
+                <li>
+                    <div class="languages_list">
+                        <a>Languages</a>
+                        <div id="boxoflang">
+                            <a href="Hindi_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/India.jpg">Learn Hindi</a>
+                            <a href="french_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/France.jpg">Learn French</a>
+                            <a href="japanese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Japan.jpg">Learn Japanese</a>
+                            <a href="chinese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/China.jpg">Learn Chinese</a>
+                            <a href="spanish_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Spain.jpg">Learn Spanish</a>
+                            <a href="tamil_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/tamil.png">Learn Tamil</a>
+                            <a href="German_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Germany.jpg">Learn German</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a>About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Common Header Ends -->
+
+    <div id="Lang_name">
         French Learning(Beginners)
     </div>
+
     <hr>
     <div id="backward" onclick="backword()">
         <img src="Images/Backward Button.png" width="70px">
@@ -37,7 +74,8 @@
     <script>
         let english = [' Hello', ' Thank you', ' Yes', ' No', ' Please', ' Goodbye', ' How are you?', ' Good', ' Bad', ' Thank you very much', " You're welcome", ' Excuse me', ' Sorry', ' Good night', ' See you soon', ' Mr.', ' Mrs.', ' Miss', ' Dog', ' Cat', ' House', ' Car', ' Bread', ' Water', ' Apple', ' Banana', ' Book', ' School', ' Work', ' Hour']
         let otherlang = ['Bonjour ', 'Merci ', 'Oui ', 'Non ', "S'il vous plaît ", 'Au revoir ', 'Comment ça va? ', 'Bien ', 'Mal ', 'Merci beaucoup ', 'De rien ', 'Excusez moi ', 'Pardon ', 'Bonne nuit ', 'À bientôt ', 'Monsieur ', 'Madame ', 'Mademoiselle ', 'Chien ', 'Chat ', 'Maison ', 'Voiture ', 'Pain ', 'Eau ', 'Pomme ', 'Banane ', 'Livre ', 'École ', 'Travail ', 'Heure ']
-
+        let questions = ["Bonjour", "Merci", "Au revoir", "Oui", "Non", "S'il vous plaît", "Pardon", "Excusez-moi", "Comment ça va ?", "Ça va bien", "Comment vous appelez-vous ?", "Je m'appelle", "Quel âge avez-vous ?", "J'ai vingt ans", "Quelle heure est-il ?", "Je suis désolé", "Je ne parle pas français", "Je ne comprends pas", "Où est la gare ?", "Combien ça coûte ?"]
+        let answers = ["Hello", "Thank you", "Goodbye", "Yes", "No", "Please", "Sorry", "Excuse me", "How are you?", "I'm fine", "What's your name?", "My name is", "How old are you?", "I'm twenty years old", "What time is it?", "I'm sorry", "I don't speak French", "I don't understand", "Where is the train station?", "How much does it cost?"]
     </script>
     <script src="language_script.js"></script>
 </body>

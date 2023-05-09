@@ -11,10 +11,47 @@
 </head>
 
 <body>
-    <div id="topline"></div>
-    <div id="Secondline">
+
+    <!-- Common Header -->
+    <div id="topline">
+    </div>
+    <div id="logonmenu">
+        <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a id="home" href="home.html">Home</a></li>
+                <li>
+                    <div class="languages_list">
+                        <a>Languages</a>
+                        <div id="boxoflang">
+                            <a href="Hindi_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/India.jpg">Learn Hindi</a>
+                            <a href="french_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/France.jpg">Learn French</a>
+                            <a href="japanese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Japan.jpg">Learn Japanese</a>
+                            <a href="chinese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/China.jpg">Learn Chinese</a>
+                            <a href="spanish_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Spain.jpg">Learn Spanish</a>
+                            <a href="tamil_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/tamil.png">Learn Tamil</a>
+                            <a href="German_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Germany.jpg">Learn German</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a>About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Common Header Ends -->
+
+    <div id="Lang_name">
         German Learning(Advance)
     </div>
+
     <hr>
     <div id="backward" onclick="backword()">
         <img src="Images/Backward Button.png" width="70px">
@@ -34,10 +71,11 @@
             <img src="Images/volume.png" onclick="speakeng()" width="30px">
         </div>
     </div>
-<script>
-    let otherlang = ['Die Zeit heilt alle Wunden. ', 'Ich bin aufgeregt, weil ich morgen meine Prüfung habe. ', 'Es tut mir leid, dass ich gestern nicht zum Treffen kommen konnte. ', 'Ich freue mich darauf, bald nach Deutschland zu reisen. ', 'Die Welt ist ein Buch, und wer nicht reist, liest nur eine Seite. ', 'Ich habe seit Jahren nicht mehr mit meiner Schwester gesprochen. ', 'Es ist wichtig, dass wir alle zusammenarbeiten, um die Umwelt zu schützen. ', 'Ich werde dir helfen, dein Deutsch zu verbessern. ', 'Wir haben den Zug verpasst, weil wir zu spät gekommen sind. ', 'Das Essen in diesem Restaurant ist ausgezeichnet. ', '']
-    let english = ['German adv', ' Time heals all wounds.', ' I am excited because I have my exam tomorrow.', " I am sorry I couldn't come to the meeting yesterday.", ' I am looking forward to traveling to Germany soon.', ' The world is a book, and those who do not travel read only one page.', " I haven't spoken to my sister for years.", ' It is important that we all work together to protect the environment.', ' I will help you improve your German.', ' We missed the train because we arrived too late.', ' The food in this restaurant\xa0is\xa0excellent.']
-</script>
-<script src="language_script.js"></script>
+    <script>
+        let otherlang = ['Die Zeit heilt alle Wunden. ', 'Ich bin aufgeregt, weil ich morgen meine Prüfung habe. ', 'Es tut mir leid, dass ich gestern nicht zum Treffen kommen konnte. ', 'Ich freue mich darauf, bald nach Deutschland zu reisen. ', 'Die Welt ist ein Buch, und wer nicht reist, liest nur eine Seite. ', 'Ich habe seit Jahren nicht mehr mit meiner Schwester gesprochen. ', 'Es ist wichtig, dass wir alle zusammenarbeiten, um die Umwelt zu schützen. ', 'Ich werde dir helfen, dein Deutsch zu verbessern. ', 'Wir haben den Zug verpasst, weil wir zu spät gekommen sind. ', 'Das Essen in diesem Restaurant ist ausgezeichnet. ', '']
+        let english = ['German adv', ' Time heals all wounds.', ' I am excited because I have my exam tomorrow.', " I am sorry I couldn't come to the meeting yesterday.", ' I am looking forward to traveling to Germany soon.', ' The world is a book, and those who do not travel read only one page.', " I haven't spoken to my sister for years.", ' It is important that we all work together to protect the environment.', ' I will help you improve your German.', ' We missed the train because we arrived too late.', ' The food in this restaurant\xa0is\xa0excellent.']
+    </script>
+    <script src="language_script.js"></script>
 </body>
+
 </html>

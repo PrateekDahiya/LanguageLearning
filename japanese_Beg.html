@@ -11,20 +11,65 @@
 </head>
 
 <body>
-    <div id="topline"></div>
-    <div id="Secondline">
+    <!-- Common Header -->
+    <div id="topline">
+    </div>
+    <div id="logonmenu">
+        <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a id="home" href="home.html">Home</a></li>
+                <li>
+                    <div class="languages_list">
+                        <a>Languages</a>
+                        <div id="boxoflang">
+                            <a href="Hindi_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/India.jpg">Learn Hindi</a>
+                            <a href="french_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/France.jpg">Learn French</a>
+                            <a href="japanese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Japan.jpg">Learn Japanese</a>
+                            <a href="chinese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/China.jpg">Learn Chinese</a>
+                            <a href="spanish_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Spain.jpg">Learn Spanish</a>
+                            <a href="tamil_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/tamil.png">Learn Tamil</a>
+                            <a href="German_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Germany.jpg">Learn German</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a>About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Common Header Ends -->
+
+    <div id="Lang_name">
         Japanese Learning(Beginners)
     </div>
+
     <hr>
+    <!-- Word Change -->
     <div id="backward" onclick="backword()">
         <img src="Images/Backward Button.png" width="70px">
     </div>
     <div id="continue" onclick="nextword()">
         <img src="Images/Continue Button.png" width="70px">
     </div>
-    <div id="division" onclick = "change_division()">
-        
+    <!-- Division Change -->
+    <div id="prevdivision" onclick="prevdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="pdivision"></div>
     </div>
+
+    <div id="nextdivision" onclick="nextdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="ndivision"></div>
+    </div>
+    <!-- Main Body -->
     <div id="textpart">
         <p class="lanname">JAPANESE</p>
         <strong class="word" id="lang">こんにちは</strong>
@@ -40,9 +85,11 @@
         </div>
     </div>
     <script>
-        let english = [' Hello', ' Thank you', 'I love you', ' Excuse me', ' Good morning', ' Good evening', ' Yes', ' No', ' Please', " I'm sorry", ' Goodbye', ' Cat', ' Dog', ' Fish', ' Flower', ' Mountain', ' River', ' Weather', ' School', ' Book', ' Train', ' Airplane', ' Travel', ' Foreigner', ' Food', ' Drink', ' Family', ' Friend', ' Language', ' History', ' Culture']
-        let otherlang = ['こんにちは ', 'ありがとう ', '愛してます', 'すみません ', 'おはようございます ', 'こんばんは ', 'はい ', 'いいえ ', 'お願いします ', 'ごめんなさい ', 'さようなら ', '猫 ', '犬 ', '魚 ', '花 ', '山 ', '川 ', '天気 ', '学校 ', '本 ', '電車 ', '飛行機 ', '旅行 ', '外国人 ', '食べ物 ', '飲み物 ', '家族 ', '友達 ', '言語 ', '歴史 ', '文化 ']
-        let romaji = ['Konnichiwa', 'Arigatou', 'Aishitemasu', 'Sumimasen', 'Ohayou gozaimasu', 'Konbanwa', 'Hai', 'Iie', 'Onegaishimasu', 'Gomen nasai', 'Sayonara', 'Neko', 'Inu', 'Sakana', 'Hana', 'Yama', 'Kawa', 'Tenki', 'Gakkou', 'Hon', 'Densha', 'Hikouki', 'Ryokou', 'Gaikokujin', 'Tabemono', 'Nomimono', 'Kazoku', 'Tomodachi', 'Gengo', 'Rekishi', 'Bunka']
+        // Words 
+        let english = [' Hello', ' Thank you', 'I love you', ' Excuse me', ' Good morning', ' Good evening', ' Yes', ' No', ' Please', `I'm sorry`, ' Goodbye', ' Cat', ' Dog', ' Fish', ' Flower', ' Mountain', ' River', ' Weather', ' School', ' Book', ' Train', `Airplane`, ' Travel', ' Foreigner', ' Food', ' Drink', ' Family', ' Friend', ' Language', ' History', ' Culture'];
+        let otherlang = ['こんにちは ', 'ありがとう ', '愛してます', 'すみません ', 'おはようございます ', 'こんばんは ', 'はい ', 'いいえ ', 'お願いします ', 'ごめんなさい ', 'さようなら ', '猫 ', '犬 ', '魚 ', '花 ', '山 ', '川 ', '天気 ', '学校 ', '本 ', '電車 ', '飛行機 ', '旅行 ', '外国人 ', '食べ物 ', '飲み物 ', '家族 ', '友達 ', '言語 ', '歴史 ', '文化 '];
+        let romaji = ['Konnichiwa', 'Arigatou', 'Aishitemasu', 'Sumimasen', 'Ohayou gozaimasu', 'Konbanwa', 'Hai', 'Iie', 'Onegaishimasu', 'Gomen nasai', 'Sayonara', 'Neko', 'Inu', 'Sakana', 'Hana', 'Yama', 'Kawa', 'Tenki', 'Gakkou', 'Hon', 'Densha', 'Hikouki', 'Ryokou', 'Gaikokujin', 'Tabemono', 'Nomimono', 'Kazoku', 'Tomodachi', 'Gengo', 'Rekishi', 'Bunka'];
+        div_num = 0;
     </script>
     <script src="language_script.js"></script>
 </body>
