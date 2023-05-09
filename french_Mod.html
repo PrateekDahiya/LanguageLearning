@@ -11,10 +11,47 @@
 </head>
 
 <body>
-    <div id="topline"></div>
-    <div id="Secondline">
+
+    <!-- Common Header -->
+    <div id="topline">
+    </div>
+    <div id="logonmenu">
+        <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a id="home" href="home.html">Home</a></li>
+                <li>
+                    <div class="languages_list">
+                        <a>Languages</a>
+                        <div id="boxoflang">
+                            <a href="Hindi_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/India.jpg">Learn Hindi</a>
+                            <a href="french_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/France.jpg">Learn French</a>
+                            <a href="japanese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Japan.jpg">Learn Japanese</a>
+                            <a href="chinese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/China.jpg">Learn Chinese</a>
+                            <a href="spanish_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Spain.jpg">Learn Spanish</a>
+                            <a href="tamil_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/tamil.png">Learn Tamil</a>
+                            <a href="German_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Germany.jpg">Learn German</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a>About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Common Header Ends -->
+
+    <div id="Lang_name">
         French Learning(Moderate)
     </div>
+
     <hr>
     <div id="backward" onclick="backword()">
         <img src="Images/Backward Button.png" width="70px">
@@ -37,8 +74,8 @@
     <script>
         let english = [' Hello!', ' How are you?', ' My name is Sophie.', ' What is your name?', ' I am happy.', ' I am tired.', ' Thank you very much.', " You're welcome.", ' Yes, I understand.', " No, I don't understand.", ' Excuse me.', ' Goodbye!', " I don't know.", ' I like music.', " I don't like vegetables.", ' What time is it?', ' How much does it cost?', ' I am going to the cinema.', " It's nice weather today.", ' I am hungry.'];
         let otherlang = ['Bonjour! ', 'Comment ça va? ', "Je m'appelle Sophie. ", "Comment t'appelles tu? ", 'Je suis content(e). ', 'Je suis fatigué(e). ', 'Merci beaucoup. ', 'De rien. ', 'Oui, je comprends. ', 'Non, je ne comprends pas. ', 'Excusez moi. ', 'Au revoir! ', 'Je ne sais pas. ', "J'aime la musique. ", "Je n'aime pas les légumes. ", 'Quelle heure est il? ', 'Combien ça coûte? ', 'Je vais au cinéma. ', "Il fait beau aujourd'hui. ", "J'ai faim. "];
-        let questions = ["Comment ça va ?","Quel est ton nom ?","Où est la gare ?","Je suis fatigué","Elle est belle","Je suis en retard","Tu parles anglais ?","Je ne sais pas","Quel temps fait-il ?","Je suis désolé","Je suis occupé","Je suis en vacances","Quelle est ta profession ?","C'est combien ?","J'ai faim","Je suis malade","Elle est occupée","Je suis prêt","Je suis heureux","Je suis triste"]
-        let answers = ["How are you?","What's your name?","Where is the train station?","I am tired","She is beautiful","I am late","Do you speak English?","I don't know","What's the weather like?","I'm sorry","I am busy","I am on vacation","What's your profession?","How much is it?","I'm hungry","I'm sick","She is busy","I'm ready","I'm happy","I'm sad"]
+        let questions = ["Comment ça va ?", "Quel est ton nom ?", "Où est la gare ?", "Je suis fatigué", "Elle est belle", "Je suis en retard", "Tu parles anglais ?", "Je ne sais pas", "Quel temps fait-il ?", "Je suis désolé", "Je suis occupé", "Je suis en vacances", "Quelle est ta profession ?", "C'est combien ?", "J'ai faim", "Je suis malade", "Elle est occupée", "Je suis prêt", "Je suis heureux", "Je suis triste"]
+        let answers = ["How are you?", "What's your name?", "Where is the train station?", "I am tired", "She is beautiful", "I am late", "Do you speak English?", "I don't know", "What's the weather like?", "I'm sorry", "I am busy", "I am on vacation", "What's your profession?", "How much is it?", "I'm hungry", "I'm sick", "She is busy", "I'm ready", "I'm happy", "I'm sad"]
     </script>
     <script src="language_script.js"></script>
 </body>

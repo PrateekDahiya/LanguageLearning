@@ -1,24 +1,126 @@
-body {
+/*Common Header  */
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+* {
     margin: 0;
+    font-family: "Bruno Ace SC", sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(22, 21, 31, 0.934);
 }
 
 #topline {
     background-color: rgb(255, 187, 0);
-    height: 50px;
+    height: 10px;
     width: 100%;
+    padding-bottom: 40px;
 }
 
-#Secondline {
-    padding-top: 3%;
-    height: 90px;
-    background-color: rgba(22, 21, 31, 0.934);
+#logonmenu {
     color: white;
-    font-size: 30px;
-    padding-left: 7%;
+    font-size: large;
+    font-weight: 500;
+    padding: 8px;
+    height: 50px;
+    background-color: rgba(22, 21, 31, 0.934);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+}
+
+#home {
+    text-decoration: none;
+    color: white;
+
+}
+
+#home:hover {
+    color: rgb(255, 187, 0);
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav_links li a:hover {
+    color: rgb(255, 187, 0);
+}
+
+.lang_list:visited {
+    color: rgba(22, 21, 31, 0.934);
+}
+
+
+.languages_list {
+    padding-top: 80px;
+    position: relative;
+    line-height: 30px;
+    height: 100px;
+    cursor: pointer;
+    font-size: large;
+    justify-content: space-between;
+}
+
+#boxoflang {
+    height: auto;
+    width: 250px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 140px;
+    left: -40px;
+    background-color: rgb(255, 187, 0);
+    z-index: 2;
+}
+
+.lang_list {
+    padding: 10px;
+    display: none;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.lang_list:hover {
+    background-color: rgba(57, 57, 59, 0.934);
+
+}
+
+.languages_list:hover .lang_list {
+    display: flex;
+}
+
+
+.flags {
+    padding-top: 8px;
+    height: 15px;
+    padding-right: 8px;
+}
+
+/* Common Header Ends */
+
+
+body {
+    margin: 0;
+}
+
+#Lang_name {
+    /* height: 50px; */
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
 }
 
 #textpart {
-    padding-top: 1%;
+    padding-top: 5%;
     width: 400px;
     height: 450px;
     /* border: 2px solid black; */
@@ -37,6 +139,7 @@ body {
 }
 
 #continue {
+    margin-top: 50px;
     width: 150px;
     height: 40px;
     float: right;
@@ -49,6 +152,7 @@ body {
 }
 
 #backward {
+    margin-top: 50px;
     width: 150px;
     height: 40px;
     float: left;
@@ -56,28 +160,41 @@ body {
     margin-left: 20%;
 }
 
-#nextdivision{
-    position: absolute;
-    top: 200px;
-    right: 450px;
+#nextdivision {
+
+    margin-top: 50px;
+    width: 150px;
+    height: 40px;
+    float: right;
+    margin-right: 20%;
+    padding-bottom: 15px;
+
 }
 
-#prevdivision{
-    position: absolute;
-    top: 200px;
-    left: 150px;
+#prevdivision {
+    margin-top: 50px;
+    width: 150px;
+    height: 40px;
+    float: left;
+    padding-bottom: 15px;
+    margin-left: 20%;
+
 }
 
-#ndivision{
+#ndivision {
     position: relative;
     text-align: center;
     top: -38px;
     font-size: 20px;
+    padding-left: 30px;
+
 }
 
-#pdivision{
+#pdivision {
     position: relative;
     text-align: center;
     top: -38px;
     font-size: 20px;
+    padding-left: 30px;
+
 }

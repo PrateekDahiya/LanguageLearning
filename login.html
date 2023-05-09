@@ -11,40 +11,79 @@
 </head>
 
 <body>
-    
+<!-- Common Header -->
+    <div id="topline">
+    </div>
+    <div id="logonmenu">
+        <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a>Home</a></li>
+                <li>
+                    <div class="languages_list">
+                        <a>Languages</a>
+                        <div id="boxoflang">
+                            <a href="Hindi_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/India.jpg">Learn Hindi</a>
+                            <a href="french_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/France.jpg">Learn French</a>
+                            <a href="japanese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Japan.jpg">Learn Japanese</a>
+                            <a href="chinese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/China.jpg">Learn Chinese</a>
+                            <a href="spanish_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Spain.jpg">Learn Spanish</a>
+                            <a href="tamil_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/tamil.png">Learn Tamil</a>
+                            <a href="German_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Germany.jpg">Learn German</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a>About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+<!-- Common Header Ends -->
+
+
+
     <div class="container">
         <div class="login-register">
             <div class="form" id="login-form">
                 <h1>Login</h1>
-                <form>
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password">
-                    <button type="submit">Login</button>
+                <form id="login-text">
+                    <label for="username">Username: </label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username"><br>
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password"><br>
+                    <button type="submit" class="button-regnlog" onclick="login()">Login</button>
+                    <p class="message">Not registered? <a href="#" onclick="toggleForm('R')">Create an account</a></p>
                 </form>
-                <p class="message">Not registered? <a href="#" onclick="toggleForm()">Create an account</a></p>
             </div>
             <div class="form" id="register-form">
                 <h1>Register</h1>
-                <form>
-                    <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter a username">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter a password">
-                    <label for="confirm-password">Confirm Password</label>
+                <form id="register-text">
+                    <label for="fullname">Full Name: </label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"><br>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email"><br>
+                    <label for="username">Username: </label>
+                    <input type="text" id="use" name="username" placeholder="Enter a username"><br>
+                    <label for="password">Password: </label>
+                    <input type="password" id="pass" name="password" placeholder="Enter a password"><br>
+                    <label for="confirm-password">Confirm Password: </label>
                     <input type="password" id="confirm-password" name="confirm-password"
-                        placeholder="Confirm your password">
-                    <button type="submit">Register</button>
+                        placeholder="Confirm your password"><br>
+                    <button type="submit" class="button-regnlog" onclick="register()">Register</button>
+                    <p class="message">Already registered? <a href="#" onclick="toggleForm('L')">Login here</a></p>
                 </form>
-                <p class="message">Already registered? <a href="#" onclick="toggleForm()">Login here</a></p>
             </div>
         </div>
     </div>
+
+    <script src="loginjava.js"></script>
 </body>
 
 </html>
