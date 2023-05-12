@@ -2,7 +2,7 @@ var i = 0;
 var divtext = ['Beginner', 'Moderate', 'Advance']
 var divisions = ['Beg', 'Mod', 'Adv'];
 var num_words = english.length;
-
+var withromanji = ['japanese', 'chinese', 'tamil'];
 
 var pre_div = divtext[div_num - 1];
 var nxtdiv = divtext[div_num + 1];
@@ -34,7 +34,11 @@ function nextword() {
         i = i + 1;
         document.getElementById("lang").innerHTML = otherlang[i];
         document.getElementById("eng").innerHTML = english[i];
-        document.getElementById("romaji").innerHTML = romaji[i];
+        for (let k = 0; k < withromanji.length; k++) {
+            if (withromanji.includes(language)) {
+                document.getElementById("romaji").innerHTML = romaji[i];
+            }
+        }
     }
     if (i == 0) {
         document.getElementById('backward').style.display = "none";
@@ -52,7 +56,12 @@ function backword() {
         i = i - 1;
         document.getElementById("lang").innerHTML = otherlang[i];
         document.getElementById("eng").innerHTML = english[i];
-        document.getElementById("romaji").innerHTML = romaji[i];
+        for (let k = 0; k < withromanji.length; k++) {
+            if (withromanji.includes(language)) {
+                document.getElementById("romaji").innerHTML = romaji[i];
+            }
+        }
+
     }
     if (i == 0) {
         document.getElementById('backward').style.display = "none";
@@ -60,10 +69,8 @@ function backword() {
     else (document.getElementById('backward').style.display = "block");
     if (i == english.length - 1) {
         document.getElementById('continue').style.display = "none";
-        is_last = true;
     } else {
         document.getElementById('continue').style.display = "block";
-        is_last = false;
     }
     check_nxtdiv(i);
 }
