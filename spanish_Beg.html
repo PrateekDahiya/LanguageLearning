@@ -7,33 +7,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="language_style.css">
-    <title>Spanish Beginner</title>
+    <title>Japanese Beginner</title>
 </head>
 
 <body>
-    <div id="topline"></div>
-    <div id="Secondline">
+    <!-- Common Header -->
+    <div id="topline">
+    </div>
+    <div id="logonmenu">
+        <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a id="home" href="home.html">Home</a></li>
+                <li>
+                    <div class="languages_list">
+                        <a>Languages</a>
+                        <div id="boxoflang">
+                            <a href="Hindi_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/India.jpg">Learn Hindi</a>
+                            <a href="french_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/France.jpg">Learn French</a>
+                            <a href="japanese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Japan.jpg">Learn Japanese</a>
+                            <a href="chinese_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/China.jpg">Learn Chinese</a>
+                            <a href="spanish_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Spain.jpg">Learn Spanish</a>
+                            <a href="tamil_Beg.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/tamil.png">Learn Tamil</a>
+                            <a href="German_Big.html" class="lang_list"><img class="flags"
+                                    src="Images/Flags/Germany.jpg">Learn German</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a>About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Common Header Ends -->
+
+    <div id="Lang_name">
         Spanish Learning(Beginners)
     </div>
-    <hr>
-    <div id="textpart">
-        <div id="continue" onclick="nextword()">
-            <p>Continue</p>
-        </div>
 
-        <p class="lanname">SPANISH</p>
-        <strong class="word" id="lang">Hola!</strong>
-        <p class="lanname">ENGLISH</p>
-        <strong class="word" id="eng">Hello!</strong><br>
-        <img src="Images/volume.png" onclick="speak('es')" width="30px">
+    <hr>
+    <!-- Word Change -->
+    <div id="backward" onclick="backword()">
+        <img src="Images/Backward Button.png" width="70px">
+    </div>
+    <div id="continue" onclick="nextword()">
+        <img src="Images/Continue Button.png" width="70px">
+    </div>
+    <!-- Division Change -->
+    <div id="prevdivision" onclick="prevdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="pdivision"></div>
     </div>
 
-
-<script>
-    let english = [' Hello', ' Goodbye', ' Thank you', ' Please', ' Yes', ' No', ' Friend', ' House', ' Dog', ' Cat', ' Water', ' Food', ' Happy', ' Sad', ' Small', ' Big', ' Hot', ' Cold', ' Red', ' Blue']
-    let otherlang = ['Hola ', 'Adiós ', 'Gracias ', 'Por favor ', 'Sí ', 'No ', 'Amigo/amiga ', 'Casa ', 'Perro ', 'Gato ', 'Agua ', 'Comida ', 'Feliz ', 'Triste ', 'Pequeño/pequeña ', 'Grande ', 'Caliente ', 'Frío ', 'Rojo ', 'Azul ']
-
-</script>
-<script  src="language_script.js"></script>
+    <div id="nextdivision" onclick="nextdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="ndivision"></div>
+    </div>
+    <!-- Main Body -->
+    <div id="textpart">
+        <p class="lanname">Spanish</p>
+        <strong class="word" id="lang">Hola</strong>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speak('ja')" width="30px">
+        </div>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng"> Hello</strong><br>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+    </div>
+    <script>
+        // Words 
+        let english = [' Hello', ' Goodbye', ' Thank you', ' Please', ' Welcome', ' Friend', ' House', ' Food', ' Water', ' Beach', ' Mountain', ' Party', ' Work', ' School', ' Book', ' Movie', ' Music', ' Trip', ' Money', ' Sports']
+        let otherlang = ['Hola ', 'Adiós ', 'Gracias ', 'Por favor ', 'Bienvenido/a ', 'Amigo/a ', 'Casa ', 'Comida ', 'Agua ', ' Playa ', ' Montaña ', ' Fiesta ', ' Trabajo ', ' Escuela ', ' Libro ', ' Película ', ' Música ', ' Viaje ', ' Dinero ', ' Deportes ']
+        div_num = 0;
+    </script>
+    <script src="language_script.js"></script>
 </body>
+
 </html>
