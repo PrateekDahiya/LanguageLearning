@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="language_style.css">
-    <title>French Advanced</title>
+    <title>German Beginners</title>
 </head>
 
 <body>
@@ -48,10 +48,11 @@
 
     <!-- Common Header Ends -->
 
-
     <div id="Lang_name">
-        French Learning(Advanced)
+        German Learning(Beginners)
     </div>
+
+    <hr>
     <div id="backward" onclick="backword()">
         <img src="Images/Backward Button.png" width="70px">
     </div>
@@ -68,23 +69,22 @@
         <div id="ndivision"></div>
     </div>
     <div id="textpart">
-        <p class="lanname">FRENCH</p>
-        <strong class="word" id="lang">Je suis en train de réfléchir à ce que je vais faire.</strong>
+        <p class="lanname">GERMAN</p>
+        <strong class="word" id="lang">Hallo</strong>
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speak('de')" width="30px">
         </div>
         <p class="lanname">ENGLISH</p>
-        <strong class="word" id="eng">I'm thinking about what I'm going to do.</strong><br>
+        <strong class="word" id="eng">Hello</strong>
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speakeng()" width="30px">
         </div>
     </div>
-    <hr>
     <script>
-        let english = ["I'm thinking about what I'm going to do.", 'I was impressed by his speech.', ' We talked for hours.', ' She achieved her childhood dream.', " It's time to make a decision.", ' We worked hard to achieve this goal.', " I'm passionate about classical music.", ' She took the initiative to solve the problem.', " I've had the opportunity to travel a lot.", " It's important to take other people's opinions into account.", ' We must consider all options before making a decision.', ' She is extremely talented in mathematics.', ' The project requires a creative approach.', " It's important to maintain a balance between work and personal life.", ' We discussed the possibility of collaborating on a joint project.', ' She was appointed CEO of the company.', " I was moved by the artist's thankyou speech.", ' We need to find an innovative solution to this problem.', ' She demonstrated great resilience in the face of adversity.', ' Trust is a key element for a healthy and productive relationship.']
-        let otherlang = ['Je suis en train de réfléchir à ce que je vais faire. ', "J'ai été impressionné par son discours. ", 'Nous avons discuté pendant des heures. ', "Elle a réalisé son rêve d'enfant. ", 'Il est temps de prendre une décision. ', 'Nous avons travaillé dur pour atteindre cet objectif. ', 'Je suis passionné par la musique classique. ', "Elle a pris l'initiative de résoudre le problème. ", "J'ai eu l'occasion de voyager beaucoup. ", 'Il est important de prendre en compte les opinions des autres. ', 'Nous devons envisager toutes les options avant de prendre une décision. ', 'Elle est extrêmement douée en mathématiques. ', 'Le projet nécessite une approche créative. ', 'Il est important de maintenir un équilibre entre vie professionnelle et vie privée. ', 'Nous avons discuté de la possibilité de collaborer sur un projet commun. ', "Elle a été nommée directrice générale de l'entreprise. ", "J'ai été ému par le discours de remerciement de l'artiste. ", 'Nous devons trouver une solution innovante pour ce problème. ', "Elle a fait preuve d'une grande résilience face à l'adversité. ", 'La confiance est un élément clé pour une relation saine et productive. ']
-        div_num = 2;
-        var language = 'french';
+        let english = [' Hello', ' Good morning', ' Good day', ' Goodbye', ' Thank you', ' Please', ' Yes', ' No', ' I', ' You (singular)', ' He', ' She', ' It', ' We', ' You (plural)', ' They/You (formal)', ' Food', ' Drink', ' Water', ' Bread', ' Milk', ' Coffee', ' Tea', ' Apple', ' Banana', ' Car', ' House', ' School', ' Clock/watch', 'Time']
+        let otherlang = ['Hallo ', 'Guten Morgen ', 'Guten Tag ', 'Auf Wiedersehen ', 'Danke ', 'Bitte ', 'Ja ', 'Nein ', 'Ich ', 'Du ', 'Er ', 'Sie ', 'Es ', 'Wir ', 'Ihr ', 'Sie ', 'Essen ', 'Trinken ', 'Wasser ', 'Brot ', 'Milch ', 'Kaffee ', 'Tee ', 'Apfel ', 'Banane ', 'Auto ', 'Haus ', 'Schule ', 'Uhr ', 'Zeit']
+        div_num = 0;
+        var language = 'german';
     </script>
     <script src="language_script.js"></script>
 </body>

@@ -59,6 +59,15 @@
     <div id="continue" onclick="nextword()">
         <img src="Images/Continue Button.png" width="70px">
     </div>
+    <div id="prevdivision" onclick="prevdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="pdivision"></div>
+    </div>
+
+    <div id="nextdivision" onclick="nextdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="ndivision"></div>
+    </div>
     <div id="textpart">
         <p class="lanname">FRENCH</p>
         <strong class="word" id="lang">Bonjour!</strong>
@@ -74,8 +83,8 @@
     <script>
         let english = [' Hello!', ' How are you?', ' My name is Sophie.', ' What is your name?', ' I am happy.', ' I am tired.', ' Thank you very much.', " You're welcome.", ' Yes, I understand.', " No, I don't understand.", ' Excuse me.', ' Goodbye!', " I don't know.", ' I like music.', " I don't like vegetables.", ' What time is it?', ' How much does it cost?', ' I am going to the cinema.', " It's nice weather today.", ' I am hungry.'];
         let otherlang = ['Bonjour! ', 'Comment ça va? ', "Je m'appelle Sophie. ", "Comment t'appelles tu? ", 'Je suis content(e). ', 'Je suis fatigué(e). ', 'Merci beaucoup. ', 'De rien. ', 'Oui, je comprends. ', 'Non, je ne comprends pas. ', 'Excusez moi. ', 'Au revoir! ', 'Je ne sais pas. ', "J'aime la musique. ", "Je n'aime pas les légumes. ", 'Quelle heure est il? ', 'Combien ça coûte? ', 'Je vais au cinéma. ', "Il fait beau aujourd'hui. ", "J'ai faim. "];
-        let questions = ["Comment ça va ?", "Quel est ton nom ?", "Où est la gare ?", "Je suis fatigué", "Elle est belle", "Je suis en retard", "Tu parles anglais ?", "Je ne sais pas", "Quel temps fait-il ?", "Je suis désolé", "Je suis occupé", "Je suis en vacances", "Quelle est ta profession ?", "C'est combien ?", "J'ai faim", "Je suis malade", "Elle est occupée", "Je suis prêt", "Je suis heureux", "Je suis triste"]
-        let answers = ["How are you?", "What's your name?", "Where is the train station?", "I am tired", "She is beautiful", "I am late", "Do you speak English?", "I don't know", "What's the weather like?", "I'm sorry", "I am busy", "I am on vacation", "What's your profession?", "How much is it?", "I'm hungry", "I'm sick", "She is busy", "I'm ready", "I'm happy", "I'm sad"]
+        div_num = 1;
+        var language = 'french';
     </script>
     <script src="language_script.js"></script>
 </body>

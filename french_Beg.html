@@ -59,6 +59,15 @@
     <div id="continue" onclick="nextword()">
         <img src="Images/Continue Button.png" width="70px">
     </div>
+    <div id="prevdivision" onclick="prevdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="pdivision"></div>
+    </div>
+
+    <div id="nextdivision" onclick="nextdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="ndivision"></div>
+    </div>
     <div id="textpart">
         <p class="lanname">FRENCH</p>
         <strong class="word" id="lang">Bonjour!</strong>
@@ -74,9 +83,9 @@
     <script>
         let english = [' Hello', ' Thank you', ' Yes', ' No', ' Please', ' Goodbye', ' How are you?', ' Good', ' Bad', ' Thank you very much', " You're welcome", ' Excuse me', ' Sorry', ' Good night', ' See you soon', ' Mr.', ' Mrs.', ' Miss', ' Dog', ' Cat', ' House', ' Car', ' Bread', ' Water', ' Apple', ' Banana', ' Book', ' School', ' Work', ' Hour']
         let otherlang = ['Bonjour ', 'Merci ', 'Oui ', 'Non ', "S'il vous plaît ", 'Au revoir ', 'Comment ça va? ', 'Bien ', 'Mal ', 'Merci beaucoup ', 'De rien ', 'Excusez moi ', 'Pardon ', 'Bonne nuit ', 'À bientôt ', 'Monsieur ', 'Madame ', 'Mademoiselle ', 'Chien ', 'Chat ', 'Maison ', 'Voiture ', 'Pain ', 'Eau ', 'Pomme ', 'Banane ', 'Livre ', 'École ', 'Travail ', 'Heure ']
-        let questions = ["Bonjour", "Merci", "Au revoir", "Oui", "Non", "S'il vous plaît", "Pardon", "Excusez-moi", "Comment ça va ?", "Ça va bien", "Comment vous appelez-vous ?", "Je m'appelle", "Quel âge avez-vous ?", "J'ai vingt ans", "Quelle heure est-il ?", "Je suis désolé", "Je ne parle pas français", "Je ne comprends pas", "Où est la gare ?", "Combien ça coûte ?"]
-        let answers = ["Hello", "Thank you", "Goodbye", "Yes", "No", "Please", "Sorry", "Excuse me", "How are you?", "I'm fine", "What's your name?", "My name is", "How old are you?", "I'm twenty years old", "What time is it?", "I'm sorry", "I don't speak French", "I don't understand", "Where is the train station?", "How much does it cost?"]
-    </script>
+        div_num = 0;
+        var language = 'french';
+        </script>
     <script src="language_script.js"></script>
 </body>
 

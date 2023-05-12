@@ -57,6 +57,15 @@
     <div id="continue" onclick="nextword()">
         <img src="Images/Continue Button.png" width="70px">
     </div>
+    <div id="prevdivision" onclick="prevdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="pdivision"></div>
+    </div>
+
+    <div id="nextdivision" onclick="nextdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="ndivision"></div>
+    </div>
     <div id="textpart">
         <p class="lanname">CHINESE</p>
         <strong class="word" id="lang">彼女は日本語を上手に話せます。 </strong>
@@ -75,6 +84,8 @@
         let english = [' We must work hard to achieve success.', ' His attitude disappoints me.', ' This problem requires more discussion.', ' She is my teacher and I have a lot of respect for her.', ' We must protect the environment and think about the future.', ' We should give young people more opportunities to show their talents.', ' Our goal is to make the world a better place.', ' We should try to avoid wasting resources.', ' He is a very talented musician.', ' We should respect different cultures and customs.', ' We need more time to solve this problem.', ' We should believe in ourselves and never give up.', ' This question is not easy to answer.', ' We must take action immediately.', ' Their views are somewhat biased.', " This is the best advice I've ever heard.", ' We need more information to make a decision.', " We can't wait any longer, we must take action.", ' We must solve this problem as soon as possible.']
         let otherlang = ['我们必须努力工作才能取得成功。 ', '他的态度让我感到失望。 ', '这个问题需要更多的讨论。 ', '她是我的老师，我非常尊敬她。 ', '我们必须保护环境，为未来着想。 ', '我们应该给年轻人更多机会发挥自己的才能。 ', '我们的目标是让世界更加美好。 ', '我们应该尽量避免浪费资源。 ', '他是一位非常有才华的音乐家。 ', '我们应该尊重不同的文化和习俗。 ', '我们需要更多的时间来解决这个问题。 ', '我们要相信自己，永不放弃。 ', '这个问题不容易回答。 ', '我们必须立即采取行动。 ', '他们的观点有些偏见。 ', '这是我听过的最好的建议。 ', '我们需要更多的信息才能做出决定。 ', '我们不能再等了，必须采取行动。 ', '我们必须尽快解决这个问题。 ']
         let romaji = ['Wǒmen bìxū nǔlì gōngzuò cáinéng qǔdé chénggōng.', 'Tā de tàidù ràng wǒ gǎndào shīwàng.', 'Zhège wèntí xūyào gèng duō de tǎolùn.', 'Tā shì wǒ de lǎoshī, wǒ fēicháng zūnjìng tā.', 'Wǒmen bìxū bǎohù huánjìng, wèi wèilái zhuóxiǎng.', 'Wǒmen yīnggāi gěi niánqīng rén gèng duō jīhuì fāhuī zìjǐ de cáinéng.', 'Wǒmen de mùbiāo shì ràng shìjiè gèngjiā měihǎo.', 'Wǒmen yīnggāi jǐnliàng bìmiǎn làngfèi zīyuán.', 'Tā shì yī wèi fēicháng yǒu cáihuá de yīnyuèjiā.', 'Wǒmen yīnggāi zūnzhòng bùtóng de wénhuà hé xísú.', 'Wǒmen xūyào gèng duō de shíjiān lái jiějué zhège wèntí.', 'Wǒmen yào xiāngxìn zìjǐ, yǒngbù fàngqì.', 'Zhège wèntí bù róngyì huídá.', 'Wǒmen bìxū lìjí cǎiqǔ xíngdòng.', 'Tāmen de guāndiǎn yǒuxiē piānjiàn.', 'Zhè shì wǒ tīngguò de zuì hǎo de jiànyì.', 'Wǒmen xūyào gèng duō de xìnxī cáinéng zuò chū juédìng.', 'Wǒmen bùnéng zài děngle, bìxū cǎiqǔ xíngdòng.', 'Wǒmen bìxū jǐnkuài jiějué zhège wèntí.']
+        div_num = 2;
+        var language = 'chinese';
     </script>
     <script src="language_script.js"></script>
 </body>

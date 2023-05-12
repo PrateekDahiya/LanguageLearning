@@ -1,8 +1,13 @@
 var i = 0;
-var divisions = ['Beginner', 'Moderate', 'Advanced'];
+var divtext = ['Beginner', 'Moderate', 'Advance']
+var divisions = ['Beg', 'Mod', 'Adv'];
 var num_words = english.length;
-var is_last = false;
 
+
+var pre_div = divtext[div_num - 1];
+var nxtdiv = divtext[div_num + 1];
+document.getElementById('ndivision').innerHTML = nxtdiv;
+document.getElementById('pdivision').innerHTML = pre_div;
 
 document.getElementById('backward').style.display = "none";
 document.getElementById('nextdivision').style.display = "none";
@@ -63,15 +68,10 @@ function backword() {
     check_nxtdiv(i);
 }
 
-if (window.i == 10) {
-    console.log("i = 10")
-}
+
 // Division change
 function check_nxtdiv(i) {
-    var pre_div = divisions[div_num - 1];
-    var nxtdiv = divisions[div_num + 1];
-    document.getElementById('ndivision').innerHTML = nxtdiv;
-    document.getElementById('pdivision').innerHTML = pre_div;
+
 
     if ((i == english.length - 1) && (div_num < 2)) {
         document.getElementById('nextdivision').style.display = "block";
@@ -85,14 +85,18 @@ function check_nxtdiv(i) {
     else {
         document.getElementById('prevdivision').style.display = "none";
     }
-
-    function nextdiv() {
-
-
-    }
-
-    function prevdiv() {
-
-    }
 }
+
+
+function nextdiv() {
+    link = String(String(language) + "_" + String(divisions[div_num + 1]) + ".html");
+    open(link, "_parent");
+
+}
+
+function prevdiv() {
+    link = String(String(language) + "_" + String(divisions[div_num - 1]) + ".html");
+    open(link, "_parent");
+}
+
 

@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="language_style.css">
-    <title>Chinese Moderate</title>
+    <title>Tamil Advance</title>
 </head>
 
 <body>
+
     <!-- Common Header -->
     <div id="topline">
     </div>
@@ -47,10 +48,10 @@
 
     <!-- Common Header Ends -->
 
-    </div>
     <div id="Lang_name">
-        Chinese Learning(Moderate)
+        Tamil Learning(Advance)
     </div>
+
     <hr>
     <div id="backward" onclick="backword()">
         <img src="Images/Backward Button.png" width="70px">
@@ -68,25 +69,25 @@
         <div id="ndivision"></div>
     </div>
     <div id="textpart">
-        <p class="lanname">CHINESE</p>
-        <strong class="word" id="lang">你好吗？</strong>
+        <p class="lanname">TAMIL</p>
+        <strong class="word" id="lang">எங்கள் ஊருக்கு வருகிறேன்</strong>
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speak('zh')" width="30px">
         </div>
-        <p class="lanname">PINYIN</p>
-        <strong class="word" id="romaji">Nǐ hǎo ma?</strong><br>
+        <p class="lanname">TAMIL</p>
+        <strong class="word" id="romaji">Engaḷ ūrukku varugireṉ</strong><br>
         <p class="lanname">ENGLISH</p>
-        <strong class="word" id="eng">How are you?</strong><br>
+        <strong class="word" id="eng"> I am coming to our town.</strong><br>
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speakeng()" width="30px">
         </div>
     </div>
     <script>
-        let english = [' How are you?', ' Thank you.', ' Sorry.', " It's okay.", ' Goodbye.', ' Good morning.', ' Good evening.', ' My name is...', " What's your name?", ' Nice to meet you.', " Sorry, I don't speak Chinese.", ' Please speak slower.', " I don't know.", ' Okay.', ' Another cup of tea, please.', " I'm glad to meet you.", ' What would you like to drink?', " Let's go eat.", ' You speak Chinese very well.', ' Excuse me, how do I get to the restroom?']
-        let otherlang = ['你好吗？', '谢谢。', '对不起。', '没关系。', '再见。', '早上好。', '晚上好。', '我叫…', '你叫什么名字？', '很高兴认识你。', '对不起，我不会说中文。', '请说慢一点。', '我不知道。', '好的。', '再来一杯茶。', '我很高兴认识你。', '你想要喝什么？', '我们去吃饭吧。', '你的中文说得很好。', '请问去洗手间怎么走？']
-        let romaji = ['Nǐ hǎo ma?', 'Xièxiè.', 'Duìbùqǐ.', 'Méiguānxi.', 'Zàijiàn.', 'Zǎoshang hǎo.', 'Wǎnshàng hǎo.', 'Wǒ jiào…', 'Nǐ jiào shénme míngzi?', 'Hěn gāoxìng rènshì nǐ.', 'Duìbùqǐ, wǒ bù huì shuō zhōngwén.', 'Qǐng shuō màn yīdiǎn.', 'Wǒ bù zhīdào.', 'Hǎo de.', 'Zài lái yī bēi chá.', 'Wǒ hěn gāoxìng rènshí nǐ.', 'Nǐ xiǎng yào hē shénme?', 'Wǒmen qù chīfàn ba.', 'Nǐ de zhōngwén shuō dé hěn hǎo.', 'Qǐngwèn qù xǐshǒujiān zěnme zǒu?']
-        div_num = 0;
-        var language = 'chinese';
+        let english = [' I am coming to our town.', ' Your thoughts are in my heart.', ' She is coming to my house.', ' Your love fills my life.', ' I am trying to tell you what I have known so far.', ' Can you write in Tamil?', ' I am sure.', ' He loves me with anger.', ' You cannot keep me from sleeping.', ' His dehydration has continued until death.', ' We must not delay anywhere.', ' I am thinking of ways to act.', ' You are calling many good people.']
+        let otherlang = ['எங்கள் ஊருக்கு வருகிறேன் ', 'என் மனதில் உங்கள் நினைவுகள் உள்ளன ', 'அவள் என் வீட்டில் வருகிறாள் ', 'என் உயிரினத்தை உன் காதல் நிறைக்கிறது ', 'நான் இதுவரை அறிந்ததை உங்களுக்கு சொல்ல முயற்சிக்கிறேன் ', 'தமிழில் உரை எழுத முடியுமா? ', 'நான் கட்டாயம் கொடுத்துக்கொண்டிருக்கிறேன். ', 'அவர் கோபமுடன் என்னை நேசிக்கிறார். ', 'நீங்கள் என்னை உறங்கத் தவிர்க்க முடியாது. ', 'அவர் மரணம் துடிக்கும் வரை பரிசுகளின் நீர்த்தேக்கம் செலுத்தியிருக்கிறது. ', 'எங்கும் துரத்திக் காக்க வேண்டாம். ', 'நான் நடந்துகொள்ள வேண்டிய முறைகளை நினைக்கிறேன். ', 'நீ பலர் நல்லவர்களை அழைக்கிறாய். ']
+        let romaji = ['Engaḷ ūrukku varugireṉ', 'En manathil uṅgaḷ ninaiṉkal uḷḷaṉa', 'Avaḷ eṉ vīṭṭil varugiṟāḷ', 'En uyiriṉattai uṉ kādal niṟaikkiraṯu', 'Nāṉ ituvarai aṟintadhai uṅkaḷukku solla muyaṟcikkiṟēṉ', 'Tamilil urai ezhutha mudiyuma?', 'Nān kattāyam koவடிthukkoவடிṉṟukkiṟēṉ', 'Avar kōpamudan ennai nēchikkiṟār', 'Nīṅkaḷ ennai uṟangat tavirkka muṭiyātu', 'Avar maraṇam tuṭikkum varai paricukaḷiṉ nīrttēkkam celuttirukkiṟadhu', 'Eṅkum turattik kākka vēṇṭām', 'Nān naṭantukolla veṇṭiya muṟaikaḷai niṉaikkirēṉ', 'Nī palar nallavargalai aḻaikkiṟāy']
+        div_num = 2;
+        var language = 'tamil';
     </script>
     <script src="language_script.js"></script>
 </body>

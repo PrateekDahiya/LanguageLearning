@@ -59,6 +59,15 @@
     <div id="continue" onclick="nextword()">
         <img src="Images/Continue Button.png" width="70px">
     </div>
+    <div id="prevdivision" onclick="prevdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="pdivision"></div>
+    </div>
+
+    <div id="nextdivision" onclick="nextdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="ndivision"></div>
+    </div>
     <div id="textpart">
         <p class="lanname">GERMAN</p>
         <strong class="word" id="lang">Bonjour!</strong>
@@ -72,8 +81,10 @@
         </div>
     </div>
     <script>
-        let english = [' How are you?', " I'm fine, thank you.", " I don't speak German.", ' Can you please repeat that?', " I don't understand.", ' Where is the toilet?', ' What is that?', ' My name is (Name).', ' What time is it?', " Excuse me/I'm sorry.", " I'm from Germany.", " I'm learning German.", ' What would you like to drink?', ' Can you help me, please?', ' I love you.', " That's fantastic!", " I'm tired.", ' Where is the train station?', ' I have a question.', ' What is that called\xa0in\xa0German?']
+        let english = [' How are you?', " I'm fine, thank you.", " I don't speak German.", ' Can you please repeat that?', " I don't understand.", ' Where is the toilet?', ' What is that?', ' My name is (Name).', ' What time is it?', " Excuse me/I'm sorry.", " I'm from Germany.", " I'm learning German.", ' What would you like to drink?', ' Can you help me, please?', ' I love you.', " That's fantastic!", " I'm tired.", ' Where is the train station?', ' I have a question.', ' What is that called in German?']
         let otherlang = ['Wie geht es dir? ', 'Mir geht es gut, danke. ', 'Ich spreche kein Deutsch. ', 'Kannst du das bitte wiederholen? ', 'Ich verstehe nicht. ', 'Wo ist die Toilette? ', 'Was ist das? ', 'Ich heiße (Name). ', 'Wie spät ist es? ', 'Entschuldigung ', 'Ich komme aus Deutschland. ', 'Ich lerne Deutsch. ', 'Was möchtest du trinken? ', 'Kannst du mir helfen, bitte? ', 'Ich liebe dich. ', 'Das ist fantastisch! ', 'Ich bin müde. ', 'Wo ist der Bahnhof? ', 'Ich habe eine Frage. ', 'Wie heißt das auf Deutsch? ']
+        div_num = 1;
+        var language = 'german';
     </script>
     <script src="language_script.js"></script>
 </body>

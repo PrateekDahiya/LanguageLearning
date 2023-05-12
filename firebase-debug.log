@@ -1,0 +1,133 @@
+[debug] [2023-05-10T15:47:18.489Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T15:47:18.492Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Prateek Dahiya\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-05-10T15:47:18.493Z] CLI Version:   12.0.0
+[debug] [2023-05-10T15:47:18.493Z] Platform:      win32
+[debug] [2023-05-10T15:47:18.493Z] Node Version:  v19.7.0
+[debug] [2023-05-10T15:47:18.493Z] Time:          Wed May 10 2023 21:17:18 GMT+0530 (India Standard Time)
+[debug] [2023-05-10T15:47:18.494Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T15:47:18.571Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T15:47:18.572Z] > authorizing via signed-in user (dahiyaprateek27@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Documents\HTML\Language Learner
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-05-10T15:47:24.639Z] Using project from CLI flag: lingoverse-37674
+[debug] [2023-05-10T15:47:24.642Z] > refreshing access token with scopes: []
+[debug] [2023-05-10T15:47:24.645Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-10T15:47:24.645Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-10T15:47:26.076Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-05-10T15:47:26.077Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-10T15:47:26.113Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lingoverse-37674 [none]
+[debug] [2023-05-10T15:47:27.476Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lingoverse-37674 200
+[debug] [2023-05-10T15:47:27.477Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/lingoverse-37674 {"projectId":"lingoverse-37674","projectNumber":"1076297862713","displayName":"LingoVerse","name":"projects/lingoverse-37674","resources":{"hostingSite":"lingoverse-37674","realtimeDatabaseInstance":"lingoverse-37674-default-rtdb"},"state":"ACTIVE","etag":"1_4253c687-1ccb-46d7-9cd9-47c7e21d9a1a"}
+[info] i  Using project lingoverse-37674 (LingoVerse) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2023-05-10T15:47:27.530Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/lingoverse-37674/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-05-10T15:47:27.530Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/lingoverse-37674/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/lingoverse-37674
+[debug] [2023-05-10T15:47:29.135Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/lingoverse-37674/services/firebasedatabase.googleapis.com 200
+[debug] [2023-05-10T15:47:29.135Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/lingoverse-37674/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2023-05-10T15:47:29.139Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/lingoverse-37674/locations/-/instances/lingoverse-37674-default-rtdb [none]
+[debug] [2023-05-10T15:47:30.845Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/lingoverse-37674/locations/-/instances/lingoverse-37674-default-rtdb 200
+[debug] [2023-05-10T15:47:30.845Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/lingoverse-37674/locations/-/instances/lingoverse-37674-default-rtdb {"name":"projects/1076297862713/locations/asia-southeast1/instances/lingoverse-37674-default-rtdb","project":"projects/1076297862713","databaseUrl":"https://lingoverse-37674-default-rtdb.asia-southeast1.firebasedatabase.app","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[info] Skipping overwrite of Realtime Database Security Rules.
+[info] The security rules defined in database.rules.json will be published when you run firebase deploy.
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2023-05-10T15:56:24.334Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T15:56:24.338Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Prateek Dahiya\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-05-10T15:56:24.339Z] CLI Version:   12.0.0
+[debug] [2023-05-10T15:56:24.339Z] Platform:      win32
+[debug] [2023-05-10T15:56:24.340Z] Node Version:  v19.7.0
+[debug] [2023-05-10T15:56:24.340Z] Time:          Wed May 10 2023 21:26:24 GMT+0530 (India Standard Time)
+[debug] [2023-05-10T15:56:24.340Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T15:56:24.452Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T15:56:24.453Z] > authorizing via signed-in user (dahiyaprateek27@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Documents\HTML\Language Learner
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-05-10T15:56:29.690Z] Using project from CLI flag: lingoverse-37674
+[debug] [2023-05-10T15:56:29.697Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lingoverse-37674 [none]
+[debug] [2023-05-10T15:56:31.350Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lingoverse-37674 200
+[debug] [2023-05-10T15:56:31.350Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/lingoverse-37674 {"projectId":"lingoverse-37674","projectNumber":"1076297862713","displayName":"LingoVerse","name":"projects/lingoverse-37674","resources":{"hostingSite":"lingoverse-37674","realtimeDatabaseInstance":"lingoverse-37674-default-rtdb"},"state":"ACTIVE","etag":"1_4253c687-1ccb-46d7-9cd9-47c7e21d9a1a"}
+[info] i  Using project lingoverse-37674 (LingoVerse) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2023-05-10T15:56:31.379Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/lingoverse-37674/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-05-10T15:56:31.380Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/lingoverse-37674/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/lingoverse-37674
+[debug] [2023-05-10T15:56:34.041Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/lingoverse-37674/services/firebasedatabase.googleapis.com 200
+[debug] [2023-05-10T15:56:34.041Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/lingoverse-37674/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2023-05-10T15:56:34.046Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/lingoverse-37674/locations/-/instances/lingoverse-37674-default-rtdb [none]
+[debug] [2023-05-10T15:56:35.546Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/lingoverse-37674/locations/-/instances/lingoverse-37674-default-rtdb 200
+[debug] [2023-05-10T15:56:35.547Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/lingoverse-37674/locations/-/instances/lingoverse-37674-default-rtdb {"name":"projects/1076297862713/locations/asia-southeast1/instances/lingoverse-37674-default-rtdb","project":"projects/1076297862713","databaseUrl":"https://lingoverse-37674-default-rtdb.asia-southeast1.firebasedatabase.app","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2023-05-10T15:56:35.554Z] >>> [apiv2][query] GET https://lingoverse-37674-default-rtdb.asia-southeast1.firebasedatabase.app/.settings/rules.json [none]
+[debug] [2023-05-10T15:56:35.839Z] <<< [apiv2][status] GET https://lingoverse-37674-default-rtdb.asia-southeast1.firebasedatabase.app/.settings/rules.json 200
+[debug] [2023-05-10T15:56:35.839Z] <<< [apiv2][body] GET https://lingoverse-37674-default-rtdb.asia-southeast1.firebasedatabase.app/.settings/rules.json [stream]
+[info] +  Database Rules for lingoverse-37674-default-rtdb have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
