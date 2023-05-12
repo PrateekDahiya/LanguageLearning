@@ -115,3 +115,57 @@ header {
     height: 15px;
     padding-right: 8px;
 }
+
+#detail_box {
+    
+}
+
+#short_description {
+    border-radius: 20px;
+    background-color: rgba(57, 57, 59, 0.934);
+    padding: 20px;
+    height: auto;
+    width: 500px;
+}
+
+section {
+    align-content: center;
+    padding: 20px;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.language img {
+    background-color: rgba(57, 57, 59, 0.934);
+    padding: 5px;
+    margin-left: 8%;
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.language-description {
+    margin-left: 5%;
+    color: white;
+    padding: 20px;
+    width: 60%;
+    background-color: rgba(57, 57, 59, 0.934);
+    border-radius: 20px;
+}
+
+.language h2 {
+    padding-left: 5%;
+    margin-top: 0;
+    color: rgb(255, 187, 0);
+}
+
+section h1 {
+    padding: 15px;
+    text-align: center;
+    font-size: 50px;
+}
