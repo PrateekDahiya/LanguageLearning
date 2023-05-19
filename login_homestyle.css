@@ -3,6 +3,7 @@
 * {
     margin: 0;
     font-family: "Bruno Ace SC", sans-serif;
+    padding: 0;
 }
 
 header {
@@ -143,31 +144,200 @@ section {
 
 .language img {
     background-color: rgba(57, 57, 59, 0.934);
-    padding: 5px;
+    padding: 2px;
     margin-left: 8%;
-    width: 150px;
+    width: 200px;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
 }
 
 .language-description {
-    margin-left: 5%;
-    color: white;
-    padding: 20px;
+    margin-left: 3%;
+    color: black;
     width: 60%;
-    background-color: rgba(57, 57, 59, 0.934);
+    /* background-color: rgba(57, 57, 59, 0.934); */
     border-radius: 20px;
 }
 
 .language h2 {
-    padding-left: 5%;
     margin-top: 0;
-    color: rgb(255, 187, 0);
+    color: black;
 }
 
 section h1 {
     padding: 15px;
     text-align: center;
     font-size: 50px;
+}
+
+#p1 {
+    position: relative;
+    width: 1515px;
+    height: 590px;
+    background-image: url(Images/desk.jpg);
+    z-index: -1;
+}
+
+#webname {
+    position: relative;
+    top: 25%;
+    left: 55%;
+    width: 500px;
+    /* padding-top: 250px; */
+
+}
+
+#webname h1,
+h3 {
+    text-align: center;
+}
+
+#webname h1 {
+    font-size: 64px;
+}
+
+#webname h3 {
+    font-size: 20px;
+}
+
+#p2 {
+    position: relative;
+    width: 1515px;
+    height: auto;
+
+    /* background-image: url(Images/desk.jpg); */
+    z-index: -1;
+}
+
+#lang-details {
+    padding: 50px;
+    margin-left: 5%;
+}
+
+#p3 {
+    position: relative;
+    width: 1515px;
+    height: 590px;
+
+    z-index: -1;
+}
+
+
+/* Our Team */
+
+
+
+.responsive-cell-block {
+    min-height: 75px;
+    width: 280px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.text-blk {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.container-block {
+    min-height: 75px;
+    height: fit-content;
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    margin-top: 0px; 
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    justify-content: space-evenly;
+}
+
+.head-text {
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: -90px;
+    margin-left: 0px;
+
+}
+
+.container {
+    max-width: 1550px;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    padding-top: 0px;
+    padding-right: 30px;
+    padding-bottom: 0px;
+    padding-left: 30px;
+    display: flex;
+}
+
+.card {
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-right: 25px;
+    padding-bottom: 30px;
+    padding-left: 25px;
+}
+
+
+
+.membe-name {
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.member-position {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.feature-text {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    color: rgb(122, 122, 122);
+}
+
+.social-icons {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-box {
+    clip-path: circle(50% at 50% 50%);
+    width: 150px;
+    height: 150px;
+}
+
+.member-image {
+    max-width: 100%;
+}
+
+
+.twitter-icon,.facebook-icon,.instagram-icon,.linkedin-icon,.github-icon{
+    width: 35px;
 }

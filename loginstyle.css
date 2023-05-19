@@ -196,21 +196,24 @@ footer {
   text-align: center;
 }
 
-#register-form {
+#register-form,
+#login-form {
+  border: 2px black solid;
   text-align: center;
+  justify-content: center;
+  margin: 50px;
 }
 
 #login-form {
-  text-align: center;
   display: none;
 }
 
 #login-text,
 #register-text {
-  position: relative;
+  text-align: center;
+  padding-left: 50px;
   padding-top: 50px;
-  text-align: right;
-  padding-right: 33%;
+  padding-bottom: 50px;
 }
 
 .button-regnlog {
@@ -221,4 +224,10 @@ footer {
 
 .message {
   text-align: center;
+}
+
+.container {
+
+  border: 2px black solid;
+  margin: 50px;
 }
