@@ -105,3 +105,107 @@ header {
 }
 
 /* Common Header Ends */
+
+
+#home_boxes {
+    padding: 50px;
+    display: flex;
+}
+
+#current_lang {
+    padding: 20px;
+    position: relative;
+    /* left: 60px; */
+    border-radius: 15px;
+    margin: 10px;
+    width: 1000px;
+    height: 250px;
+    background-color: rgb(255, 187, 0);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
+}
+
+#current_div {
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+    margin: 10px;
+    width: 430px;
+    height: 250px;
+    background-color: rgb(241, 239, 236);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
+}
+
+#word_goal {
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+    margin: 10px;
+    width: 430px;
+    height: 250px;
+    background-color: rgb(241, 239, 236);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
+}
+
+#edit_btn {
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    left: 50px;
+
+}
+
+#set_wrd_goal {
+    left: -550px;
+    top: 20px;
+    position: absolute;
+    width: 500px;
+    height: 350px;
+    background-color: brown;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 30px;
+    display: none;
+}
+
+#close_btn {
+    position: relative;
+    top: -150px;
+    left: 220px;
+    cursor: pointer;
+}
+
+#set_wrd_goal img {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+#goal_options {
+    display: inline-flex;
+}
+
+.goal_choice {
+    color: black;
+    padding-top: 5px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 40px;
+    width: 50px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.goal_choice:hover {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.626);
+    border: 2px black solid;
+
+}
+
+
+#word_goal:hover,
+#current_div:hover,
+#current_lang:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.416);
+}

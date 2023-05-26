@@ -24,7 +24,7 @@
                     <div class="languages_list">
                         <a>Languages</a>
                         <div id="boxoflang">
-                            <a href="Hindi_Big.html" class="lang_list"><img class="flags"
+                            <a href="hindi_Beg.html" class="lang_list"><img class="flags"
                                     src="Images/Flags/India.jpg">Learn Hindi</a>
                             <a href="french_Beg.html" class="lang_list"><img class="flags"
                                     src="Images/Flags/France.jpg">Learn French</a>
@@ -36,7 +36,7 @@
                                     src="Images/Flags/Spain.jpg">Learn Spanish</a>
                             <a href="tamil_Beg.html" class="lang_list"><img class="flags"
                                     src="Images/Flags/tamil.png">Learn Tamil</a>
-                            <a href="German_Big.html" class="lang_list"><img class="flags"
+                            <a href="german_Beg.html" class="lang_list"><img class="flags"
                                     src="Images/Flags/Germany.jpg">Learn German</a>
                         </div>
                     </div>
@@ -47,6 +47,45 @@
     </div>
 
     <!-- Common Header Ends -->
+    <div id="home_boxes">
+        <div id="current_lang">
+            You are Currently Learning<br>
+            <div id="crnt_lang"></div>
+        </div>
+
+        <div id="current_div">
+            You are Currently At Level<br>
+            <div id="crnt_level"></div>
+        </div>
+        <div id="word_goal">
+            Your Word Goal is
+
+            <img id="edit_btn" src="Images/edit.png" onclick="word_goal_win()" width="25px">
+            <div id="word_num"></div>
+            <div id="set_wrd_goal">
+                <img src="Images/goal.png" width="150px">
+                <div id="close_btn" onclick="close_word_goal_win()"><b>X</b></div>
+                <h4>Set your daily words learned goal</h4>
+                <h5>Number of new words you want to learn per day</h5>
+                <div id="goal_options">
+                    <div class="goal_choice" onclick="goal(5)">
+                        5
+                    </div>
+                    <div class="goal_choice" onclick="goal(10)">
+                        10
+                    </div>
+                    <div class="goal_choice" onclick="goal(15)">
+                        15
+                    </div>
+                    <div class="goal_choice" onclick="goal(20)">
+                        20
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="script" src="homejava.js"></script>
 </body>
+
 
 </html>

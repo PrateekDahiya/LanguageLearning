@@ -161,7 +161,7 @@ body {
 }
 
 #nextdivision {
-
+    color: rgba(22, 21, 31, 0.934);
     margin-top: 50px;
     width: 150px;
     height: 40px;
@@ -172,6 +172,7 @@ body {
 }
 
 #prevdivision {
+    color: rgba(22, 21, 31, 0.934);
     margin-top: 50px;
     width: 150px;
     height: 40px;

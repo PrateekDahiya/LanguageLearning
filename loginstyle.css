@@ -134,7 +134,8 @@ header {
 
 form {
   background-color: #fff;
-  border: 2px solid #003366;
+  border: 2px solid rgba(57, 57, 59, 0.934);
+  border-radius: 7px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin: 50px auto;
   max-width: 600px;
@@ -143,40 +144,32 @@ form {
 }
 
 .form-title {
-  font-size: 24px;
+  color: rgba(22, 21, 31, 0.934);
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px;
   text-align: center;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
 .form-group input {
+  font-family: sans-serif;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
+  border-radius: 7px;
+  font-size: 14px;
+  padding: 13px;
+  width: 80%;
+  margin: 2px;
 }
 
 .form-group input:focus {
-  border-color: #003366;
+
+  border-color: rgba(22, 21, 31, 0.934);
   outline: none;
 }
 
 .submit-btn {
-  background-color: #003366;
+  background-color: rgba(22, 21, 31, 0.934);
   border: none;
-  color: #fff;
+  color: rgb(255, 187, 0);
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
@@ -184,7 +177,8 @@ form {
 }
 
 .submit-btn:hover {
-  background-color: #00204a;
+  background-color: rgb(255, 187, 0);
+  color: rgba(22, 21, 31, 0.934);
 }
 
 /* Footer Styles */
@@ -198,10 +192,11 @@ footer {
 
 #register-form,
 #login-form {
-  border: 2px black solid;
+  /* border: 2px black solid; */
   text-align: center;
   justify-content: center;
   margin: 50px;
+
 }
 
 #login-form {
@@ -210,16 +205,18 @@ footer {
 
 #login-text,
 #register-text {
-  text-align: center;
-  padding-left: 50px;
+  justify-content: center;
+  /* padding-left: 50px; */
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
-.button-regnlog {
-  padding: 10px;
+.submit-btn {
+  font-size: 15px;
+  padding: 5px;
   margin-top: 25px;
-  margin-right: 100px;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
 .message {
@@ -228,6 +225,66 @@ footer {
 
 .container {
 
-  border: 2px black solid;
-  margin: 50px;
+  /* border: 2px black solid; */
+  /* margin: 50px; */
 }
+
+.toggletext {
+  text-decoration: none;
+  color: rgb(255, 187, 0);
+}
+
+.toggletext:hover {
+  color: rgba(22, 21, 31, 0.934);
+}
+
+/* Message Box */
+
+#click-protector {
+  position: absolute;
+  height: 580px;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.084);
+  display: none;
+
+}
+
+#message_box {
+  position: relative;
+  width: 450px;
+  height: 250px;
+  color: rgba(22, 21, 31, 0.934);
+  background-color: rgb(255, 187, 0);
+  z-index: 4;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
+  left: 33%;
+  top: 100px;
+  padding: 25px;
+}
+
+#ok_message_btn {
+  color: rgb(255, 187, 0);
+  background-color: rgba(22, 21, 31, 0.934);
+  bottom: 15px;
+  left: 150px;
+  text-align: center;
+  width: 200px;
+  position: absolute;
+  height: 30px;
+}
+
+#ok_message_btn:hover {
+  color: rgba(22, 21, 31, 0.934);
+  background-color: rgb(255, 187, 0);
+}
+
+#message_text {
+  text-align: center;
+  padding-top: 80px;
+  padding-left: 15px;
+  position: relative;
+  width: 400px;
+}
+
+/* Message Box ends */

@@ -1,3 +1,4 @@
+
 var i = 0;
 var divtext = ['Beginner', 'Moderate', 'Advance']
 var divisions = ['Beg', 'Mod', 'Adv'];
@@ -106,4 +107,10 @@ function prevdiv() {
     open(link, "_parent");
 }
 
+currentuser = firebase.auth().currentUser;
+console.log(currentuser)
+if (currentuser) {
+    const email = currentUser.email;
+}
 
+console.log(email)

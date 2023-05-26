@@ -97,6 +97,7 @@ header {
     display: none;
     text-align: center;
     text-decoration: none;
+    z-index: 5;
 
 }
 
@@ -106,7 +107,6 @@ header {
 }
 
 .languages_list:hover .lang_list {
-    animation: both;
     display: flex;
 }
 
@@ -250,7 +250,7 @@ h3 {
     width: 100%;
     display: block;
     flex-wrap: wrap;
-    margin-top: 0px; 
+    margin-top: 0px;
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
@@ -331,6 +331,7 @@ h3 {
     clip-path: circle(50% at 50% 50%);
     width: 150px;
     height: 150px;
+    z-index: -2;
 }
 
 .member-image {
@@ -338,6 +339,10 @@ h3 {
 }
 
 
-.twitter-icon,.facebook-icon,.instagram-icon,.linkedin-icon,.github-icon{
+.twitter-icon,
+.facebook-icon,
+.instagram-icon,
+.linkedin-icon,
+.github-icon {
     width: 35px;
 }
