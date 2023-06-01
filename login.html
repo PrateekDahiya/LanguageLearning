@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="loginstyle.css">
+    <script type="module" src="firebase_init.js" defer></script>
+    <script type="module" src="loginfirebase.js"></script>
+    <script type="text/javascript" src="loginjava.js"></script> 
     <title>Login Page</title>
 </head>
 
@@ -50,9 +53,8 @@
             <button id="ok_message_btn" onclick="OK()"><b>OK</b></button>
         </div>
     </div>
-
+    <!-- <button onclick="update_data('french', 0, 0)">Send Nudes</button> -->
     <!-- Common Header Ends -->
-
 
     <div class="container">
         <div class="login-register">
@@ -82,114 +84,8 @@
             </div>
         </div>
     </div>
-    <script src="loginjava.js"></script>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
-        import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+      
 
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyDh4XjShuxTvJMM_HVl1AajvRsfpqN2Hdw",
-            authDomain: "lingoverse-37674.firebaseapp.com",
-            databaseURL: "https://lingoverse-37674-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "lingoverse-37674",
-            storageBucket: "lingoverse-37674.appspot.com",
-            messagingSenderId: "1076297862713",
-            appId: "1:1076297862713:web:94a905ae54dbb8e8e607e8",
-            measurementId: "G-1WF8Y16YZ5"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const database = getDatabase(app);
-        const auth = getAuth();
-
-        signup.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            var email = document.getElementById("email").value;
-            var username = document.getElementById("use").value;
-            var password = document.getElementById("pass").value;
-            var name = document.getElementById("fullname").value;
-
-            createUserWithEmailAndPassword(auth, email, password, name)
-                .then((userCredential) => {
-                    // Signed in
-                    const user = userCredential.user;
-
-                    set(ref(database, "users/" + user.uid), {
-                        name: name,
-                        username: username,
-                        email: email
-                    })
-
-                    // alert('User Created');
-                    show_mbox("User Created Successfully.","login");
-                    // ...
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    // ..
-                    // alert(errorMessage);
-                    show_mbox(errorMessage);
-                });
-        });
-
-        login.addEventListener('click', (e) => {
-            e.preventDefault();
-            var email = document.getElementById("emaillogin").value;
-            var password = document.getElementById("password").value;
-
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    // Signed in
-                    const user = userCredential.user;
-                    const dt = new Date();
-                    update(ref(database, "users/" + user.uid), {
-                        last_login: dt,
-
-                    })
-                    // alert("User Logged In")
-                    show_mbox("User Logged In Successfully.","home");
-                    // ...
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    // alert(errorMessage);
-                    show_mbox(errorMessage);
-                });
-        });
-
-        // const user = auth.currentUser;
-        // onAuthStateChanged(auth, (user) => {
-        //     if (user) {
-        //         // User is signed in, see docs for a list of available properties
-        //         // https://firebase.google.com/docs/reference/js/firebase.User
-        //         const uid = user.uid;
-        //         // ...
-        //     } else {
-        //         // User is signed out
-        //         // ...
-        //     }
-        // });
-
-        // // logout.addEventListener('click', (e) => {
-        // //     signOut(auth).then(() => {
-        // //         alert("Logged Out");
-        // //     }).catch((error) => {
-        // //         alert(errorMessage);
-        // //     });
-        // // });
-    </script>
 </body>
 
 </html>

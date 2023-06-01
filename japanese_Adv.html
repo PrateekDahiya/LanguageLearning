@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="language_style.css">
+    <script type="module" src="firebase_init.js" defer></script>
+    <script type="module" src="lang_firebase.js"></script>
     <title>Japanese Advanced</title>
 </head>
 
-<body>
+<body onload="send_lang_div(langanddiv())">
 
     <!-- Common Header -->
     <div id="topline">
@@ -73,7 +75,7 @@
         <p class="lanname">JAPANESE</p>
         <strong class="word" id="lang">彼女は日本語を上手に話せます。 </strong>
         <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('ja')" width="30px">
+            <img src="Images/volume.png" onclick="speak('ja'); send_word()" width="30px">
         </div>
         <p class="lanname">ROMAJI</p>
         <strong class="word" id="romaji">Kanojo wa nihongo o jouzu ni hanasemasu.</strong><br>
@@ -91,7 +93,6 @@
         var language = 'japanese';
     </script>
     <script src="language_script.js"></script>
-    <script type="module" src="firebaseqw.js"></script>
 
 </body>
 

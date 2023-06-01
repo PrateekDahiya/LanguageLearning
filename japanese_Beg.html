@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="language_style.css">
+    <script type="module" src="firebase_init.js" defer></script>
+    <script type="module" src="lang_firebase.js"></script>
     <title>Japanese Beginner</title>
 </head>
 
-<body>
+<body onload="send_lang_div(langanddiv())">
     <!-- Common Header -->
     <div id="topline">
     </div>
@@ -74,7 +76,7 @@
         <p class="lanname">JAPANESE</p>
         <strong class="word" id="lang">こんにちは</strong>
         <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('ja')" width="30px">
+            <img src="Images/volume.png" onclick="speak('ja'); send_word();" width="30px">
         </div>
         <p class="lanname">ROMAJI</p>
         <strong class="word" id="romaji">Konnichiwa</strong><br>
@@ -86,14 +88,13 @@
     </div>
     <script>
         // Words 
-        let english = [' Hello', ' Thank you', 'I love you', ' Excuse me', ' Good morning', ' Good evening', ' Yes', ' No', ' Please', `I'm sorry`, ' Goodbye', ' Cat', ' Dog', ' Fish', ' Flower', ' Mountain', ' River', ' Weather', ' School', ' Book', ' Train', `Airplane`, ' Travel', ' Foreigner', ' Food', ' Drink', ' Family', ' Friend', ' Language', ' History', ' Culture'];
+        let english = [' Hello', ' Thank you', 'I love you', ' Sorry', ' Good morning', ' Good evening', ' Yes', ' No', ' Please', `I'm sorry`, ' Goodbye', ' Cat', ' Dog', ' Fish', ' Flower', ' Mountain', ' River', ' Weather', ' School', ' Book', ' Train', `Airplane`, ' Travel', ' Foreigner', ' Food', ' Drink', ' Family', ' Friend', ' Language', ' History', ' Culture'];
         let otherlang = ['こんにちは ', 'ありがとう ', '愛してます', 'すみません ', 'おはようございます ', 'こんばんは ', 'はい ', 'いいえ ', 'お願いします ', 'ごめんなさい ', 'さようなら ', '猫 ', '犬 ', '魚 ', '花 ', '山 ', '川 ', '天気 ', '学校 ', '本 ', '電車 ', '飛行機 ', '旅行 ', '外国人 ', '食べ物 ', '飲み物 ', '家族 ', '友達 ', '言語 ', '歴史 ', '文化 '];
         let romaji = ['Konnichiwa', 'Arigatou', 'Aishitemasu', 'Sumimasen', 'Ohayou gozaimasu', 'Konbanwa', 'Hai', 'Iie', 'Onegaishimasu', 'Gomen nasai', 'Sayonara', 'Neko', 'Inu', 'Sakana', 'Hana', 'Yama', 'Kawa', 'Tenki', 'Gakkou', 'Hon', 'Densha', 'Hikouki', 'Ryokou', 'Gaikokujin', 'Tabemono', 'Nomimono', 'Kazoku', 'Tomodachi', 'Gengo', 'Rekishi', 'Bunka'];
         div_num = 0;
         var language = 'japanese';
     </script>
     <script src="language_script.js"></script>
-    <script type="module" src="firebaseqw.js"></script>
 
 </body>
 

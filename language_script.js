@@ -1,4 +1,4 @@
-
+var is_heard = 0;
 var i = 0;
 var divtext = ['Beginner', 'Moderate', 'Advance']
 var divisions = ['Beg', 'Mod', 'Adv'];
@@ -24,6 +24,7 @@ function speak(b) {
     var msg = new SpeechSynthesisUtterance(otherlang[i]);
     msg.lang = b;
     window.speechSynthesis.speak(msg);
+    is_heard = 1;
 }
 function speakeng() {
     var msg = new SpeechSynthesisUtterance(english[i]);
@@ -107,10 +108,23 @@ function prevdiv() {
     open(link, "_parent");
 }
 
-currentuser = firebase.auth().currentUser;
-console.log(currentuser)
-if (currentuser) {
-    const email = currentUser.email;
+// currentuser = firebase.auth().currentUser;
+// console.log(currentuser)
+// if (currentuser) {
+//     const email = currentUser.email;
+// }
+
+// console.log(email)
+
+function langanddiv() {
+    let a = document.getElementById("Lang_name").innerHTML;
+    a = a.trim();
+    let temp1 = a.split(" ");
+    let language = temp1[0];
+    let temp2 = temp1[1];
+    let temp3 = temp2.split("(");
+    let temp4 = temp3[1].slice(0, -1);
+    let division = temp4;
+    return [language, division];
 }
 
-console.log(email)
