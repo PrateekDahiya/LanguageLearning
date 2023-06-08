@@ -43,8 +43,7 @@ login.addEventListener('click', (e) => {
             update(ref(database, "users/" + user.uid), {
                 last_login: dt,
             });
-
-            show_mbox("User Logged In Successfully.", "home");
+            open("home.html", "_self");
         })
         .catch((error) => {
             const errorCode = error.code;

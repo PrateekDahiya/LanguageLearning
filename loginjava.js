@@ -1,4 +1,3 @@
-
 var headto;
 const urlParams = new URLSearchParams(window.location.search);
 const functionName = urlParams.get('functionName');

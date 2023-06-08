@@ -71,6 +71,8 @@ header {
 }
 
 #boxoflang {
+    position: relative;
+    z-index: 1;
     height: auto;
     width: 250px;
     box-sizing: border-box;
@@ -109,7 +111,9 @@ header {
 
 #home_boxes {
     padding: 50px;
+    z-index: -5;
     display: flex;
+    
 }
 
 #current_lang {

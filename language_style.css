@@ -110,6 +110,7 @@ header {
 
 body {
     margin: 0;
+    background-image: url("Images/background_image2.jpg");
 }
 
 #Lang_name {
@@ -117,17 +118,29 @@ body {
     text-align: center;
     font-size: 25px;
     padding: 10px;
+    color: rgb(255, 187, 0);
+    text-shadow: 5px 5px 5px black;
 }
 
 #textpart {
     padding-top: 5%;
     width: 400px;
-    height: 450px;
-    /* border: 2px solid black; */
+    height: 400px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.485);
+    border-radius: 20px;
     margin-top: 20px;
-    margin-left: 25%;
+    margin-left: 28%;
     padding-left: 15%;
     padding-right: 5%;
+}
+
+#textpart:hover,
+#backward:hover~#textpart,
+#continue:hover~#textpart,
+#nextdivision:hover~#textpart,
+#prevdivision:hover~#textpart {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.844);
+    border: 1px solid rgba(0, 0, 0, 0.495);
 }
 
 .word {
@@ -136,50 +149,77 @@ body {
 
 .lanname {
     font-size: 15px;
+    text-shadow: 1px 1px 1px white;
 }
 
 #continue {
-    margin-top: 50px;
-    width: 150px;
-    height: 40px;
-    float: right;
-    margin-right: 20%;
-    padding-bottom: 15px;
+    position: absolute;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.816);
+    border-radius: 50px;
+    top: 300px;
+    left: 1000px;
 }
 
+
 .vol_icon {
-    padding-left: 15px;
+    position: absolute;
+    left: 610px;
+    margin-top: -50px;
+
+}
+
+.vol_icon img {
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.727);
+}
+
+.vol_icon img:hover {
+    width: 35px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+    cursor: pointer;
 }
 
 #backward {
-    margin-top: 50px;
-    width: 150px;
-    height: 40px;
-    float: left;
-    padding-bottom: 15px;
-    margin-left: 20%;
+    padding-top: 1px;
+    position: absolute;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.816);
+    border-radius: 50px;
+    left: 460px;
+    top: 300px;
+}
+
+#backward:hover,
+#continue:hover {
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.604);
+    cursor: pointer;
 }
 
 #nextdivision {
-    color: rgba(22, 21, 31, 0.934);
-    margin-top: 50px;
-    width: 150px;
-    height: 40px;
-    float: right;
-    margin-right: 20%;
-    padding-bottom: 15px;
-
+    position: absolute;
+    color: rgb(0, 0, 0);
+    width: 200px;
+    height: 43px;
+    top: 530px;
+    left: 850px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.733);
+    border-radius: 19px;
 }
 
 #prevdivision {
-    color: rgba(22, 21, 31, 0.934);
-    margin-top: 50px;
-    width: 150px;
-    height: 40px;
-    float: left;
-    padding-bottom: 15px;
-    margin-left: 20%;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    width: 200px;
+    height: 43px;
+    top: 530px;
+    left: 570px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.733);
+    border-radius: 19px;
+}
 
+#nextdivision:hover,
+#prevdivision:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.574);
+    cursor: pointer;
 }
 
 #ndivision {
@@ -187,7 +227,6 @@ body {
     text-align: center;
     top: -38px;
     font-size: 20px;
-    padding-left: 30px;
 
 }
 
@@ -196,6 +235,49 @@ body {
     text-align: center;
     top: -38px;
     font-size: 20px;
-    padding-left: 30px;
+
+}
+
+body hr {
+    display: none;
+}
+
+#change_division_menu {
+    position: absolute;
+    /* border: 2px black solid; */
+    top: 600px;
+    left: 610px;
+    border-radius: 25px;
+    width: 360px;
+    height: 35px;
+    display: flex;
+    background-color: rgb(255, 187, 0);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.849);
+}
+
+#change_division_menu:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.522);
+
+}
+
+#change_division_menu div {
+    padding-top: 8px;
+    text-align: center;
+    /* border: 1px black solid; */
+    height: 27px;
+    width: 120px;
+}
+
+#change_division_menu div:hover {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.599);
+    cursor: pointer;
+}
+
+#Beg_div {
+    border-radius: 25px 0 0 25px;
+}
+
+#Adv_div {
+    border-radius: 0 25px 25px 0;
 
 }

@@ -76,7 +76,15 @@ function backword() {
     }
     check_nxtdiv(i);
 }
+// For Division Menu
+document.getElementById("Beg_div").innerHTML = divtext[0];
+document.getElementById("Mod_div").innerHTML = divtext[1];
+document.getElementById("Adv_div").innerHTML = divtext[2];
 
+function chng_div(n) {
+    link = String(String(language) + "_" + String(divisions[n]) + ".html");
+    open(link, "_parent");
+}
 
 // Division change
 function check_nxtdiv(i) {
@@ -127,4 +135,6 @@ function langanddiv() {
     let division = temp4;
     return [language, division];
 }
+
+
 

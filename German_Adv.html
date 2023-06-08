@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="language_style.css">
-    <script type="module" src="firebase_init.js" defer></script>  
-    <script type="module" src="lang_firebase.js"></script>  
+    <script type="module" src="firebase_init.js" defer></script>
+    <script type="module" src="lang_firebase.js"></script>
     <title>German Advance</title>
 </head>
 
@@ -80,6 +80,11 @@
         <strong class="word" id="eng">German adv</strong><br>
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+        <div id="change_division_menu">
+            <div id="Beg_div" onclick="chng_div(0)"></div>
+            <div id="Mod_div" onclick="chng_div(1)"></div>
+            <div id="Adv_div" onclick="chng_div(2)"></div>
         </div>
     </div>
     <script>
