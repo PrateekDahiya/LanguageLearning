@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="language_style.css">
+    <script type="module" src="firebase_init.js" defer></script>
+    <script type="module" src="lang_firebase.js"></script>
     <title>Chinese Moderate</title>
 </head>
 
-<body>
+<body onload="send_lang_div(langanddiv())">
     <!-- Common Header -->
     <div id="topline">
     </div>
@@ -20,23 +22,96 @@
             <ul class="nav_links">
                 <li><a id="home" href="home.html">Home</a></li>
                 <li>
+                    <script>
+                        function goto(b) {
+                            a = String(b) + "_Beg.html";
+                            open(a, "_self");
+                        }
+                    </script>
                     <div class="languages_list">
-                        <a>Languages</a>
-                        <div id="boxoflang">
-                            <a href="Hindi_Big.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/India.jpg">Learn Hindi</a>
-                            <a href="french_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/France.jpg">Learn French</a>
-                            <a href="japanese_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/Japan.jpg">Learn Japanese</a>
-                            <a href="chinese_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/China.jpg">Learn Chinese</a>
-                            <a href="spanish_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/Spain.jpg">Learn Spanish</a>
-                            <a href="tamil_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/tamil.png">Learn Tamil</a>
-                            <a href="German_Big.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/Germany.jpg">Learn German</a>
+                        <div id="container_list"><a>Languages</a></div>
+                        <div class="radio-inputs">
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('hindi')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/India.jpg">
+                                    </span>
+                                    <span class="radio-label">Hindi</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('french')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/France.jpg">
+                                    </span>
+                                    <span class="radio-label">French</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('japanese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Japan.jpg">
+                                    </span>
+                                    <span class="radio-label">Japanese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('chinese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/China.jpg">
+                                    </span>
+                                    <span class="radio-label">Chinese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('spanish')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Spain.jpg">
+                                    </span>
+                                    <span class="radio-label">Spanish</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('tamil')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/tamil.png">
+                                    </span>
+                                    <span class="radio-label">Tamil</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('german')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Germany.jpg">
+                                    </span>
+                                    <span class="radio-label">German</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('korean')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Korea.jpg">
+                                    </span>
+                                    <span class="radio-label">Korean</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('russian')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Russia.jpg">
+                                    </span>
+                                    <span class="radio-label">Russia</span>
+                                </span>
+                            </label>
                         </div>
                     </div>
                 </li>
@@ -58,11 +133,28 @@
     <div id="continue" onclick="nextword()">
         <img src="Images/Continue Button.png" width="70px">
     </div>
+    <div id="prevdivision" onclick="prevdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="pdivision"></div>
+    </div>
+
+    <div id="nextdivision" onclick="nextdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="ndivision"></div>
+    </div>
+
+    <div id="add_to_diff">
+        <input id="checkbox" type="checkbox" onclick="addtodiff()">
+        <label class="switch" for="checkbox">
+            <img src="Images/difficult.png">
+        </label>
+    </div>
+
     <div id="textpart">
         <p class="lanname">CHINESE</p>
         <strong class="word" id="lang">你好吗？</strong>
         <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('zh')" width="30px">
+            <img src="Images/volume.png" onclick="speak('zh'); send_word()" width="30px">
         </div>
         <p class="lanname">PINYIN</p>
         <strong class="word" id="romaji">Nǐ hǎo ma?</strong><br>
@@ -71,13 +163,22 @@
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speakeng()" width="30px">
         </div>
+        <div id="change_division_menu">
+            <div id="Beg_div" onclick="chng_div(0)"></div>
+            <div id="Mod_div" onclick="chng_div(1)"></div>
+            <div id="Adv_div" onclick="chng_div(2)"></div>
+        </div>
     </div>
     <script>
         let english = [' How are you?', ' Thank you.', ' Sorry.', " It's okay.", ' Goodbye.', ' Good morning.', ' Good evening.', ' My name is...', " What's your name?", ' Nice to meet you.', " Sorry, I don't speak Chinese.", ' Please speak slower.', " I don't know.", ' Okay.', ' Another cup of tea, please.', " I'm glad to meet you.", ' What would you like to drink?', " Let's go eat.", ' You speak Chinese very well.', ' Excuse me, how do I get to the restroom?']
         let otherlang = ['你好吗？', '谢谢。', '对不起。', '没关系。', '再见。', '早上好。', '晚上好。', '我叫…', '你叫什么名字？', '很高兴认识你。', '对不起，我不会说中文。', '请说慢一点。', '我不知道。', '好的。', '再来一杯茶。', '我很高兴认识你。', '你想要喝什么？', '我们去吃饭吧。', '你的中文说得很好。', '请问去洗手间怎么走？']
         let romaji = ['Nǐ hǎo ma?', 'Xièxiè.', 'Duìbùqǐ.', 'Méiguānxi.', 'Zàijiàn.', 'Zǎoshang hǎo.', 'Wǎnshàng hǎo.', 'Wǒ jiào…', 'Nǐ jiào shénme míngzi?', 'Hěn gāoxìng rènshì nǐ.', 'Duìbùqǐ, wǒ bù huì shuō zhōngwén.', 'Qǐng shuō màn yīdiǎn.', 'Wǒ bù zhīdào.', 'Hǎo de.', 'Zài lái yī bēi chá.', 'Wǒ hěn gāoxìng rènshí nǐ.', 'Nǐ xiǎng yào hē shénme?', 'Wǒmen qù chīfàn ba.', 'Nǐ de zhōngwén shuō dé hěn hǎo.', 'Qǐngwèn qù xǐshǒujiān zěnme zǒu?']
+        div_num = 1;
+        var language = 'chinese';
     </script>
     <script src="language_script.js"></script>
+
+
 </body>
 
 </html>

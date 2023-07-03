@@ -1,0 +1,253 @@
+/*Common Header  */
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+* {
+    margin: 0;
+    font-family: "Bruno Ace SC", sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(22, 21, 31, 0.934);
+}
+
+#topline {
+    background-color: rgb(255, 187, 0);
+    height: 10px;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+#logonmenu {
+    color: white;
+    font-size: large;
+    font-weight: 500;
+    padding: 8px;
+    height: 50px;
+    background-color: rgba(22, 21, 31, 0.934);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+}
+
+#home {
+    text-decoration: none;
+    color: white;
+
+}
+
+#home:hover {
+    color: rgb(255, 187, 0);
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav_links li a:hover {
+    color: rgb(255, 187, 0);
+}
+
+.lang_list:visited {
+    color: rgba(22, 21, 31, 0.934);
+}
+
+
+.languages_list {
+    padding-top: 80px;
+    position: relative;
+    line-height: 30px;
+    height: 100px;
+    cursor: pointer;
+    font-size: large;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+#boxoflang {
+    height: auto;
+    width: 250px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 140px;
+    left: -40px;
+    background-color: rgb(255, 187, 0);
+}
+
+.lang_list {
+    padding: 10px;
+    display: none;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.lang_list:hover {
+    background-color: rgba(57, 57, 59, 0.934);
+
+}
+
+.languages_list:hover .lang_list {
+    display: flex;
+}
+
+
+.flags {
+    padding-top: 8px;
+    height: 15px;
+    padding-right: 8px;
+}
+
+
+/* Common Header Ends */
+
+
+.item {
+    margin: 100px;
+}
+
+.item h1 {
+    text-align: center;
+}
+
+.para {
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+/* Our Team */
+
+#p4 {
+    margin: 100px;
+    width: 1550;
+}
+
+.responsive-cell-block {
+    min-height: 75px;
+    width: 280px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.text-blk {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.container-block {
+    min-height: 75px;
+    height: fit-content;
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    justify-content: space-evenly;
+}
+
+.head-text {
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: -90px;
+    margin-left: 0px;
+
+}
+
+.container {
+    max-width: 1550px;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    padding-top: 0px;
+    padding-right: 30px;
+    padding-bottom: 0px;
+    padding-left: 30px;
+    display: flex;
+}
+
+.card {
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-right: 25px;
+    padding-bottom: 30px;
+    padding-left: 25px;
+}
+
+
+
+.membe-name {
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.member-position {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.feature-text {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    color: rgb(122, 122, 122);
+}
+
+.social-icons {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-box {
+    clip-path: circle(50% at 50% 50%);
+    width: 150px;
+    height: 150px;
+    z-index: -2;
+}
+
+.member-image {
+    max-width: 100%;
+}
+
+
+.twitter-icon,
+.facebook-icon,
+.instagram-icon,
+.linkedin-icon,
+.github-icon {
+    width: 35px;
+}

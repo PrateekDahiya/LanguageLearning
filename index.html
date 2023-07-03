@@ -7,51 +7,392 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="login_homestyle.css">
+    <script type="module" src="firebase_init.js" defer></script>
     <title>LINGOVERSE</title>
+    <script>
+        function goto(b) {
+            a = String(b) + "_Beg.html";
+            open(a, "_self");
+        }
+    </script>
 </head>
 
 <body>
     <header>
         <div id="topline">
             <div id="login">
-                <a href="login.html" target="_blank"><img src="Images/login.png" alt="Login" height="38px"></a>
+                <a href="login.html?functionName=login" target="_self"><img src="Images/login.png" alt="Login"
+                        height="38px"></a>
             </div>
         </div>
         <div id="logonmenu">
             <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
             <nav>
                 <ul class="nav_links">
-                    <li><a id="home" href="home.html">Home</a></li>
+                    <!-- <li><a id="home" href="home.html">Home</a></li> -->
                     <li>
+                        <script>
+                            function goto(b) {
+                                a = String(b) + "_Beg.html";
+                                open(a, "_self");
+                            }
+                        </script>
                         <div class="languages_list">
-                            <a>Languages</a>
-                            <div id="boxoflang">
-                                <a href="Hindi_Big.html" class="lang_list"><img class="flags"
-                                        src="Images/Flags/India.jpg">Learn Hindi</a>
-                                <a href="french_Beg.html" class="lang_list"><img class="flags"
-                                        src="Images/Flags/France.jpg">Learn French</a>
-                                <a href="japanese_Beg.html" class="lang_list"><img class="flags"
-                                        src="Images/Flags/Japan.jpg">Learn Japanese</a>
-                                <a href="chinese_Beg.html" class="lang_list"><img class="flags"
-                                        src="Images/Flags/China.jpg">Learn Chinese</a>
-                                <a href="spanish_Beg.html" class="lang_list"><img class="flags"
-                                        src="Images/Flags/Spain.jpg">Learn Spanish</a>
-                                <a href="tamil_Beg.html" class="lang_list"><img class="flags"
-                                        src="Images/Flags/tamil.png">Learn Tamil</a>
-                                <a href="German_Big.html" class="lang_list"><img class="flags"
-                                        src="Images/Flags/Germany.jpg">Learn German</a>
+                            <div id="container_list"><a>Languages</a></div>
+                            <div class="radio-inputs">
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('hindi')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/India.jpg">
+                                        </span>
+                                        <span class="radio-label">Hindi</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('french')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/France.jpg">
+                                        </span>
+                                        <span class="radio-label">French</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('japanese')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Japan.jpg">
+                                        </span>
+                                        <span class="radio-label">Japanese</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('chinese')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/China.jpg">
+                                        </span>
+                                        <span class="radio-label">Chinese</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('spanish')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Spain.jpg">
+                                        </span>
+                                        <span class="radio-label">Spanish</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('tamil')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/tamil.png">
+                                        </span>
+                                        <span class="radio-label">Tamil</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('german')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Germany.jpg">
+                                        </span>
+                                        <span class="radio-label">German</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('korean')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Korea.jpg">
+                                        </span>
+                                        <span class="radio-label">Korean</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('russian')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Russia.jpg">
+                                        </span>
+                                        <span class="radio-label">Russia</span>
+                                    </span>
+                                </label>
                             </div>
                         </div>
                     </li>
                     <li><a>About Us</a></li>
                 </ul>
             </nav>
-            <a class="startlearning" href="login.html"><img src="Images/StartLearning.png" height="50"></a>
+            <a href="login.html?functionName=register" class="startlearning">
+                <button id="strtlearn">
+                    <span class="boxsl">
+                        Start Learning
+                    </span>
+                </button>
+            </a>
         </div>
     </header>
-    <div id="page_area">
 
+    <div id="page_area">
+        <div id="p1">
+            <div id="webname">
+                <h1>LINGOVERSE</h1><br>
+                <h3>Unlock the Power of Language with Lingoverse</h3>
+            </div>
+
+        </div>
+        <div id="p2">
+            <section id="lang-details">
+                <h1>Languages</h1>
+                <div class="language">
+                    <img src="Images/Flags/India.jpg" alt="Hindi">
+                    <div class="language-description">
+                        <h2>Hindi</h2>
+                        <p>Hindi is one of the most widely spoken languages in the world. It is the official language of
+                            India and also spoken in various other countries.</p>
+                    </div>
+                </div>
+
+                <div class="language">
+                    <img src="Images/Flags/China.jpg" alt="Chinese">
+                    <div class="language-description">
+                        <h2>Chinese</h2>
+                        <p>Chinese, also known as Mandarin, is the most spoken language globally. It has a rich history
+                            and is essential for business and cultural exchanges.</p>
+                    </div>
+                </div>
+
+                <div class="language">
+                    <img src="Images/Flags/Japan.jpg" alt="Japanese">
+                    <div class="language-description">
+                        <h2>Japanese</h2>
+                        <p>Japanese is spoken by over 128 million people in Japan and is an important language for
+                            business,
+                            technology, and pop culture.</p>
+                    </div>
+                </div>
+
+                <div class="language">
+                    <img src="Images/Flags/France.jpg" alt="French">
+                    <div class="language-description">
+                        <h2>French</h2>
+                        <p>French is a romantic language spoken by millions of people worldwide. It is the official
+                            language
+                            of many countries and is widely used in international relations, diplomacy, and arts.</p>
+                    </div>
+                </div>
+                <div class="language">
+                    <img src="Images/Flags/Germany.jpg" alt="German">
+                    <div class="language-description">
+                        <h2>German</h2>
+                        <p>German is the most widely spoken language in the European Union. It is a key language for
+                            business, engineering, and scientific research.</p>
+                    </div>
+                </div>
+
+                <div class="language">
+                    <img src="Images/Flags/tamil.png" alt="Tamil">
+                    <div class="language-description">
+                        <h2>Tamil</h2>
+                        <p>Tamil is one of the oldest languages in the world with a rich literary tradition. It is the
+                            official language of the Indian state of Tamil Nadu and Sri Lanka.</p>
+                    </div>
+                </div>
+
+                <div class="language">
+                    <img src="Images/Flags/Spain.jpg" alt="Spanish">
+                    <div class="language-description">
+                        <h2>Spanish</h2>
+                        <p>Spanish is the second most spoken language globally, with over 460 million speakers. It is
+                            widely
+                            used in business, travel, and cultural exchanges.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <div id="p3">
+            <h1 id="p3_head">Why you'll love learning with LingoVerse</h1>
+            <div id="container_prop">
+                <div class="left_prop">
+                    <div id="prop1">
+                        <div class="prop_heading"><img class="prop_img" src="Images/prop_icons/fire-solid.svg">Effective
+                            and
+                            efficient</div>
+                        <div class="prop_text">Our courses effectively and efficiently teach reading, listening, and
+                            speaking
+                            skills</div>
+                    </div>
+                    <div id="prop2">
+                        <div class="prop_heading"><img class="prop_img"
+                                src="Images/prop_icons/circle-check-solid.svg">Personalized learning</div>
+                        <div class="prop_text">Combining the best of AI and language science, lessons are tailored to
+                            help
+                            you
+                            learn at just the right level and pace.</div>
+                    </div>
+                </div>
+                <img id="prop_img" src="Images/prop_icons/prop_image.svg">
+                <div class="right_prop">
+                    <div id="prop3">
+                        <div class="prop_heading"><img class="prop_img" src="Images/prop_icons/crown-solid.svg">Stay
+                            motivated</div>
+                        <div class="prop_text">We make it easy to form a habit of language learning, with game-like
+                            features,
+                            fun challenges, and reminders from our friendly mascot, Duo the owl.</div>
+                    </div>
+                    <div id="prop4">
+                        <div class="prop_heading"><img class="prop_img"
+                                src="Images/prop_icons/hat-cowboy-solid.svg">Have
+                            fun with it!</div>
+                        <div class="prop_text">Effective learning doesn't have to be boring! Build your skills each day
+                            with
+                            engaging exercises and playful characters.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="p4">
+            <p class="text-blk head-text">
+                Our Team
+            </p>
+            <div class="container">
+                <div class="container-block">
+                    <div class="responsive-cell-block"></div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img class="member-image" src='Images/Prateek.jpg'>
+                        </div>
+                        <p class="text-blk membe-name">
+                            Prateek Dahiya
+                        </p>
+                        <p class="text-blk member-position">
+                            President<br>
+                        </p>
+                        <p class="text-blk feature-text">
+                            Programmer and Designer.
+                        </p>
+                        <div class="social-icons">
+                            <a href="https://twitter.com/Prateek2768" target="_blank">
+                                <img class="twitter-icon" src="Images/icons8-twitter-50.png">
+                            </a>
+                            <a href="https://www.facebook.com/prateek.dahiya.5477" target="_blank">
+                                <img class="facebook-icon" src="Images/icons8-facebook-50.png">
+                            </a>
+                            <a href="https://instagram.com/dahiya_prtk27?igshid=MzRlODBiNWFlZA==" target="_blank">
+                                <img class="instagram-icon" src="Images/icons8-instagram-50.png">
+                            </a>
+                            <a href="https://www.linkedin.com/in/prateek-dahiya-842509272" target="_blank">
+                                <img class="linkedin-icon" src="Images/icons8-linkedin-50.png">
+                            </a>
+                            <a href="https://github.com/PrateekDahiya" target="_blank">
+                                <img class="github-icon" src="Images/icons8-github-50.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-block">
+                    <div class="responsive-cell-block"></div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img class="member-image" src="Images/Amit.jpg">
+                        </div>
+                        <p class="text-blk membe-name">
+                            Amit Kumar
+                        </p>
+                        <p class="text-blk member-position">
+                            <!-- Theme Management -->
+                            Vice- President
+                        </p>
+                        <p class="text-blk feature-text">
+                            Layout Manager and text position and alignment.
+                        </p>
+                        <div class="social-icons">
+                            <a href="https://twitter.com/amitrai4988" target="_blank">
+                                <img class="twitter-icon" src="Images/icons8-twitter-50.png">
+                            </a>
+                            <a href="https://instagram.com/amitrai4988?igshid=NTc4MTlwNjQ2YQ==" target="_blank">
+                                <img class="instagram-icon" src="Images/icons8-instagram-50.png">
+                            </a>
+                            <a href="https://www.linkedin.com/in/amit-kumar-767b51259" target="_blank">
+                                <img class="linkedin-icon" src="Images/icons8-linkedin-50.png">
+                                <a href="https://github.com/amitrai4988" target="_blank">
+                                    <img class="github-icon" src="Images/icons8-github-50.png">
+                                </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-block">
+                    <div class="responsive-cell-block"></div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img class="member-image" src="Images/Abdul.jpg">
+                        </div>
+                        <p class="text-blk membe-name">
+                            Abdul Aaziz
+                        </p>
+                        <p class="text-blk member-position">
+                            Sr Manager
+                        </p>
+                        <p class="text-blk feature-text">
+                            Designing and Photography
+                        </p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/abdulaziz-shaikh-783700278/" target="_blank">
+                                <img class="linkedin-icon" src="Images/icons8-linkedin-50.png">
+                            </a>
+                            <a href="https://github.com/noobcoder3068" target="_blank">
+                                <img class="github-icon" src="Images/icons8-github-50.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-block">
+                    <div class="responsive-cell-block"></div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img class="member-image" src="Images/Anup.jpg">
+                        </div>
+                        <p class="text-blk membe-name">
+                            Anup Yadav
+                        </p>
+                        <p class="text-blk member-position">
+                            Jr Manager
+                        </p>
+                        <p class="text-blk feature-text">
+                            Basic Layout and Designer.
+                        </p>
+                        <div class="social-icons">
+                            <a href="" target="_blank">
+                                <img class="twitter-icon" src="Images/icons8-twitter-50.png">
+                            </a>
+                            <a href="" target="_blank">
+                                <img class="facebook-icon" src="Images/icons8-facebook-50.png">
+                            </a>
+                            <a href="" target="_blank">
+                                <img class="instagram-icon" src="Images/icons8-instagram-50.png">
+                            </a>
+                            <a href="" target="_blank">
+                                <img class="linkedin-icon" src="Images/icons8-linkedin-50.png">
+                            </a>
+                            <a href="" target="_blank">
+                                <img class="github-icon" src="Images/icons8-github-50.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 </body>
+<script type="script" src="login_home.js"></script>
 
 </html>

@@ -1,0 +1,254 @@
+<li>
+    <script>
+        function goto(b) {
+            a = String(b) + "_Beg.html";
+            open(a, "_self");
+        }
+    </script>
+    <div class="languages_list">
+        <div id="container_list"><a>Languages</a></div>
+        <div class="radio-inputs">
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                <span class="radio-tile" onclick="goto('hindi')">
+                    <span class="radio-icon">
+                        <img class="flags" src="Images/Flags/India.jpg">
+                    </span>
+                    <span class="radio-label">Hindi</span>
+                </span>
+            </label>
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                <span class="radio-tile" onclick="goto('french')">
+                    <span class="radio-icon">
+                        <img class="flags" src="Images/Flags/France.jpg">
+                    </span>
+                    <span class="radio-label">French</span>
+                </span>
+            </label>
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                <span class="radio-tile" onclick="goto('japanese')">
+                    <span class="radio-icon">
+                        <img class="flags" src="Images/Flags/Japan.jpg">
+                    </span>
+                    <span class="radio-label">Japanese</span>
+                </span>
+            </label>
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                <span class="radio-tile" onclick="goto('chinese')">
+                    <span class="radio-icon">
+                        <img class="flags" src="Images/Flags/China.jpg">
+                    </span>
+                    <span class="radio-label">Chinese</span>
+                </span>
+            </label>
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                <span class="radio-tile" onclick="goto('spanish')">
+                    <span class="radio-icon">
+                        <img class="flags" src="Images/Flags/Spain.jpg">
+                    </span>
+                    <span class="radio-label">Spanish</span>
+                </span>
+            </label>
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                <span class="radio-tile" onclick="goto('tamil')">
+                    <span class="radio-icon">
+                        <img class="flags" src="Images/Flags/tamil.png">
+                    </span>
+                    <span class="radio-label">Tamil</span>
+                </span>
+            </label>
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                <span class="radio-tile" onclick="goto('german')">
+                    <span class="radio-icon">
+                        <img class="flags" src="Images/Flags/Germany.jpg">
+                    </span>
+                    <span class="radio-label">German</span>
+                </span>
+            </label>
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                <span class="radio-tile" onclick="goto('korean')">
+                    <span class="radio-icon">
+                        <img class="flags" src="Images/Flags/Korea.jpg">
+                    </span>
+                    <span class="radio-label">Korean</span>
+                </span>
+            </label>
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                <span class="radio-tile" onclick="goto('russian')">
+                    <span class="radio-icon">
+                        <img class="flags" src="Images/Flags/Russia.jpg">
+                    </span>
+                    <span class="radio-label">Russia</span>
+                </span>
+            </label>
+        </div>
+    </div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Language Menu */
+
+.radio-inputs {
+    position: absolute;
+    width: 850px;
+    left: 200px;
+    top: 80px;
+    height: 180px;
+    display: none;
+    justify-content: center;
+    align-items: end;
+}
+
+.radio-inputs>* {
+    margin: 6px;
+}
+
+.radio-input:checked+.radio-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+    background-color: #2260ff;
+    border-color: #2260ff;
+    z-index: 1;
+}
+
+.radio-input:checked+.radio-tile .radio-icon img {
+    fill: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-label {
+    color: #2260ff;
+}
+
+.radio-input:focus+.radio-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus+.radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    min-height: 80px;
+    border-radius: 0.5rem;
+    border: 2px solid #b5bfd9;
+    background-color: #d7d7d7;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.15s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-tile:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 0.25rem;
+    left: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.25s ease;
+}
+
+.radio-tile:hover {
+    border-color: #2260ff;
+}
+
+.radio-tile:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-icon img {
+    position: relative;
+    z-index: 0;
+    top: 5px;
+    width: 4rem;
+    fill: #494949;
+}
+
+.radio-label {
+    color: #707070;
+    transition: 0.375s ease;
+    text-align: center;
+    font-size: 13px;
+}
+
+.radio-input {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* #container_list {
+    font-size: larger;
+    height: auto;
+    width: 110px;
+    text-align: center;
+    cursor: pointer;
+} */
+
+#container_list:hover~.radio-inputs {
+    display: flex;
+}
+
+.radio-inputs:hover {
+    display: flex;
+}
+
+
+.lang_list:hover {
+    background-color: rgba(57, 57, 59, 0.934);
+
+}
+
+

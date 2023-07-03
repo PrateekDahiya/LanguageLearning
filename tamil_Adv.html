@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logolion.png">
+    <link rel="stylesheet" href="language_style.css">
+    <script type="module" src="firebase_init.js" defer></script>
+    <script type="module" src="lang_firebase.js"></script>
+    <title>Tamil Advance</title>
+</head>
+
+<body onload="send_lang_div(langanddiv())">
+
+    <!-- Common Header -->
+    <div id="topline">
+    </div>
+    <div id="logonmenu">
+        <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a id="home" href="home.html">Home</a></li>
+                <li>
+                    <script>
+                        function goto(b) {
+                            a = String(b) + "_Beg.html";
+                            open(a, "_self");
+                        }
+                    </script>
+                    <div class="languages_list">
+                        <div id="container_list"><a>Languages</a></div>
+                        <div class="radio-inputs">
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('hindi')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/India.jpg">
+                                    </span>
+                                    <span class="radio-label">Hindi</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('french')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/France.jpg">
+                                    </span>
+                                    <span class="radio-label">French</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('japanese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Japan.jpg">
+                                    </span>
+                                    <span class="radio-label">Japanese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('chinese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/China.jpg">
+                                    </span>
+                                    <span class="radio-label">Chinese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('spanish')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Spain.jpg">
+                                    </span>
+                                    <span class="radio-label">Spanish</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('tamil')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/tamil.png">
+                                    </span>
+                                    <span class="radio-label">Tamil</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('german')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Germany.jpg">
+                                    </span>
+                                    <span class="radio-label">German</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('korean')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Korea.jpg">
+                                    </span>
+                                    <span class="radio-label">Korean</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('russian')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Russia.jpg">
+                                    </span>
+                                    <span class="radio-label">Russia</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li><a>About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Common Header Ends -->
+
+    <div id="Lang_name">
+        Tamil Learning(Advance)
+    </div>
+
+    <hr>
+    <div id="backward" onclick="backword()">
+        <img src="Images/Backward Button.png" width="70px">
+    </div>
+    <div id="continue" onclick="nextword()">
+        <img src="Images/Continue Button.png" width="70px">
+    </div>
+    <div id="prevdivision" onclick="prevdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="pdivision"></div>
+    </div>
+
+    <div id="nextdivision" onclick="nextdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="ndivision"></div>
+    </div>
+    <div id="add_to_diff">
+        <input id="checkbox" type="checkbox" onclick="addtodiff()">
+        <label class="switch" for="checkbox">
+            <img src="Images/difficult.png">
+        </label>
+    </div>
+    <div id="textpart">
+        <p class="lanname">TAMIL</p>
+        <strong class="word" id="lang">எங்கள் ஊருக்கு வருகிறேன்</strong>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speak('ta-IN'); send_word()" width="30px">
+        </div>
+        <p class="lanname">TAMIL</p>
+        <strong class="word" id="romaji">Engaḷ ūrukku varugireṉ</strong><br>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng"> I am coming to our town.</strong><br>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+        <div id="change_division_menu">
+            <div id="Beg_div" onclick="chng_div(0)"></div>
+            <div id="Mod_div" onclick="chng_div(1)"></div>
+            <div id="Adv_div" onclick="chng_div(2)"></div>
+        </div>
+    </div>
+    <script>
+        let english = [' I am coming to our town.', ' Your thoughts are in my heart.', ' She is coming to my house.', ' Your love fills my life.', ' I am trying to tell you what I have known so far.', ' Can you write in Tamil?', ' I am sure.', ' He loves me with anger.', ' You cannot keep me from sleeping.', ' His dehydration has continued until death.', ' We must not delay anywhere.', ' I am thinking of ways to act.', ' You are calling many good people.']
+        let otherlang = ['எங்கள் ஊருக்கு வருகிறேன் ', 'என் மனதில் உங்கள் நினைவுகள் உள்ளன ', 'அவள் என் வீட்டில் வருகிறாள் ', 'என் உயிரினத்தை உன் காதல் நிறைக்கிறது ', 'நான் இதுவரை அறிந்ததை உங்களுக்கு சொல்ல முயற்சிக்கிறேன் ', 'தமிழில் உரை எழுத முடியுமா? ', 'நான் கட்டாயம் கொடுத்துக்கொண்டிருக்கிறேன். ', 'அவர் கோபமுடன் என்னை நேசிக்கிறார். ', 'நீங்கள் என்னை உறங்கத் தவிர்க்க முடியாது. ', 'அவர் மரணம் துடிக்கும் வரை பரிசுகளின் நீர்த்தேக்கம் செலுத்தியிருக்கிறது. ', 'எங்கும் துரத்திக் காக்க வேண்டாம். ', 'நான் நடந்துகொள்ள வேண்டிய முறைகளை நினைக்கிறேன். ', 'நீ பலர் நல்லவர்களை அழைக்கிறாய். ']
+        let romaji = ['Engaḷ ūrukku varugireṉ', 'En manathil uṅgaḷ ninaiṉkal uḷḷaṉa', 'Avaḷ eṉ vīṭṭil varugiṟāḷ', 'En uyiriṉattai uṉ kādal niṟaikkiraṯu', 'Nāṉ ituvarai aṟintadhai uṅkaḷukku solla muyaṟcikkiṟēṉ', 'Tamilil urai ezhutha mudiyuma?', 'Nān kattāyam koவடிthukkoவடிṉṟukkiṟēṉ', 'Avar kōpamudan ennai nēchikkiṟār', 'Nīṅkaḷ ennai uṟangat tavirkka muṭiyātu', 'Avar maraṇam tuṭikkum varai paricukaḷiṉ nīrttēkkam celuttirukkiṟadhu', 'Eṅkum turattik kākka vēṇṭām', 'Nān naṭantukolla veṇṭiya muṟaikaḷai niṉaikkirēṉ', 'Nī palar nallavargalai aḻaikkiṟāy']
+        div_num = 2;
+        var language = 'tamil';
+
+    </script>
+    <script src="language_script.js"></script>
+
+</body>
+
+</html>

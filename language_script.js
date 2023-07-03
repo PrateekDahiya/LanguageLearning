@@ -1,11 +1,36 @@
+var is_heard = 0;
 var i = 0;
-var divisions = ['Beginner', 'Moderate', 'Advanced'];
+var divtext = ['Beginner', 'Moderate', 'Advance']
+var divisions = ['Beg', 'Mod', 'Adv'];
 var num_words = english.length;
-var is_last = false;
+var withromanji = ['japanese', 'chinese', 'tamil', 'korean', 'russian'];
+var diff_otherlang = [];
+var diff_romaji = [];
+var diff_english = [];
 
+
+// For making all functions work properly
+nextword();
+backword();
+var pre_div = divtext[div_num - 1];
+var nxtdiv = divtext[div_num + 1];
+
+document.getElementById('ndivision').innerHTML = nxtdiv;
+document.getElementById('pdivision').innerHTML = pre_div;
 
 document.getElementById('backward').style.display = "none";
 document.getElementById('nextdivision').style.display = "none";
+
+if (div_num == 0) {
+    document.getElementById('Beg_div').style.border = "2px solid black";
+}
+else if (div_num == 1) {
+    document.getElementById('Mod_div').style.border = "2px solid black";
+}
+else if (div_num == 2) {
+    document.getElementById('Adv_div').style.border = "2px solid black";
+}
+
 
 if (i == 0 && div_num > 0) {
     document.getElementById('prevdivision').style.display = "block";
@@ -18,6 +43,7 @@ function speak(b) {
     var msg = new SpeechSynthesisUtterance(otherlang[i]);
     msg.lang = b;
     window.speechSynthesis.speak(msg);
+    is_heard = 1;
 }
 function speakeng() {
     var msg = new SpeechSynthesisUtterance(english[i]);
@@ -25,11 +51,17 @@ function speakeng() {
     window.speechSynthesis.speak(msg);
 }
 function nextword() {
+    // for goining to next word
+    uncheck_diff();
     if (i < english.length - 1) {
         i = i + 1;
         document.getElementById("lang").innerHTML = otherlang[i];
         document.getElementById("eng").innerHTML = english[i];
-        document.getElementById("romaji").innerHTML = romaji[i];
+        for (let k = 0; k < withromanji.length; k++) {
+            if (withromanji.includes(language)) {
+                document.getElementById("romaji").innerHTML = romaji[i];
+            }
+        }
     }
     if (i == 0) {
         document.getElementById('backward').style.display = "none";
@@ -43,11 +75,18 @@ function nextword() {
     check_nxtdiv(i);
 }
 function backword() {
+    // For going to previous word
+    uncheck_diff();
     if (i > 0) {
         i = i - 1;
         document.getElementById("lang").innerHTML = otherlang[i];
         document.getElementById("eng").innerHTML = english[i];
-        document.getElementById("romaji").innerHTML = romaji[i];
+        for (let k = 0; k < withromanji.length; k++) {
+            if (withromanji.includes(language)) {
+                document.getElementById("romaji").innerHTML = romaji[i];
+            }
+        }
+
     }
     if (i == 0) {
         document.getElementById('backward').style.display = "none";
@@ -55,23 +94,25 @@ function backword() {
     else (document.getElementById('backward').style.display = "block");
     if (i == english.length - 1) {
         document.getElementById('continue').style.display = "none";
-        is_last = true;
     } else {
         document.getElementById('continue').style.display = "block";
-        is_last = false;
     }
     check_nxtdiv(i);
 }
+// For Division Menu
+document.getElementById("Beg_div").innerHTML = divtext[0];
+document.getElementById("Mod_div").innerHTML = divtext[1];
+document.getElementById("Adv_div").innerHTML = divtext[2];
 
-if (window.i == 10) {
-    console.log("i = 10")
+function chng_div(n) {
+    uncheck_diff();
+    link = String(String(language) + "_" + String(divisions[n]) + ".html");
+    open(link, "_parent");
 }
+
 // Division change
 function check_nxtdiv(i) {
-    var pre_div = divisions[div_num - 1];
-    var nxtdiv = divisions[div_num + 1];
-    document.getElementById('ndivision').innerHTML = nxtdiv;
-    document.getElementById('pdivision').innerHTML = pre_div;
+    uncheck_diff();
 
     if ((i == english.length - 1) && (div_num < 2)) {
         document.getElementById('nextdivision').style.display = "block";
@@ -85,14 +126,121 @@ function check_nxtdiv(i) {
     else {
         document.getElementById('prevdivision').style.display = "none";
     }
+}
 
-    function nextdiv() {
 
+function nextdiv() {
+    uncheck_diff();
+    link = String(String(language) + "_" + String(divisions[div_num + 1]) + ".html");
+    open(link, "_parent");
 
+}
+
+function prevdiv() {
+    uncheck_diff();
+    link = String(String(language) + "_" + String(divisions[div_num - 1]) + ".html");
+    open(link, "_parent");
+}
+
+// currentuser = firebase.auth().currentUser;
+// console.log(currentuser)
+// if (currentuser) {
+//     const email = currentUser.email;
+// }
+
+// console.log(email)
+
+// Difficult words array
+
+function addtodiff() {
+    let diff_var = JSON.parse(localStorage.difficult);
+    let diff_arr = diff_var;
+    if (withromanji.includes(language)) {
+        a = english[i];
+        b = otherlang[i];
+        c = romaji[i];
+        z = [a, c, b];
+    }
+    else {
+        a = english[i];
+        b = otherlang[i];
+        z = [a, b];
     }
 
-    function prevdiv() {
+    if (document.getElementById("checkbox").checked) {
+        if (diff_var != []) {
+            if (!diff_var.some(arr => JSON.stringify(arr) === JSON.stringify(z))) {
+                diff_arr.push(z);
+                localStorage.setItem("difficult", JSON.stringify(diff_arr));
+                console.log("Iteam added!");
+            }
+            else {
+                console.log("item already exists!");
+            }
+
+        }
+        else {
+            diff_arr.push(z);
+            localStorage.setItem("difficult", JSON.stringify(diff_arr));
+            console.log("First Item added!");
+        }
+    }
+    else {
+        let z_as_string = JSON.stringify(z);
+
+        let foundIndex = -1;
+
+        diff_arr.forEach((arr, index) => {
+            if (JSON.stringify(arr) === z_as_string) {
+                foundIndex = index;
+            }
+        });
+
+        if (foundIndex !== -1) {
+            diff_arr.splice(foundIndex, 1);
+            localStorage.setItem("difficult", JSON.stringify(diff_arr));
+            console.log("Item removed!");
+        }
+
 
     }
 }
+
+
+function uncheck_diff() {
+    if (withromanji.includes(language)) {
+        a = english[i];
+        b = otherlang[i];
+        c = romaji[i];
+        z = [a, c, b];
+    }
+    else {
+        a = english[i];
+        b = otherlang[i];
+        z = [a, b];
+    }
+    let diff_var = JSON.parse(localStorage.difficult);
+    let isdiff = diff_var.some(arr => JSON.stringify(arr) === JSON.stringify(z));
+    if (isdiff) {
+        document.getElementById('checkbox').checked = true;
+    }
+    else {
+        document.getElementById('checkbox').checked = false;
+    }
+}
+
+
+function langanddiv() {
+    let a = document.getElementById("Lang_name").innerHTML;
+    a = a.trim();
+    let temp1 = a.split(" ");
+    let language = temp1[0];
+    let temp2 = temp1[1];
+    let temp3 = temp2.split("(");
+    let temp4 = temp3[1].slice(0, -1);
+    let division = temp4;
+    return [language, division];
+}
+
+
 

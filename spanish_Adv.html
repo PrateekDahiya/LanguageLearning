@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logolion.png">
+    <link rel="stylesheet" href="language_style.css">
+    <script type="module" src="firebase_init.js" defer></script>
+    <script type="module" src="lang_firebase.js"></script>
+    <title>Japanese Beginner</title>
+</head>
+
+<body onload="send_lang_div(langanddiv())">
+    <!-- Common Header -->
+    <div id="topline">
+    </div>
+    <div id="logonmenu">
+        <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
+        <nav>
+            <ul class="nav_links">
+                <li><a id="home" href="home.html">Home</a></li>
+                <li>
+                    <script>
+                        function goto(b) {
+                            a = String(b) + "_Beg.html";
+                            open(a, "_self");
+                        }
+                    </script>
+                    <div class="languages_list">
+                        <div id="container_list"><a>Languages</a></div>
+                        <div class="radio-inputs">
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('hindi')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/India.jpg">
+                                    </span>
+                                    <span class="radio-label">Hindi</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('french')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/France.jpg">
+                                    </span>
+                                    <span class="radio-label">French</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('japanese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Japan.jpg">
+                                    </span>
+                                    <span class="radio-label">Japanese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('chinese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/China.jpg">
+                                    </span>
+                                    <span class="radio-label">Chinese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('spanish')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Spain.jpg">
+                                    </span>
+                                    <span class="radio-label">Spanish</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('tamil')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/tamil.png">
+                                    </span>
+                                    <span class="radio-label">Tamil</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('german')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Germany.jpg">
+                                    </span>
+                                    <span class="radio-label">German</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('korean')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Korea.jpg">
+                                    </span>
+                                    <span class="radio-label">Korean</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('russian')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Russia.jpg">
+                                    </span>
+                                    <span class="radio-label">Russia</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li><a>About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Common Header Ends -->
+
+    <div id="Lang_name">
+        Spanish Learning(Advance)
+    </div>
+
+    <hr>
+    <!-- Word Change -->
+    <div id="backward" onclick="backword()">
+        <img src="Images/Backward Button.png" width="70px">
+    </div>
+    <div id="continue" onclick="nextword()">
+        <img src="Images/Continue Button.png" width="70px">
+    </div>
+    <!-- Division Change -->
+    <div id="prevdivision" onclick="prevdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="pdivision"></div>
+    </div>
+
+    <div id="nextdivision" onclick="nextdiv()">
+        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
+        <div id="ndivision"></div>
+    </div>
+    <div id="add_to_diff">
+        <input id="checkbox" type="checkbox" onclick="addtodiff()">
+        <label class="switch" for="checkbox">
+            <img src="Images/difficult.png">
+        </label>
+    </div>
+    <!-- Main Body -->
+    <div id="textpart">
+        <p class="lanname">Spanish</p>
+        <strong class="word" id="lang">Hola, ¿cómo estás?</strong>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speak('es'); send_word()" width="30px">
+        </div>
+        <p class="lanname">ENGLISH</p>
+        <strong class="word" id="eng">Hello, how are you?</strong><br>
+        <div class="vol_icon">
+            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        </div>
+        <div id="change_division_menu">
+            <div id="Beg_div" onclick="chng_div(0)"></div>
+            <div id="Mod_div" onclick="chng_div(1)"></div>
+            <div id="Adv_div" onclick="chng_div(2)"></div>
+        </div>
+    </div>
+    <script>
+        // Words 
+        let english = [' Hello, how are you?', ' I like pop music.', ' Where is the bathroom?', ' My favorite food is pizza.', ' How much does this cost?', ' Today is very hot.', ' I am from Mexico.', ' Can I help you with anything?', ' I love reading adventure books.', ' What time does the movie start?', ' The beach is my favorite place to relax.', ' I want to learn to speak French.', ' What is your name?', ' Mexican food is very tasty.', ' Where do you live?', ' I like going to the movies on weekends.', ' What plans do you have for today?', ' Winter is my favorite season of the year.', ' Do you want to go for a walk with me?', ' I like spending time with my family and friends']
+        let otherlang = [' Hola, ¿cómo estás? ', 'e gusta la música pop. ', 'Dónde está el baño? ', 'i comida favorita es la pizza. ', 'Cuánto cuesta esto? ', 'oy hace mucho calor. ', 'oy de México. ', 'Puedo ayudarte en algo? ', 'e encanta leer libros de aventuras. ', '¿A qué hora empieza la película? ', 'La playa es mi lugar favorito para relajarme. ', 'Quiero aprender a hablar francés. ', '¿Cómo te llamas? ', 'La comida mexicana es muy sabrosa. ', '¿Dónde vives? ', 'Me gusta ir al cine los fines de semana. ', '¿Qué planes tienes para hoy? ', 'El invierno es mi estación favorita del año. ', '¿Quieres salir a pasear conmigo? ', 'Me gusta pasar tiempo con mi familia y amigos.']
+        div_num = 2;
+        var language = 'spanish';
+    </script>
+    <script src="language_script.js"></script>
+</body>
+
+</html>

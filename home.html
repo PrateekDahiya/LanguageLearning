@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="homestyle.css">
+    <script type="module" src="firebase_init.js" defer></script>
+    <script type="module" src="homefirejava.js"></script>
+    <script type="text/javascript" src="homejava.js"></script>
     <title>LINGOVERSE</title>
 </head>
 
-<body>
+<body onload="updateElements()">
 
     <!-- Common Header -->
     <div id="topline">
@@ -19,25 +22,98 @@
         <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
         <nav>
             <ul class="nav_links">
-                <li><a id="home" href="home.html">Home</a></li>
+                <!-- <li><a id="home" href="home.html">Home</a></li> -->
                 <li>
+                    <script>
+                        function goto(b) {
+                            a = String(b) + "_Beg.html";
+                            open(a, "_self");
+                        }
+                    </script>
                     <div class="languages_list">
-                        <a>Languages</a>
-                        <div id="boxoflang">
-                            <a href="Hindi_Big.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/India.jpg">Learn Hindi</a>
-                            <a href="french_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/France.jpg">Learn French</a>
-                            <a href="japanese_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/Japan.jpg">Learn Japanese</a>
-                            <a href="chinese_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/China.jpg">Learn Chinese</a>
-                            <a href="spanish_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/Spain.jpg">Learn Spanish</a>
-                            <a href="tamil_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/tamil.png">Learn Tamil</a>
-                            <a href="German_Big.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/Germany.jpg">Learn German</a>
+                        <div id="container_list"><a>Languages</a></div>
+                        <div class="radio-inputs">
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('hindi')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/India.jpg">
+                                    </span>
+                                    <span class="radio-label">Hindi</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('french')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/France.jpg">
+                                    </span>
+                                    <span class="radio-label">French</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('japanese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Japan.jpg">
+                                    </span>
+                                    <span class="radio-label">Japanese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('chinese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/China.jpg">
+                                    </span>
+                                    <span class="radio-label">Chinese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('spanish')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Spain.jpg">
+                                    </span>
+                                    <span class="radio-label">Spanish</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('tamil')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/tamil.png">
+                                    </span>
+                                    <span class="radio-label">Tamil</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('german')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Germany.jpg">
+                                    </span>
+                                    <span class="radio-label">German</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('korean')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Korea.jpg">
+                                    </span>
+                                    <span class="radio-label">Korean</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('russian')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Russia.jpg">
+                                    </span>
+                                    <span class="radio-label">Russia</span>
+                                </span>
+                            </label>
                         </div>
                     </div>
                 </li>
@@ -47,6 +123,63 @@
     </div>
 
     <!-- Common Header Ends -->
+    <div id="home_boxes">
+        <div id="current_lang">
+            You are Currently Learning<br>
+            <span id="crnt_lang"></span>
+        </div>
+
+        <div id="current_div">
+            You are Currently At Level<br>
+            <span id="crnt_level"></span>
+        </div>
+        <div id="word_goal">
+            <div id="ur_goal_txt">Your Word Goal is:</div>
+            <img id="edit_btn" src="Images/edit.png" onclick="word_goal_win()" width="25px">
+            <span id="crnt_goal_value"></span>
+            <div id="wrd_done_txt">Words Done Today: </div>
+            <div id="word_num"></div>
+            <div id="set_wrd_goal">
+                <img src="Images/goal.png" width="150px">
+                <div id="close_btn" onclick="close_word_goal_win()"><b>X</b></div>
+                <h4>Set your daily words learned goal</h4>
+                <h5>Number of new words you want to learn per day</h5>
+                <div id="goal_options">
+                    <div class="goal_choice" onclick="goal(5)">
+                        5
+                    </div>
+                    <div class="goal_choice" onclick="goal(10)">
+                        10
+                    </div>
+                    <div class="goal_choice" onclick="goal(15)">
+                        15
+                    </div>
+                    <div class="goal_choice" onclick="goal(20)">
+                        20
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loading-back">
+        
+    </div>
+    <div id="loading">
+        <div id="loading_dots">
+            <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+                <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000"
+                    stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+                <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000"
+                    stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+                <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20"
+                    stroke-dasharray="0 440" stroke-linecap="round"></circle>
+                <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000"
+                    stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+            </svg>
+        </div>
+
+    </div>
+
 </body>
 
 </html>

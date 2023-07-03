@@ -54,55 +54,132 @@ header {
 .nav_links li a:hover {
   color: rgb(255, 187, 0);
 }
+/* Language Menu */
 
-.lang_list:visited {
-  color: rgba(22, 21, 31, 0.934);
+.radio-inputs {
+  position: absolute;
+  width: 850px;
+  left: 650px;
+  top: 115px;
+  height: 135px;
+  display: none;
+  justify-content: center;
+  align-items: end;
 }
 
+.radio-inputs>* {
+  margin: 6px;
+}
 
-.languages_list {
-  padding-top: 80px;
-  position: relative;
-  line-height: 30px;
-  height: 100px;
-  cursor: pointer;
-  font-size: large;
-  justify-content: space-between;
+.radio-input:checked+.radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #2260ff;
+  border-color: #2260ff;
   z-index: 1;
 }
 
-#boxoflang {
-  height: auto;
-  width: 250px;
-  box-sizing: border-box;
+.radio-input:checked+.radio-tile .radio-icon img {
+  fill: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-label {
+  color: #2260ff;
+}
+
+.radio-input:focus+.radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus+.radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  min-height: 80px;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #d7d7d7;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-tile:before {
+  content: "";
   position: absolute;
-  top: 140px;
-  left: -40px;
-  background-color: rgb(255, 187, 0);
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
 }
 
-.lang_list {
-  padding: 10px;
-  display: none;
+.radio-tile:hover {
+  border-color: #2260ff;
+}
+
+.radio-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-icon img {
+  position: relative;
+  z-index: 0;
+  top: 5px;
+  width: 4rem;
+  fill: #494949;
+}
+
+.radio-label {
+  color: #707070;
+  transition: 0.375s ease;
   text-align: center;
-  text-decoration: none;
-
+  font-size: 13px;
 }
 
-.lang_list:hover {
-  background-color: rgba(57, 57, 59, 0.934);
-
+.radio-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-.languages_list:hover .lang_list {
+#container_list {
+  cursor: pointer;
+}
+
+#container_list:hover~.radio-inputs {
   display: flex;
 }
 
-
-.flags {
-  padding-top: 8px;
-  height: 15px;
-  padding-right: 8px;
+.radio-inputs:hover {
+  display: flex;
 }
 
 /* Common Header Ends */
@@ -134,7 +211,8 @@ header {
 
 form {
   background-color: #fff;
-  border: 2px solid #003366;
+  border: 2px solid rgba(57, 57, 59, 0.934);
+  border-radius: 7px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin: 50px auto;
   max-width: 600px;
@@ -143,40 +221,32 @@ form {
 }
 
 .form-title {
-  font-size: 24px;
+  color: rgba(22, 21, 31, 0.934);
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px;
   text-align: center;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
 .form-group input {
+  font-family: sans-serif;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
+  border-radius: 7px;
+  font-size: 14px;
+  padding: 13px;
+  width: 80%;
+  margin: 2px;
 }
 
 .form-group input:focus {
-  border-color: #003366;
+
+  border-color: rgba(22, 21, 31, 0.934);
   outline: none;
 }
 
 .submit-btn {
-  background-color: #003366;
+  background-color: rgba(22, 21, 31, 0.934);
   border: none;
-  color: #fff;
+  color: rgb(255, 187, 0);
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
@@ -184,7 +254,8 @@ form {
 }
 
 .submit-btn:hover {
-  background-color: #00204a;
+  background-color: rgb(255, 187, 0);
+  color: rgba(22, 21, 31, 0.934);
 }
 
 /* Footer Styles */
@@ -196,29 +267,101 @@ footer {
   text-align: center;
 }
 
-#register-form {
+#register-form,
+#login-form {
+  /* border: 2px black solid; */
   text-align: center;
+  justify-content: center;
+  margin: 50px;
+
 }
 
 #login-form {
-  text-align: center;
   display: none;
 }
 
 #login-text,
 #register-text {
-  position: relative;
+  justify-content: center;
+  /* padding-left: 50px; */
   padding-top: 50px;
-  text-align: right;
-  padding-right: 33%;
+  padding-bottom: 30px;
 }
 
-.button-regnlog {
-  padding: 10px;
+.submit-btn {
+  font-size: 15px;
+  padding: 5px;
   margin-top: 25px;
-  margin-right: 100px;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
 .message {
   text-align: center;
 }
+
+.container {
+
+  /* border: 2px black solid; */
+  /* margin: 50px; */
+}
+
+.toggletext {
+  text-decoration: none;
+  color: rgb(255, 187, 0);
+}
+
+.toggletext:hover {
+  color: rgba(22, 21, 31, 0.934);
+}
+
+/* Message Box */
+
+#click-protector {
+  position: absolute;
+  height: 580px;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.084);
+  display: none;
+
+}
+
+#message_box {
+  position: relative;
+  width: 450px;
+  height: 250px;
+  color: rgba(22, 21, 31, 0.934);
+  background-color: rgb(255, 187, 0);
+  z-index: 4;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
+  left: 33%;
+  top: 100px;
+  padding: 25px;
+}
+
+#ok_message_btn {
+  color: rgb(255, 187, 0);
+  background-color: rgba(22, 21, 31, 0.934);
+  bottom: 15px;
+  left: 150px;
+  text-align: center;
+  width: 200px;
+  position: absolute;
+  height: 30px;
+}
+
+#ok_message_btn:hover {
+  color: rgba(22, 21, 31, 0.934);
+  background-color: rgb(255, 187, 0);
+}
+
+#message_text {
+  text-align: center;
+  padding-top: 80px;
+  padding-left: 15px;
+  position: relative;
+  width: 400px;
+}
+
+/* Message Box ends */
