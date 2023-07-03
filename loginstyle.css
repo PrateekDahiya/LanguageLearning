@@ -54,55 +54,132 @@ header {
 .nav_links li a:hover {
   color: rgb(255, 187, 0);
 }
+/* Language Menu */
 
-.lang_list:visited {
-  color: rgba(22, 21, 31, 0.934);
+.radio-inputs {
+  position: absolute;
+  width: 850px;
+  left: 650px;
+  top: 115px;
+  height: 135px;
+  display: none;
+  justify-content: center;
+  align-items: end;
 }
 
+.radio-inputs>* {
+  margin: 6px;
+}
 
-.languages_list {
-  padding-top: 80px;
-  position: relative;
-  line-height: 30px;
-  height: 100px;
-  cursor: pointer;
-  font-size: large;
-  justify-content: space-between;
+.radio-input:checked+.radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #2260ff;
+  border-color: #2260ff;
   z-index: 1;
 }
 
-#boxoflang {
-  height: auto;
-  width: 250px;
-  box-sizing: border-box;
+.radio-input:checked+.radio-tile .radio-icon img {
+  fill: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-label {
+  color: #2260ff;
+}
+
+.radio-input:focus+.radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus+.radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  min-height: 80px;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #d7d7d7;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-tile:before {
+  content: "";
   position: absolute;
-  top: 140px;
-  left: -40px;
-  background-color: rgb(255, 187, 0);
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
 }
 
-.lang_list {
-  padding: 10px;
-  display: none;
+.radio-tile:hover {
+  border-color: #2260ff;
+}
+
+.radio-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-icon img {
+  position: relative;
+  z-index: 0;
+  top: 5px;
+  width: 4rem;
+  fill: #494949;
+}
+
+.radio-label {
+  color: #707070;
+  transition: 0.375s ease;
   text-align: center;
-  text-decoration: none;
-
+  font-size: 13px;
 }
 
-.lang_list:hover {
-  background-color: rgba(57, 57, 59, 0.934);
-
+.radio-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-.languages_list:hover .lang_list {
+#container_list {
+  cursor: pointer;
+}
+
+#container_list:hover~.radio-inputs {
   display: flex;
 }
 
-
-.flags {
-  padding-top: 8px;
-  height: 15px;
-  padding-right: 8px;
+.radio-inputs:hover {
+  display: flex;
 }
 
 /* Common Header Ends */

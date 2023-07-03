@@ -30,7 +30,7 @@ function fetchData(a, callback) {
             get(dataRef)
                 .then(function (snapshot) {
                     var value = snapshot.val();
-                    console.log(a + " Value: " + value);
+                    // console.log(a + " Value: " + value);
                     goal_value = value;
                     callback(goal_value);
                 })
@@ -58,6 +58,13 @@ window.updateElements = () => {
         fetchData("goal", function (result) {
             document.getElementById("crnt_goal_value").innerHTML = result;
         });
+        fetchData("word_count", function (result) {
+            document.getElementById("word_num").innerHTML = result;
+        });
     }, 1000);
 }
+
+
+
+
 

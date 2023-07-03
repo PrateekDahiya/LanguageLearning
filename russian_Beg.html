@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="language_style.css">
     <script type="module" src="firebase_init.js" defer></script>
     <script type="module" src="lang_firebase.js"></script>
-    <title>Chinese Beginner</title>
+    <title>Russian Beginner</title>
 </head>
 
 <body onload="send_lang_div(langanddiv())">
@@ -123,16 +123,18 @@
     <!-- Common Header Ends -->
 
     <div id="Lang_name">
-        Chinese Learning(Beginner)
+        Russian Learning(Beginners)
     </div>
 
     <hr>
+    <!-- Word Change -->
     <div id="backward" onclick="backword()">
         <img src="Images/Backward Button.png" width="70px">
     </div>
     <div id="continue" onclick="nextword()">
         <img src="Images/Continue Button.png" width="70px">
     </div>
+    <!-- Division Change -->
     <div id="prevdivision" onclick="prevdiv()">
         <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
         <div id="pdivision"></div>
@@ -142,22 +144,21 @@
         <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
         <div id="ndivision"></div>
     </div>
-
     <div id="add_to_diff">
         <input id="checkbox" type="checkbox" onclick="addtodiff()">
         <label class="switch" for="checkbox">
             <img src="Images/difficult.png">
         </label>
     </div>
-
+    <!-- Main Body -->
     <div id="textpart">
-        <p class="lanname">CHINESE</p>
-        <strong class="word" id="lang">你好</strong>
+        <p class="lanname">RUSSIAN</p>
+        <strong class="word" id="lang">Привет</strong>
         <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('zh'); send_word()" width="30px">
+            <img src="Images/volume.png" onclick="speak('ru'); send_word();" width="30px">
         </div>
-        <p class="lanname">PINYIN</p>
-        <strong class="word" id="romaji">nǐ hǎo</strong><br>
+        <p class="lanname">ROMANISATION</p>
+        <strong class="word" id="romaji">privet</strong><br>
         <p class="lanname">ENGLISH</p>
         <strong class="word" id="eng">Hello</strong><br>
         <div class="vol_icon">
@@ -170,14 +171,14 @@
         </div>
     </div>
     <script>
-        let english = [' Hello', ' Thank you', ' Sorry', " It's okay", ' Yes', ' No', ' Friend', ' Family or home', ' Food', ' Water', ' Love', ' Like', ' Week', ' Morning', ' Afternoon', ' Evening', ' Time', ' Money', ' Store', ' School', ' Hospital', ' Park', ' Library', ' Restaurant', ' Train station', ' Movie theater', ' On the way', ' Sit', ' Stand', ' Run']
-        let otherlang = ['你好 ', '谢谢 ', '对不起 ', '没关系 ', '是 ', '不是 ', '朋友 ', '家 ', '食物 ', '水 ', '爱 ', '喜欢 ', '星期 ', '上午 ', '下午 ', '晚上 ', '时间 ', '钱 ', '商店 ', '学校 ', '医院 ', '公园 ', '图书馆 ', '饭店 ', '火车站 ', '电影院 ', '路上 ', '坐 ', '站 ', '跑 ']
-        let romaji = ['nǐ hǎo', 'xiè xiè', 'duì bù qǐ', 'méi guān xi', 'shì', 'bù shì', 'péng yǒu', 'jiā', 'shí wù', 'shuǐ', 'ài', 'xǐ huān', 'xīng qī', 'shàng wǔ', 'xià wǔ', 'wǎn shàng', 'shí jiān', 'qián', 'shāng diàn', 'xué xiào', 'yī yuàn', 'gōng yuán', 'tú shū guǎn', 'fàn diàn', 'huǒ chē zhàn', 'diàn yǐng yuàn', 'lù shàng', 'zuò', 'zhàn', 'pǎo']
+        // Words 
+        let english = [' Hello', ' Thank you', ' Yes', ' No', ' Please', ' Excuse me', ' Coffee', ' Tea', ' Water', ' Milk', ' Bread', ' Salt', ' Sugar', ' Meat', ' Fish', ' Egg', ' Soup', ' Fruits', ' Vegetables', ' Flowers', ' Book', ' Table', ' Chair', ' Window', ' Door', ' Key', ' Telephone', ' Computer', ' Music', ' Time']
+        let otherlang = ['Привет ', 'Спасибо ', 'Да ', 'Нет ', 'Пожалуйста ', 'Извините ', 'Кофе ', 'Чай ', 'Вода ', 'Молоко ', 'Хлеб ', 'Соль ', 'Сахар ', 'Мясо ', 'Рыба ', 'Яйцо ', 'Суп ', 'Фрукты ', 'Овощи ', 'Цветы ', 'Книга ', 'Стол ', 'Стул ', 'Окно ', 'Дверь ', 'Ключ ', 'Телефон ', 'Компьютер ', 'Музыка ', 'Время ']
+        let romaji = ['privet', 'spasibo', 'da', 'net', 'pozhaluysta', 'izvinite', 'kofe', 'chay', 'voda', 'moloko', 'hleb', "sol'", 'sakhar', 'myaso', 'ryba', 'yaytso', 'sup', 'frukty', 'ovoschi', 'cvety', 'kniga', 'stol', 'stul', 'okno', "dver'", 'klyuch', 'telefon', 'kompyuter', 'muzyka', 'vremya']
         div_num = 0;
-        var language = 'chinese';
+        var language = 'russian';
     </script>
     <script src="language_script.js"></script>
-
 
 </body>
 

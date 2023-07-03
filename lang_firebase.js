@@ -2,6 +2,7 @@ import firebaseFunctions from "./firebase_init.js";
 const { database, analytics, auth, app, set, ref, update, get, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } = firebaseFunctions;
 
 
+reset_word_count();
 window.send_lang_div = (a) => {
     let language = a[0];
     let division = a[1];
@@ -57,4 +58,47 @@ window.send_word = () => {
     });
 }
 
+// Reset word count to zero
+function reset_word_count() {
+    fetchData("last_updated", function (result) {
+        var current_date = new Date();
+        current_date = current_date.toISOString().split('T')[0];
+        var last_updated = result;
+        if (last_updated != current_date) {
+            console.log("set count to zero!");
+            set_word_count_to_zero();
+            reset_last_update(current_date);
+        }
+        else {
+            console.log("Date checked");
+        }
+    });
+}
 
+function set_word_count_to_zero() {
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            var dataRef = ref(database, "users/" + user.uid);
+            var updatedData = {
+                word_count: 0
+            };
+            update(dataRef, updatedData);
+        } else {
+            console.log("User not logged in");
+        }
+    });
+}
+
+function reset_last_update(crnt_date) {
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            var dataRef = ref(database, "users/" + user.uid);
+            var updatedData = {
+                last_updated: crnt_date
+            };
+            update(dataRef, updatedData);
+        } else {
+            console.log("User not logged in");
+        }
+    });
+}

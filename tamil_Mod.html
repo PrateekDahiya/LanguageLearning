@@ -23,23 +23,96 @@
             <ul class="nav_links">
                 <li><a id="home" href="home.html">Home</a></li>
                 <li>
+                    <script>
+                        function goto(b) {
+                            a = String(b) + "_Beg.html";
+                            open(a, "_self");
+                        }
+                    </script>
                     <div class="languages_list">
-                        <a>Languages</a>
-                        <div id="boxoflang">
-                            <a href="hindi_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/India.jpg">Learn Hindi</a>
-                            <a href="french_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/France.jpg">Learn French</a>
-                            <a href="japanese_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/Japan.jpg">Learn Japanese</a>
-                            <a href="chinese_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/China.jpg">Learn Chinese</a>
-                            <a href="spanish_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/Spain.jpg">Learn Spanish</a>
-                            <a href="tamil_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/tamil.png">Learn Tamil</a>
-                            <a href="german_Beg.html" class="lang_list"><img class="flags"
-                                    src="Images/Flags/Germany.jpg">Learn German</a>
+                        <div id="container_list"><a>Languages</a></div>
+                        <div class="radio-inputs">
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('hindi')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/India.jpg">
+                                    </span>
+                                    <span class="radio-label">Hindi</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('french')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/France.jpg">
+                                    </span>
+                                    <span class="radio-label">French</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('japanese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Japan.jpg">
+                                    </span>
+                                    <span class="radio-label">Japanese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('chinese')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/China.jpg">
+                                    </span>
+                                    <span class="radio-label">Chinese</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('spanish')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Spain.jpg">
+                                    </span>
+                                    <span class="radio-label">Spanish</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('tamil')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/tamil.png">
+                                    </span>
+                                    <span class="radio-label">Tamil</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('german')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Germany.jpg">
+                                    </span>
+                                    <span class="radio-label">German</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('korean')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Korea.jpg">
+                                    </span>
+                                    <span class="radio-label">Korean</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" name="engine">
+                                <span class="radio-tile" onclick="goto('russian')">
+                                    <span class="radio-icon">
+                                        <img class="flags" src="Images/Flags/Russia.jpg">
+                                    </span>
+                                    <span class="radio-label">Russia</span>
+                                </span>
+                            </label>
                         </div>
                     </div>
                 </li>
@@ -70,6 +143,12 @@
         <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
         <div id="ndivision"></div>
     </div>
+    <div id="add_to_diff">
+        <input id="checkbox" type="checkbox" onclick="addtodiff()">
+        <label class="switch" for="checkbox">
+            <img src="Images/difficult.png">
+        </label>
+    </div>
     <div id="textpart">
         <p class="lanname">TAMIL</p>
         <strong class="word" id="lang">வணக்கம்</strong>
@@ -90,8 +169,8 @@
         </div>
     </div>
     <script>
-        let english = [' Hello', ' Where are you going?', ' My name is a wonderful name', ' How old are you?', ' I speak Tamil', ' I need help', ' I have lost weight', ' Do you know how to speak Tamil?', ' I want you to have a good day', ' Where should I go', ' What food should I give my mom to eat?', ' Where are you going?', ' He will come to see.', ' I am here.', ' I need to give you a message.', ' What is your name?', ' I was not born in this country.', ' Can I speak to you?', ' Why did you come?', ' I already know that person.', '']
-        let otherlang = ['வணக்கம் ', 'எங்கு போகிறீர்கள்? ', 'என் பேரு அருமையான பேர் ', 'நீங்கள் எவ்வளவு வாழ்க்கையில் இருக்கிறீர்கள்? ', 'நான் தமிழ் பேசுகிறேன் ', 'எனக்கு உதவி தயக்கம் போன்றது ', 'நான் உடல் எடை குறைத்தேன் ', 'நீங்கள் தமிழில் பேசுவது தெரியுமா? ', 'நான் நீங்களுக்கு நல்ல நாள் கூட்டாக இருக்க வேண்டும் ', 'எங்கு போக வேண்டும்? ', 'என் அம்மா சாப்பிட வேண்டிய உணவு என்ன? ', 'நீ எங்கு போகிறாய்? ', 'அவன் பார்க்க செல்லும். ', 'நான் இங்கே இருக்கிறேன். ', 'நான் உனக்கு தொடர்பு கொடுக்க வேண்டும். ', 'உங்கள் பெயர் என்ன? ', 'நான் சொந்த நாட்டில் பிறந்தது எங்கும் இல்லை. ', 'உன்னிடம் சொல்ல முடியுமா? ', 'நீ எதுக்கு வந்திருக்கிறாய்? ', 'அந்த பேரை நான் அறிந்து கொண்டே இருக்கிறேன். ', '']
+        let english = [' Hello', ' Where are you going?', ' My name is a wonderful name', ' How old are you?', ' I speak Tamil', ' I need help', ' I have lost weight', ' Do you know how to speak Tamil?', ' I want you to have a good day', ' Where should I go', ' What food should I give my mom to eat?', ' Where are you going?', ' He will come to see.', ' I am here.', ' I need to give you a message.', ' What is your name?', ' I was not born in this country.', ' Can I speak to you?', ' Why did you come?', ' I already know that person.']
+        let otherlang = ['வணக்கம் ', 'எங்கு போகிறீர்கள்? ', 'என் பேரு அருமையான பேர் ', 'நீங்கள் எவ்வளவு வாழ்க்கையில் இருக்கிறீர்கள்? ', 'நான் தமிழ் பேசுகிறேன் ', 'எனக்கு உதவி தயக்கம் போன்றது ', 'நான் உடல் எடை குறைத்தேன் ', 'நீங்கள் தமிழில் பேசுவது தெரியுமா? ', 'நான் நீங்களுக்கு நல்ல நாள் கூட்டாக இருக்க வேண்டும் ', 'எங்கு போக வேண்டும்? ', 'என் அம்மா சாப்பிட வேண்டிய உணவு என்ன? ', 'நீ எங்கு போகிறாய்? ', 'அவன் பார்க்க செல்லும். ', 'நான் இங்கே இருக்கிறேன். ', 'நான் உனக்கு தொடர்பு கொடுக்க வேண்டும். ', 'உங்கள் பெயர் என்ன? ', 'நான் சொந்த நாட்டில் பிறந்தது எங்கும் இல்லை. ', 'உன்னிடம் சொல்ல முடியுமா? ', 'நீ எதுக்கு வந்திருக்கிறாய்? ', 'அந்த பேரை நான் அறிந்து கொண்டே இருக்கிறேன். ']
         let romaji = ['vaṇakkam', 'eṅku pōgirīrkal?', 'en pēru arumaiyāna pēr', 'nīṅkal evvaḷavu vāḻkaiyil irukkiṟīrkaḷ?', 'nāṉ tamiḻ pēsugiṟēṉ', 'enakku udhavi tayakkam pōṉṟadhu', 'nāṉ uṭal eṭai kuṟaittēṉ', 'nīṅkal tamiḻil pēsuvadhu teriyumā?', 'nāṉ nīṅkaḷukku nalla nāḷ kūṭṭāka irukka vēṇṭum', 'eṅku pōka vēṇṭum?', 'En ammā sāppiṭa vēṇṭiya uṇavu enna?', 'Nī eṅku pōkiṟāy?', 'Avaṉ pārka cellum', 'Nāṉ iṅkē irukkiṟēṉ', 'Nāṉ uṉakku toṭarpu koṭukka vēṇṭum', 'Uṅkaḷ peyar enna?', 'Nāṉ sontha nāṭṭil piṟanthadhu eṅkum illai', 'Uṉṉiṭam solla muṭiyumā?', 'Nī edhukku vandhirukkiṟāy?', 'Anth pērai nān aṟinthu koṇṭē irukkiṟēn']
         div_num = 1;
         var language = 'tamil';

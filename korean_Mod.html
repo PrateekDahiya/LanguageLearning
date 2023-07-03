@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="language_style.css">
     <script type="module" src="firebase_init.js" defer></script>
     <script type="module" src="lang_firebase.js"></script>
-    <title>Chinese Beginner</title>
+    <title>Korean Moderate</title>
 </head>
 
 <body onload="send_lang_div(langanddiv())">
+
     <!-- Common Header -->
     <div id="topline">
     </div>
@@ -123,7 +124,7 @@
     <!-- Common Header Ends -->
 
     <div id="Lang_name">
-        Chinese Learning(Beginner)
+        Korean Learning(Moderate)
     </div>
 
     <hr>
@@ -142,24 +143,22 @@
         <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
         <div id="ndivision"></div>
     </div>
-
     <div id="add_to_diff">
         <input id="checkbox" type="checkbox" onclick="addtodiff()">
         <label class="switch" for="checkbox">
             <img src="Images/difficult.png">
         </label>
     </div>
-
     <div id="textpart">
-        <p class="lanname">CHINESE</p>
-        <strong class="word" id="lang">你好</strong>
+        <p class="lanname">KOREAN</p>
+        <strong class="word" id="lang">안녕하세요?</strong>
         <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('zh'); send_word()" width="30px">
+            <img src="Images/volume.png" onclick="speak('ko'); send_word()" width="30px">
         </div>
-        <p class="lanname">PINYIN</p>
-        <strong class="word" id="romaji">nǐ hǎo</strong><br>
+        <p class="lanname">ROMAJI</p>
+        <strong class="word" id="romaji">annyeonghaseyo?</strong><br>
         <p class="lanname">ENGLISH</p>
-        <strong class="word" id="eng">Hello</strong><br>
+        <strong class="word" id="eng">Hello?</strong><br>
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speakeng()" width="30px">
         </div>
@@ -170,14 +169,13 @@
         </div>
     </div>
     <script>
-        let english = [' Hello', ' Thank you', ' Sorry', " It's okay", ' Yes', ' No', ' Friend', ' Family or home', ' Food', ' Water', ' Love', ' Like', ' Week', ' Morning', ' Afternoon', ' Evening', ' Time', ' Money', ' Store', ' School', ' Hospital', ' Park', ' Library', ' Restaurant', ' Train station', ' Movie theater', ' On the way', ' Sit', ' Stand', ' Run']
-        let otherlang = ['你好 ', '谢谢 ', '对不起 ', '没关系 ', '是 ', '不是 ', '朋友 ', '家 ', '食物 ', '水 ', '爱 ', '喜欢 ', '星期 ', '上午 ', '下午 ', '晚上 ', '时间 ', '钱 ', '商店 ', '学校 ', '医院 ', '公园 ', '图书馆 ', '饭店 ', '火车站 ', '电影院 ', '路上 ', '坐 ', '站 ', '跑 ']
-        let romaji = ['nǐ hǎo', 'xiè xiè', 'duì bù qǐ', 'méi guān xi', 'shì', 'bù shì', 'péng yǒu', 'jiā', 'shí wù', 'shuǐ', 'ài', 'xǐ huān', 'xīng qī', 'shàng wǔ', 'xià wǔ', 'wǎn shàng', 'shí jiān', 'qián', 'shāng diàn', 'xué xiào', 'yī yuàn', 'gōng yuán', 'tú shū guǎn', 'fàn diàn', 'huǒ chē zhàn', 'diàn yǐng yuàn', 'lù shàng', 'zuò', 'zhàn', 'pǎo']
-        div_num = 0;
-        var language = 'chinese';
+        let english = [' Hello?', ' Yes, thank you.', " I'm sorry, I made a mistake.", ' I am learning Korean.', " Today's weather is good.", ' Where are you going?', ' I ate food.', ' I live in Korea.', ' Read this book.', ' I take a walk in the park and relax.', ' What day is it today?', ' Would you like to have dinner together?', ' How can we solve this problem?', ' Cheer up! Everything will be fine.', ' Where is the nearest subway station from here?', ' I enjoy listening to music.', ' Have a good day today.', ' Learning a new language is fun.', ' I will take care of this matter.', ' I am making travel plans.'];
+        let otherlang = ['안녕하세요? ', '네, 감사합니다. ', '죄송합니다, 잘못했어요. ', '저는 한국어를 배우고 있어요. ', '오늘 날씨가 좋아요. ', '어디에 가고 있어요? ', '밥을 먹었어요. ', '저는 한국에 살고 있어요. ', '이 책을 읽어 봐요. ', '공원에서 산책하면서 휴식해요. ', '오늘은 무슨 요일이에요? ', '저녁 식사를 함께 하실래요? ', '이 문제를 어떻게 해결할 수 있을까요? ', '힘내세요! 다 잘 될 거예요. ', '여기에서 가까운 지하철 역이 어디에 있나요? ', '저는 음악을 듣는 것을 좋아해요. ', '오늘은 좋은 하루 보내세요. ', '새로운 언어를 배우는 것은 재미있어요. ', '이 일은 제가 맡을게요. ', '여행 계획을 세우고 있어요. '];
+        let romaji = ['annyeonghaseyo?', 'ne, gamsahamnida.', 'joesonghamnida, jalmoshaesseoyo.', 'jeoneun hangugeo reul baeugo isseoyo.', 'oneul nalssiga johayo.', 'eodie gago isseoyo?', 'bapeul meogeosseoyo.', 'jeoneun hanguke salgo isseoyo.', 'i chaek eul ilgeo bwayo.', 'gong won eseo sanchaekhamyeonseo hyusikhaeyo.', 'oneul eun museun yoil ieyo?', 'jeonyeok siksa reul hamkke hasillae yo?', 'i munje reul eotteohge haegyeolhal su iss eulkka yo?', 'himnaeseyo! da jal doel geoyeyo.', 'yeogieseo gakkawoon jihacheol yeog i eodie issnayo?', 'jeoneun eumak eul deutneun geos eul johahaeyo.', 'oneul eun joh eun haru bonaeseyo.', 'saeroun eon eo reul baeuneun geos eun jaemiisseoyo.', 'i il eun jega mas eulgeyo.', 'yeohaeng gyehoeg eul seugo iss eoyo.'];
+        div_num = 1;
+        var language = 'korean';
     </script>
     <script src="language_script.js"></script>
-
 
 </body>
 

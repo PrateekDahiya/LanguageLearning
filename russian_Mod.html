@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="language_style.css">
     <script type="module" src="firebase_init.js" defer></script>
     <script type="module" src="lang_firebase.js"></script>
-    <title>Chinese Beginner</title>
+    <title>Russian Moderate</title>
 </head>
 
 <body onload="send_lang_div(langanddiv())">
+
     <!-- Common Header -->
     <div id="topline">
     </div>
@@ -123,7 +124,7 @@
     <!-- Common Header Ends -->
 
     <div id="Lang_name">
-        Chinese Learning(Beginner)
+        Russian Learning(Moderate)
     </div>
 
     <hr>
@@ -142,24 +143,22 @@
         <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
         <div id="ndivision"></div>
     </div>
-
     <div id="add_to_diff">
         <input id="checkbox" type="checkbox" onclick="addtodiff()">
         <label class="switch" for="checkbox">
             <img src="Images/difficult.png">
         </label>
     </div>
-
     <div id="textpart">
-        <p class="lanname">CHINESE</p>
-        <strong class="word" id="lang">你好</strong>
+        <p class="lanname">RUSSIAN</p>
+        <strong class="word" id="lang">Привет! Как дела?</strong>
         <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('zh'); send_word()" width="30px">
+            <img src="Images/volume.png" onclick="speak('ru'); send_word()" width="30px">
         </div>
-        <p class="lanname">PINYIN</p>
-        <strong class="word" id="romaji">nǐ hǎo</strong><br>
+        <p class="lanname">ROMANISATION</p>
+        <strong class="word" id="romaji">Privet! Kak dela?</strong><br>
         <p class="lanname">ENGLISH</p>
-        <strong class="word" id="eng">Hello</strong><br>
+        <strong class="word" id="eng">Hello! How are you?</strong><br>
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speakeng()" width="30px">
         </div>
@@ -170,14 +169,13 @@
         </div>
     </div>
     <script>
-        let english = [' Hello', ' Thank you', ' Sorry', " It's okay", ' Yes', ' No', ' Friend', ' Family or home', ' Food', ' Water', ' Love', ' Like', ' Week', ' Morning', ' Afternoon', ' Evening', ' Time', ' Money', ' Store', ' School', ' Hospital', ' Park', ' Library', ' Restaurant', ' Train station', ' Movie theater', ' On the way', ' Sit', ' Stand', ' Run']
-        let otherlang = ['你好 ', '谢谢 ', '对不起 ', '没关系 ', '是 ', '不是 ', '朋友 ', '家 ', '食物 ', '水 ', '爱 ', '喜欢 ', '星期 ', '上午 ', '下午 ', '晚上 ', '时间 ', '钱 ', '商店 ', '学校 ', '医院 ', '公园 ', '图书馆 ', '饭店 ', '火车站 ', '电影院 ', '路上 ', '坐 ', '站 ', '跑 ']
-        let romaji = ['nǐ hǎo', 'xiè xiè', 'duì bù qǐ', 'méi guān xi', 'shì', 'bù shì', 'péng yǒu', 'jiā', 'shí wù', 'shuǐ', 'ài', 'xǐ huān', 'xīng qī', 'shàng wǔ', 'xià wǔ', 'wǎn shàng', 'shí jiān', 'qián', 'shāng diàn', 'xué xiào', 'yī yuàn', 'gōng yuán', 'tú shū guǎn', 'fàn diàn', 'huǒ chē zhàn', 'diàn yǐng yuàn', 'lù shàng', 'zuò', 'zhàn', 'pǎo']
-        div_num = 0;
-        var language = 'chinese';
+        let english = [' Hello! How are you?', ' Thank you for your help.', " Excuse me, I don't understand.", ' Can I have some water, please?', ' Where is the restroom?', ' I want to order coffee.', ' What is your name?', ' How much does this cost?', ' I love you.', ' Today is good weather.', ' What is your name?', ' I want to eat.', ' What is your favorite book?', ' Where can I find an ATM?', ' How long is the trip to the city?', ' Can I have the bill, please?', "русски. (Ya uchus' govorit' po", ' I am learning to speak Russian.', ' What is your favorite movie?', ' I am busy today.', ' How do I get to the airport?']
+        let otherlang = ['Привет! Как дела?', 'Спасибо за помощь. ', 'Извините, я не понимаю. ', 'Можно попросить воду? ', 'Где находится туалет? ', 'Я хочу заказать кофе. ', 'Как вас зовут? ', 'Сколько стоит это? ', 'Я люблю тебя. ', 'Сегодня хорошая погода. ', 'Как тебя зовут? ', 'Я хочу поесть. ', 'Какая у тебя любимая книга? ', 'Где я могу найти банкомат? ', 'Как долго длится поездка до города? ', 'Можно попросить счет? ', 'Я учусь говорить по', 'Какой у тебя любимый фильм? ', 'Сегодня я занят. ', 'Как добраться до аэропорта? ']
+        let romaji = ['Privet! Kak dela?', 'Spasibo za pomoshch.', 'Izvinite, ya ne ponimayu.', "Možno poprosit' vodu?", 'Gde nakhoditsya tualet?', "Ya hoču zakazat' kofe.", 'Kak vas zovut?', "Skol'ko stoit eto?", 'Ya lyublyu tebya.', 'Segodnya khoroshaya pogoda.', 'Kak tebya zovut?', "Ya hochu poest'", 'Kakaya u tebya lyubimaya kniga?', 'Gde ya mogu nayti bankomat?', 'Kak dolgo dlitsya poezdka do goroda?', "Možno poprosit' schet?", 'russki.', 'Kakoy u tebya lyubimyy film?', 'Segodnya ya zanyat.', "Kak dobrat'sya do aeroporta?"]
+        div_num = 1;
+        var language = 'russian';
     </script>
     <script src="language_script.js"></script>
-
 
 </body>
 

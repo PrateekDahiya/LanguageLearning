@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="language_style.css">
     <script type="module" src="firebase_init.js" defer></script>
     <script type="module" src="lang_firebase.js"></script>
-    <title>Chinese Beginner</title>
+    <title>Korean Advanced</title>
 </head>
 
 <body onload="send_lang_div(langanddiv())">
+
     <!-- Common Header -->
     <div id="topline">
     </div>
@@ -123,7 +124,7 @@
     <!-- Common Header Ends -->
 
     <div id="Lang_name">
-        Chinese Learning(Beginner)
+        Korean Learning(Advanced)
     </div>
 
     <hr>
@@ -142,24 +143,22 @@
         <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
         <div id="ndivision"></div>
     </div>
-
     <div id="add_to_diff">
         <input id="checkbox" type="checkbox" onclick="addtodiff()">
         <label class="switch" for="checkbox">
             <img src="Images/difficult.png">
         </label>
     </div>
-
     <div id="textpart">
-        <p class="lanname">CHINESE</p>
-        <strong class="word" id="lang">你好</strong>
+        <p class="lanname">KOREAN</p>
+        <strong class="word" id="lang">저는 한국에서 한국어를 배우는데 도움을 주는 어플을 사용합니다.</strong>
         <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('zh'); send_word()" width="30px">
+            <img src="Images/volume.png" onclick="speak('ko'); send_word()" width="30px">
         </div>
-        <p class="lanname">PINYIN</p>
-        <strong class="word" id="romaji">nǐ hǎo</strong><br>
+        <p class="lanname">ROMANISATION</p>
+        <strong class="word" id="romaji">jeoneun hangugeseo hangugeo reul baeuneunde doum eul juneun eopeul eul sayonghamnida.</strong><br>
         <p class="lanname">ENGLISH</p>
-        <strong class="word" id="eng">Hello</strong><br>
+        <strong class="word" id="eng">I use an app that helps me learn Korean in Korea.</strong><br>
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speakeng()" width="30px">
         </div>
@@ -170,14 +169,13 @@
         </div>
     </div>
     <script>
-        let english = [' Hello', ' Thank you', ' Sorry', " It's okay", ' Yes', ' No', ' Friend', ' Family or home', ' Food', ' Water', ' Love', ' Like', ' Week', ' Morning', ' Afternoon', ' Evening', ' Time', ' Money', ' Store', ' School', ' Hospital', ' Park', ' Library', ' Restaurant', ' Train station', ' Movie theater', ' On the way', ' Sit', ' Stand', ' Run']
-        let otherlang = ['你好 ', '谢谢 ', '对不起 ', '没关系 ', '是 ', '不是 ', '朋友 ', '家 ', '食物 ', '水 ', '爱 ', '喜欢 ', '星期 ', '上午 ', '下午 ', '晚上 ', '时间 ', '钱 ', '商店 ', '学校 ', '医院 ', '公园 ', '图书馆 ', '饭店 ', '火车站 ', '电影院 ', '路上 ', '坐 ', '站 ', '跑 ']
-        let romaji = ['nǐ hǎo', 'xiè xiè', 'duì bù qǐ', 'méi guān xi', 'shì', 'bù shì', 'péng yǒu', 'jiā', 'shí wù', 'shuǐ', 'ài', 'xǐ huān', 'xīng qī', 'shàng wǔ', 'xià wǔ', 'wǎn shàng', 'shí jiān', 'qián', 'shāng diàn', 'xué xiào', 'yī yuàn', 'gōng yuán', 'tú shū guǎn', 'fàn diàn', 'huǒ chē zhàn', 'diàn yǐng yuàn', 'lù shàng', 'zuò', 'zhàn', 'pǎo']
-        div_num = 0;
-        var language = 'chinese';
+        let english = [' I use an app that helps me learn Korean in Korea.', ' By cooking Korean food, you can learn about Korean culture.', ' Watching Korean dramas and movies can help improve your Korean language skills.', ' I visited many tourist attractions while traveling in Korea.', ' I made friends with Koreans while living in Korea.', ' I took Korean conversation classes and was able to apply it in real life situations.', ' I wanted to deeply understand Korean culture, so I participated in traditional Korean events.', ' I studied Korean economy and gained an understanding of the business environment in Korea.', ' As a foreign student in Korea, I achieved academic success.', ' Through discussions with Koreans, I gained diverse perspectives.']
+        let otherlang = ['저는 한국에서 한국어를 배우는데 도움을 주는 어플을 사용합니다. ', '한국 음식을 만들어 보면서 한국 문화에 대해 배울 수 있어요. ', '한국 드라마와 영화를 보면서 한국어 실력을 향상시킬 수 있어요. ', '한국에 여행하면서 많은 관광지를 방문했어요. ', '한국에서 사는 동안 한국인들과 친구가 되었어요. ', '한국어 회화 수업을 듣고 실생활에서 활용할 수 있었어요. ', '한국 문화에 대해 깊이 이해하고 싶어서 한국의 전통 행사에 참여했어요. ', '한국 경제에 대해 연구하며 한국의 비즈니스 환경을 이해했어요. ', '한국에서 외국인 유학생으로서 학문적인 성과를 이루었어요. ', '한국인과의 토론을 통해 다양한 시각을 얻을 수 있었어요. ']
+        let romaji = ['jeoneun hangugeseo hangugeo reul baeuneunde doum eul juneun eopeul eul sayonghamnida.', 'hangug eumsig eul mandeul eo bomyeonseo hangug munhwa e daehae baeul su iss eoyo.', 'hangug deurama wa yeonghwa reul bomyeonseo hangug eo sill yeog eul hyangsang sikil su iss eoyo.', 'hangug e yeohaenghamyeonseo manh eun gwangwangji reul bangmunhaess eoyo.', 'hangug eseo saneun dong an hangug indeul gwa chingu ga doeeoss eoyo.', 'hangug eo hoe hwa sueob eul deutgo silsaenghwal eseo hwalyonghal su iss eoss eoyo.', 'hangug munhwa e daehae gipi ihaehago sip eoseo hangug ui jeontong haengsa e chamyeohess eoyo.', 'hangug gyeongje e daehae yeonguhamyeo hangug ui bizeuniseu hwangen eul ihaehaess eoyo.', 'hangug eseo oegugin yuhagsaeng euloseo hakmunjeog in seong gwaleul ilu eoss eoyo.', 'hangug in gwaeui toloneul tonghae dayanghan sigag eul eodeul su iss eoss eoyo.']
+        div_num = 2;
+        var language = 'korean';
     </script>
     <script src="language_script.js"></script>
-
 
 </body>
 

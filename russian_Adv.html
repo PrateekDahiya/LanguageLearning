@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="language_style.css">
     <script type="module" src="firebase_init.js" defer></script>
     <script type="module" src="lang_firebase.js"></script>
-    <title>Chinese Beginner</title>
+    <title>Russian Advanced</title>
 </head>
 
 <body onload="send_lang_div(langanddiv())">
+
     <!-- Common Header -->
     <div id="topline">
     </div>
@@ -123,7 +124,7 @@
     <!-- Common Header Ends -->
 
     <div id="Lang_name">
-        Chinese Learning(Beginner)
+        Russian Learning(Advanced)
     </div>
 
     <hr>
@@ -142,24 +143,22 @@
         <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
         <div id="ndivision"></div>
     </div>
-
     <div id="add_to_diff">
         <input id="checkbox" type="checkbox" onclick="addtodiff()">
         <label class="switch" for="checkbox">
             <img src="Images/difficult.png">
         </label>
     </div>
-
     <div id="textpart">
-        <p class="lanname">CHINESE</p>
-        <strong class="word" id="lang">你好</strong>
+        <p class="lanname">RUSSIAN</p>
+        <strong class="word" id="lang">Я изучаю русский язык уже несколько лет. </strong>
         <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('zh'); send_word()" width="30px">
+            <img src="Images/volume.png" onclick="speak('ru'); send_word()" width="30px">
         </div>
-        <p class="lanname">PINYIN</p>
-        <strong class="word" id="romaji">nǐ hǎo</strong><br>
+        <p class="lanname">ROMANISATION</p>
+        <strong class="word" id="romaji">Ya izuchayu russkiy yazyk uzhe neskol'ko let.</strong><br>
         <p class="lanname">ENGLISH</p>
-        <strong class="word" id="eng">Hello</strong><br>
+        <strong class="word" id="eng">I have been studying Russian for several years.</strong><br>
         <div class="vol_icon">
             <img src="Images/volume.png" onclick="speakeng()" width="30px">
         </div>
@@ -170,14 +169,13 @@
         </div>
     </div>
     <script>
-        let english = [' Hello', ' Thank you', ' Sorry', " It's okay", ' Yes', ' No', ' Friend', ' Family or home', ' Food', ' Water', ' Love', ' Like', ' Week', ' Morning', ' Afternoon', ' Evening', ' Time', ' Money', ' Store', ' School', ' Hospital', ' Park', ' Library', ' Restaurant', ' Train station', ' Movie theater', ' On the way', ' Sit', ' Stand', ' Run']
-        let otherlang = ['你好 ', '谢谢 ', '对不起 ', '没关系 ', '是 ', '不是 ', '朋友 ', '家 ', '食物 ', '水 ', '爱 ', '喜欢 ', '星期 ', '上午 ', '下午 ', '晚上 ', '时间 ', '钱 ', '商店 ', '学校 ', '医院 ', '公园 ', '图书馆 ', '饭店 ', '火车站 ', '电影院 ', '路上 ', '坐 ', '站 ', '跑 ']
-        let romaji = ['nǐ hǎo', 'xiè xiè', 'duì bù qǐ', 'méi guān xi', 'shì', 'bù shì', 'péng yǒu', 'jiā', 'shí wù', 'shuǐ', 'ài', 'xǐ huān', 'xīng qī', 'shàng wǔ', 'xià wǔ', 'wǎn shàng', 'shí jiān', 'qián', 'shāng diàn', 'xué xiào', 'yī yuàn', 'gōng yuán', 'tú shū guǎn', 'fàn diàn', 'huǒ chē zhàn', 'diàn yǐng yuàn', 'lù shàng', 'zuò', 'zhàn', 'pǎo']
-        div_num = 0;
-        var language = 'chinese';
+        let english = [' I have been studying Russian for several years.', ' I have Russian speaking friends with whom I practice the language.', ' Reading classic Russian literature helps expand vocabulary.', ' I attend Russian language events to immerse myself in the language environment.', ' Understanding complex grammatical structures is the key to mastering the Russian language.', ' I watch Russian movies with subtitles to improve my listening practice.', " Knowledge of the Russian language helps me expand my circle of communication and understand the country's culture.", " I read a Russian book without a dictionary  it's a great achievement for me.", ' I communicate with native speakers through online platforms to improve my speaking skills.', ' Russian language is a beautiful and melodic language worth studying.']
+        let otherlang = ['Я изучаю русский язык уже несколько лет. ', 'У меня есть русскоязычные друзья, с которыми я практикую язык. ', 'Чтение классической русской литературы помогает расширить словарный запас. ', 'Я посещаю русскоязычные мероприятия, чтобы окунуться в языковую среду. ', 'Понимание сложных грамматических конструкций  ключ к владению русским языком. ', 'Я смотрю русские фильмы с субтитрами, чтобы улучшить свою слуховую практику. ', 'Знание русского языка помогает мне расширить круг общения и понимать культуру страны. ', 'Я прочитал русскую книгу без словаря  это большой успех для меня. ', 'Я общаюсь с носителями языка через онлайн платформы, чтобы совершенствовать свою речь. ', 'Русский язык  красивый и мелодичный язык, который стоит изучать. ']
+        let romaji = ["Ya izuchayu russkiy yazyk uzhe neskol'ko let.", "U menya est' russkoyazychnye druz'ya, s kotorymi ya praktikuyu yazyk.", "Chtenie klassicheskoy russkoy literatury pomogaet rasshiryt' slovarenyy zapas.", "Ya poseschayu russkoyazychnye meropriyatiya, chtoby okunut'sya v yazykovuyu sredu.", 'Ponimanie slozhnykh grammaticheskikh konstruktsiy  klyuch k vladeniyu russkim yazykom.', "Ya smotryu russkie filmy s subtitrami, chtoby uluchshit' svoyu slukhovuyu praktiku.", "Znanie russkogo yazyka pomogaet mne rasshiryt' krug obshcheniya i ponimat' kulturu strany.", "Ya prochital russkuyu knigu bez slovarya  eto bol'shoy uspek h dlya menya.", "Ya obshchayus' s nositelyami yazyka cherez onlayn platformy, chtoby sovershenstvovat' svoyu rech'.", "Russkiy yazyk  krasivyy i melodichnyy yazyk, kotoryy stoit izuchat'."]
+        div_num = 2;
+        var language = 'russian';
     </script>
     <script src="language_script.js"></script>
-
 
 </body>
 
