@@ -19,6 +19,15 @@ header {
     padding-bottom: 40px;
 }
 
+#logout {
+    margin-right: 1%;
+    text-align: right;
+    position: relative;
+    float: right;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
 #logonmenu {
     color: white;
     font-size: large;
@@ -229,6 +238,37 @@ header {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
 }
 
+#difficult {
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+    margin: 10px;
+    width: 430px;
+    height: 250px;
+    background-color: rgb(241, 239, 236);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
+}
+
+#difficult_btn{
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    left: 50px;
+    background-color: rgb(255, 187, 0);
+    border: double rgba(22, 21, 31, 0.934) 5px;
+    padding-top: 2.5px;
+    height: 20px;
+    width: 75px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#difficult_btn:hover{
+    background-color: rgba(22, 21, 31, 0.653);
+    border: double rgb(255, 187, 0) 5px;
+    color: white;
+}
+
 #edit_btn {
     cursor: pointer;
     position: relative;
@@ -313,6 +353,10 @@ header {
 #current_lang:hover {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.416);
 }
+
+
+
+
 
 /* Loading */
 

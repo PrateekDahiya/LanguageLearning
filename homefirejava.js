@@ -20,6 +20,28 @@ window.goal = (a) => {
     });
 }
 
+window.log_out = () => {
+    auth.signOut()
+        .then(() => {
+            console.log("User logged out successfully.");
+            open("index.html","_self");
+        })
+        .catch((error) => {
+            console.error("Error during logout:", error);
+        });
+}
+
+window.is_loggedin = () => {
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            console.log("User LoggedIn");
+            // open("home.html", "_self");
+        } else {
+            console.log("User not logged in");
+            open("index.html","_self");
+        }
+    });
+}
 
 const user = auth.currentUser;
 function fetchData(a, callback) {
@@ -47,10 +69,10 @@ function fetchData(a, callback) {
 
 
 window.updateElements = () => {
+    send_diff();
     setInterval(function () {
         fetchData("division", function (result) {
             document.getElementById("crnt_level").innerHTML = result;
-
         });
         fetchData("language", function (result) {
             document.getElementById("crnt_lang").innerHTML = result;
@@ -62,9 +84,24 @@ window.updateElements = () => {
             document.getElementById("word_num").innerHTML = result;
         });
     }, 1000);
+
 }
 
+function send_diff() {
+    var a = localStorage.difficult;
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            var dataRef = ref(database, "users/" + user.uid);
+            var updatedData = {
+                difficult: a
+            };
+            update(dataRef, updatedData);
+        } else {
+            console.log("User not logged in");
+        }
 
+    });
+}
 
 
 

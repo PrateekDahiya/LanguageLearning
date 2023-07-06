@@ -4,9 +4,16 @@ var divtext = ['Beginner', 'Moderate', 'Advance']
 var divisions = ['Beg', 'Mod', 'Adv'];
 var num_words = english.length;
 var withromanji = ['japanese', 'chinese', 'tamil', 'korean', 'russian'];
-var diff_otherlang = [];
-var diff_romaji = [];
-var diff_english = [];
+
+
+// Check for local storage variables exists or not
+function checkLSV(variable) {
+    if (localStorage.getItem(variable) !== null) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 // For making all functions work properly
@@ -86,7 +93,6 @@ function backword() {
                 document.getElementById("romaji").innerHTML = romaji[i];
             }
         }
-
     }
     if (i == 0) {
         document.getElementById('backward').style.display = "none";
@@ -128,7 +134,6 @@ function check_nxtdiv(i) {
     }
 }
 
-
 function nextdiv() {
     uncheck_diff();
     link = String(String(language) + "_" + String(divisions[div_num + 1]) + ".html");
@@ -153,6 +158,10 @@ function prevdiv() {
 // Difficult words array
 
 function addtodiff() {
+    if (!checkLSV('difficult')) {
+        localStorage.setItem('difficult', JSON.stringify([]));
+    }
+
     let diff_var = JSON.parse(localStorage.difficult);
     let diff_arr = diff_var;
     if (withromanji.includes(language)) {
@@ -180,7 +189,7 @@ function addtodiff() {
 
         }
         else {
-            diff_arr.push(z);
+            diff_arr = [z];
             localStorage.setItem("difficult", JSON.stringify(diff_arr));
             console.log("First Item added!");
         }
@@ -206,8 +215,8 @@ function addtodiff() {
     }
 }
 
-
 function uncheck_diff() {
+    var isdiff = false;
     if (withromanji.includes(language)) {
         a = english[i];
         b = otherlang[i];
@@ -220,7 +229,13 @@ function uncheck_diff() {
         z = [a, b];
     }
     let diff_var = JSON.parse(localStorage.difficult);
-    let isdiff = diff_var.some(arr => JSON.stringify(arr) === JSON.stringify(z));
+    if (checkLSV('difficult')) {
+        isdiff = diff_var.some(arr => JSON.stringify(arr) === JSON.stringify(z));
+    }
+    else {
+        isdiff = false;
+    }
+
     if (isdiff) {
         document.getElementById('checkbox').checked = true;
     }

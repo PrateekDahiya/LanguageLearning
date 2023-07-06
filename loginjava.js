@@ -1,14 +1,4 @@
 var headto;
-const urlParams = new URLSearchParams(window.location.search);
-const functionName = urlParams.get('functionName');
-
-window.onload = function () {
-    if (functionName === 'login') {
-        toggleForm("L");
-    } else if (functionName === 'register') {
-        toggleForm("R");
-    }
-};
 
 function toggleForm(a) {
     if (a == "R") {

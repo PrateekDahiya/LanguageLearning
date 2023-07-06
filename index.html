@@ -6,37 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/logolion.png">
-    <link rel="stylesheet" href="login_homestyle.css">
+    <link rel="stylesheet" href="./login_homestyle.css">
     <script type="module" src="firebase_init.js" defer></script>
+    <script type="module" src="login_home_firebase.js"></script>
     <title>LINGOVERSE</title>
-    <script>
-        function goto(b) {
-            a = String(b) + "_Beg.html";
-            open(a, "_self");
-        }
-    </script>
 </head>
 
-<body>
+<body onload="glow_title();is_loggedin()">
     <header>
         <div id="topline">
             <div id="login">
-                <a href="login.html?functionName=login" target="_self"><img src="Images/login.png" alt="Login"
-                        height="38px"></a>
+                <a href="login.html" target="_self"><img src="Images/login.png" alt="Login" height="38px"></a>
             </div>
         </div>
         <div id="logonmenu">
             <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
             <nav>
-                <ul class="nav_links">
-                    <!-- <li><a id="home" href="home.html">Home</a></li> -->
+                <ul id="nav_linksa" class="nav_links">
+                    <li><a id="home" href="home.html">Home</a></li>
                     <li>
-                        <script>
-                            function goto(b) {
-                                a = String(b) + "_Beg.html";
-                                open(a, "_self");
-                            }
-                        </script>
                         <div class="languages_list">
                             <div id="container_list"><a>Languages</a></div>
                             <div class="radio-inputs">
@@ -127,7 +115,7 @@
                     <li><a>About Us</a></li>
                 </ul>
             </nav>
-            <a href="login.html?functionName=register" class="startlearning">
+            <a href="login.html" class="startlearning">
                 <button id="strtlearn">
                     <span class="boxsl">
                         Start Learning
@@ -140,8 +128,27 @@
     <div id="page_area">
         <div id="p1">
             <div id="webname">
-                <h1>LINGOVERSE</h1><br>
-                <h3>Unlock the Power of Language with Lingoverse</h3>
+                <div id="title_name">
+                    <span id="title_name1">L</span>
+                    <span id="title_name2">I</span>
+                    <span id="title_name3">N</span>
+                    <span id="title_name4">G</span>
+                    <span id="title_name5">O</span>
+                    <span id="title_name6">V</span>
+                    <span id="title_name7">E</span>
+                    <span id="title_name8">R</span>
+                    <span id="title_name9">S</span>
+                    <span id="title_name10">E</span>
+                </div>
+                <br>
+                <div id="slogan">Unlock the Power of Language with Lingoverse</div>
+                <a href="login.html" class="startlearning">
+                    <button id="strtlearn2">
+                        <span class="boxs2">
+                            Start Learning
+                        </span>
+                    </button>
+                </a>
             </div>
 
         </div>
@@ -151,7 +158,7 @@
                 <div class="language">
                     <img src="Images/Flags/India.jpg" alt="Hindi">
                     <div class="language-description">
-                        <h2>Hindi</h2>
+                        <a class="lang_link" href="hindi_Beg.html" target="_self">Hindi</a>
                         <p>Hindi is one of the most widely spoken languages in the world. It is the official language of
                             India and also spoken in various other countries.</p>
                     </div>
@@ -160,7 +167,7 @@
                 <div class="language">
                     <img src="Images/Flags/China.jpg" alt="Chinese">
                     <div class="language-description">
-                        <h2>Chinese</h2>
+                        <a class="lang_link" href="chinese_Beg.html" target="_self">Chinese</a>
                         <p>Chinese, also known as Mandarin, is the most spoken language globally. It has a rich history
                             and is essential for business and cultural exchanges.</p>
                     </div>
@@ -169,7 +176,7 @@
                 <div class="language">
                     <img src="Images/Flags/Japan.jpg" alt="Japanese">
                     <div class="language-description">
-                        <h2>Japanese</h2>
+                        <a class="lang_link" href="japanese_Beg.html" target="_self">Japanese</a>
                         <p>Japanese is spoken by over 128 million people in Japan and is an important language for
                             business,
                             technology, and pop culture.</p>
@@ -179,7 +186,7 @@
                 <div class="language">
                     <img src="Images/Flags/France.jpg" alt="French">
                     <div class="language-description">
-                        <h2>French</h2>
+                        <a class="lang_link" href="french_Beg.html" target="_self">French</a>
                         <p>French is a romantic language spoken by millions of people worldwide. It is the official
                             language
                             of many countries and is widely used in international relations, diplomacy, and arts.</p>
@@ -188,7 +195,7 @@
                 <div class="language">
                     <img src="Images/Flags/Germany.jpg" alt="German">
                     <div class="language-description">
-                        <h2>German</h2>
+                        <a class="lang_link" href="german_Beg.html" target="_self">German</a>
                         <p>German is the most widely spoken language in the European Union. It is a key language for
                             business, engineering, and scientific research.</p>
                     </div>
@@ -197,7 +204,7 @@
                 <div class="language">
                     <img src="Images/Flags/tamil.png" alt="Tamil">
                     <div class="language-description">
-                        <h2>Tamil</h2>
+                        <a class="lang_link" href="tamil_Beg.html" target="_self">Tamil</a>
                         <p>Tamil is one of the oldest languages in the world with a rich literary tradition. It is the
                             official language of the Indian state of Tamil Nadu and Sri Lanka.</p>
                     </div>
@@ -206,10 +213,31 @@
                 <div class="language">
                     <img src="Images/Flags/Spain.jpg" alt="Spanish">
                     <div class="language-description">
-                        <h2>Spanish</h2>
+                        <a class="lang_link" href="spanish_Beg.html" target="_self">Spanish</a>
                         <p>Spanish is the second most spoken language globally, with over 460 million speakers. It is
                             widely
                             used in business, travel, and cultural exchanges.</p>
+                    </div>
+                </div>
+
+                <div class="language">
+                    <img src="Images/Flags/Russia.jpg" alt="Russian">
+                    <div class="language-description">
+                        <a class="lang_link" href="russian_Beg.html" target="_self">Russian</a>
+                        <p> Russian is an East Slavic language spoken by around 258 million people, with significant
+                            importance in diplomacy and international relations.</p>
+                    </div>
+                </div>
+
+                <div class="language">
+                    <img src="Images/Flags/Korea.jpg" alt="Korean">
+                    <div class="language-description">
+                        <a class="lang_link" href="korean_Beg.html" target="_self">
+                            <div>Korean</div>
+                        </a>
+                        <p>Korean, the official language of North and South Korea, has around 77 million speakers and
+                            gained global popularity through "Hallyu," the Korean Wave, impacting entertainment and
+                            business sectors.</p>
                     </div>
                 </div>
             </section>
@@ -259,7 +287,7 @@
         </div>
         <div id="p4">
             <p class="text-blk head-text">
-                Our Team
+                Me
             </p>
             <div class="container">
                 <div class="container-block">
@@ -297,7 +325,7 @@
                     </div>
                 </div>
 
-                <div class="container-block">
+                <!-- <div class="container-block">
                     <div class="responsive-cell-block"></div>
                     <div class="card">
                         <div class="image-box">
@@ -307,7 +335,6 @@
                             Amit Kumar
                         </p>
                         <p class="text-blk member-position">
-                            <!-- Theme Management -->
                             Vice- President
                         </p>
                         <p class="text-blk feature-text">
@@ -386,13 +413,13 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     </div>
     </div>
 </body>
-<script type="script" src="login_home.js"></script>
+<script src="login_homejava.js"></script>
 
 </html>
