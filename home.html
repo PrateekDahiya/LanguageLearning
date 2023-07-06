@@ -13,10 +13,13 @@
     <title>LINGOVERSE</title>
 </head>
 
-<body onload="updateElements()">
+<body onload="updateElements();is_loggedin()">
 
     <!-- Common Header -->
     <div id="topline">
+        <div id="logout" onclick="log_out()">
+            <img src="Images/logout.jpg" alt="Log_Out" height="40px">
+        </div>
     </div>
     <div id="logonmenu">
         <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
@@ -160,9 +163,13 @@
                 </div>
             </div>
         </div>
+        <div id="difficult">
+            Work on Difficult Words<br>
+            <div id="difficult_btn" onclick='goto_diff()'>Start</div>
+        </div>
     </div>
     <div id="loading-back">
-        
+
     </div>
     <div id="loading">
         <div id="loading_dots">

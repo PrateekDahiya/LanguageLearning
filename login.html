@@ -9,18 +9,18 @@
     <link rel="stylesheet" href="loginstyle.css">
     <script type="module" src="firebase_init.js" defer></script>
     <script type="module" src="loginfirebase.js"></script>
-    <script type="text/javascript" src="loginjava.js"></script> 
+    <script type="text/javascript" src="loginjava.js"></script>
     <title>Login Page</title>
 </head>
 
-<body>
+<body onload="is_loggedin()">
     <!-- Common Header -->
     <div id="topline">
     </div>
     <div id="logonmenu">
         <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
         <nav>
-            <ul class="nav_links">
+            <ul id="nav_linksa" class="nav_links">
                 <li><a>Home</a></li>
                 <li>
                     <script>
@@ -157,7 +157,7 @@
             </div>
         </div>
     </div>
-      
+
 
 </body>
 
