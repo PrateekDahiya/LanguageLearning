@@ -226,31 +226,6 @@ section {
     padding: 20px;
 }
 
-.language {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.language img {
-    background-color: rgba(57, 57, 59, 0.934);
-    padding: 2px;
-    margin-left: 8%;
-    width: 200px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.language-description {
-    margin-left: 3%;
-    color: black;
-    width: 60%;
-    /* background-color: rgba(57, 57, 59, 0.934); */
-    border-radius: 20px;
-}
-
-
 
 section h1 {
     padding: 15px;
@@ -293,15 +268,27 @@ section h1 {
 
 #p2 {
     position: relative;
-    width: 1550;
-    height: auto;
-    /* background-image: url(Images/desk.jpg); */
     z-index: 0;
 }
 
-.language div {
-    margin-top: 0;
-    width: auto;
+.language {
+    display: flex;
+    margin-bottom: 20px;
+    width: 80%;
+    padding-left: 150px;
+}
+
+.language img {
+    border: 3px solid rgba(57, 57, 59, 0.934);
+    width: 200px;
+    margin-right: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.language-description {
+    margin-top: 20px;
+    color: black;
 }
 
 .lang_link {
@@ -317,14 +304,6 @@ section h1 {
 .lang_link:hover {
     color: rgb(255, 187, 0);
 }
-
-
-#lang-details {
-    /* padding: 50px; */
-    margin-left: 5%;
-}
-
-
 
 
 /* Our Team */

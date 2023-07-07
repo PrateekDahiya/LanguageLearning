@@ -1,10 +1,16 @@
 var is_heard = 0;
 var i = 0;
-var divtext = ['Beginner', 'Moderate', 'Advance']
+var divtext = ['Beginner', 'Moderate', 'Advance'];
 var divisions = ['Beg', 'Mod', 'Adv'];
 var num_words = english.length;
 var withromanji = ['japanese', 'chinese', 'tamil', 'korean', 'russian'];
 
+function disable_googletrans() {
+    // Bypass Google Translate popup and disable automatic translation
+    document.cookie = 'googtrans=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
+
+disable_googletrans();
 
 // Check for local storage variables exists or not
 function checkLSV(variable) {
@@ -216,32 +222,35 @@ function addtodiff() {
 }
 
 function uncheck_diff() {
-    var isdiff = false;
-    if (withromanji.includes(language)) {
-        a = english[i];
-        b = otherlang[i];
-        c = romaji[i];
-        z = [a, c, b];
-    }
-    else {
-        a = english[i];
-        b = otherlang[i];
-        z = [a, b];
-    }
-    let diff_var = JSON.parse(localStorage.difficult);
-    if (checkLSV('difficult')) {
-        isdiff = diff_var.some(arr => JSON.stringify(arr) === JSON.stringify(z));
-    }
-    else {
-        isdiff = false;
+    if (localStorage.getItem('difficult') !== null) {
+        var isdiff = false;
+        if (withromanji.includes(language)) {
+            a = english[i];
+            b = otherlang[i];
+            c = romaji[i];
+            z = [a, c, b];
+        }
+        else {
+            a = english[i];
+            b = otherlang[i];
+            z = [a, b];
+        }
+        let diff_var = JSON.parse(localStorage.difficult);
+        if (checkLSV('difficult')) {
+            isdiff = diff_var.some(arr => JSON.stringify(arr) === JSON.stringify(z));
+        }
+        else {
+            isdiff = false;
+        }
+
+        if (isdiff) {
+            document.getElementById('checkbox').checked = true;
+        }
+        else {
+            document.getElementById('checkbox').checked = false;
+        }
     }
 
-    if (isdiff) {
-        document.getElementById('checkbox').checked = true;
-    }
-    else {
-        document.getElementById('checkbox').checked = false;
-    }
 }
 
 

@@ -19,6 +19,15 @@ header {
     padding-bottom: 40px;
 }
 
+#logout {
+    margin-right: 1%;
+    text-align: right;
+    position: relative;
+    float: right;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
 #logonmenu {
     color: white;
     font-size: large;

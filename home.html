@@ -8,6 +8,8 @@
     <link rel="icon" href="Images/logolion.png">
     <link rel="stylesheet" href="homestyle.css">
     <script type="module" src="firebase_init.js" defer></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819267788985297"
+    crossorigin="anonymous"></script>
     <script type="module" src="homefirejava.js"></script>
     <script type="text/javascript" src="homejava.js"></script>
     <title>LINGOVERSE</title>
@@ -114,7 +116,7 @@
                                     <span class="radio-icon">
                                         <img class="flags" src="Images/Flags/Russia.jpg">
                                     </span>
-                                    <span class="radio-label">Russia</span>
+                                    <span class="radio-label">Russian</span>
                                 </span>
                             </label>
                         </div>
@@ -126,22 +128,27 @@
     </div>
 
     <!-- Common Header Ends -->
+
     <div id="home_boxes">
         <div id="current_lang">
             You are Currently Learning<br>
-            <span id="crnt_lang"></span>
+            <span id="crnt_lang">&nbsp;</span>
+            <div id="continue_lang_btn" onclick="continuej_to()">Continue Your journey <div class="arrow">&gt;</div>
+            </div>
         </div>
 
         <div id="current_div">
             You are Currently At Level<br>
-            <span id="crnt_level"></span>
+            <span id="crnt_level">&nbsp;</span>
         </div>
         <div id="word_goal">
-            <div id="ur_goal_txt">Your Word Goal is:</div>
+            <div id="ur_goal_txt">Your Word Goal is:
+
+            </div>
             <img id="edit_btn" src="Images/edit.png" onclick="word_goal_win()" width="25px">
-            <span id="crnt_goal_value"></span>
+            <span id="crnt_goal_value">&nbsp;</span>
             <div id="wrd_done_txt">Words Done Today: </div>
-            <div id="word_num"></div>
+            <div id="word_num">&nbsp;</div>
             <div id="set_wrd_goal">
                 <img src="Images/goal.png" width="150px">
                 <div id="close_btn" onclick="close_word_goal_win()"><b>X</b></div>
@@ -165,7 +172,8 @@
         </div>
         <div id="difficult">
             Work on Difficult Words<br>
-            <div id="difficult_btn" onclick='goto_diff()'>Start</div>
+            <div id="difficult_btn">Start Work on Hard Words <div class="arrow">&gt;</div>
+            </div>
         </div>
     </div>
     <div id="loading-back">
@@ -175,18 +183,22 @@
         <div id="loading_dots">
             <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
                 <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000"
-                    stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+                    stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round">
+                </circle>
                 <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000"
-                    stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+                    stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round">
+                </circle>
                 <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20"
                     stroke-dasharray="0 440" stroke-linecap="round"></circle>
                 <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000"
                     stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
             </svg>
         </div>
-
+    </div>
+    <div id="home_background">
     </div>
 
 </body>
+
 
 </html>

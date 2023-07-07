@@ -1,7 +1,17 @@
 var headto;
 
+const urlParams = new URLSearchParams(window.location.search);
+const mode = urlParams.get('mode');
+console.log(urlParams, mode);
+
+if (mode == 'login') {
+    toggleForm('L');
+} else if (mode == 'register') {
+    toggleForm('R');
+}
+
 function toggleForm(a) {
-    if (a == "R") {
+    if (a === "R") {
         document.getElementById('register-form').style.display = "block";
         document.getElementById('login-form').style.display = "none";
     }

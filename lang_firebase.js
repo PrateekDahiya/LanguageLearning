@@ -19,7 +19,7 @@ window.send_lang_div = (a) => {
         }
 
     });
-}
+};
 
 const user = auth.currentUser;
 function fetchData(a, callback) {
@@ -41,6 +41,18 @@ function fetchData(a, callback) {
         }
     });
 }
+
+window.log_out = () => {
+    auth.signOut()
+        .then(() => {
+            console.log("User logged out successfully.");
+            open("index.html", "_self");
+        })
+        .catch((error) => {
+            console.error("Error during logout:", error);
+        });
+};
+
 window.send_word = () => {
     fetchData("word_count", function (result) {
 
@@ -56,7 +68,7 @@ window.send_word = () => {
             }
         });
     });
-}
+};
 
 // Reset word count to zero
 function reset_word_count() {

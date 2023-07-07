@@ -41,6 +41,19 @@ header {
     padding: 30px 5%;
 }
 
+#home_background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: url("Images/home_background.jpg");
+    border: 2px balck dotted;
+    z-index: -1;
+
+}
+
 #home {
     text-decoration: none;
     color: white;
@@ -210,11 +223,50 @@ header {
     /* left: 60px; */
     border-radius: 15px;
     margin: 10px;
-    width: 1000px;
+    width: 700px;
     height: 250px;
     background-color: rgb(255, 187, 0);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
 }
+
+#continue_lang_btn {
+    color: rgb(255, 187, 0);
+    cursor: pointer;
+    position: relative;
+    top: 150px;
+    left: 180px;
+    background-color: rgba(22, 21, 31, 0.934);
+    border: double white 5px;
+    border-radius: 10px;
+    padding-top: 2.5px;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
+}
+
+#continue_lang_btn:hover {
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.604);
+    padding-right: 30px;
+}
+
+.arrow {
+    position: relative;
+    top: -50px;
+    left: -10px;
+    padding-top: 8px;
+    padding-left: 185px;
+    padding-right: 50px;
+    font-size: 40px;
+    color: rgb(255, 187, 0);
+}
+
+.arrow:hover {
+    padding-left: 210px;
+    padding-right: 60px;
+}
+
 
 #current_div {
     padding: 20px;
@@ -249,24 +301,27 @@ header {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
 }
 
-#difficult_btn{
+#difficult_btn {
     cursor: pointer;
     position: relative;
-    top: 20px;
-    left: 50px;
-    background-color: rgb(255, 187, 0);
-    border: double rgba(22, 21, 31, 0.934) 5px;
+    top: 170px;
+    left: 0;
+    background-color: rgba(22, 21, 31, 0.934);
+    border: double rgb(255, 187, 0) 5px;
+    color: rgb(255, 187, 0);
+    border-radius: 10px;
     padding-top: 2.5px;
-    height: 20px;
-    width: 75px;
+    height: 40px;
+    width: 200px;
     text-align: center;
     vertical-align: middle;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
+
 }
 
-#difficult_btn:hover{
-    background-color: rgba(22, 21, 31, 0.653);
-    border: double rgb(255, 187, 0) 5px;
-    color: white;
+#difficult_btn:hover {
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.604);
+    padding-right: 30px;
 }
 
 #edit_btn {
@@ -342,15 +397,16 @@ header {
 #word_num {
     position: relative;
     top: 20px;
-    text-decoration: underline;
     font-size: 20px;
+    font-weight: 800;
     text-align: center;
 
 }
 
 #word_goal:hover,
 #current_div:hover,
-#current_lang:hover {
+#current_lang:hover,
+#difficult:hover {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.416);
 }
 
@@ -363,12 +419,12 @@ header {
 #loading-back {
     position: absolute;
     display: block;
-    left: -4px;
-    top: 0;
+    left: 0;
+    top: -5px;
     height: 100%;
     width: 100%;
     background-image: url(Images/loading_back.png);
-    filter: blur(8px);
+    filter: blur(5px);
 }
 
 
