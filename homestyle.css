@@ -331,24 +331,28 @@ header {
     left: 200px;
 }
 
+
 #set_wrd_goal {
-    left: -550px;
-    top: 20px;
     position: absolute;
     width: 500px;
     height: 350px;
+    left: -270px;
+    top: 0;
     background-color: rgb(216, 215, 215);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
     border-radius: 20px;
     text-align: center;
     line-height: 30px;
     display: none;
+    z-index: 1;
 }
 
 #close_btn {
     position: relative;
+    width: 6px;
+    font-size: 20px;
     top: -150px;
-    left: 220px;
+    left: 450px;
     cursor: pointer;
 }
 

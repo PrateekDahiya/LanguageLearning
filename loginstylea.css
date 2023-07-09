@@ -1,4 +1,4 @@
-/* Common Header  */
+/*Common Header  */
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
 
 * {
@@ -32,23 +32,25 @@ header {
   padding: 30px 5%;
 }
 
-#login_background {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  background-image: url("Images/login_background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
+#login_background
+{
+    position: absolute;
+    left: 0;
+    top: 15px;
+    height: 730px;
+    width: 1536px;
+    margin: 0;
+    background-image: url("Images/login_background.png");
+    background-repeat: no-repeat;
+    border: 2px balck dotted;
+    z-index: -1;
+    
 }
 
 #home {
   text-decoration: none;
   color: white;
+
 }
 
 #home:hover {
@@ -67,7 +69,6 @@ header {
 .nav_links li a:hover {
   color: rgb(255, 187, 0);
 }
-
 /* Language Menu */
 
 .radio-inputs {
@@ -198,6 +199,7 @@ header {
 
 /* Common Header Ends */
 
+
 body {
   background-color: #fff;
   font-family: 'Open Sans', sans-serif;
@@ -251,6 +253,7 @@ form {
 }
 
 .form-group input:focus {
+
   border-color: rgba(22, 21, 31, 0.934);
   outline: none;
 }
@@ -285,6 +288,7 @@ footer {
   text-align: center;
   justify-content: center;
   margin: 50px;
+
 }
 
 #login-form {
@@ -311,6 +315,11 @@ footer {
   text-align: center;
 }
 
+.container {
+
+  /* border: 2px black solid; */
+  /* margin: 50px; */
+}
 
 .toggletext {
   text-decoration: none;
@@ -329,6 +338,7 @@ footer {
   width: 100%;
   background-color: rgba(128, 128, 128, 0.084);
   display: none;
+
 }
 
 #message_box {
@@ -370,46 +380,3 @@ footer {
 }
 
 /* Message Box ends */
-
-/* Responsive Styles */
-
-@media (max-width: 768px) {
-
-  /* Styles for screens smaller than 768px */
-  #logonmenu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-
-  #nav_linksa {
-    margin-top: 10px;
-  }
-
-  .radio-inputs {
-    width: 100%;
-    left: 0;
-    top: 60px;
-  }
-
-  .radio-tile {
-    width: 60px;
-    min-height: 60px;
-  }
-
-  .radio-icon img {
-    width: 3rem;
-  }
-}
-
-@media (max-width: 480px) {
-
-  /* Styles for screens smaller than 480px */
-  #logonmenu {
-    padding: 10px;
-  }
-
-  .radio-inputs {
-    top: 80px;
-  }
-}

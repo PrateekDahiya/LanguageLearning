@@ -28,11 +28,11 @@ backword();
 var pre_div = divtext[div_num - 1];
 var nxtdiv = divtext[div_num + 1];
 
-document.getElementById('ndivision').innerHTML = nxtdiv;
-document.getElementById('pdivision').innerHTML = pre_div;
+// document.getElementById('ndivision').innerHTML = nxtdiv;
+// document.getElementById('pdivision').innerHTML = pre_div;
 
 document.getElementById('backward').style.display = "none";
-document.getElementById('nextdivision').style.display = "none";
+// document.getElementById('nextdivision').style.display = "none";
 
 if (div_num == 0) {
     document.getElementById('Beg_div').style.border = "2px solid black";
@@ -45,12 +45,12 @@ else if (div_num == 2) {
 }
 
 
-if (i == 0 && div_num > 0) {
-    document.getElementById('prevdivision').style.display = "block";
-}
-else {
-    document.getElementById('prevdivision').style.display = "none";
-}
+// if (i == 0 && div_num > 0) {
+//     document.getElementById('prevdivision').style.display = "block";
+// }
+// else {
+//     document.getElementById('prevdivision').style.display = "none";
+// }
 
 function speak(b) {
     var msg = new SpeechSynthesisUtterance(otherlang[i]);
@@ -85,7 +85,6 @@ function nextword() {
     } else {
         document.getElementById('continue').style.display = "block";
     }
-    check_nxtdiv(i);
 }
 function backword() {
     // For going to previous word
@@ -109,7 +108,6 @@ function backword() {
     } else {
         document.getElementById('continue').style.display = "block";
     }
-    check_nxtdiv(i);
 }
 // For Division Menu
 document.getElementById("Beg_div").innerHTML = divtext[0];
@@ -123,35 +121,35 @@ function chng_div(n) {
 }
 
 // Division change
-function check_nxtdiv(i) {
-    uncheck_diff();
+// function check_nxtdiv(i) {
+//     uncheck_diff();
 
-    if ((i == english.length - 1) && (div_num < 2)) {
-        document.getElementById('nextdivision').style.display = "block";
-    }
-    else {
-        document.getElementById('nextdivision').style.display = "none";
-    }
-    if (i == 0 && div_num > 0) {
-        document.getElementById('prevdivision').style.display = "block";
-    }
-    else {
-        document.getElementById('prevdivision').style.display = "none";
-    }
-}
+//     if ((i == english.length - 1) && (div_num < 2)) {
+//         document.getElementById('nextdivision').style.display = "block";
+//     }
+//     else {
+//         document.getElementById('nextdivision').style.display = "none";
+//     }
+//     if (i == 0 && div_num > 0) {
+//         document.getElementById('prevdivision').style.display = "block";
+//     }
+//     else {
+//         document.getElementById('prevdivision').style.display = "none";
+//     }
+// }
 
-function nextdiv() {
-    uncheck_diff();
-    link = String(String(language) + "_" + String(divisions[div_num + 1]) + ".html");
-    open(link, "_parent");
+// function nextdiv() {
+//     uncheck_diff();
+//     link = String(String(language) + "_" + String(divisions[div_num + 1]) + ".html");
+//     open(link, "_parent");
 
-}
+// }
 
-function prevdiv() {
-    uncheck_diff();
-    link = String(String(language) + "_" + String(divisions[div_num - 1]) + ".html");
-    open(link, "_parent");
-}
+// function prevdiv() {
+//     uncheck_diff();
+//     link = String(String(language) + "_" + String(divisions[div_num - 1]) + ".html");
+//     open(link, "_parent");
+// }
 
 // currentuser = firebase.auth().currentUser;
 // console.log(currentuser)
