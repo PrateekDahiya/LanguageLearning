@@ -10,6 +10,8 @@ function disable_googletrans() {
     document.cookie = 'googtrans=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }
 
+
+
 disable_googletrans();
 
 // Check for local storage variables exists or not
@@ -43,14 +45,6 @@ else if (div_num == 1) {
 else if (div_num == 2) {
     document.getElementById('Adv_div').style.border = "2px solid black";
 }
-
-
-// if (i == 0 && div_num > 0) {
-//     document.getElementById('prevdivision').style.display = "block";
-// }
-// else {
-//     document.getElementById('prevdivision').style.display = "none";
-// }
 
 function speak(b) {
     var msg = new SpeechSynthesisUtterance(otherlang[i]);

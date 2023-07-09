@@ -1,3 +1,14 @@
+function preloadImages() {
+    var imageSources = ['Abdul.jpg', 'Amit.jpg', 'Anup.jpg', 'background_image.avif', 'background_image2.jpg', 'Backward Button.png', 'busuu-header-hello.png', 'chngdiv.png', 'Continue Button.png', 'desk.jpg', 'difficult.png', 'edit.png', 'goal.png', 'home_background.jpg', 'home_image.png', 'icons8-facebook-50.png', 'icons8-github-50.png', 'icons8-instagram-50.png', 'icons8-linkedin-50.png', 'icons8-twitter-50.png', 'image1.png', 'image2.png', 'image3.png', 'loading_back.png', 'login.png', 'login_background.png', 'logo.png', 'logolion.png', 'logout.jpg', 'out_0.png', 'out_3.png', 'Prateek.jpg', 'rarrow.png', 'slogan.png', 'StartLearning.png', 'volume.png'];
+
+    for (var i = 0; i < imageSources.length; i++) {
+        var image = new Image();
+        image.src = imageSources[i];
+    }
+}
+
+window.addEventListener("load", preloadImages);
+
 function glow_title() {
     // Title to Glow and animate on hover
     let element = document.getElementById("title_name");
