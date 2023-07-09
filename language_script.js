@@ -5,11 +5,41 @@ var divisions = ['Beg', 'Mod', 'Adv'];
 var num_words = english.length;
 var withromanji = ['japanese', 'chinese', 'tamil', 'korean', 'russian'];
 
+
+let containerlist = document.getElementById("container_list");
+let radioinputs = document.getElementsByClassName("radio-inputs")[0];
+containerlist.addEventListener("mouseover", showList);
+radioinputs.addEventListener("mouseover", showList);
+
+var a, b;
+
+containerlist.addEventListener("mouseout", function () {
+    a = setTimeout(hideList, 1000);
+});
+radioinputs.addEventListener("mouseout", function () {
+    b = setTimeout(hideList, 1000);
+});
+
+function showList() {
+    clearTimeout(a);
+    clearTimeout(b);
+    radioinputs.style.display = "flex";
+}
+
+function hideList() {
+    radioinputs.style.display = "none";
+}
+
 function disable_googletrans() {
     // Bypass Google Translate popup and disable automatic translation
     document.cookie = 'googtrans=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }
 
+setInterval(hide_loading, 1000);
+function hide_loading() {
+    document.getElementById('loading-back').style.display = "none";
+    document.getElementById('loading').style.display = "none";
+}
 
 
 disable_googletrans();

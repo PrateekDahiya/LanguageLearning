@@ -1,13 +1,31 @@
-function preloadImages() {
-    var imageSources = ['Abdul.jpg', 'Amit.jpg', 'Anup.jpg', 'background_image.avif', 'background_image2.jpg', 'Backward Button.png', 'busuu-header-hello.png', 'chngdiv.png', 'Continue Button.png', 'desk.jpg', 'difficult.png', 'edit.png', 'goal.png', 'home_background.jpg', 'home_image.png', 'icons8-facebook-50.png', 'icons8-github-50.png', 'icons8-instagram-50.png', 'icons8-linkedin-50.png', 'icons8-twitter-50.png', 'image1.png', 'image2.png', 'image3.png', 'loading_back.png', 'login.png', 'login_background.png', 'logo.png', 'logolion.png', 'logout.jpg', 'out_0.png', 'out_3.png', 'Prateek.jpg', 'rarrow.png', 'slogan.png', 'StartLearning.png', 'volume.png'];
+// Language List
 
-    for (var i = 0; i < imageSources.length; i++) {
-        var image = new Image();
-        image.src = imageSources[i];
-    }
+let containerlist = document.getElementById("container_list");
+let radioinputs = document.getElementsByClassName("radio-inputs")[0];
+containerlist.addEventListener("mouseover", showList);
+radioinputs.addEventListener("mouseover", showList);
+
+var a, b;
+
+containerlist.addEventListener("mouseout", function () {
+    a = setTimeout(hideList, 1000);
+});
+radioinputs.addEventListener("mouseout", function () {
+    b = setTimeout(hideList, 1000);
+});
+
+function showList() {
+    clearTimeout(a);
+    clearTimeout(b);
+    radioinputs.style.display = "flex";
 }
 
-window.addEventListener("load", preloadImages);
+function hideList() {
+    radioinputs.style.display = "none";
+}
+
+
+
 
 function glow_title() {
     // Title to Glow and animate on hover
