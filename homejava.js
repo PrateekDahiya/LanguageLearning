@@ -8,7 +8,6 @@ function hide_loading() {
 }
 let containerlist = document.getElementById("container_list");
 let radioinputs = document.getElementsByClassName("radio-inputs")[0];
-console.log(radioinputs);
 radioinputs.addEventListener("mouseover", showList);
 containerlist.addEventListener("mouseover", showList);
 var a, b;

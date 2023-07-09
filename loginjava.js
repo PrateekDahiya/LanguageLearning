@@ -1,5 +1,4 @@
 var headto;
-
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get('mode');
 
@@ -26,7 +25,7 @@ function toggleForm(a) {
     }
 }
 
-function show_mbox(a, b = def) {
+function show_mbox(a, b = "def") {
 
     document.getElementById("click-protector").style.display = "block";
     document.getElementById("message_text").innerHTML = a;
@@ -42,7 +41,6 @@ function OK() {
     else {
         hide_mbox();
     }
-
 }
 
 function hide_mbox() {

@@ -35,7 +35,6 @@ window.is_loggedin = () => {
     auth.onAuthStateChanged(function (user) {
         if (user) {
             console.log("User LoggedIn");
-            // open("home.html", "_self");
         } else {
             console.log("User not logged in");
             open("index.html", "_self");
