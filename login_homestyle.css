@@ -207,7 +207,7 @@ header {
 
 #page_area {
     position: relative;
-    top: 180px;
+    top: 160px;
     width: 100%;
 }
 
@@ -217,8 +217,6 @@ header {
     position: relative;
     width: 100%;
     height: 590px;
-    background-image: url(Images/home_image.png);
-    background-repeat: no-repeat;
     text-align: center;
 }
 
@@ -259,13 +257,6 @@ header {
     justify-content: center;
 }
 
-#short_description {
-    border-radius: 20px;
-    background-color: rgba(57, 57, 59, 0.934);
-    padding: 20px;
-    width: 70%;
-    color: white;
-}
 
 #lang-details {
     position: relative;
@@ -280,11 +271,13 @@ header {
 #lang-details h1 {
     text-align: center;
     font-size: 50px;
+    margin-bottom: 50px;
 }
 
 .language {
     display: flex;
     margin-bottom: 20px;
+    height: 180px;
     width: 80%;
     position: relative;
     left: 50%;
@@ -294,6 +287,7 @@ header {
 .language img {
     border: 3px solid rgba(57, 57, 59, 0.934);
     width: 200px;
+    height: 150px;
     margin-right: 20px;
     object-fit: cover;
     border-radius: 10px;
@@ -303,6 +297,7 @@ header {
     margin-top: 20px;
     color: black;
     width: 80%;
+    word-wrap: normal;
 }
 
 .lang_link {
@@ -313,6 +308,10 @@ header {
     text-transform: uppercase;
     text-decoration: none;
 
+}
+
+.lang-short-info {
+    font-size: 15px;
 }
 
 .lang_link:hover {
@@ -446,6 +445,8 @@ header {
     width: 35px;
 }
 
+
+/* P3 */
 #p3 {
     position: relative;
     width: 100%;
@@ -455,9 +456,11 @@ header {
 #p3_head {
     position: relative;
     top: 40px;
-    width: 100%;
+    width: 500px;
     height: 50px;
     text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 #container_prop {
@@ -495,8 +498,6 @@ header {
 
 #prop_img {
     position: relative;
-
-    height: 480px;
     width: 25%;
 }
 
@@ -510,7 +511,6 @@ header {
 
 #right_prop {
     position: relative;
-
     width: 25%;
     padding: 10px;
     top: 30px;
@@ -674,15 +674,70 @@ header {
 
     .language img {
         width: 150px;
+        height: 112.5px;
+    }
+
+    #lang-details h1 {
+        font-size: 35px;
+    }
+
+    .lang_link {
+        font-size: 18px;
+    }
+
+    .lang-short-info {
+        font-size: 15px;
+    }
+
+    .language {
+        width: 90%;
+        height: 125px;
+    }
+
+    .language-description {
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    #p3_head {
+        font-size: 25px;
+        width: 500px;
+    }
+
+    .prop_img {
+        width: 25px;
+    }
+
+    #container_prop {
+        top: 40px;
+    }
+
+    .prop_heading {
+        font-size: 15px;
+    }
+
+    .prop_text {
+        font-size: 13px;
+    }
+
+    #left_prop {
+        padding-right: 20px;
+    }
+
+    #prop_img {
+        position: relative;
+        width: 35%;
+    }
+
+    #right_prop,
+    #left_prop {
+        width: 30%;
     }
 
 }
 
 @media (max-width: 768px) {
 
-    #logonmenu {
-        height: 20px;
-    }
 
     .radio-inputs label {
         flex-basis: 25%;
@@ -705,6 +760,68 @@ header {
         width: 400px;
         font-size: 20px;
     }
+
+    #lang-details h1 {
+        font-size: 25px;
+    }
+
+    .lang_link {
+        font-size: 15px;
+    }
+
+    .lang-short-info {
+        font-size: 13px;
+    }
+
+    .language img {
+        width: 100px;
+        height: 75px;
+    }
+
+    .language {
+        width: 95%;
+    }
+
+
+    .language-description {
+        margin-top: 0px;
+        width: 100%;
+    }
+
+    #p3_head {
+        font-size: 20px;
+        width: 400px;
+    }
+
+    .prop_img {
+        width: 12px;
+    }
+
+    #container_prop {
+        top: 30px;
+    }
+
+    .prop_heading {
+        font-size: 13px;
+    }
+
+    .prop_text {
+        font-size: 10px;
+    }
+
+    #left_prop {
+        padding-right: 0px;
+    }
+
+    #prop_img {
+        width: 30%;
+    }
+
+    #right_prop,
+    #left_prop {
+        width: 35%;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -738,6 +855,96 @@ header {
 
     #slogan {
         width: 200px;
+        font-size: 15px;
+    }
+
+    #lang-details h1 {
+        font-size: 20px;
+    }
+
+    .lang_link {
+        font-size: 10px;
+    }
+
+    .lang-short-info {
+        font-size: 10px;
+    }
+
+
+    .language {
+        width: 100%;
+    }
+
+    .language-description {
+        width: 150%;
+    }
+
+    #p3_head {
+        font-size: 15px;
+        width: 350px;
+    }
+
+    .prop_img {
+        width: 15px;
+    }
+
+    #container_prop {
+        top: 10px;
+        flex-direction: column;
+    }
+
+    #right_prop,
+    #left_prop {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 200px;
+        text-align: left;
+    }
+
+    .prope {
+        width: 300px;
+    }
+
+    #prope_2 {
+        margin-top: 0;
+    }
+
+    #prop_img {
+        width: 400px;
+        z-index: -1;
+        left: 50%;
+        transform: translate(-50%, 0);
+        filter: opacity(50%);
+    }
+
+    #left_prop {
+        top: 60px;
+    }
+
+    #right_prop {
+        position: relative;
+        top: -400px;
+    }
+
+    .prop_text {
+        font-weight: 800;
+        color: black;
+    }
+
+
+}
+
+@media (max-width: 340px) {
+    .lang-short-info {
+        font-size: 8px;
+        display: none;
+    }
+
+    .lang_link {
+        position: relative;
+        top: 20px;
         font-size: 15px;
     }
 }
