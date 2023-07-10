@@ -4,7 +4,7 @@ const { database, analytics, auth, app, set, ref, update, get, createUserWithEma
 window.goto = (b) => {
     let a = String(b) + "_Beg.html";
     open(a, "_self");
-}
+};
 
 function deactivateLinks() {
     const links = document.getElementsByClassName('lang_link');
@@ -16,6 +16,11 @@ function deactivateLinks() {
     }
 }
 
+function align_strtlearn() {
+    document.getElementById("strtlearn").style.top = "0px";
+    document.getElementById("strtlearn").style.left = "-10px";
+}
+
 window.is_loggedin = () => {
     auth.onAuthStateChanged(function (user) {
         if (user) {
@@ -24,10 +29,11 @@ window.is_loggedin = () => {
         } else {
             console.log("User not logged in");
             document.getElementById("nav_linksa").style.display = "none";
+            align_strtlearn();
             deactivateLinks();
         }
     });
-}
+};
 
 window.log_out = () => {
     auth.signOut()
@@ -37,4 +43,4 @@ window.log_out = () => {
         .catch((error) => {
             console.error("Error during logout:", error);
         });
-}
+};

@@ -1,6 +1,14 @@
 import firebaseFunctions from "./firebase_init.js";
 const { database, analytics, auth, app, set, ref, update, get, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } = firebaseFunctions;
 
+function empty_form() {
+    document.getElementById('fullname').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('use').value = "";
+    document.getElementById('pass').value = "";
+    document.getElementById('confirm-password').value = "";
+}
+
 signup.addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -17,30 +25,42 @@ signup.addEventListener('click', (e) => {
                 name: name,
                 username: username,
                 email: email,
-                language: null,
-                division: 0,
-                word: 0
+                language: "Hindi",
+                division: "Beginner",
+                difficult: null,
+                goal: 10,
+                word_count: 0
             });
-            show_mbox("User Created Successfully.", "login");
+            show_mbox("User Created Successfully.");
+            empty_form();
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            show_mbox("Error Code: " + errorCode + "\n" + "Error: " + errorMessage);
+            show_mbox("Error Code: " + errorCode + "<br>" + "Error: " + errorMessage);
         });
 });
+
+function auto_login() {
+    var asd = document.getElementById("register-form");
+    var style = window.getComputedStyle(asd);
+    console.log(style.display);
+    if (style.display == "none") {
+        open("home.html", "_self");
+    }
+}
 
 window.is_loggedin = () => {
     auth.onAuthStateChanged(function (user) {
         if (user) {
             console.log("User LoggedIn");
-            open("home.html", "_self");
+            auto_login();
         } else {
             console.log("User not logged in");
             document.getElementById("nav_linksa").style.display = "none";
         }
     });
-}
+};
 
 
 login.addEventListener('click', (e) => {
@@ -61,7 +81,6 @@ login.addEventListener('click', (e) => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-
-            show_mbox("Error Code: ", errorCode, "\n", "Error: ", errorMessage);
+            show_mbox("Error Code: " + errorCode + "<br>" + "Error: " + errorMessage);
         });
 });

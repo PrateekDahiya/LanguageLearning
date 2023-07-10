@@ -1,4 +1,4 @@
-/*Common Header  */
+/* Common Header  */
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
 
 * {
@@ -32,10 +32,23 @@ header {
   padding: 30px 5%;
 }
 
+#login_background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-image: url("Images/login_background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
 #home {
   text-decoration: none;
   color: white;
-
 }
 
 #home:hover {
@@ -54,6 +67,7 @@ header {
 .nav_links li a:hover {
   color: rgb(255, 187, 0);
 }
+
 /* Language Menu */
 
 .radio-inputs {
@@ -184,7 +198,6 @@ header {
 
 /* Common Header Ends */
 
-
 body {
   background-color: #fff;
   font-family: 'Open Sans', sans-serif;
@@ -238,7 +251,6 @@ form {
 }
 
 .form-group input:focus {
-
   border-color: rgba(22, 21, 31, 0.934);
   outline: none;
 }
@@ -273,7 +285,6 @@ footer {
   text-align: center;
   justify-content: center;
   margin: 50px;
-
 }
 
 #login-form {
@@ -300,11 +311,6 @@ footer {
   text-align: center;
 }
 
-.container {
-
-  /* border: 2px black solid; */
-  /* margin: 50px; */
-}
 
 .toggletext {
   text-decoration: none;
@@ -319,11 +325,10 @@ footer {
 
 #click-protector {
   position: absolute;
-  height: 580px;
+  height: 100%;
   width: 100%;
   background-color: rgba(128, 128, 128, 0.084);
   display: none;
-
 }
 
 #message_box {
@@ -335,19 +340,21 @@ footer {
   z-index: 4;
   border-radius: 20px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
-  left: 33%;
-  top: 100px;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
   padding: 25px;
 }
 
 #ok_message_btn {
+  position: absolute;
   color: rgb(255, 187, 0);
   background-color: rgba(22, 21, 31, 0.934);
-  bottom: 15px;
-  left: 150px;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, 0);
   text-align: center;
   width: 200px;
-  position: absolute;
   height: 30px;
 }
 
@@ -357,11 +364,324 @@ footer {
 }
 
 #message_text {
+  line-height: 30px;
+  height: 100%;
+  width: 100%;
+  word-wrap: break-word;
   text-align: center;
-  padding-top: 80px;
-  padding-left: 15px;
   position: relative;
-  width: 400px;
+  font-size: 13px;
+  padding: 10px;
 }
 
 /* Message Box ends */
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+
+  /* Styles for screens smaller than 768px */
+  #logonmenu {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  #nav_linksa {
+    margin-top: 10px;
+  }
+
+  .radio-inputs {
+    width: 100%;
+    left: 0;
+    top: 60px;
+  }
+
+  .radio-tile {
+    width: 60px;
+    min-height: 60px;
+  }
+
+  .radio-icon img {
+    width: 3rem;
+  }
+
+  #message_box {
+    width: 400px;
+    height: 222.22px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Styles for screens smaller than 480px */
+  #logonmenu {
+    padding: 10px;
+  }
+
+  .radio-inputs {
+    top: 80px;
+  }
+
+  #message_box {
+    width: 300px;
+    height: 166.66px;
+  }
+
+  #ok_message_btn {
+    bottom: -70%;
+  }
+}
+
+
+/* Loading */
+
+#loading-back {
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(Images/loading_back.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+
+#loading {
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+
+#loading_dots {
+  position: relative;
+  top: 45%;
+}
+
+.pl {
+  width: 6em;
+  height: 6em;
+}
+
+.pl__ring {
+  animation: ringA 2s linear infinite;
+}
+
+.pl__ring--a {
+  stroke: #f42f25;
+}
+
+.pl__ring--b {
+  animation-name: ringB;
+  stroke: #f49725;
+}
+
+.pl__ring--c {
+  animation-name: ringC;
+  stroke: #255ff4;
+}
+
+.pl__ring--d {
+  animation-name: ringD;
+  stroke: #f42582;
+}
+
+/* Animations */
+@keyframes ringA {
+
+  from,
+  4% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+
+  12% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -335;
+  }
+
+  32% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -595;
+  }
+
+  40%,
+  54% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -660;
+  }
+
+  62% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -665;
+  }
+
+  82% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -925;
+  }
+
+  90%,
+  to {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -990;
+  }
+}
+
+@keyframes ringB {
+
+  from,
+  12% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -110;
+  }
+
+  20% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -115;
+  }
+
+  40% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -195;
+  }
+
+  48%,
+  62% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  70% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  90% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -305;
+  }
+
+  98%,
+  to {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+}
+
+@keyframes ringC {
+  from {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  8% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  28% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  36%,
+  58% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  66% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  86% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  94%,
+  to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+
+@keyframes ringD {
+
+  from,
+  8% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  16% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  36% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  44%,
+  50% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  58% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  78% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  86%,
+  to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}

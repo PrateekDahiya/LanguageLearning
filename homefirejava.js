@@ -3,7 +3,7 @@ const { database, analytics, auth, app, set, ref, update, get, createUserWithEma
 
 // var goal_value;
 var language;
-var level;
+var division;
 
 window.goal = (a) => {
     auth.onAuthStateChanged(function (user) {
@@ -18,30 +18,29 @@ window.goal = (a) => {
         }
 
     });
-}
+};
 
 window.log_out = () => {
     auth.signOut()
         .then(() => {
             console.log("User logged out successfully.");
-            open("index.html","_self");
+            open("index.html", "_self");
         })
         .catch((error) => {
             console.error("Error during logout:", error);
         });
-}
+};
 
 window.is_loggedin = () => {
     auth.onAuthStateChanged(function (user) {
         if (user) {
             console.log("User LoggedIn");
-            // open("home.html", "_self");
         } else {
             console.log("User not logged in");
-            open("index.html","_self");
+            open("index.html", "_self");
         }
     });
-}
+};
 
 const user = auth.currentUser;
 function fetchData(a, callback) {
@@ -73,9 +72,11 @@ window.updateElements = () => {
     setInterval(function () {
         fetchData("division", function (result) {
             document.getElementById("crnt_level").innerHTML = result;
+            division = result;
         });
         fetchData("language", function (result) {
             document.getElementById("crnt_lang").innerHTML = result;
+            language = result;
         });
         fetchData("goal", function (result) {
             document.getElementById("crnt_goal_value").innerHTML = result;
@@ -85,7 +86,7 @@ window.updateElements = () => {
         });
     }, 1000);
 
-}
+};
 
 function send_diff() {
     var a = localStorage.difficult;
@@ -103,5 +104,10 @@ function send_diff() {
     });
 }
 
-
-
+window.continuej_to = () => {
+    console.log(language, division);
+    let a = language.toLowerCase();
+    let b = division[0] + division[1] + division[2];
+    let site_is = a + "_" + b + ".html";
+    open(site_is, "_self");
+};

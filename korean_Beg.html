@@ -1,185 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Images/logolion.png">
-    <link rel="stylesheet" href="language_style.css">
-    <script type="module" src="firebase_init.js" defer></script>
-    <script type="module" src="lang_firebase.js"></script>
-    <title>Korean Beginner</title>
-</head>
-
-<body onload="send_lang_div(langanddiv())">
-    <!-- Common Header -->
-    <div id="topline">
-    </div>
-    <div id="logonmenu">
-        <a href="index.html" target="_self"><img id="logo" src="Images/logo.png" height="60"></a>
-        <nav>
-            <ul class="nav_links">
-                <li><a id="home" href="home.html">Home</a></li>
-                <li>
-                    <script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="Images/logolion.png">
+        <link rel="stylesheet" href="language_style.css">
+        <script type="module" src="firebase_init.js" defer></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819267788985297" crossorigin="anonymous"></script>
+        <script type="module" src="lang_firebase.js"></script>
+        <title>Korean Beginner</title>
+    </head>
+    <body onload="send_lang_div(langanddiv())">
+        <!-- Common Header -->
+        <div id="topline">
+            <div id="logout" onclick="log_out()">
+                <img src="Images/logout.jpg" alt="Log_Out" height="40px">
+            </div>
+        </div>
+        <div id="logonmenu">
+            <a href="index.html" target="_self">
+                <img id="logo" src="Images/logo.png" height="60">
+            </a>
+            <nav>
+                <ul class="nav_links">
+                    <li>
+                        <a id="home" href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <script>
                         function goto(b) {
                             a = String(b) + "_Beg.html";
                             open(a, "_self");
                         }
-                    </script>
-                    <div class="languages_list">
-                        <div id="container_list"><a>Languages</a></div>
-                        <div class="radio-inputs">
-                            <label>
-                                <input class="radio-input" type="radio" name="engine">
-                                <span class="radio-tile" onclick="goto('hindi')">
-                                    <span class="radio-icon">
-                                        <img class="flags" src="Images/Flags/India.jpg">
+                        </script>
+                        <div class="languages_list">
+                            <div id="container_list">
+                                <a>Languages</a>
+                            </div>
+                            <div class="radio-inputs">
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('hindi')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/India.jpg">
+                                        </span>
+                                        <span class="radio-label">Hindi</span>
                                     </span>
-                                    <span class="radio-label">Hindi</span>
-                                </span>
-                            </label>
-                            <label>
-                                <input class="radio-input" type="radio" name="engine">
-                                <span class="radio-tile" onclick="goto('french')">
-                                    <span class="radio-icon">
-                                        <img class="flags" src="Images/Flags/France.jpg">
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('french')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/France.jpg">
+                                        </span>
+                                        <span class="radio-label">French</span>
                                     </span>
-                                    <span class="radio-label">French</span>
-                                </span>
-                            </label>
-                            <label>
-                                <input class="radio-input" type="radio" name="engine">
-                                <span class="radio-tile" onclick="goto('japanese')">
-                                    <span class="radio-icon">
-                                        <img class="flags" src="Images/Flags/Japan.jpg">
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('japanese')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Japan.jpg">
+                                        </span>
+                                        <span class="radio-label">Japanese</span>
                                     </span>
-                                    <span class="radio-label">Japanese</span>
-                                </span>
-                            </label>
-                            <label>
-                                <input class="radio-input" type="radio" name="engine">
-                                <span class="radio-tile" onclick="goto('chinese')">
-                                    <span class="radio-icon">
-                                        <img class="flags" src="Images/Flags/China.jpg">
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('chinese')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/China.jpg">
+                                        </span>
+                                        <span class="radio-label">Chinese</span>
                                     </span>
-                                    <span class="radio-label">Chinese</span>
-                                </span>
-                            </label>
-                            <label>
-                                <input class="radio-input" type="radio" name="engine">
-                                <span class="radio-tile" onclick="goto('spanish')">
-                                    <span class="radio-icon">
-                                        <img class="flags" src="Images/Flags/Spain.jpg">
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('spanish')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Spain.jpg">
+                                        </span>
+                                        <span class="radio-label">Spanish</span>
                                     </span>
-                                    <span class="radio-label">Spanish</span>
-                                </span>
-                            </label>
-                            <label>
-                                <input class="radio-input" type="radio" name="engine">
-                                <span class="radio-tile" onclick="goto('tamil')">
-                                    <span class="radio-icon">
-                                        <img class="flags" src="Images/Flags/tamil.png">
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('tamil')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/tamil.png">
+                                        </span>
+                                        <span class="radio-label">Tamil</span>
                                     </span>
-                                    <span class="radio-label">Tamil</span>
-                                </span>
-                            </label>
-                            <label>
-                                <input class="radio-input" type="radio" name="engine">
-                                <span class="radio-tile" onclick="goto('german')">
-                                    <span class="radio-icon">
-                                        <img class="flags" src="Images/Flags/Germany.jpg">
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('german')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Germany.jpg">
+                                        </span>
+                                        <span class="radio-label">German</span>
                                     </span>
-                                    <span class="radio-label">German</span>
-                                </span>
-                            </label>
-                            <label>
-                                <input class="radio-input" type="radio" name="engine">
-                                <span class="radio-tile" onclick="goto('korean')">
-                                    <span class="radio-icon">
-                                        <img class="flags" src="Images/Flags/Korea.jpg">
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('korean')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Korea.jpg">
+                                        </span>
+                                        <span class="radio-label">Korean</span>
                                     </span>
-                                    <span class="radio-label">Korean</span>
-                                </span>
-                            </label>
-                            <label>
-                                <input class="radio-input" type="radio" name="engine">
-                                <span class="radio-tile" onclick="goto('russian')">
-                                    <span class="radio-icon">
-                                        <img class="flags" src="Images/Flags/Russia.jpg">
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('russian')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Russia.jpg">
+                                        </span>
+                                        <span class="radio-label">Russian</span>
                                     </span>
-                                    <span class="radio-label">Russia</span>
-                                </span>
-                            </label>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li><a>About Us</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Common Header Ends -->
-
-    <div id="Lang_name">
-        Korean Learning(Beginners)
-    </div>
-
-    <hr>
-    <!-- Word Change -->
-    <div id="backward" onclick="backword()">
-        <img src="Images/Backward Button.png" width="70px">
-    </div>
-    <div id="continue" onclick="nextword()">
-        <img src="Images/Continue Button.png" width="70px">
-    </div>
-    <!-- Division Change -->
-    <div id="prevdivision" onclick="prevdiv()">
-        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
-        <div id="pdivision"></div>
-    </div>
-
-    <div id="nextdivision" onclick="nextdiv()">
-        <img class="chngdivimg" src="Images/chngdiv.png" width="200px">
-        <div id="ndivision"></div>
-    </div>
-    <div id="add_to_diff">
-        <input id="checkbox" type="checkbox" onclick="addtodiff()">
-        <label class="switch" for="checkbox">
-            <img src="Images/difficult.png">
-        </label>
-    </div>
-    <!-- Main Body -->
-    <div id="textpart">
-        <p class="lanname">KOREAN</p>
-        <strong class="word" id="lang">안녕하세요</strong>
-        <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('ko'); send_word();" width="30px">
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <p class="lanname">ROMAJI</p>
-        <strong class="word" id="romaji">annyeonghaseyo</strong><br>
-        <p class="lanname">ENGLISH</p>
-        <strong class="word" id="eng">Hello</strong><br>
-        <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speakeng()" width="30px">
+        <!-- Common Header Ends -->
+        <div id="Lang_name">
+            Korean Learning(Beginners)
         </div>
+        <hr>
         <div id="change_division_menu">
             <div id="Beg_div" onclick="chng_div(0)"></div>
             <div id="Mod_div" onclick="chng_div(1)"></div>
             <div id="Adv_div" onclick="chng_div(2)"></div>
         </div>
-    </div>
-    <script>
-        // Words 
+        <hr>
+        <div id="change_word_menu">
+            <div id="back" onclick="backword()">
+                <span id="backward" class="nextandback">&lt;</span>
+            </div>
+            <div id="add_to_diff">
+                <input id="checkbox" type="checkbox" onclick="addtodiff()">
+                <label class="switch" for="checkbox">
+                    <img src="Images/difficult.png">
+                </label>
+            </div>
+            <div id="next" onclick="nextword()">
+                <span id="continue" class="nextandback">&gt;</span>
+            </div>
+        </div>
+        <!-- Main Body -->
+        <div id="textpart">
+            <p class="lanname">KOREAN</p>
+            <strong class="word" id="lang">안녕하세요</strong>
+            <div class="vol_icon">
+                <img src="Images/volume.png" onclick="speak('ko'); send_word();" width="30px">
+            </div>
+            <p class="lanname">ROMAJI</p>
+            <strong class="word" id="romaji">annyeonghaseyo</strong>
+            <br>
+            <p class="lanname">ENGLISH</p>
+            <strong class="word" id="eng">Hello</strong>
+            <br>
+            <div class="vol_icon">
+                <img src="Images/volume.png" onclick="speakeng()" width="30px">
+            </div>
+        </div>
+        <div id="lang_background"></div>
+        <div id="loading-back"></div>
+        <div id="loading">
+            <div id="loading_dots">
+                <svg
+                    class="pl"
+                    width="240"
+                    height="240"
+                    viewBox="0 0 240 240"
+                >
+                    <circle
+                        class="pl__ring pl__ring--a"
+                        cx="120"
+                        cy="120"
+                        r="105"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="20"
+                        stroke-dasharray="0 660"
+                        stroke-dashoffset="-330"
+                        stroke-linecap="round"
+                    ></circle>
+                    <circle
+                        class="pl__ring pl__ring--b"
+                        cx="120"
+                        cy="120"
+                        r="35"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="20"
+                        stroke-dasharray="0 220"
+                        stroke-dashoffset="-110"
+                        stroke-linecap="round"
+                    ></circle>
+                    <circle
+                        class="pl__ring pl__ring--c"
+                        cx="85"
+                        cy="120"
+                        r="70"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="20"
+                        stroke-dasharray="0 440"
+                        stroke-linecap="round"
+                    ></circle>
+                    <circle
+                        class="pl__ring pl__ring--d"
+                        cx="155"
+                        cy="120"
+                        r="70"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="20"
+                        stroke-dasharray="0 440"
+                        stroke-linecap="round"
+                    ></circle>
+                </svg>
+            </div>
+        </div>
+        <script>
+        // Words
         let english = [' Hello', ' Thank you', ' Sorry', ' Yes', ' No', ' Friend', ' Family', ' Food', ' Water', ' School', ' Love', ' Joy', ' Sadness', ' Health', ' Help', ' Thank you', " I'm sorry", ' Day', ' Night', ' Read', ' Write', ' Listen', ' Speak', ' Understand', ' See', ' Photo', ' Travel', ' Music', ' Movie', ' Dance']
         let otherlang = ['안녕하세요 ', '감사합니다 ', '죄송합니다 ', '예 ', '아니오 ', '친구 ', '가족 ', '음식 ', '물 ', '학교 ', '사랑 ', '기쁨 ', '슬픔 ', '건강 ', '도움 ', '고마워요 ', '미안해요 ', '일 ', '밤 ', '읽다 ', '쓰다 ', '듣다 ', '말하다 ', '이해하다 ', '보다 ', '사진 ', '여행 ', '음악 ', '영화 ', '춤 ']
         let romaji = ['annyeonghaseyo', 'gamsahamnida', 'joesonghamnida', 'ye', 'anio', 'chingu', 'gajok', 'eumsik', 'mul', 'hakgyo', 'sarang', 'gippeum', 'seulpeum', 'geongang', 'doum', 'gomawoyo', 'mianhaeyo', 'il', 'bam', 'ikda', 'sseuda', 'deutda', 'malhada', 'ihaehada', 'boda', 'sajin', 'yeohaeng', 'eumak', 'yeonghwa', 'chum']
         div_num = 0;
         var language = 'korean';
-    </script>
-    <script src="language_script.js"></script>
-
-</body>
-
+        </script>
+        <script src="language_script.js"></script>
+    </body>
 </html>

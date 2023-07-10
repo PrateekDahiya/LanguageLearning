@@ -1,10 +1,48 @@
 var is_heard = 0;
 var i = 0;
-var divtext = ['Beginner', 'Moderate', 'Advance']
+var divtext = ['Beginner', 'Moderate', 'Advance'];
 var divisions = ['Beg', 'Mod', 'Adv'];
 var num_words = english.length;
 var withromanji = ['japanese', 'chinese', 'tamil', 'korean', 'russian'];
 
+
+let containerlist = document.getElementById("container_list");
+let radioinputs = document.getElementsByClassName("radio-inputs")[0];
+containerlist.addEventListener("mouseover", showList);
+radioinputs.addEventListener("mouseover", showList);
+
+var a, b;
+
+containerlist.addEventListener("mouseout", function () {
+    a = setTimeout(hideList, 1000);
+});
+radioinputs.addEventListener("mouseout", function () {
+    b = setTimeout(hideList, 1000);
+});
+
+function showList() {
+    clearTimeout(a);
+    clearTimeout(b);
+    radioinputs.style.display = "flex";
+}
+
+function hideList() {
+    radioinputs.style.display = "none";
+}
+
+function disable_googletrans() {
+    // Bypass Google Translate popup and disable automatic translation
+    document.cookie = 'googtrans=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
+
+setInterval(hide_loading, 1000);
+function hide_loading() {
+    document.getElementById('loading-back').style.display = "none";
+    document.getElementById('loading').style.display = "none";
+}
+
+
+disable_googletrans();
 
 // Check for local storage variables exists or not
 function checkLSV(variable) {
@@ -22,11 +60,11 @@ backword();
 var pre_div = divtext[div_num - 1];
 var nxtdiv = divtext[div_num + 1];
 
-document.getElementById('ndivision').innerHTML = nxtdiv;
-document.getElementById('pdivision').innerHTML = pre_div;
+// document.getElementById('ndivision').innerHTML = nxtdiv;
+// document.getElementById('pdivision').innerHTML = pre_div;
 
 document.getElementById('backward').style.display = "none";
-document.getElementById('nextdivision').style.display = "none";
+// document.getElementById('nextdivision').style.display = "none";
 
 if (div_num == 0) {
     document.getElementById('Beg_div').style.border = "2px solid black";
@@ -36,14 +74,6 @@ else if (div_num == 1) {
 }
 else if (div_num == 2) {
     document.getElementById('Adv_div').style.border = "2px solid black";
-}
-
-
-if (i == 0 && div_num > 0) {
-    document.getElementById('prevdivision').style.display = "block";
-}
-else {
-    document.getElementById('prevdivision').style.display = "none";
 }
 
 function speak(b) {
@@ -79,7 +109,6 @@ function nextword() {
     } else {
         document.getElementById('continue').style.display = "block";
     }
-    check_nxtdiv(i);
 }
 function backword() {
     // For going to previous word
@@ -103,7 +132,6 @@ function backword() {
     } else {
         document.getElementById('continue').style.display = "block";
     }
-    check_nxtdiv(i);
 }
 // For Division Menu
 document.getElementById("Beg_div").innerHTML = divtext[0];
@@ -117,35 +145,35 @@ function chng_div(n) {
 }
 
 // Division change
-function check_nxtdiv(i) {
-    uncheck_diff();
+// function check_nxtdiv(i) {
+//     uncheck_diff();
 
-    if ((i == english.length - 1) && (div_num < 2)) {
-        document.getElementById('nextdivision').style.display = "block";
-    }
-    else {
-        document.getElementById('nextdivision').style.display = "none";
-    }
-    if (i == 0 && div_num > 0) {
-        document.getElementById('prevdivision').style.display = "block";
-    }
-    else {
-        document.getElementById('prevdivision').style.display = "none";
-    }
-}
+//     if ((i == english.length - 1) && (div_num < 2)) {
+//         document.getElementById('nextdivision').style.display = "block";
+//     }
+//     else {
+//         document.getElementById('nextdivision').style.display = "none";
+//     }
+//     if (i == 0 && div_num > 0) {
+//         document.getElementById('prevdivision').style.display = "block";
+//     }
+//     else {
+//         document.getElementById('prevdivision').style.display = "none";
+//     }
+// }
 
-function nextdiv() {
-    uncheck_diff();
-    link = String(String(language) + "_" + String(divisions[div_num + 1]) + ".html");
-    open(link, "_parent");
+// function nextdiv() {
+//     uncheck_diff();
+//     link = String(String(language) + "_" + String(divisions[div_num + 1]) + ".html");
+//     open(link, "_parent");
 
-}
+// }
 
-function prevdiv() {
-    uncheck_diff();
-    link = String(String(language) + "_" + String(divisions[div_num - 1]) + ".html");
-    open(link, "_parent");
-}
+// function prevdiv() {
+//     uncheck_diff();
+//     link = String(String(language) + "_" + String(divisions[div_num - 1]) + ".html");
+//     open(link, "_parent");
+// }
 
 // currentuser = firebase.auth().currentUser;
 // console.log(currentuser)
@@ -216,32 +244,35 @@ function addtodiff() {
 }
 
 function uncheck_diff() {
-    var isdiff = false;
-    if (withromanji.includes(language)) {
-        a = english[i];
-        b = otherlang[i];
-        c = romaji[i];
-        z = [a, c, b];
-    }
-    else {
-        a = english[i];
-        b = otherlang[i];
-        z = [a, b];
-    }
-    let diff_var = JSON.parse(localStorage.difficult);
-    if (checkLSV('difficult')) {
-        isdiff = diff_var.some(arr => JSON.stringify(arr) === JSON.stringify(z));
-    }
-    else {
-        isdiff = false;
+    if (localStorage.getItem('difficult') !== null) {
+        var isdiff = false;
+        if (withromanji.includes(language)) {
+            a = english[i];
+            b = otherlang[i];
+            c = romaji[i];
+            z = [a, c, b];
+        }
+        else {
+            a = english[i];
+            b = otherlang[i];
+            z = [a, b];
+        }
+        let diff_var = JSON.parse(localStorage.difficult);
+        if (checkLSV('difficult')) {
+            isdiff = diff_var.some(arr => JSON.stringify(arr) === JSON.stringify(z));
+        }
+        else {
+            isdiff = false;
+        }
+
+        if (isdiff) {
+            document.getElementById('checkbox').checked = true;
+        }
+        else {
+            document.getElementById('checkbox').checked = false;
+        }
     }
 
-    if (isdiff) {
-        document.getElementById('checkbox').checked = true;
-    }
-    else {
-        document.getElementById('checkbox').checked = false;
-    }
 }
 
 

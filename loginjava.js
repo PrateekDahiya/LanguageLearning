@@ -1,7 +1,21 @@
 var headto;
+const urlParams = new URLSearchParams(window.location.search);
+const mode = urlParams.get('mode');
+
+setInterval(hide_loading, 3000);
+function hide_loading() {
+    document.getElementById('loading-back').style.display = "none";
+    document.getElementById('loading').style.display = "none";
+}
+
+if (mode == 'login') {
+    toggleForm('L');
+} else if (mode == 'register') {
+    toggleForm('R');
+}
 
 function toggleForm(a) {
-    if (a == "R") {
+    if (a === "R") {
         document.getElementById('register-form').style.display = "block";
         document.getElementById('login-form').style.display = "none";
     }
@@ -11,7 +25,7 @@ function toggleForm(a) {
     }
 }
 
-function show_mbox(a, b = def) {
+function show_mbox(a, b = "def") {
 
     document.getElementById("click-protector").style.display = "block";
     document.getElementById("message_text").innerHTML = a;
@@ -27,7 +41,6 @@ function OK() {
     else {
         hide_mbox();
     }
-
 }
 
 function hide_mbox() {
