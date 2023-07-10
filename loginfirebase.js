@@ -37,7 +37,7 @@ signup.addEventListener('click', (e) => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            show_mbox("Error Code: " + errorCode + "\n" + "Error: " + errorMessage);
+            show_mbox("Error Code: " + errorCode + "<br>" + "Error: " + errorMessage);
         });
 });
 
@@ -81,7 +81,6 @@ login.addEventListener('click', (e) => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-
-            show_mbox("Error Code: ", errorCode, "\n", "Error: ", errorMessage);
+            show_mbox("Error Code: " + errorCode + "<br>" + "Error: " + errorMessage);
         });
 });

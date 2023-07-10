@@ -313,8 +313,9 @@ header {
     position: absolute;
     width: 500px;
     height: 350px;
-    left: -270px;
-    top: 0;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
     background-color: rgb(216, 215, 215);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
     border-radius: 20px;
@@ -673,7 +674,8 @@ header {
         flex-basis: 5%;
         max-width: 100%;
     }
-    #home_boxes{
+
+    #home_boxes {
         top: 200px;
     }
 }
@@ -707,7 +709,9 @@ header {
         width: 180px;
     }
 
-
+    #set_wrd_goal {
+        top: 40%;
+    }
 
 }
 
@@ -761,10 +765,14 @@ header {
     #difficult_btn {
         width: 160px;
     }
-    #home_boxes{
+
+    #home_boxes {
         top: 150px;
     }
 
+    #set_wrd_goal {
+        top: 30%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -805,5 +813,33 @@ header {
     #edit_btn {
         left: 80px;
     }
+
+    #set_wrd_goal {
+        width: 400px;
+        height: 280px;
+    }
+
+    #close_btn {
+        left: 350px;
+        top: -100px;
+    }
+
+    #set_wrd_goal img {
+        width: 100px;
+        top: 15px;
+    }
+
+    #set_wrd_goal h4,
+    #set_wrd_goal h5 {
+        position: relative;
+        top: -20px;
+    }
+
+    .goal_choice{
+        position: relative;
+        top: -15px;
+    }
+
+
 
 }
