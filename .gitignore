@@ -1,10 +1,2 @@
 public
-.firebase
-node_modules
-.firebaserc
-404.html
-database.rules.json
-firebase.json
-package-lock.json
-package.json
 .vscode
