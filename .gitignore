@@ -7,3 +7,4 @@ database.rules.json
 firebase.json
 package-lock.json
 package.json
+.vscode
