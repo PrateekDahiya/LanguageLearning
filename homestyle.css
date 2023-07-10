@@ -12,6 +12,7 @@ header {
     position: fixed;
     width: 100%;
     background: rgba(22, 21, 31, 0.934);
+    z-index: 1;
 }
 
 #topline {
@@ -672,6 +673,9 @@ header {
         flex-basis: 5%;
         max-width: 100%;
     }
+    #home_boxes{
+        top: 200px;
+    }
 }
 
 
@@ -708,6 +712,11 @@ header {
 }
 
 @media (max-width: 768px) {
+
+    #logonmenu {
+        height: 20px;
+    }
+
     .radio-inputs label {
         flex-basis: 25%;
         max-width: 50%;
@@ -751,6 +760,9 @@ header {
     #continue_lang_btn,
     #difficult_btn {
         width: 160px;
+    }
+    #home_boxes{
+        top: 150px;
     }
 
 }

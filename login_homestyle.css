@@ -1,18 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
 
-#loading {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    background-color: red;
-}
-
-
 * {
     margin: 0;
     font-family: "Bruno Ace SC", sans-serif;
-    padding: 0;
+    user-select: none;
 }
+
 
 header {
     position: fixed;
@@ -21,15 +14,20 @@ header {
     z-index: 1;
 }
 
-#page_area {
-    padding-top: 200px;
-}
-
 #topline {
     background-color: rgb(255, 187, 0);
     height: 10px;
     width: 100%;
     padding-bottom: 40px;
+}
+
+#login {
+    margin-right: 1%;
+    text-align: right;
+    position: relative;
+    float: right;
+    padding-top: 5px;
+    cursor: pointer;
 }
 
 #logonmenu {
@@ -45,15 +43,6 @@ header {
     padding: 30px 5%;
 }
 
-#login {
-    margin-right: 1%;
-    text-align: right;
-    position: relative;
-    float: right;
-    padding-top: 5px;
-    cursor: pointer;
-
-}
 
 #home {
     text-decoration: none;
@@ -78,14 +67,12 @@ header {
     color: rgb(255, 187, 0);
 }
 
-/* Language menu */
-
+/* Language Menu */
 
 .radio-inputs {
     position: absolute;
+    right: 3%;
     top: 170px;
-    left: 50%;
-    transform: translate(-50%, 0);
     width: 500px;
     justify-content: center;
     align-items: end;
@@ -213,16 +200,59 @@ header {
     white-space: nowrap;
     width: 1px;
 }
-#container_list{
+
+#container_list {
     cursor: pointer;
 }
 
-
-.lang_list:hover {
-    background-color: rgba(57, 57, 59, 0.934);
-
+#page_area {
+    position: relative;
+    top: 180px;
+    width: 100%;
 }
 
+
+
+#p1 {
+    position: relative;
+    width: 100%;
+    height: 590px;
+    background-image: url(Images/home_image.png);
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+#webname {
+    position: relative;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    text-align: center;
+    backdrop-filter: blur(2px);
+}
+
+#slogan {
+    position: relative;
+    width: 600px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#title_name {
+    color: transparent;
+    font-size: 60px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#p2 {
+    width: 100%;
+    position: relative;
+}
 
 #detail_box {
     display: flex;
@@ -233,66 +263,32 @@ header {
     border-radius: 20px;
     background-color: rgba(57, 57, 59, 0.934);
     padding: 20px;
-    height: auto;
     width: 70%;
     color: white;
 }
 
-section {
-    align-content: center;
-    padding: 20px;
+#lang-details {
+    position: relative;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
-section h1 {
-    padding: 15px;
+#lang-details h1 {
     text-align: center;
     font-size: 50px;
-}
-
-#p1 {
-    position: relative;
-    width: 1515px;
-    height: 590px;
-    background-image: url(Images/home_image.png);
-    text-align: center;
-}
-
-#webname {
-    position: relative;
-    top: 25%;
-    left: 55%;
-    width: 600px;
-    /* padding-top: 250px; */
-    text-align: center;
-}
-
-#slogan {
-    position: relative;
-    width: 500px;
-    left: 50px;
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-
-#title_name {
-    font-size: 50px;
-    text-align: center;
-    cursor: pointer;
-}
-
-#p2 {
-    position: relative;
-    z-index: 0;
 }
 
 .language {
     display: flex;
     margin-bottom: 20px;
     width: 80%;
-    padding-left: 150px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .language img {
@@ -306,6 +302,7 @@ section h1 {
 .language-description {
     margin-top: 20px;
     color: black;
+    width: 80%;
 }
 
 .lang_link {
@@ -326,7 +323,7 @@ section h1 {
 /* Our Team */
 
 #p4 {
-    width: 1550;
+    width: 100%;
 }
 
 
@@ -373,7 +370,7 @@ section h1 {
 }
 
 .container {
-    max-width: 1550px;
+    max-width: 100%;
     margin-top: 30px;
     text-align: center;
     margin-bottom: 50px;
@@ -450,57 +447,88 @@ section h1 {
 }
 
 #p3 {
-    width: 1550;
     position: relative;
-    padding: 50px;
-    position: relative;
+    width: 100%;
     height: 590px;
-    z-index: -1;
-
 }
 
 #p3_head {
+    position: relative;
+    top: 40px;
     width: 100%;
     height: 50px;
     text-align: center;
 }
 
 #container_prop {
-    margin-left: 50px;
-    padding: 50px 150px 50px 150px;
-    /* width: 300px; */
+    position: relative;
+    top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+}
+
+#prope_2 {
+    margin-top: 45px;
 }
 
 .prop_img {
     position: relative;
     margin: 3px;
-    width: 20px;
+    width: 30px;
     top: 5px;
 }
 
-.left_prop {
-    float: left;
+#left_prop {
+    position: relative;
+    width: 25%;
+    padding: 10px;
+    padding-right: 40px;
+    text-align: right;
+    top: 30px;
+    height: 100%;
 }
 
 #prop_img {
     position: relative;
-    top: 10px;
-    width: 400px;
+
+    height: 480px;
+    width: 25%;
 }
 
-.right_prop {
-    float: right;
+#prop_img img {
+    position: relative;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#right_prop {
+    position: relative;
+
+    width: 25%;
+    padding: 10px;
+    top: 30px;
+    height: 100%;
+}
+
+.prope {
+    height: auto;
+    word-wrap: break-word;
 }
 
 .prop_heading {
-    width: 300px;
     font-weight: 800;
 }
 
 .prop_text {
     padding: 10px;
-    height: 200px;
-    width: 250px;
+    height: auto;
 }
 
 /* Start Learning Button */
@@ -618,6 +646,7 @@ section h1 {
         flex-basis: 5%;
         max-width: 100%;
     }
+
 }
 
 @media (max-width: 1024px) {
@@ -629,9 +658,32 @@ section h1 {
     .radio-inputs {
         width: 450px;
     }
+
+    #webname {
+        width: 600px;
+    }
+
+    #title_name {
+        font-size: 50px;
+    }
+
+    #slogan {
+        font-size: 20px;
+        width: 500px;
+    }
+
+    .language img {
+        width: 150px;
+    }
+
 }
 
 @media (max-width: 768px) {
+
+    #logonmenu {
+        height: 20px;
+    }
+
     .radio-inputs label {
         flex-basis: 25%;
         max-width: 50%;
@@ -639,6 +691,19 @@ section h1 {
 
     .radio-inputs {
         width: 350px;
+    }
+
+    #webname {
+        width: 500px;
+    }
+
+    #title_name {
+        font-size: 40px;
+    }
+
+    #slogan {
+        width: 400px;
+        font-size: 20px;
     }
 }
 
@@ -648,7 +713,31 @@ section h1 {
         max-width: 50%;
     }
 
+    #strtlearn {
+        position: relative;
+        left: -180px;
+        top: 50px;
+    }
+
     .radio-inputs {
         width: 250px;
+    }
+
+
+    #logonmenu {
+        height: 100px;
+    }
+
+    #webname {
+        width: 300px;
+    }
+
+    #title_name {
+        font-size: 20px;
+    }
+
+    #slogan {
+        width: 200px;
+        font-size: 15px;
     }
 }

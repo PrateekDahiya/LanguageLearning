@@ -85,11 +85,11 @@ function glow_title() {
     ];
     let i = 0;
     // Initial color of fonts
-    l1.style.color = "white";
-    l2.style.color = "white";
-    l3.style.color = "white";
-    l4.style.color = "white";
-    l5.style.color = "white";
+    l1.style.color = "transparent";
+    l2.style.color = "transparent";
+    l3.style.color = "transparent";
+    l4.style.color = "transparent";
+    l5.style.color = "transparent";
     l6.style.color = colors[i + 5];
     l7.style.color = colors[i + 6];
     l8.style.color = colors[i + 7];
