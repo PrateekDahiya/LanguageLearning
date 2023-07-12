@@ -6,12 +6,14 @@ reset_word_count();
 window.send_lang_div = (a) => {
     let language = a[0];
     let division = a[1];
+    let atword = a[2];
     auth.onAuthStateChanged(function (user) {
         if (user) {
             var dataRef = ref(database, "users/" + user.uid);
             var updatedData = {
                 language: language,
-                division: division
+                division: division,
+                atword: atword
             };
             update(dataRef, updatedData);
         } else {
@@ -19,6 +21,27 @@ window.send_lang_div = (a) => {
         }
 
     });
+};
+
+window.send_atword = (a) => {
+
+    let atword = 0;
+    if (typeof(a) != 'undefined') {
+        atword = a;
+    }
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            var dataRef = ref(database, "users/" + user.uid);
+            var updatedData = {
+                atword: atword
+            };
+            update(dataRef, updatedData);
+        } else {
+            console.log("User not logged in");
+        }
+
+    });
+    return atword;
 };
 
 const user = auth.currentUser;

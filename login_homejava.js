@@ -24,7 +24,43 @@ function hideList() {
     radioinputs.style.display = "none";
 }
 
+function goto(b, diviv = "1", atword = 0) {
+    let a;
+    switch (b) {
+        case "chinese":
+            a = "1" + String(diviv);
+            break;
+        case "french":
+            a = "2" + String(diviv);
+            break;
+        case "german":
+            a = "3" + String(diviv);
+            break;
+        case "hindi":
+            a = "4" + String(diviv);
+            break;
+        case "japanese":
+            a = "5" + String(diviv);
+            break;
+        case "korean":
+            a = "6" + String(diviv);
+            break;
+        case "russian":
+            a = "7" + String(diviv);
+            break;
+        case "spanish":
+            a = "8" + String(diviv);
+            break;
+        case "tamil":
+            a = "9" + String(diviv);
+            break;
 
+        default:
+            break;
+    }
+    let link = "language.html?langid=" + String(a) + "&atword=" + String(atword);
+    open(link, "_self");
+}
 
 
 function glow_title() {

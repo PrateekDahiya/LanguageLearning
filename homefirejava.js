@@ -84,6 +84,9 @@ window.updateElements = () => {
         fetchData("word_count", function (result) {
             document.getElementById("word_num").innerHTML = result;
         });
+        fetchData("atword", function (result) {
+            document.getElementById("crnt_atword").innerHTML = result;
+        });
     }, 1000);
 
 };
@@ -104,10 +107,4 @@ function send_diff() {
     });
 }
 
-window.continuej_to = () => {
-    console.log(language, division);
-    let a = language.toLowerCase();
-    let b = division[0] + division[1] + division[2];
-    let site_is = a + "_" + b + ".html";
-    open(site_is, "_self");
-};
+

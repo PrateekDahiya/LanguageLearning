@@ -49,5 +49,69 @@ function goto_diff() {
 
 
 
+function goto(b, diviv = "1", atword = 0) {
+    let a;
+    switch (b) {
+        case "chinese":
+            a = "1" + String(diviv);
+            break;
+        case "french":
+            a = "2" + String(diviv);
+            break;
+        case "german":
+            a = "3" + String(diviv);
+            break;
+        case "hindi":
+            a = "4" + String(diviv);
+            break;
+        case "japanese":
+            a = "5" + String(diviv);
+            break;
+        case "korean":
+            a = "6" + String(diviv);
+            break;
+        case "russian":
+            a = "7" + String(diviv);
+            break;
+        case "spanish":
+            a = "8" + String(diviv);
+            break;
+        case "tamil":
+            a = "9" + String(diviv);
+            break;
+        case "Difficult Words":
+            a = "100";
+            break;
+        default:
+            break;
+    }
+    let link = "language.html?langid=" + String(a) + "&atword=" + String(atword);
+    open(link, "_self");
+}
 
 
+function continuej_to() {
+    let got_lang_div = [String(document.getElementById("crnt_lang").innerHTML), String(document.getElementById("crnt_level").innerHTML)];
+    let divnumber;
+    switch (String(got_lang_div[1])) {
+        case "Beginner":
+            divnumber = "1";
+            break;
+        case "Moderate":
+            divnumber = "2";
+            break;
+        case "Advance":
+            divnumber = "3";
+            break;
+        case "Hard":
+            goto("Difficult Words");
+            break;
+
+        default:
+            console.log("Nothing matched");
+            break;
+    }
+    let atwordfromhtml = document.getElementById("crnt_atword").innerHTML;
+
+    goto(got_lang_div[0], String(divnumber), String(atwordfromhtml));
+};

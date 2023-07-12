@@ -300,6 +300,9 @@ footer {
 }
 
 .submit-btn {
+  width: 80%;
+  height: 45px;
+  border-radius: 8px;
   font-size: 15px;
   padding: 5px;
   margin-top: 25px;
@@ -311,10 +314,14 @@ footer {
   text-align: center;
 }
 
+#reset-pass-menu {
+  display: none;
+}
 
 .toggletext {
   text-decoration: none;
   color: rgb(255, 187, 0);
+  cursor: pointer;
 }
 
 .toggletext:hover {

@@ -71,7 +71,8 @@ header {
 
 .radio-inputs {
     position: absolute;
-    right: 3%;
+    left: 50%;
+    transform: translate(-50%,0);
     top: 170px;
     width: 500px;
     justify-content: center;

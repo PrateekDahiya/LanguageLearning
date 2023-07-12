@@ -33,7 +33,7 @@ function show_mbox(a, b = "def") {
 }
 function OK() {
     if (headto == "login") {
-        open("login.html?functionName=login", "_self");
+        open("login.html?mode=login", "_self");
     }
     else if (headto == "home") {
         open("home.html", "_self");
@@ -47,5 +47,13 @@ function hide_mbox() {
     document.getElementById("click-protector").style.display = "none";
 }
 
-
+function password_reset() {
+    let element = document.getElementById("reset-pass-menu");
+    if (window.getComputedStyle(element).display == "block") {
+        document.getElementById("reset-pass-menu").style.display = "none";
+    }
+    else if (window.getComputedStyle(element).display == "none") {
+        document.getElementById("reset-pass-menu").style.display = "block";
+    }
+}
 

@@ -261,6 +261,10 @@ header {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.626);
 }
 
+#continue_lang_btn{
+    top: 25%;
+}
+
 #difficult_btn {
     top: 28%;
 }
@@ -395,7 +399,8 @@ header {
 
 #crnt_goal_value,
 #crnt_lang,
-#crnt_level {
+#crnt_level,
+#crnt_atword {
     position: relative;
     top: 20px;
     font-size: 20px;

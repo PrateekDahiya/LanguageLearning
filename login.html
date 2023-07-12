@@ -56,10 +56,22 @@
                             value="Login"
                         >
                         <p class="message">
+                            Forget Password?
+                            <a class="toggletext" onclick="password_reset()">Reset Password</a>
+                            <div id="reset-pass-menu">
+                                <input
+                                    type="email"
+                                    id="email-pass-reset"
+                                    name="email"
+                                    placeholder="Enter your Email"
+                                >
+                                <button id="sendresetpassmail" class="submit-btn" onclick="resetpassword()">Send Reset Mail</button>
+                            </div>
+                        </p>
+                        <p class="message">
                             Not registered?
                             <a href="#" class="toggletext" onclick="toggleForm('R')">
-                                Create
-                            an account
+                                Create an account
                             </a>
                         </p>
                     </form>

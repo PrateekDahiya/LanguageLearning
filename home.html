@@ -27,12 +27,6 @@
                     <ul class="nav_links">
                         <!-- <li><a id="home" href="home.html">Home</a></li> -->
                         <li>
-                            <script>
-                        function goto(b) {
-                            a = String(b) + "_Beg.html";
-                            open(a, "_self");
-                        }
-                            </script>
                             <div class="languages_list">
                                 <div id="container_list">
                                     <a>Languages</a>
@@ -132,6 +126,12 @@
                 You are Currently Learning
                 <br>
                 <span id="crnt_lang">&nbsp;</span>
+                <hr style="height: 40px;border-color: transparent;">
+                You have done
+                <br>
+                <span id="crnt_atword">&nbsp;</span>
+                <br>
+                <p style="position: relative;left: 50px;">Words</p>
                 <div id="continue_lang_btn" onclick="continuej_to()">
                     Continue Your journey
                 </div>
@@ -182,7 +182,7 @@
                 <div id="diff_count_num">0</div>
                 Work on Difficult Words
                 <br>
-                <div id="difficult_btn">Start Work on Hard Words</div>
+                <div id="difficult_btn" onclick="goto('Difficult Words')">Start Work on Hard Words</div>
             </div>
         </div>
         <div id="loading-back">
