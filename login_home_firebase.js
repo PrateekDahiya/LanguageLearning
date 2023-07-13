@@ -1,6 +1,6 @@
 import firebaseFunctions from "./firebase_init.js";
 const { database, analytics, auth, app, set, ref, update, get, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } = firebaseFunctions;
-
+var isuser = true;
 
 function deactivateLinks() {
     const links = document.getElementsByClassName('lang_link');
@@ -24,7 +24,8 @@ window.is_loggedin = () => {
             // open("home.html", "_self");
         } else {
             console.log("User not logged in");
-            document.getElementById("nav_linksa").style.display = "none";
+            // document.getElementById("nav_linksa").style.display = "none";
+            isuser = false;
             align_strtlearn();
             deactivateLinks();
         }

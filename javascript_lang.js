@@ -59,196 +59,196 @@ function identify_lang() {
             language = 'chinese';
             speak_lang = "zh";
             wordsarr = chinese_Beg;
-            document.title = "Chinese Beginner";
+            document.title = "LingoVerse-Chinese Beginner";
             break;
         case "12":
             div_num = 1;
             language = 'chinese';
             speak_lang = "zh";
             wordsarr = chinese_Mod;
-            document.title = "Chinese Moderate";
+            document.title = "LingoVerse-Chinese Moderate";
             break;
         case "13":
             div_num = 2;
             language = 'chinese';
             speak_lang = "zh";
             wordsarr = chinese_Adv;
-            document.title = "Chinese Advanced";
+            document.title = "LingoVerse-Chinese Advanced";
             break;
         case "21":
             div_num = 0;
             language = 'french';
             speak_lang = "fr";
             wordsarr = french_Beg;
-            document.title = "French Beginner";
+            document.title = "LingoVerse-French Beginner";
             break;
         case "22":
             div_num = 1;
             language = 'french';
             speak_lang = "fr";
             wordsarr = french_Mod;
-            document.title = "French Moderate";
+            document.title = "LingoVerse-French Moderate";
             break;
         case "23":
             div_num = 2;
             language = 'french';
             speak_lang = "fr";
             wordsarr = french_Adv;
-            document.title = "French Advanced";
+            document.title = "LingoVerse-French Advanced";
             break;
         case "31":
             div_num = 0;
             language = 'german';
             speak_lang = "de";
             wordsarr = german_Beg;
-            document.title = "German Beginner";
+            document.title = "LingoVerse-German Beginner";
             break;
         case "32":
             div_num = 1;
             language = 'german';
             speak_lang = "de";
             wordsarr = german_Mod;
-            document.title = "German Moderate";
+            document.title = "LingoVerse-German Moderate";
             break;
         case "33":
             div_num = 2;
             language = 'german';
             speak_lang = "de";
             wordsarr = german_Adv;
-            document.title = "German Advanced";
+            document.title = "LingoVerse-German Advanced";
             break;
         case "41":
             div_num = 0;
             language = 'hindi';
             speak_lang = "hi";
             wordsarr = hindi_Beg;
-            document.title = "Hindi Beginner";
+            document.title = "LingoVerse-Hindi Beginner";
             break;
         case "42":
             div_num = 1;
             language = 'hindi';
             speak_lang = "hi";
             wordsarr = hindi_Mod;
-            document.title = "Hindi Moderate";
+            document.title = "LingoVerse-Hindi Moderate";
             break;
         case "43":
             div_num = 2;
             language = 'hindi';
             speak_lang = "hi";
             wordsarr = hindi_Adv;
-            document.title = "Hindi Advanced";
+            document.title = "LingoVerse-Hindi Advanced";
             break;
         case "51":
             div_num = 0;
             language = 'japanese';
             speak_lang = "ja";
             wordsarr = japanese_Beg;
-            document.title = "Japanese Beginner";
+            document.title = "LingoVerse-Japanese Beginner";
             break;
         case "52":
             div_num = 1;
             language = 'japanese';
             speak_lang = "ja";
             wordsarr = japanese_Mod;
-            document.title = "Japanese Moderate";
+            document.title = "LingoVerse-Japanese Moderate";
             break;
         case "53":
             div_num = 2;
             language = 'japanese';
             speak_lang = "ja";
             wordsarr = japanese_Adv;
-            document.title = "Japanese Advanced";
+            document.title = "LingoVerse-Japanese Advanced";
             break;
         case "61":
             div_num = 0;
             language = 'korean';
             speak_lang = "ko";
             wordsarr = korean_Beg;
-            document.title = "Korean Beginner";
+            document.title = "LingoVerse-Korean Beginner";
             break;
         case "62":
             div_num = 1;
             language = 'korean';
             speak_lang = "ko";
             wordsarr = korean_Mod;
-            document.title = "Korean Moderate";
+            document.title = "LingoVerse-Korean Moderate";
             break;
         case "63":
             div_num = 2;
             language = 'korean';
             speak_lang = "ko";
             wordsarr = korean_Adv;
-            document.title = "Korean Advanced";
+            document.title = "LingoVerse-Korean Advanced";
             break;
         case "71":
             div_num = 0;
             language = 'russian';
             speak_lang = "ru";
             wordsarr = russian_Beg;
-            document.title = "Russian Beginner";
+            document.title = "LingoVerse-Russian Beginner";
             break;
         case "72":
             div_num = 1;
             language = 'russian';
             speak_lang = "ru";
             wordsarr = russian_Mod;
-            document.title = "Russian Moderate";
+            document.title = "LingoVerse-Russian Moderate";
             break;
         case "73":
             div_num = 2;
             language = 'russian';
             speak_lang = "ru";
             wordsarr = russian_Adv;
-            document.title = "Russian Advanced";
+            document.title = "LingoVerse-Russian Advanced";
             break;
         case "81":
             div_num = 0;
             language = 'spanish';
             speak_lang = "es";
             wordsarr = spanish_Beg;
-            document.title = "Spanish Beginner";
+            document.title = "LingoVerse-Spanish Beginner";
             break;
         case "82":
             div_num = 1;
             language = 'spanish';
             speak_lang = "es";
             wordsarr = spanish_Mod;
-            document.title = "Spanish Moderate";
+            document.title = "LingoVerse-Spanish Moderate";
             break;
         case "83":
             div_num = 2;
             language = 'spanish';
             speak_lang = "es";
             wordsarr = spanish_Adv;
-            document.title = "Spanish Advanced";
+            document.title = "LingoVerse-Spanish Advanced";
             break;
         case "91":
             div_num = 0;
             language = 'tamil';
             speak_lang = "ta";
             wordsarr = tamil_Beg;
-            document.title = "Tamil Beginner";
+            document.title = "LingoVerse-Tamil Beginner";
             break;
         case "92":
             div_num = 1;
             language = 'tamil';
             speak_lang = "ta";
             wordsarr = tamil_Mod;
-            document.title = "Tamil Moderate";
+            document.title = "LingoVerse-Tamil Moderate";
             break;
         case "93":
             div_num = 2;
             language = 'tamil';
             speak_lang = "ta";
             wordsarr = tamil_Adv;
-            document.title = "Tamil Advanced";
+            document.title = "LingoVerse-Tamil Advanced";
             break;
         case "100":
             let arrayis = JSON.parse(localStorage.getItem("difficult"));
             div_num = 3;
             language = 'Difficult Words';
             wordsarr = arrayis;
-            document.title = "Difficult Words";
+            document.title = "LingoVerse-Difficult Words";
             document.getElementById("change_division_menu").style.display = "none";
             break;
 

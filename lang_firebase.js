@@ -1,5 +1,30 @@
 import firebaseFunctions from "./firebase_init.js";
 const { database, analytics, auth, app, set, ref, update, get, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } = firebaseFunctions;
+var isuser = true;
+
+
+window.is_loggedin = () => {
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            console.log("User LoggedIn");
+        } else {
+            console.log("User not logged in");
+            isuser = false;
+        }
+    });
+};
+
+
+window.log_out = () => {
+    auth.signOut()
+        .then(() => {
+            console.log("User logged out successfully.");
+            open("index.html", "_self");
+        })
+        .catch((error) => {
+            console.error("Error during logout:", error);
+        });
+};
 
 
 reset_word_count();
@@ -23,10 +48,11 @@ window.send_lang_div = (a) => {
     });
 };
 
+
 window.send_atword = (a) => {
 
     let atword = 0;
-    if (typeof(a) != 'undefined') {
+    if (typeof (a) != 'undefined') {
         atword = a;
     }
     auth.onAuthStateChanged(function (user) {
@@ -43,6 +69,7 @@ window.send_atword = (a) => {
     });
     return atword;
 };
+
 
 const user = auth.currentUser;
 function fetchData(a, callback) {
@@ -65,16 +92,6 @@ function fetchData(a, callback) {
     });
 }
 
-window.log_out = () => {
-    auth.signOut()
-        .then(() => {
-            console.log("User logged out successfully.");
-            open("index.html", "_self");
-        })
-        .catch((error) => {
-            console.error("Error during logout:", error);
-        });
-};
 
 window.send_word = () => {
     fetchData("word_count", function (result) {
@@ -110,6 +127,7 @@ function reset_word_count() {
     });
 }
 
+
 function set_word_count_to_zero() {
     auth.onAuthStateChanged(function (user) {
         if (user) {
@@ -124,6 +142,7 @@ function set_word_count_to_zero() {
     });
 }
 
+
 function reset_last_update(crnt_date) {
     auth.onAuthStateChanged(function (user) {
         if (user) {
@@ -137,3 +156,18 @@ function reset_last_update(crnt_date) {
         }
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

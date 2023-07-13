@@ -4,19 +4,16 @@ const { database, analytics, auth, app, set, ref, update, get, createUserWithEma
 // var goal_value;
 var language;
 var division;
+var isuser = true;
 
-window.goal = (a) => {
+window.is_loggedin = () => {
     auth.onAuthStateChanged(function (user) {
         if (user) {
-            var dataRef = ref(database, "users/" + user.uid);
-            var updatedData = {
-                goal: a
-            };
-            update(dataRef, updatedData);
+            console.log("User LoggedIn");
         } else {
             console.log("User not logged in");
+            isuser = false;
         }
-
     });
 };
 
@@ -31,16 +28,6 @@ window.log_out = () => {
         });
 };
 
-window.is_loggedin = () => {
-    auth.onAuthStateChanged(function (user) {
-        if (user) {
-            console.log("User LoggedIn");
-        } else {
-            console.log("User not logged in");
-            open("index.html", "_self");
-        }
-    });
-};
 
 const user = auth.currentUser;
 function fetchData(a, callback) {
@@ -65,8 +52,6 @@ function fetchData(a, callback) {
         }
     });
 }
-
-
 window.updateElements = () => {
     send_diff();
     setInterval(function () {
@@ -90,7 +75,6 @@ window.updateElements = () => {
     }, 1000);
 
 };
-
 function send_diff() {
     var a = localStorage.difficult;
     auth.onAuthStateChanged(function (user) {
@@ -106,5 +90,18 @@ function send_diff() {
 
     });
 }
+window.goal = (a) => {
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            var dataRef = ref(database, "users/" + user.uid);
+            var updatedData = {
+                goal: a
+            };
+            update(dataRef, updatedData);
+        } else {
+            console.log("User not logged in");
+        }
 
+    });
+};
 
