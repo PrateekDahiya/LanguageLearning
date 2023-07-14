@@ -1,6 +1,9 @@
 public
 .vscode
 .firebase
-node_modulus
-newindex
+node_modules
+.github
+*.json
+*.py
+
 
