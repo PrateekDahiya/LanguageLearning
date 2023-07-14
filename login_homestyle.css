@@ -54,6 +54,10 @@ header {
     color: rgb(255, 187, 0);
 }
 
+#languages-button:hover{
+    color: rgb(255, 187, 0);
+}
+
 .nav_links {
     list-style: none;
 }
@@ -848,7 +852,7 @@ header {
     }
 
     #webname {
-        width: 400px;
+        width: 350px;
     }
 
     #title_name {
@@ -893,6 +897,7 @@ header {
     #container_prop {
         top: 10px;
         flex-direction: column;
+        width: min-content;
     }
 
     #right_prop,

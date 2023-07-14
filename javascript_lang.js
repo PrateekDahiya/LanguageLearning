@@ -1,18 +1,13 @@
 const urlParams = new URLSearchParams(window.location.search);
 const langid = urlParams.get('langid');
-const atword = urlParams.get('atword');
+const atword = parseInt(urlParams.get('atword'));
 var div_num;
 var language;
 var wordsarr;
-var is_heard = 0;
 var i = 0;
-i = parseInt(atword);
+i = atword;
 var divtext = ['Beginner', 'Moderate', 'Advanced', 'Hard'];
-var divisions = ['Beg', 'Mod', 'Adv'];
-var withromanji = ['japanese', 'chinese', 'tamil', 'korean', 'russian'];
 var speak_lang;
-
-
 
 
 // Loading Page
@@ -37,7 +32,8 @@ let hindi_Mod = [[' Yes, I came.', 'Haan, main aaya. '], [' No, I did not come.'
 let hindi_Adv = [[' I am not sure what to do.', 'Mujhe samajh mein nahi aa raha hai ki main kya karoon. '], [' If you work hard, you will definitely succeed.', 'Agar tum apne kaam mein mann lagaoge to safalta zaroor milegi. '], [' I had never been here before coming here.', 'Main yahan aane se pahle kabhi nahin aaya tha. '], [" I don't completely agree with everything you said.", 'Aapne jo bhi kaha hai, main uske saath poori tarah sehmat nahi hoon. '], [" I have worked so hard for you, please don't ruin it.", 'Mainne tumhare liye itni mehnat ki hai, kripaya ise barbaad na karo. '], [' Have you started to run away from your responsibilities?', 'Kya tumne apni zimmedari se bhagna shuru kar diya hai? '], [" I have completed my work, now it's your turn.", 'Mainne apna kaam poora kiya hai, ab aapki baari hai. '], [' He has a lot of courage and determination inside him.', 'Uske andar bahut sahas aur dridh sankalp hai. '], [' I am going out of the city for a few days.', 'Main kuch dinon ke liye shahar se bahar ja raha hoon. '], [' I am very happy with the way you are living your life.', 'Jis tarah se tum apni zindagi guzaar rahe ho, usse mujhe badi khushi milti hai. ']];
 let japanese_Beg = [[' Hello', 'Konnichiwa', 'こんにちは '], [' Thank you', 'Arigatou', 'ありがとう '], ['I love you', 'Aishitemasu', '愛してます'], [' Sorry', 'Sumimasen', 'すみません '], [' Good morning', 'Ohayou gozaimasu', 'おはようございます '], [' Good evening', 'Konbanwa', 'こんばんは '], [' Yes', 'Hai', 'はい '], [' No', 'Iie', 'いいえ '], [' Please', 'Onegaishimasu', 'お願いします '], ['I\'m sorry', 'Gomen nasai', 'ごめんなさい '], [' Goodbye', 'Sayonara', 'さようなら '], [' Cat', 'Neko', '猫 '], [' Dog', 'Inu', '犬 '], [' Fish', 'Sakana', '魚 '], [' Flower', 'Hana', '花 '], [' Mountain', 'Yama', '山 '], [' River', 'Kawa', '川 '], [' Weather', 'Tenki', '天気 '], [' School', 'Gakkou', '学校 '], [' Book', 'Hon', '本 '], [' Train', 'Densha', '電車 '], [' Airplane', 'Hikouki', '飛行機 '], [' Travel', 'Ryokou', '旅行 '], [' Foreigner', 'Gaikokujin', '外国人 '], [' Food', 'Tabemono', '食べ物 '], [' Drink', 'Nomimono', '飲み物 '], [' Family', 'Kazoku', '家族 '], [' Friend', 'Tomodachi', '友達 '], [' Language', 'Gengo', '言語 '], [' History', 'Rekishi', '歴史 '], [' Culture', 'Bunka', '文化 ']];
 let japanese_Mod = [[' Good morning.', 'Ohayou gozaimasu.', 'おはようございます。 '], [' Thank you.', 'Arigatou.', 'ありがとう。 '], [' Excuse me.', 'Sumimasen.', 'すみません。 '], [" I'm sorry.", 'Gomen nasai.', 'ごめんなさい。 '], [" Yes, that's correct.", 'Hai, sou desu.', 'はい、そうです。 '], [" No, that's incorrect.", 'Iie, chigaimasu.', 'いいえ、違います。 '], [' Please.', 'Onegaishimasu.', 'お願いします。 '], [' Goodbye.', 'Sayonara.', 'さようなら。 '], [" You're welcome.", 'Dou itashimashite.', 'どういたしまして。 '], [' What is your name?', 'Namae wa nan desu ka?', '名前は何ですか？ '], [" Let's eat (before a meal).", 'Itadakimasu.', 'いただきます。 '], [' Thank you for the meal (after a meal).', 'Gochisousama deshita.', 'ごちそうさまでした。 '], [' What time is it now?', 'Ima nanji desu ka?', '今何時ですか？ '], [' How are you?', 'Ogenki desu ka?', 'お元気ですか？ '], [" I'm fine.", 'Genki desu.', '元気です。 '], [' Goodnight.', 'Oyasuminasai.', 'お休みなさい。 '], [' Thank you for your hard work.', 'Otsukaresama desu.', 'お疲れ様です。 '], [' Please come in.', 'Douzo oagari kudasai.', 'どうぞお上がりください。 '], [' Are you okay?', 'Daijoubu desu ka?', '大丈夫ですか？ '], [' Where are you from?', 'Doko kara kimashita ka?', 'どこから来ましたか？ ']];
-let japanese_Adv = [[' She can speak Japanese fluently.', 'Kanojo wa nihongo o jouzu ni hanasemasu.', '彼女は日本語を上手に話せます。 '], [' Japan is a country with four seasons.', 'Nihon wa shiki ga aru kuni desu.', '日本は四季がある国です。 '], [' I am planning to travel to Kyoto next week.', 'Watashi wa raishuu, Kyoto ni ryokou ni iku yotei desu.', '私は来週、京都に旅行に行く予定です。 '], [' He is studying abroad in Japan.', 'Kare wa Nihon ni ryuugaku shiteimasu.', '彼は日本に留学しています。 '], [' I am interested in Japanese culture.', 'Nihon no bunka ni kyoumi ga arimasu.', '日本の文化に興味があります。 '], [' Tokyo is one of the cities with a large population.', 'Tokyo wa jinkou ga ooi toshi no hitotsu desu.', '東京は人口が多い都市の一つです。 '], [' There are many beautiful shrines and temples in Japan.', 'Nihon ni wa takusan no utsukushii jinja ya jiin ga arimasu.', '日本にはたくさんの美しい神社や寺院があります。 '], [' The number of foreigners studying Japanese is increasing.', 'Nihongo o benkyou shiteiru gaikokujin ga fuete imasu.', '日本語を勉強している外国人が増えています。 '], [' Japanese anime and manga are famous worldwide.', 'Nihon no anime ya manga wa sekaiteki ni yuumei desu.', '日本のアニメや漫画は世界的に有名です。 '], [' Japanese cuisine is delicious, especially sushi is recommended.', 'Nihon ryouri wa oishii desu. Tokuni sushi wa osusume desu.', '日本料理は美味しいです。特に寿司はおすすめです。 '], [" Japan's transportation system is highly developed.", 'Nihon no koutsuu kikan wa hijou ni hatten shiteimasu.', '日本の交通機関は非常に発展しています。 '], [' Japanese high school students are enthusiastic about studying.', 'Nihon no koukousei wa benkyou ni nesshin desu.', '日本の高校生は勉強に熱心です。 '], [' Japanese companies are famous worldwide.', 'Nihon no kigyou wa sekaiteki ni yuumei desu.', '日本の企業は世界的に有名です。 '], [' Japanese public facilities are clean and easy to use.', 'Nihon no koukyou shisetsu wa seiketsu de tsukaiyasui desu.', '日本の公共施設は清潔で使いやすいです。 '], [" Japan's nature is beautiful.", 'Nihon no shizen wa utsukushii desu.', '日本の自然は美しいです。 '], [' Japanese houses are built with strong structures that can withstand earthquakes.', 'Nihon no juutaku wa jishin ni tsuyoi kouzou ni natteimasu.', '日本の住宅は地震に強い構造になっています。 '], [" Japan's education system boasts a high level of excellence.", 'Nihon no kyouiku seido wa takai reberu o hokotteimasu.', '日本の教育制度は高いレベルを誇っています。 '], [" Japan's traditional culture is being carefully preserved.", 'Nihon no dentou bunka wa taisetsu ni mamorareteimasu.', '日本の伝統文化は大切に守られています。 '], [' Japan is a very safe country.', 'Nihon wa hijou ni anzen na kuni desu.', '日本は非常に安全な国です。 '], [" Japan's medical technology is among the world's top level.", 'Nihon no iryou gijutsu wa sekai toppu reberu desu.', '日本の医療技術は世界トップレベルです。 ']];
+let japanese_Adv = [[' She can speak Japanese fluently.', 'Kanojo wa nihongo o jouzu ni hanasemasu.', '彼女は日本語を上手に話せます。 '], [' Japan is a country with four seasons.', 'Nihon wa shiki ga aru kuni desu.', '日本は四季がある国です。 '], [' I am planning to travel to Kyoto next week.', 'Watashi wa raishuu, Kyoto ni ryokou ni iku yotei desu.', '私は来週、京都に旅行に行く予定です。 '], [' He is studying abroad in Japan.', 'Kare wa Nihon ni ryuugaku shiteimasu.', '彼は日本に留学しています。 '], [' I am interested in Japanese culture.', 'Nihon no bunka ni kyoumi ga arimasu.', '日本の文化に興味があります。 '], [' Tokyo is one of the cities with a large population.', 'Tokyo wa jinkou ga ooi toshi no hitotsu desu.', '東京は人口が多い都市の一つです。 '], [' There are many beautiful shrines and temples in Japan.', 'Nihon ni wa takusan no utsukushii jinja ya jiin ga arimasu.', '日本にはたくさんの美しい神社や寺院があります。 '], [' The number of foreigners studying Japanese is increasing.', 'Nihongo o benkyou shiteiru gaikokujin ga fuete imasu.', '日本語を勉強している外国人が増えています。 '], [' Japanese anime and manga are famous worldwide.',
+    'Nihon no anime ya manga wa sekaiteki ni yuumei desu.', '日本のアニメや漫画は世界的に有名です。 '], [' Japanese cuisine is delicious, especially sushi is recommended.', 'Nihon ryouri wa oishii desu. Tokuni sushi wa osusume desu.', '日本料理は美味しいです。特に寿司はおすすめです。 '], [" Japan's transportation system is highly developed.", 'Nihon no koutsuu kikan wa hijou ni hatten shiteimasu.', '日本の交通機関は非常に発展しています。 '], [' Japanese high school students are enthusiastic about studying.', 'Nihon no koukousei wa benkyou ni nesshin desu.', '日本の高校生は勉強に熱心です。 '], [' Japanese companies are famous worldwide.', 'Nihon no kigyou wa sekaiteki ni yuumei desu.', '日本の企業は世界的に有名です。 '], [' Japanese public facilities are clean and easy to use.', 'Nihon no koukyou shisetsu wa seiketsu de tsukaiyasui desu.', '日本の公共施設は清潔で使いやすいです。 '], [" Japan's nature is beautiful.", 'Nihon no shizen wa utsukushii desu.', '日本の自然は美しいです。 '], [' Japanese houses are built with strong structures that can withstand earthquakes.', 'Nihon no juutaku wa jishin ni tsuyoi kouzou ni natteimasu.', '日本の住宅は地震に強い構造になっています。 '], [" Japan's education system boasts a high level of excellence.", 'Nihon no kyouiku seido wa takai reberu o hokotteimasu.', '日本の教育制度は高いレベルを誇っています。 '], [" Japan's traditional culture is being carefully preserved.", 'Nihon no dentou bunka wa taisetsu ni mamorareteimasu.', '日本の伝統文化は大切に守られています。 '], [' Japan is a very safe country.', 'Nihon wa hijou ni anzen na kuni desu.', '日本は非常に安全な国です。 '], [" Japan's medical technology is among the world's top level.", 'Nihon no iryou gijutsu wa sekai toppu reberu desu.', '日本の医療技術は世界トップレベルです。 ']];
 let korean_Beg = [[' Hello', 'annyeonghaseyo', '안녕하세요 '], [' Thank you', 'gamsahamnida', '감사합니다 '], [' Sorry', 'joesonghamnida', '죄송합니다 '], [' Yes', 'ye', '예 '], [' No', 'anio', '아니오 '], [' Friend', 'chingu', '친구 '], [' Family', 'gajok', '가족 '], [' Food', 'eumsik', '음식 '], [' Water', 'mul', '물 '], [' School', 'hakgyo', '학교 '], [' Love', 'sarang', '사랑 '], [' Joy', 'gippeum', '기쁨 '], [' Sadness', 'seulpeum', '슬픔 '], [' Health', 'geongang', '건강 '], [' Help', 'doum', '도움 '], [' Thank you', 'gomawoyo', '고마워요 '], [" I'm sorry", 'mianhaeyo', '미안해요 '], [' Day', 'il', '일 '], [' Night', 'bam', '밤 '], [' Read', 'ikda', '읽다 '], [' Write', 'sseuda', '쓰다 '], [' Listen', 'deutda', '듣다 '], [' Speak', 'malhada', '말하다 '], [' Understand', 'ihaehada', '이해하다 '], [' See', 'boda', '보다 '], [' Photo', 'sajin', '사진 '], [' Travel', 'yeohaeng', '여행 '], [' Music', 'eumak', '음악 '], [' Movie', 'yeonghwa', '영화 '], [' Dance', 'chum', '춤 ']];
 let korean_Mod = [[' Hello?', 'annyeonghaseyo?', '안녕하세요? '], [' Yes, thank you.', 'ne, gamsahamnida.', '네, 감사합니다. '], [" I'm sorry, I made a mistake.", 'joesonghamnida, jalmoshaesseoyo.', '죄송합니다, 잘못했어요. '], [' I am learning Korean.', 'jeoneun hangugeo reul baeugo isseoyo.', '저는 한국어를 배우고 있어요. '], [" Today's weather is good.", 'oneul nalssiga johayo.', '오늘 날씨가 좋아요. '], [' Where are you going?', 'eodie gago isseoyo?', '어디에 가고 있어요? '], [' I ate food.', 'bapeul meogeosseoyo.', '밥을 먹었어요. '], [' I live in Korea.', 'jeoneun hanguke salgo isseoyo.', '저는 한국에 살고 있어요. '], [' Read this book.', 'i chaek eul ilgeo bwayo.', '이 책을 읽어 봐요. '], [' I take a walk in the park and relax.', 'gong won eseo sanchaekhamyeonseo hyusikhaeyo.', '공원에서 산책하면서 휴식해요. '], [' What day is it today?', 'oneul eun museun yoil ieyo?', '오늘은 무슨 요일이에요? '], [' Would you like to have dinner together?', 'jeonyeok siksa reul hamkke hasillae yo?', '저녁 식사를 함께 하실래요? '], [' How can we solve this problem?', 'i munje reul eotteohge haegyeolhal su iss eulkka yo?', '이 문제를 어떻게 해결할 수 있을까요? '], [' Cheer up! Everything will be fine.', 'himnaeseyo! da jal doel geoyeyo.', '힘내세요! 다 잘 될 거예요. '], [' Where is the nearest subway station from here?', 'yeogieseo gakkawoon jihacheol yeog i eodie issnayo?', '여기에서 가까운 지하철 역이 어디에 있나요? '], [' I enjoy listening to music.', 'jeoneun eumak eul deutneun geos eul johahaeyo.', '저는 음악을 듣는 것을 좋아해요. '], [' Have a good day today.', 'oneul eun joh eun haru bonaeseyo.', '오늘은 좋은 하루 보내세요. '], [' Learning a new language is fun.', 'saeroun eon eo reul baeuneun geos eun jaemiisseoyo.', '새로운 언어를 배우는 것은 재미있어요. '], [' I will take care of this matter.', 'i il eun jega mas eulgeyo.', '이 일은 제가 맡을게요. '], [' I am making travel plans.', 'yeohaeng gyehoeg eul seugo iss eoyo.', '여행 계획을 세우고 있어요. ']];
 let korean_Adv = [[' I use an app that helps me learn Korean in Korea.', 'jeoneun hangugeseo hangugeo reul baeuneunde doum eul juneun eopeul eul sayonghamnida.', '저는 한국에서 한국어를 배우는데 도움을 주는 어플을 사용합니다. '], [' By cooking Korean food, you can learn about Korean culture.', 'hangug eumsig eul mandeul eo bomyeonseo hangug munhwa e daehae baeul su iss eoyo.', '한국 음식을 만들어 보면서 한국 문화에 대해 배울 수 있어요. '], [' Watching Korean dramas and movies can help improve your Korean language skills.', 'hangug deurama wa yeonghwa reul bomyeonseo hangug eo sill yeog eul hyangsang sikil su iss eoyo.', '한국 드라마와 영화를 보면서 한국어 실력을 향상시킬 수 있어요. '], [' I visited many tourist attractions while traveling in Korea.', 'hangug e yeohaenghamyeonseo manh eun gwangwangji reul bangmunhaess eoyo.', '한국에 여행하면서 많은 관광지를 방문했어요. '], [' I made friends with Koreans while living in Korea.', 'hangug eseo saneun dong an hangug indeul gwa chingu ga doeeoss eoyo.', '한국에서 사는 동안 한국인들과 친구가 되었어요. '], [' I took Korean conversation classes and was able to apply it in real life situations.', 'hangug eo hoe hwa sueob eul deutgo silsaenghwal eseo hwalyonghal su iss eoss eoyo.', '한국어 회화 수업을 듣고 실생활에서 활용할 수 있었어요. '], [' I wanted to deeply understand Korean culture, so I participated in traditional Korean events.', 'hangug munhwa e daehae gipi ihaehago sip eoseo hangug ui jeontong haengsa e chamyeohess eoyo.', '한국 문화에 대해 깊이 이해하고 싶어서 한국의 전통 행사에 참여했어요. '], [' I studied Korean economy and gained an understanding of the business environment in Korea.', 'hangug gyeongje e daehae yeonguhamyeo hangug ui bizeuniseu hwangen eul ihaehaess eoyo.', '한국 경제에 대해 연구하며 한국의 비즈니스 환경을 이해했어요. '], [' As a foreign student in Korea, I achieved academic success.', 'hangug eseo oegugin yuhagsaeng euloseo hakmunjeog in seong gwaleul ilu eoss eoyo.', '한국에서 외국인 유학생으로서 학문적인 성과를 이루었어요. '], [' Through discussions with Koreans, I gained diverse perspectives.', 'hangug in gwaeui toloneul tonghae dayanghan sigag eul eodeul su iss eoss eoyo.', '한국인과의 토론을 통해 다양한 시각을 얻을 수 있었어요. ']];
@@ -257,58 +253,82 @@ function identify_lang() {
     }
     document.getElementById("Lang_name").innerHTML = String(language[0]).toUpperCase() + String(language).slice(1,) + " Learning" + " (" + String(divtext[div_num]) + ")";
     document.getElementsByClassName("lanname")[0].innerHTML = String(language[0]).toUpperCase() + String(language).slice(1,);
-    console.log();
 }
 
 identify_lang();
-
-var num_words = wordsarr.length;
-
-
-// setting initial values
-
-if (wordsarr[i].length == 3 && withromanji.includes(language)) {
-    document.getElementById("eng").innerHTML = wordsarr[i][0];
-    document.getElementById("romaji").innerHTML = wordsarr[i][1];
-    document.getElementById("lang").innerHTML = wordsarr[i][2];
-}
-else if (language === "Difficult Words") {
-    if (wordsarr[i].length === 4) {
-        document.getElementById("eng").innerHTML = wordsarr[i][0];
-        document.getElementById("romaji").innerHTML = wordsarr[i][1];
-        document.getElementById("lang").innerHTML = wordsarr[i][2];
-    }
-    else if (wordsarr[i].length === 3) {
-        document.getElementById("eng").innerHTML = wordsarr[i][0];
-        document.getElementById("lang").innerHTML = wordsarr[i][1];
-    }
-}
-else if (wordsarr[i].length == 2) {
-    document.getElementById("eng").innerHTML = wordsarr[i][0];
-    document.getElementById("lang").innerHTML = wordsarr[i][1];
-}
-
 
 
 // Language description in console
 console.log("Its", language, "at", "division", divtext[div_num]);
 
 
-// romanisation display
+function adjust_layout_words() {
+    // setting is romanistion required
+    if (wordsarr[i].length == 3 && language != "Difficult Words") {
+        document.getElementById("romaji").style.display = "block";
+        document.getElementById("romajititle").style.display = "block";
+    } else if (wordsarr[i].length === 4 && language === "Difficult Words") {
+        document.getElementById("romaji").style.display = "block";
+        document.getElementById("romajititle").style.display = "block";
+    } else if (language === "Difficult Words" && wordsarr[i].length === 3) {
+        document.getElementById("romaji").style.display = "none";
+        document.getElementById("romajititle").style.display = "none";
+    } else if (wordsarr[i].length === 2 && language != "Difficult Words") {
+        document.getElementById("romaji").style.display = "none";
+        document.getElementById("romajititle").style.display = "none";
+    }
 
-if (wordsarr[i].length == 3 && withromanji.includes(language)) {
-    document.getElementById("romaji").style.display = "block";
-    document.getElementById("romajititle").style.display = "block";
-} else if (wordsarr[i].length === 4 && language === "Difficult Words") {
-    document.getElementById("romaji").style.display = "block";
-    document.getElementById("romajititle").style.display = "block";
-} else if (language === "Difficult Words" && wordsarr[i].length === 3) {
-    document.getElementById("romaji").style.display = "none";
-    document.getElementById("romajititle").style.display = "none";
-} else if (wordsarr[i].length === 2) {
-    document.getElementById("romaji").style.display = "none";
-    document.getElementById("romajititle").style.display = "none";
+    // setting words
+    if (wordsarr[i].length == 3 && language != "Difficult Words") {
+        document.getElementById("eng").innerHTML = wordsarr[i][0];
+        document.getElementById("romaji").innerHTML = wordsarr[i][1];
+        document.getElementById("lang").innerHTML = wordsarr[i][2];
+    }
+    else if (wordsarr[i].length === 4 && language === "Difficult Words") {
+        document.getElementById("eng").innerHTML = wordsarr[i][0];
+        document.getElementById("romaji").innerHTML = wordsarr[i][1];
+        document.getElementById("lang").innerHTML = wordsarr[i][2];
+    }
+    else if (wordsarr[i].length === 3 && language === "Difficult Words") {
+        document.getElementById("eng").innerHTML = wordsarr[i][0];
+        document.getElementById("lang").innerHTML = wordsarr[i][1];
+    }
+
+    else if (wordsarr[i].length == 2 && language != "Difficult Words") {
+        document.getElementById("eng").innerHTML = wordsarr[i][0];
+        document.getElementById("lang").innerHTML = wordsarr[i][1];
+    }
+
+    // For Hiding back and next when required
+    if (i == 0) {
+        document.getElementById('backward').style.display = "none";
+    }
+    else (document.getElementById('backward').style.display = "block");
+    if (i == wordsarr.length - 1) {
+        document.getElementById('continue').style.display = "none";
+    } else {
+        document.getElementById('continue').style.display = "block";
+    }
+
+
+    // For Division Menu
+    document.getElementById("Beg_div").innerHTML = divtext[0];
+    document.getElementById("Mod_div").innerHTML = divtext[1];
+    document.getElementById("Adv_div").innerHTML = divtext[2];
+
+    // Adding border to current Div
+    if (div_num == 0) {
+        document.getElementById('Beg_div').style.border = "2px solid black";
+    }
+    else if (div_num == 1) {
+        document.getElementById('Mod_div').style.border = "2px solid black";
+    }
+    else if (div_num == 2) {
+        document.getElementById('Adv_div').style.border = "2px solid black";
+    }
 }
+
+adjust_layout_words();
 
 // Langauges Menu
 let containerlist = document.getElementById("container_list");
@@ -335,13 +355,12 @@ function hideList() {
     radioinputs.style.display = "none";
 }
 
+
 // Bypass Google Translate popup and disable automatic translation and runs now
 function disable_googletrans() {
     document.cookie = 'googtrans=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }
-
 disable_googletrans();
-
 
 
 
@@ -355,24 +374,8 @@ function checkLSV(variable) {
 }
 
 
-// // For making all functions work properly
-// nextword();
-// backword();
 
 
-// to hide back Button
-document.getElementById('backward').style.display = "none";
-
-// Adding border to current Div
-if (div_num == 0) {
-    document.getElementById('Beg_div').style.border = "2px solid black";
-}
-else if (div_num == 1) {
-    document.getElementById('Mod_div').style.border = "2px solid black";
-}
-else if (div_num == 2) {
-    document.getElementById('Adv_div').style.border = "2px solid black";
-}
 
 // Javascript Speech SynthesisUtterance
 function speak() {
@@ -385,7 +388,7 @@ function speak() {
     else if (wordsarr[i].length === 4 && language == "Difficult Words") {
         var msg = new SpeechSynthesisUtterance(wordsarr[i][2]);
     }
-    else if (wordsarr[i].length === 2) {
+    else if (wordsarr[i].length === 2 && language != "Difficult Words") {
         var msg = new SpeechSynthesisUtterance(wordsarr[i][1]);
     }
 
@@ -402,7 +405,6 @@ function speak() {
     }
 
     window.speechSynthesis.speak(msg);
-    is_heard = 1;
 }
 function speakeng() {
     var msg = new SpeechSynthesisUtterance(wordsarr[i][0]);
@@ -410,58 +412,12 @@ function speakeng() {
     window.speechSynthesis.speak(msg);
 }
 
+
 // For changing Word to next
 function nextword() {
-
     if (i < wordsarr.length - 1) {
         i = i + 1;
-
-        if (wordsarr[i].length == 3 && withromanji.includes(language)) {
-            document.getElementById("eng").innerHTML = wordsarr[i][0];
-            document.getElementById("romaji").innerHTML = wordsarr[i][1];
-            document.getElementById("lang").innerHTML = wordsarr[i][2];
-        }
-        else if (language === "Difficult Words") {
-            if (wordsarr[i].length === 4) {
-                document.getElementById("eng").innerHTML = wordsarr[i][0];
-                document.getElementById("romaji").innerHTML = wordsarr[i][1];
-                document.getElementById("lang").innerHTML = wordsarr[i][2];
-            }
-            else if (wordsarr[i].length === 3) {
-                document.getElementById("eng").innerHTML = wordsarr[i][0];
-                document.getElementById("lang").innerHTML = wordsarr[i][1];
-            }
-        }
-        else if (wordsarr[i].length == 2) {
-            document.getElementById("eng").innerHTML = wordsarr[i][0];
-            document.getElementById("lang").innerHTML = wordsarr[i][1];
-        }
-    }
-    if (i == 0) {
-        document.getElementById('backward').style.display = "none";
-    }
-    else (document.getElementById('backward').style.display = "block");
-    if (i == wordsarr.length - 1) {
-        document.getElementById('continue').style.display = "none";
-    } else {
-        document.getElementById('continue').style.display = "block";
-    }
-
-    // romanisation display
-    if (language = "Difficult Words") {
-        if (wordsarr[i].length == 3 && withromanji.includes(language)) {
-            document.getElementById("romaji").style.display = "block";
-            document.getElementById("romajititle").style.display = "block";
-        } else if (wordsarr[i].length === 4 && language === "Difficult Words") {
-            document.getElementById("romaji").style.display = "block";
-            document.getElementById("romajititle").style.display = "block";
-        } else if (language === "Difficult Words" && wordsarr[i].length === 3) {
-            document.getElementById("romaji").style.display = "none";
-            document.getElementById("romajititle").style.display = "none";
-        } else if (wordsarr[i].length === 2) {
-            document.getElementById("romaji").style.display = "none";
-            document.getElementById("romajititle").style.display = "none";
-        }
+        adjust_layout_words();
     }
 }
 
@@ -469,68 +425,16 @@ function nextword() {
 function backword() {
     if (i > 0) {
         i = i - 1;
-
-        if (wordsarr[i].length === 3 && withromanji.includes(language)) {
-            document.getElementById("eng").innerHTML = wordsarr[i][0];
-            document.getElementById("romaji").innerHTML = wordsarr[i][1];
-            document.getElementById("lang").innerHTML = wordsarr[i][2];
-        }
-        else if (language === "Difficult Words") {
-            if (wordsarr[i].length === 4) {
-                document.getElementById("eng").innerHTML = wordsarr[i][0];
-                document.getElementById("romaji").innerHTML = wordsarr[i][1];
-                document.getElementById("lang").innerHTML = wordsarr[i][2];
-            }
-            else if (wordsarr[i].length === 3) {
-                document.getElementById("eng").innerHTML = wordsarr[i][0];
-                document.getElementById("lang").innerHTML = wordsarr[i][1];
-            }
-        }
-        else if (wordsarr[i].length == 2 && !withromanji.includes(language)) {
-            document.getElementById("eng").innerHTML = wordsarr[i][0];
-            document.getElementById("lang").innerHTML = wordsarr[i][1];
-        }
-    }
-    if (i == 0) {
-        document.getElementById('backward').style.display = "none";
-    }
-    else (document.getElementById('backward').style.display = "block");
-    if (i == wordsarr.length - 1) {
-        document.getElementById('continue').style.display = "none";
-    } else {
-        document.getElementById('continue').style.display = "block";
-    }
-
-    // romanisation display
-    if (language = "Difficult Words") {
-        if (wordsarr[i].length == 3 && withromanji.includes(language)) {
-            document.getElementById("romaji").style.display = "block";
-            document.getElementById("romajititle").style.display = "block";
-        } else if (wordsarr[i].length === 4 && language === "Difficult Words") {
-            document.getElementById("romaji").style.display = "block";
-            document.getElementById("romajititle").style.display = "block";
-        } else if (language === "Difficult Words" && wordsarr[i].length === 3) {
-            document.getElementById("romaji").style.display = "none";
-            document.getElementById("romajititle").style.display = "none";
-        } else if (wordsarr[i].length === 2) {
-            document.getElementById("romaji").style.display = "none";
-            document.getElementById("romajititle").style.display = "none";
-        }
+        adjust_layout_words();
     }
 }
 
-
-// For Division Menu
-document.getElementById("Beg_div").innerHTML = divtext[0];
-document.getElementById("Mod_div").innerHTML = divtext[1];
-document.getElementById("Adv_div").innerHTML = divtext[2];
 
 // For Changing Division
 function chng_div(n) {
     let link = String("language.html?" + "langid=" + String(langid[0]) + String(n + 1) + "&atword=0");
     open(link, "_parent");
 }
-
 
 
 function goto(b, diviv = "1", atword = 0) {
@@ -605,7 +509,6 @@ function addtodiff() {
             else {
                 console.log("item already exists!");
             }
-
         }
         else {
             diff_arr = [z];
@@ -671,6 +574,8 @@ function uncheck_diff() {
 function langanddivandatword() {
     return [language, divtext[div_num], i];
 }
+
+
 function send_atwordloop() {
     let returnedatword;
     setInterval(function () {
