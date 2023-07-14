@@ -1,9 +1,4 @@
 public
-.vscode
-.firebase
-node_modules
-*.json
-*.py
-*.log
+
 
 
