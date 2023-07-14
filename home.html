@@ -5,11 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="Images/logolion.png">
+        <link rel="image_src" href="Images/logolion.png">
+        <meta itemprop="image" content="Images/logolion.png">
         <link rel="stylesheet" href="homestyle.css">
-        <script type="module" src="firebase_init.js" defer></script>
+        <script type="module" src="firebase_init.js"></script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819267788985297" crossorigin="anonymous"></script>
         <script type="module" src="homefirejava.js"></script>
-        <title>LINGOVERSE</title>
+        <title>LingoVerse-Home</title>
+        <meta name="description" content="LingoVerse: Unlock Your Language Potential. Learn languages with ease through interactive lessons, immersive exercises, and personalized learning plans. Explore a world of diverse languages and cultures, and enhance your communication skills effortlessly with LingoVerse.">
     </head>
     <body onload="updateElements();is_loggedin()">
         <!-- Common Header -->
@@ -27,15 +30,9 @@
                     <ul class="nav_links">
                         <!-- <li><a id="home" href="home.html">Home</a></li> -->
                         <li>
-                            <script>
-                        function goto(b) {
-                            a = String(b) + "_Beg.html";
-                            open(a, "_self");
-                        }
-                            </script>
                             <div class="languages_list">
                                 <div id="container_list">
-                                    <a>Languages</a>
+                                    <span id="languages-button">Languages</span>
                                 </div>
                                 <div class="radio-inputs">
                                     <label>
@@ -132,6 +129,12 @@
                 You are Currently Learning
                 <br>
                 <span id="crnt_lang">&nbsp;</span>
+                <hr style="height: 40px;border-color: transparent;">
+                You have done
+                <br>
+                <span id="crnt_atword">&nbsp;</span>
+                <br>
+                <p style="position: relative;left: 50px;">Words</p>
                 <div id="continue_lang_btn" onclick="continuej_to()">
                     Continue Your journey
                 </div>
@@ -182,7 +185,7 @@
                 <div id="diff_count_num">0</div>
                 Work on Difficult Words
                 <br>
-                <div id="difficult_btn">Start Work on Hard Words</div>
+                <div id="difficult_btn" onclick="goto('Difficult Words')">Start Work on Hard Words</div>
             </div>
         </div>
         <div id="loading-back">

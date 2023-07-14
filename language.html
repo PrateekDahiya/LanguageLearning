@@ -5,13 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="Images/logolion.png">
+        <link rel="image_src" href="Images/logolion.png">
+        <meta itemprop="image" content="Images/logolion.png">
         <link rel="stylesheet" href="language_style.css">
-        <script type="module" src="firebase_init.js" defer></script>
+        <script type="module" src="firebase_init.js"></script>
+        <link rel="canonical" href="language.html">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819267788985297" crossorigin="anonymous"></script>
         <script type="module" src="lang_firebase.js"></script>
-        <title>Chinese Moderate</title>
+        <title>Lingoverse-Languages</title>
+        <meta name="description" content="LingoVerse: Unlock Your Language Potential. Learn languages with ease through interactive lessons, immersive exercises, and personalized learning plans. Explore a world of diverse languages and cultures, and enhance your communication skills effortlessly with LingoVerse.">
     </head>
-    <body onload="send_lang_div(langanddiv())">
+    <body onload="send_lang_div(langanddivandatword());send_atwordloop()">
         <!-- Common Header -->
         <div id="topline">
             <div id="logout" onclick="log_out()">
@@ -28,15 +32,9 @@
                         <a id="home" href="home.html">Home</a>
                     </li>
                     <li>
-                        <script>
-                        function goto(b) {
-                            a = String(b) + "_Beg.html";
-                            open(a, "_self");
-                        }
-                        </script>
                         <div class="languages_list">
                             <div id="container_list">
-                                <a>Languages</a>
+                                <span id="languages-button">Languages</span>
                             </div>
                             <div class="radio-inputs">
                                 <label>
@@ -127,49 +125,59 @@
             </nav>
         </div>
         <!-- Common Header Ends -->
-    </div>
-    <div id="Lang_name">
-        Chinese Learning(Moderate)
-    </div>
-    <hr>
-    <div id="change_division_menu">
-        <div id="Beg_div" onclick="chng_div(0)"></div>
-        <div id="Mod_div" onclick="chng_div(1)"></div>
-        <div id="Adv_div" onclick="chng_div(2)"></div>
-    </div>
-    <hr>
-    <div id="change_word_menu">
-        <div id="back" onclick="backword()">
-            <span id="backward" class="nextandback">&lt;</span>
+        <div id="Lang_name">
+            Languages
         </div>
-        <div id="add_to_diff">
-            <input id="checkbox" type="checkbox" onclick="addtodiff()">
-            <label class="switch" for="checkbox">
-                <img src="Images/difficult.png">
-            </label>
+        <div id="change_division_menu">
+            <div id="Beg_div" onclick="chng_div(0)"></div>
+            <div id="Mod_div" onclick="chng_div(1)"></div>
+            <div id="Adv_div" onclick="chng_div(2)"></div>
         </div>
-        <div id="next" onclick="nextword()">
-            <span id="continue" class="nextandback">&gt;</span>
+        <hr>
+        <div id="change_word_menu">
+            <div id="back" onclick="backword()">
+                <span id="backward" class="nextandback">&lt;</span>
+            </div>
+            <div id="add_to_diff">
+                <input id="checkbox" type="checkbox" onclick="addtodiff()">
+                <label class="switch" for="checkbox">
+                    <img src="Images/difficult.png">
+                </label>
+            </div>
+            <div id="next" onclick="nextword()">
+                <span id="continue" class="nextandback">&gt;</span>
+            </div>
         </div>
-    </div>
-    <div id="textpart">
-        <p class="lanname">CHINESE</p>
-        <strong class="word" id="lang">你好吗？</strong>
-        <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speak('zh'); send_word()" width="30px">
+        <!-- Main Body -->
+        <div id="textpart">
+            <p class="lanname"></p>
+            <strong class="word" id="lang"></strong>
+            <div class="vol_icon">
+                <img src="Images/volume.png" onclick="speak(); send_word();" width="30px">
+            </div>
+            <br>
+            <p id="romajititle" class="lanname">ROMANISATION</p>
+            <strong class="word" id="romaji"></strong>
+            <br>
+            <p class="lanname">ENGLISH</p>
+            <strong class="word" id="eng"></strong>
+            <br>
+            <div class="vol_icon">
+                <img src="Images/volume.png" onclick="speakeng()" width="30px">
+            </div>
         </div>
-        <p class="lanname">PINYIN</p>
-        <strong class="word" id="romaji">Nǐ hǎo ma?</strong>
-        <br>
-        <p class="lanname">ENGLISH</p>
-        <strong class="word" id="eng">How are you?</strong>
-        <br>
-        <div class="vol_icon">
-            <img src="Images/volume.png" onclick="speakeng()" width="30px">
-        </div>
-    </div>
-    <div id="lang_background"></div>
-<div id="loading-back"></div>
+        <!-- Description of Languages -->
+        <p id="chinese"></p>
+        <p id="french"></p>
+        <p id="german"></p>
+        <p id="hindi"></p>
+        <p id="japanese"></p>
+        <p id="korean"></p>
+        <p id="russian"></p>
+        <p id="spanish"></p>
+        <p id="tamil"></p>
+        <div id="lang_background"></div>
+        <div id="loading-back"></div>
         <div id="loading">
             <div id="loading_dots">
                 <svg
@@ -227,13 +235,6 @@
                 </svg>
             </div>
         </div>
-    <script>
-        let english = [' How are you?', ' Thank you.', ' Sorry.', " It's okay.", ' Goodbye.', ' Good morning.', ' Good evening.', ' My name is...', " What's your name?", ' Nice to meet you.', " Sorry, I don't speak Chinese.", ' Please speak slower.', " I don't know.", ' Okay.', ' Another cup of tea, please.', " I'm glad to meet you.", ' What would you like to drink?', " Let's go eat.", ' You speak Chinese very well.', ' Excuse me, how do I get to the restroom?']
-        let otherlang = ['你好吗？', '谢谢。', '对不起。', '没关系。', '再见。', '早上好。', '晚上好。', '我叫…', '你叫什么名字？', '很高兴认识你。', '对不起，我不会说中文。', '请说慢一点。', '我不知道。', '好的。', '再来一杯茶。', '我很高兴认识你。', '你想要喝什么？', '我们去吃饭吧。', '你的中文说得很好。', '请问去洗手间怎么走？']
-        let romaji = ['Nǐ hǎo ma?', 'Xièxiè.', 'Duìbùqǐ.', 'Méiguānxi.', 'Zàijiàn.', 'Zǎoshang hǎo.', 'Wǎnshàng hǎo.', 'Wǒ jiào…', 'Nǐ jiào shénme míngzi?', 'Hěn gāoxìng rènshì nǐ.', 'Duìbùqǐ, wǒ bù huì shuō zhōngwén.', 'Qǐng shuō màn yīdiǎn.', 'Wǒ bù zhīdào.', 'Hǎo de.', 'Zài lái yī bēi chá.', 'Wǒ hěn gāoxìng rènshí nǐ.', 'Nǐ xiǎng yào hē shénme?', 'Wǒmen qù chīfàn ba.', 'Nǐ de zhōngwén shuō dé hěn hǎo.', 'Qǐngwèn qù xǐshǒujiān zěnme zǒu?']
-        div_num = 1;
-        var language = 'chinese';
-    </script>
-    <script src="language_script.js"></script>
-</body>
+        <script src="javascript_lang.js"></script>
+    </body>
 </html>

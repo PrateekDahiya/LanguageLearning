@@ -144,44 +144,6 @@ function chng_div(n) {
     open(link, "_parent");
 }
 
-// Division change
-// function check_nxtdiv(i) {
-//     uncheck_diff();
-
-//     if ((i == english.length - 1) && (div_num < 2)) {
-//         document.getElementById('nextdivision').style.display = "block";
-//     }
-//     else {
-//         document.getElementById('nextdivision').style.display = "none";
-//     }
-//     if (i == 0 && div_num > 0) {
-//         document.getElementById('prevdivision').style.display = "block";
-//     }
-//     else {
-//         document.getElementById('prevdivision').style.display = "none";
-//     }
-// }
-
-// function nextdiv() {
-//     uncheck_diff();
-//     link = String(String(language) + "_" + String(divisions[div_num + 1]) + ".html");
-//     open(link, "_parent");
-
-// }
-
-// function prevdiv() {
-//     uncheck_diff();
-//     link = String(String(language) + "_" + String(divisions[div_num - 1]) + ".html");
-//     open(link, "_parent");
-// }
-
-// currentuser = firebase.auth().currentUser;
-// console.log(currentuser)
-// if (currentuser) {
-//     const email = currentUser.email;
-// }
-
-// console.log(email)
 
 // Difficult words array
 

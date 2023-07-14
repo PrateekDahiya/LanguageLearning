@@ -1,5 +1,5 @@
 import firebaseFunctions from "./firebase_init.js";
-const { database, analytics, auth, app, set, ref, update, get, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } = firebaseFunctions;
+const { database, analytics, auth, app, set, ref, update, get, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail, updateEmail, sendEmailVerification } = firebaseFunctions;
 
 function empty_form() {
     document.getElementById('fullname').value = "";
@@ -57,7 +57,6 @@ window.is_loggedin = () => {
             auto_login();
         } else {
             console.log("User not logged in");
-            document.getElementById("nav_linksa").style.display = "none";
         }
     });
 };
@@ -84,3 +83,61 @@ login.addEventListener('click', (e) => {
             show_mbox("Error Code: " + errorCode + "<br>" + "Error: " + errorMessage);
         });
 });
+
+
+
+window.resetpassword = () => {
+    event.preventDefault();
+    let email = document.getElementById("email-pass-reset").value;
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            console.log("Password reset email sent successfully.");
+            show_mbox("Password reset email sent successfully.");
+            password_reset();
+        })
+        .catch((error) => {
+            if (error.code === "auth/invalid-email") {
+                console.log("Invalid email address.");
+                show_mbox("Invalid email address.");
+            } else if (error.code === "auth/user-not-found") {
+                console.log("User not found.");
+                show_mbox("User not found.");
+            } else {
+                console.log("Failed to send password reset email.");
+                show_mbox("Failed to send password reset email.");
+            }
+        });
+};
+
+
+window.changeEmail = (newEmail) => {
+    const user = auth.currentUser;
+
+    if (user) {
+        updateEmail(user, newEmail)
+            .then(() => {
+                console.log("Email address changed successfully.");
+            })
+            .catch((error) => {
+                console.log("Failed to change email address.");
+            });
+    } else {
+        console.log("User not signed in.");
+    }
+};
+
+window.recoverEmail = (email) => {
+    sendEmailVerification(auth, { email })
+        .then(() => {
+            console.log("Email recovery email sent successfully.");
+        })
+        .catch((error) => {
+            if (error.code === "auth/invalid-email") {
+                console.log("Invalid email address.");
+            } else if (error.code === "auth/user-not-found") {
+                console.log("User not found.");
+            } else {
+                console.log("Failed to send recovery email.");
+            }
+        });
+};

@@ -5,12 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="Images/logolion.png">
+        <link rel="image_src" href="Images/logolion.png">
+        <meta itemprop="image" content="Images/logolion.png">
         <link rel="stylesheet" href="loginstyle.css">
-        <script type="module" src="firebase_init.js" defer></script>
+        <script type="module" src="firebase_init.js"></script>
+        <link rel="canonical" href="login.html"/>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819267788985297" crossorigin="anonymous"></script>
         <script type="module" src="loginfirebase.js"></script>
         <script type="text/javascript" src="loginjava.js" defer></script>
-        <title>Login Page</title>
+        <title>LingoVerse-Login</title>
+        <meta name="description" content="LingoVerse: Unlock Your Language Potential. Learn languages with ease through interactive lessons, immersive exercises, and personalized learning plans. Explore a world of diverse languages and cultures, and enhance your communication skills effortlessly with LingoVerse.">
+
     </head>
     <body onload="is_loggedin()">
         <!-- Common Header -->
@@ -56,10 +61,22 @@
                             value="Login"
                         >
                         <p class="message">
+                            Forget Password?
+                            <a class="toggletext" onclick="password_reset()">Reset Password</a>
+                            <div id="reset-pass-menu">
+                                <input
+                                    type="email"
+                                    id="email-pass-reset"
+                                    name="email"
+                                    placeholder="Enter your Email"
+                                >
+                                <button id="sendresetpassmail" class="submit-btn" onclick="resetpassword()">Send Reset Mail</button>
+                            </div>
+                        </p>
+                        <p class="message">
                             Not registered?
                             <a href="#" class="toggletext" onclick="toggleForm('R')">
-                                Create
-                            an account
+                                Create an account
                             </a>
                         </p>
                     </form>

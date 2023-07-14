@@ -48,6 +48,9 @@ header {
     color: white;
 }
 
+#languages-button:hover{
+    color: rgb(255, 187, 0);
+}
 #home:hover {
     color: rgb(255, 187, 0);
 }
