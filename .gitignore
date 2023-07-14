@@ -2,7 +2,6 @@ public
 .vscode
 .firebase
 node_modules
-.github
 *.json
 *.py
 *.log
