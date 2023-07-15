@@ -104,6 +104,7 @@ function goto(b, diviv = "1", atword = 0) {
             break;
         case "Difficult Words":
             a = "100";
+            break;
         default:
             break;
     }
@@ -127,7 +128,6 @@ function continuej_to() {
         case "Hard":
             goto("Difficult Words");
             break;
-
         default:
             console.log("Nothing matched");
             break;
