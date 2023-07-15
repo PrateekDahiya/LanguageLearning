@@ -168,3 +168,26 @@ function glow_title() {
         }
     }, 100);
 }
+
+
+function show_hidden_info() {
+    var containers = document.getElementsByClassName('language-description');
+    for (var i = 0; i < containers.length; i++) {
+        var container = containers[i];
+        var button = container.getElementsByClassName('lang_info_extend')[0];
+        var text = 'lang_hidden_info';
+        button.addEventListener('click', function () {
+            this.parentNode.getElementsByClassName(text)[0].display = 'block';
+            this.parentNode.getElementsByClassName("lang-short-info")[0].display = 'none';
+        });
+    }
+}
+
+
+
+
+
+
+
+
+

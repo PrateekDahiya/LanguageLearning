@@ -1,369 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="Images/logolion.png">
-        <link rel="image_src" href="Images/logolion.png">
-        <meta itemprop="image" content="Images/logolion.png">
-        <link rel="stylesheet" href="./login_homestyle.css">
-        <script type="module" src="firebase_init.js"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819267788985297" crossorigin="anonymous"></script>
-        <script type="module" src="login_home_firebase.js"></script>
-        <title>LingoVersechecking</title>
-        <meta name="description" content="LingoVerse: Unlock Your Language Potential. Learn languages with ease through interactive lessons, immersive exercises, and personalized learning plans. Explore a world of diverse languages and cultures, and enhance your communication skills effortlessly with LingoVerse.">
-    </head>
-    <body onload="glow_title();is_loggedin()">
-        <header>
-            <div id="topline">
-                <div id="login">
-                    <a href="login.html?mode=login" target="_self">
-                        <img src="Images/login.png" alt="Login" height="38px">
-                    </a>
-                </div>
-            </div>
-            <div id="logonmenu">
-                <a href="index.html" target="_self">
-                    <img id="logo" src="Images/logo.png" height="60">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logolion.png">
+    <link rel="image_src" href="Images/logolion.png">
+    <meta itemprop="image" content="Images/logolion.png">
+    <link rel="stylesheet" href="./login_homestyle.css">
+    <script type="module" src="firebase_init.js"></script>
+    <link rel="canonical" href="https://lingoverse-37674.web.app/">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819267788985297"
+        crossorigin="anonymous"></script>
+    <script type="module" src="login_home_firebase.js"></script>
+    <title>LingoVerse</title>
+    <meta name="description"
+        content="LingoVerse: Unlock Your Language Potential. Learn languages with ease through interactive lessons, immersive exercises, and personalized learning plans. Explore a world of diverse languages and cultures, and enhance your communication skills effortlessly with LingoVerse.">
+</head>
+
+<body onload="glow_title();is_loggedin()">
+    <header>
+        <div id="topline">
+            <div id="login">
+                <a href="login.html?mode=login" target="_self">
+                    <img src="Images/login.png" alt="Login" height="38px">
                 </a>
-                <nav>
-                    <ul id="nav_linksa" class="nav_links">
-                        <li>
-                            <a id="home" href="home.html">Home</a>
-                        </li>
-                        <li>
-                            <div class="languages_list">
-                                <div id="container_list">
-                                    <span id="languages-button">Languages</span>
-                                </div>
-                                <div class="radio-inputs">
-                                    <label>
-                                        <input class="radio-input" type="radio" name="engine">
-                                        <span class="radio-tile" onclick="goto('hindi')">
-                                            <span class="radio-icon">
-                                                <img class="flags" src="Images/Flags/India.jpg">
-                                            </span>
-                                            <span class="radio-label">Hindi</span>
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input class="radio-input" type="radio" name="engine">
-                                        <span class="radio-tile" onclick="goto('french')">
-                                            <span class="radio-icon">
-                                                <img class="flags" src="Images/Flags/France.jpg">
-                                            </span>
-                                            <span class="radio-label">French</span>
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input class="radio-input" type="radio" name="engine">
-                                        <span class="radio-tile" onclick="goto('japanese')">
-                                            <span class="radio-icon">
-                                                <img class="flags" src="Images/Flags/Japan.jpg">
-                                            </span>
-                                            <span class="radio-label">Japanese</span>
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input class="radio-input" type="radio" name="engine">
-                                        <span class="radio-tile" onclick="goto('chinese')">
-                                            <span class="radio-icon">
-                                                <img class="flags" src="Images/Flags/China.jpg">
-                                            </span>
-                                            <span class="radio-label">Chinese</span>
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input class="radio-input" type="radio" name="engine">
-                                        <span class="radio-tile" onclick="goto('spanish')">
-                                            <span class="radio-icon">
-                                                <img class="flags" src="Images/Flags/Spain.jpg">
-                                            </span>
-                                            <span class="radio-label">Spanish</span>
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input class="radio-input" type="radio" name="engine">
-                                        <span class="radio-tile" onclick="goto('tamil')">
-                                            <span class="radio-icon">
-                                                <img class="flags" src="Images/Flags/tamil.png">
-                                            </span>
-                                            <span class="radio-label">Tamil</span>
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input class="radio-input" type="radio" name="engine">
-                                        <span class="radio-tile" onclick="goto('german')">
-                                            <span class="radio-icon">
-                                                <img class="flags" src="Images/Flags/Germany.jpg">
-                                            </span>
-                                            <span class="radio-label">German</span>
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input class="radio-input" type="radio" name="engine">
-                                        <span class="radio-tile" onclick="goto('korean')">
-                                            <span class="radio-icon">
-                                                <img class="flags" src="Images/Flags/Korea.jpg">
-                                            </span>
-                                            <span class="radio-label">Korean</span>
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input class="radio-input" type="radio" name="engine">
-                                        <span class="radio-tile" onclick="goto('russian')">
-                                            <span class="radio-icon">
-                                                <img class="flags" src="Images/Flags/Russia.jpg">
-                                            </span>
-                                            <span class="radio-label">Russian</span>
-                                        </span>
-                                    </label>
-                                </div>
+            </div>
+        </div>
+        <div id="logonmenu">
+            <a href="index.html" target="_self">
+                <img id="logo" src="Images/logo.png" height="60">
+            </a>
+            <nav>
+                <ul id="nav_linksa" class="nav_links">
+                    <li>
+                        <a id="home" href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <div class="languages_list">
+                            <div id="container_list">
+                                <span id="languages-button">Languages</span>
                             </div>
-                        </li>
-                    </ul>
-                </nav>
+                            <div class="radio-inputs">
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('hindi')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/India.jpg">
+                                        </span>
+                                        <span class="radio-label">Hindi</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('french')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/France.jpg">
+                                        </span>
+                                        <span class="radio-label">French</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('japanese')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Japan.jpg">
+                                        </span>
+                                        <span class="radio-label">Japanese</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('chinese')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/China.jpg">
+                                        </span>
+                                        <span class="radio-label">Chinese</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('spanish')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Spain.jpg">
+                                        </span>
+                                        <span class="radio-label">Spanish</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('tamil')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/tamil.png">
+                                        </span>
+                                        <span class="radio-label">Tamil</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('german')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Germany.jpg">
+                                        </span>
+                                        <span class="radio-label">German</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('korean')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Korea.jpg">
+                                        </span>
+                                        <span class="radio-label">Korean</span>
+                                    </span>
+                                </label>
+                                <label>
+                                    <input class="radio-input" type="radio" name="engine">
+                                    <span class="radio-tile" onclick="goto('russian')">
+                                        <span class="radio-icon">
+                                            <img class="flags" src="Images/Flags/Russia.jpg">
+                                        </span>
+                                        <span class="radio-label">Russian</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <a href="login.html?mode=register" class="startlearning">
+                <button id="strtlearn">
+                    <span class="boxsl">
+                        Start Learning
+                    </span>
+                </button>
+            </a>
+        </div>
+    </header>
+    <div id="page_area">
+        <div id="p1">
+            <div id="webname">
+                <div id="title_name">
+                    <span id="title_name1">L</span>
+                    <span id="title_name2">I</span>
+                    <span id="title_name3">N</span>
+                    <span id="title_name4">G</span>
+                    <span id="title_name5">O</span>
+                    <span id="title_name6">V</span>
+                    <span id="title_name7">E</span>
+                    <span id="title_name8">R</span>
+                    <span id="title_name9">S</span>
+                    <span id="title_name10">E</span>
+                </div>
+                <br>
+                <div id="slogan">Unlock the Power of Language with Lingoverse</div>
                 <a href="login.html?mode=register" class="startlearning">
-                    <button id="strtlearn">
-                        <span class="boxsl">
+                    <button id="strtlearn2">
+                        <span class="boxs2">
                             Start Learning
                         </span>
                     </button>
                 </a>
             </div>
-        </header>
-        <div id="page_area">
-            <div id="p1">
-                <div id="webname">
-                    <div id="title_name">
-                        <span id="title_name1">L</span>
-                        <span id="title_name2">I</span>
-                        <span id="title_name3">N</span>
-                        <span id="title_name4">G</span>
-                        <span id="title_name5">O</span>
-                        <span id="title_name6">V</span>
-                        <span id="title_name7">E</span>
-                        <span id="title_name8">R</span>
-                        <span id="title_name9">S</span>
-                        <span id="title_name10">E</span>
+        </div>
+        <div id="p2">
+            <div id="lang-details">
+                <h1>Languages</h1>
+                <div class="language">
+                    <img src="Images/Flags/India.jpg" alt="Hindi">
+                    <div class="language-description">
+                        <a class="lang_link" href="hindi_Beg.html" target="_self">Hindi</a>
+                        <p class="lang-short-info">
+                            Hindi is one of the most widely spoken languages in the world. It is the official language
+                            of
+                            India and also spoken in various other countries.
+                        </p>
+                        <p class="lang_hidden_info">
+                            Hindi is one of the most widely spoken languages in the world, with over 600 million
+                            speakers. It is the official language of India and also spoken in various other countries.
+                            Hindi belongs to the Indo-Aryan branch of the Indo-European language family.
+                            Hindi has a diverse range of dialects and regional variations. It uses the Devanagari script
+                            for writing. Hindi plays a crucial role in Indian culture, media, and entertainment, with
+                            Bollywood being a prominent example.
+                        </p>
+                        <span class="lang_info_extend" onclick="show_hidden_info()">^</span>
                     </div>
-                    <br>
-                    <div id="slogan">Unlock the Power of Language with Lingoverse</div>
-                    <a href="login.html?mode=register" class="startlearning">
-                        <button id="strtlearn2">
-                            <span class="boxs2">
-                                Start Learning
-                            </span>
-                        </button>
-                    </a>
                 </div>
-            </div>
-            <div id="p2">
-                <div id="lang-details">
-                    <h1>Languages</h1>
-                    <div class="language">
-                        <img src="Images/Flags/India.jpg" alt="Hindi">
-                        <div class="language-description">
-                            <a class="lang_link" href="hindi_Beg.html" target="_self">Hindi</a>
-                            <p class="lang-short-info">
-                                Hindi is one of the most widely spoken languages in the world. It is the official language of
-                                India and also spoken in various other countries.
-                            </p>
-                        </div>
+                <div class="language">
+                    <img src="Images/Flags/China.jpg" alt="Chinese">
+                    <div class="language-description">
+                        <a class="lang_link" href="chinese_Beg.html" target="_self">Chinese</a>
+                        <p class="lang-short-info">
+                            Chinese, also known as Mandarin, is the most spoken language globally. It has a rich history
+                            and is essential for business and cultural exchanges.
+                        </p>
+                        <p class="lang_hidden_info">
+                            Chinese is a language with a rich history and widespread influence. It belongs to the
+                            Sino-Tibetan language family and is primarily spoken in China, where it serves as the
+                            official language. Chinese has a written history dating back over 4,000 years, making it one
+                            of the world's oldest writing systems. It is characterized by a complex script consisting of
+                            thousands of characters.
+                            With approximately 1.2 billion speakers, Chinese is the most spoken language globally.
+                            Mandarin, one of the major dialects, is the official language of China and serves as a
+                            lingua franca among Chinese speakers. Other important dialects include Cantonese,
+                            Shanghainese, and Hokkien.
+
+                            Chinese culture and commerce have played significant roles in spreading the language beyond
+                            China's borders. It is taught in schools worldwide and has gained popularity due to China's
+                            economic rise. Additionally, Chinese communities in various countries contribute to its
+                            global reach.
+                        </p>
+                        <span class="lang_info_extend" onclick="show_hidden_info()">^</span>
                     </div>
-                    <div class="language">
-                        <img src="Images/Flags/China.jpg" alt="Chinese">
-                        <div class="language-description">
-                            <a class="lang_link" href="chinese_Beg.html" target="_self">Chinese</a>
-                            <p class="lang-short-info">
-                                Chinese, also known as Mandarin, is the most spoken language globally. It has a rich history
-                                and is essential for business and cultural exchanges.
-                            </p>
-                        </div>
+                </div>
+                <div class="language">
+                    <img src="Images/Flags/Japan.jpg" alt="Japanese">
+                    <div class="language-description">
+                        <a class="lang_link" href="japanese_Beg.html" target="_self">Japanese</a>
+                        <p class="lang-short-info">
+                            Japanese is spoken by over 128 million people in Japan and is an important language for
+                            business,technology, and pop culture.
+                        </p>
+                        <p class="lang_hidden_info">
+                            Japanese is spoken by over 128 million people in Japan and is an important language for
+                            business, technology, and pop culture. It is a member of the Japonic language family and has
+                            a unique writing system that includes three scripts: hiragana, katakana, and kanji.
+                            Japanese has had significant cultural and linguistic influence throughout East Asia. It is
+                            known for its politeness, honorifics, and intricate social customs. The language is widely
+                            taught worldwide due to Japan's economic and technological prominence.
+                        </p>
+                        <span class="lang_info_extend" onclick="show_hidden_info()">^</span>
                     </div>
-                    <div class="language">
-                        <img src="Images/Flags/Japan.jpg" alt="Japanese">
-                        <div class="language-description">
-                            <a class="lang_link" href="japanese_Beg.html" target="_self">Japanese</a>
-                            <p class="lang-short-info">
-                                Japanese is spoken by over 128 million people in Japan and is an important language for
-                                business,technology, and pop culture.
-                            </p>
-                        </div>
+                </div>
+                <div class="language">
+                    <img src="Images/Flags/France.jpg" alt="French">
+                    <div class="language-description">
+                        <a class="lang_link" href="french_Beg.html" target="_self">French</a>
+                        <p class="lang-short-info">
+                            French is a romantic language spoken by millions of people worldwide. It is the official
+                            language of many countries and is widely used in international relations, diplomacy, and
+                            arts.
+                        </p>
+                        <p class="lang_hidden_info">
+                            French is a Romance language with a rich history and cultural significance. It originated
+                            from Latin and developed in the Middle Ages. The language evolved in France and became the
+                            official language in the country during the 16th century.
+                            Today, French is spoken by over 280 million people across the globe. It is an official
+                            language in 29 countries and widely taught as a second language. French has significant
+                            influence in fields like literature, art, cuisine, and diplomacy.
+
+                            French colonization and migration patterns contributed to the language's spread to regions
+                            such as North America, Africa, and the Caribbean. Organizations like the International
+                            Organization of La Francophonie promote the use of French and foster cultural and linguistic
+                            cooperation among French-speaking countries.
+
+                            French remains an important language in international diplomacy and is one of the official
+                            languages of the United Nations, the European Union, and several other international
+                            organizations.
+                        </p>
+                        <span class="lang_info_extend" onclick="show_hidden_info()">^</span>
                     </div>
-                    <div class="language">
-                        <img src="Images/Flags/France.jpg" alt="French">
-                        <div class="language-description">
-                            <a class="lang_link" href="french_Beg.html" target="_self">French</a>
-                            <p class="lang-short-info">
-                                French is a romantic language spoken by millions of people worldwide. It is the official
-                                language of many countries and is widely used in international relations, diplomacy, and arts.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="language">
-                        <img src="Images/Flags/Germany.jpg" alt="German">
-                        <div class="language-description">
-                            <a class="lang_link" href="german_Beg.html" target="_self">German</a>
-                            <p class="lang-short-info">
-                                German is the most widely spoken language in the European Union. It is a key language for
+                </div>
+                <div class="language">
+                    <img src="Images/Flags/Germany.jpg" alt="German">
+                    <div class="language-description">
+                        <a class="lang_link" href="german_Beg.html" target="_self">German</a>
+                        <p class="lang-short-info">
+                            German is the most widely spoken language in the European Union. It is a key language for
                             business, engineering, and scientific research.
-                            </p>
-                        </div>
+                        </p>
+                        <p class="lang_hidden_info">
+                            German is a West Germanic language that originated in Central Europe. It is the official
+                            language of Germany, Austria, Switzerland, and Liechtenstein, and it is recognized as a
+                            minority language in several other countries.
+                            With over 100 million speakers, German is widely spoken in Europe and has significant
+                            influence in literature, philosophy, and science. It is known for its complex grammar,
+                            compound words, and precise vocabulary. German dialects are also spoken in different
+                            regions, adding to the linguistic diversity of the language.
+
+                            German has been influential in various fields, including music, art, and engineering. It is
+                            a language of innovation and academic excellence, with numerous Nobel laureates hailing from
+                            German-speaking countries.
+
+                            These descriptions provide a brief overview of the history, significance, and cultural
+                            context of each language, highlighting their unique features and contributions to the world.
+                        </p>
+                        <span class="lang_info_extend" onclick="show_hidden_info()">^</span>
                     </div>
-                    <div class="language">
-                        <img src="Images/Flags/tamil.png" alt="Tamil">
-                        <div class="language-description">
-                            <a class="lang_link" href="tamil_Beg.html" target="_self">Tamil</a>
-                            <p class="lang-short-info">
-                                Tamil is one of the oldest languages in the world with a rich literary tradition. It is the
+                </div>
+                <div class="language">
+                    <img src="Images/Flags/tamil.png" alt="Tamil">
+                    <div class="language-description">
+                        <a class="lang_link" href="tamil_Beg.html" target="_self">Tamil</a>
+                        <p class="lang-short-info">
+                            Tamil is one of the oldest languages in the world with a rich literary tradition. It is the
                             official language of the Indian state of Tamil Nadu and Sri Lanka.
-                            </p>
-                        </div>
+                        </p>
+                        <p class="lang_hidden_info">
+                            Tamil is one of the oldest languages in the world, with a history dating back over two
+                            millennia. It is the official language of the Indian state of Tamil Nadu and Sri Lanka.
+                            Tamil belongs to the Dravidian language family and has a distinct script.
+                            With over 80 million speakers, Tamil has a vibrant cultural heritage and is known for its
+                            classical literature, music, and cinema. It has influenced the development of other South
+                            Indian languages.
+
+                            Tamil has a rich literary tradition, with ancient works in poetry, philosophy, and grammar.
+                            The language has undergone significant evolution over time and has regional variations in
+                            pronunciation and vocabulary.
+                        </p>
+                        <span class="lang_info_extend" onclick="show_hidden_info()">^</span>
                     </div>
-                    <div class="language">
-                        <img src="Images/Flags/Spain.jpg" alt="Spanish">
-                        <div class="language-description">
-                            <a class="lang_link" href="spanish_Beg.html" target="_self">Spanish</a>
-                            <p class="lang-short-info">
-                                Spanish is the second most spoken language globally, with over 460 million speakers. It is
+                </div>
+                <div class="language">
+                    <img src="Images/Flags/Spain.jpg" alt="Spanish">
+                    <div class="language-description">
+                        <a class="lang_link" href="spanish_Beg.html" target="_self">Spanish</a>
+                        <p class="lang-short-info">
+                            Spanish is the second most spoken language globally, with over 460 million speakers. It is
                             widely
                             used in business, travel, and cultural exchanges.
-                            </p>
-                        </div>
+                        </p>
+                        <p class="lang_hidden_info">
+                            Spanish is the second most spoken language globally, with over 460 million speakers. It is
+                            widely used in business, travel, and cultural exchanges. Spanish originated on the Iberian
+                            Peninsula and spread through Spanish colonization to Latin America, making it the official
+                            language of many countries in the region.
+                            Spanish has diverse dialects and regional variations, including European Spanish, Latin
+                            American Spanish, and Caribbean Spanish. It has contributed significantly to literature,
+                            art, and music.
+
+                            These languages offer a glimpse into the linguistic and cultural diversity of our world,
+                            connecting people across different countries and continents.
+                        </p>
+                        <span class="lang_info_extend" onclick="show_hidden_info()">^</span>
                     </div>
-                    <div class="language">
-                        <img src="Images/Flags/Russia.jpg" alt="Russian">
-                        <div class="language-description">
-                            <a class="lang_link" href="russian_Beg.html" target="_self">Russian</a>
-                            <p class="lang-short-info">
-                                Russian is an East Slavic language spoken by around 258 million people, with significant
+                </div>
+                <div class="language">
+                    <img src="Images/Flags/Russia.jpg" alt="Russian">
+                    <div class="language-description">
+                        <a class="lang_link" href="russian_Beg.html" target="_self">Russian</a>
+                        <p class="lang-short-info">
+                            Russian is an East Slavic language spoken by around 258 million people, with significant
                             importance in diplomacy and international relations.
-                            </p>
-                        </div>
+                        </p>
+                        <p class="lang_hidden_info">
+                            Russian is an East Slavic language spoken by around 258 million people. It is the official
+                            language of Russia, Belarus, Kazakhstan, and Kyrgyzstan. Russian has a rich literary
+                            tradition, with notable contributions from renowned authors like Tolstoy and Dostoevsky.
+                            The language uses the Cyrillic script and has a complex grammar system, including six cases
+                            for nouns and a rich system of verb conjugation. Russian has had significant influence in
+                            areas such as literature, music, ballet, and science. It has also played a crucial role in
+                            space exploration, with Russia being a pioneer in the field.
+
+                            Russian is widely taught in countries that were part of the former Soviet Union, and its
+                            importance in diplomacy and international relations cannot be overstated. It is one of the
+                            six official languages of the United Nations, reflecting its global significance.
+                        </p>
+                        <span class="lang_info_extend" onclick="show_hidden_info()">^</span>
                     </div>
-                    <div class="language">
-                        <img src="Images/Flags/Korea.jpg" alt="Korean">
-                        <div class="language-description">
-                            <a class="lang_link" href="korean_Beg.html" target="_self">
-                                <div>Korean</div>
-                            </a>
-                            <p class="lang-short-info">
-                                Korean, the official language of North and South Korea, has around 77 million speakers and
+                </div>
+                <div class="language">
+                    <img src="Images/Flags/Korea.jpg" alt="Korean">
+                    <div class="language-description">
+                        <a class="lang_link" href="korean_Beg.html" target="_self">
+                            <div>Korean</div>
+                        </a>
+                        <p class="lang-short-info">
+                            Korean, the official language of North and South Korea, has around 77 million speakers and
                             gained global popularity through "Hallyu," the Korean Wave, impacting entertainment and
                             business sectors.
+                        </p>
+                        <p class="lang_hidden_info">
+                            Korean is the official language of North and South Korea, spoken by around 77 million
+                            people. It is a language isolate, not belonging to any known language family. Korean has its
+                            own unique writing system called Hangul, which is known for its scientific design and
+                            simplicity.
+                            Korean has two main dialects: South Korean and North Korean. The language has formal and
+                            informal speech levels, and honorifics play an important role in Korean culture and
+                            communication.
+
+                            Korean culture, including K-pop, K-dramas, and Korean cuisine, has gained immense popularity
+                            worldwide, contributing to the spread of the language. The Korean Wave, or "Hallyu," has led
+                            to increased interest in learning Korean and experiencing Korean culture.
+                        </p>
+                        <span class="lang_info_extend" onclick="show_hidden_info()">^</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="p3">
+            <h1 id="p3_head">Why you'll love learning with LingoVerse</h1>
+            <div id="container_prop">
+                <div id="left_prop">
+                    <div class="prope" id="prope_1">
+                        <div class="prop_heading">
+                            <img class="prop_img" src="Images/prop_icons/fire-solid.svg">
+                            <p>Effective and efficient</p>
+                        </div>
+                        <div class="prop_text">
+                            <p>
+                                Our courses effectively and efficiently teach reading, listening, and
+                                speaking skills.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="prope" id="prope_2">
+                        <div class="prop_heading">
+                            <img class="prop_img" src="Images/prop_icons/circle-check-solid.svg">
+                            <p>Personalized learning</p>
+                        </div>
+                        <div class="prop_text">
+                            <p>
+                                Combining the best of AI and language science, lessons are tailored to
+                                help you learn at just the right level and pace.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="prop_img">
+                    <img src="Images/prop_icons/prop_image.svg">
+                </div>
+                <div id="right_prop">
+                    <div class="prope" id="prope_3">
+                        <div class="prop_heading">
+                            <img class="prop_img" src="Images/prop_icons/crown-solid.svg">
+                            <p>
+                                Stay motivated
+                            </p>
+                        </div>
+                        <div class="prop_text">
+                            <p>
+                                We make it easy to form a habit of language learning, with game-like
+                                features, fun challenges, and reminders from our friendly mascot, Duo the owl.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="prope" id="prope_4">
+                        <div class="prop_heading">
+                            <img class="prop_img" src="Images/prop_icons/hat-cowboy-solid.svg">
+                            <p>
+                                Have fun with it!
+                            </p>
+                        </div>
+                        <div class="prop_text">
+                            <p>
+                                Effective learning doesn't have to be boring! Build your skills each day
+                                with engaging exercises and playful characters.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="p3">
-                <h1 id="p3_head">Why you'll love learning with LingoVerse</h1>
-                <div id="container_prop">
-                    <div id="left_prop">
-                        <div class="prope" id="prope_1">
-                            <div class="prop_heading">
-                                <img class="prop_img" src="Images/prop_icons/fire-solid.svg">
-                                <p>Effective and efficient</p>
-                            </div>
-                            <div class="prop_text">
-                                <p>
-                                    Our courses effectively and efficiently teach reading, listening, and
-                                    speaking skills.
-                                </p>
-                            </div>
+        </div>
+        <div id="p5"></div>
+        <div id="p4">
+            <p class="text-blk head-text">
+                Me
+            </p>
+            <div class="container">
+                <div class="container-block">
+                    <div class="responsive-cell-block"></div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img class="member-image" src="Images/Prateek.jpg">
                         </div>
-                        <div class="prope" id="prope_2">
-                            <div class="prop_heading">
-                                <img class="prop_img" src="Images/prop_icons/circle-check-solid.svg">
-                                <p>Personalized learning</p>
-                            </div>
-                            <div class="prop_text">
-                                <p>
-                                    Combining the best of AI and language science, lessons are tailored to
-                                    help you learn at just the right level and pace.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="prop_img">
-                        <img src="Images/prop_icons/prop_image.svg">
-                    </div>
-                    <div id="right_prop">
-                        <div class="prope" id="prope_3">
-                            <div class="prop_heading">
-                                <img class="prop_img" src="Images/prop_icons/crown-solid.svg">
-                                <p>
-                                    Stay motivated
-                                </p>
-                            </div>
-                            <div class="prop_text">
-                                <p>
-                                    We make it easy to form a habit of language learning, with game-like
-                                        features, fun challenges, and reminders from our friendly mascot, Duo the owl.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="prope" id="prope_4">
-                            <div class="prop_heading">
-                                <img class="prop_img" src="Images/prop_icons/hat-cowboy-solid.svg">
-                                <p>
-                                    Have fun with it!
-                                </p>
-                            </div>
-                            <div class="prop_text">
-                                <p>
-                                    Effective learning doesn't have to be boring! Build your skills each day
-                                        with engaging exercises and playful characters.
-                                </p>
-                            </div>
+                        <p class="text-blk membe-name">
+                            Prateek Dahiya
+                        </p>
+                        <p class="text-blk member-position">
+                            Owner
+                            <br>
+                        </p>
+                        <p class="text-blk feature-text">
+                            Programmer and Designer
+                        </p>
+                        <div class="social-icons">
+                            <a href="https://twitter.com/Prateek2768" target="_blank">
+                                <img class="twitter-icon" src="Images/icons8-twitter-50.png">
+                            </a>
+                            <a href="https://www.facebook.com/prateek.dahiya.5477" target="_blank">
+                                <img class="facebook-icon" src="Images/icons8-facebook-50.png">
+                            </a>
+                            <a href="https://instagram.com/dahiya_prtk27?igshid=MzRlODBiNWFlZA==" target="_blank">
+                                <img class="instagram-icon" src="Images/icons8-instagram-50.png">
+                            </a>
+                            <a href="https://www.linkedin.com/in/prateek-dahiya-842509272" target="_blank">
+                                <img class="linkedin-icon" src="Images/icons8-linkedin-50.png">
+                            </a>
+                            <a href="https://github.com/PrateekDahiya" target="_blank">
+                                <img class="github-icon" src="Images/icons8-github-50.png">
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="p5"></div>
-            <div id="p4">
-                <p class="text-blk head-text">
-                    Me
-                </p>
-                <div class="container">
-                    <div class="container-block">
-                        <div class="responsive-cell-block"></div>
-                        <div class="card">
-                            <div class="image-box">
-                                <img class="member-image" src="Images/Prateek.jpg">
-                            </div>
-                            <p class="text-blk membe-name">
-                                Prateek Dahiya
-                            </p>
-                            <p class="text-blk member-position">
-                                Owner
-                                <br>
-                            </p>
-                            <p class="text-blk feature-text">
-                                Programmer and Designer
-                            </p>
-                            <div class="social-icons">
-                                <a href="https://twitter.com/Prateek2768" target="_blank">
-                                    <img class="twitter-icon" src="Images/icons8-twitter-50.png">
-                                </a>
-                                <a href="https://www.facebook.com/prateek.dahiya.5477" target="_blank">
-                                    <img class="facebook-icon" src="Images/icons8-facebook-50.png">
-                                </a>
-                                <a href="https://instagram.com/dahiya_prtk27?igshid=MzRlODBiNWFlZA==" target="_blank">
-                                    <img class="instagram-icon" src="Images/icons8-instagram-50.png">
-                                </a>
-                                <a href="https://www.linkedin.com/in/prateek-dahiya-842509272" target="_blank">
-                                    <img class="linkedin-icon" src="Images/icons8-linkedin-50.png">
-                                </a>
-                                <a href="https://github.com/PrateekDahiya" target="_blank">
-                                    <img class="github-icon" src="Images/icons8-github-50.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="container-block">
+                <!-- <div class="container-block">
                     <div class="responsive-cell-block"></div>
                     <div class="card">
                         <div class="image-box">
@@ -452,11 +583,12 @@
                         </div>
                     </div>
                 </div> -->
-                </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
+    </div>
 </body>
 <script src="login_homejava.js"></script>
+
 </html>

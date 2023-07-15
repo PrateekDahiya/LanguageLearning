@@ -54,7 +54,7 @@ header {
     color: rgb(255, 187, 0);
 }
 
-#languages-button:hover{
+#languages-button:hover {
     color: rgb(255, 187, 0);
 }
 
@@ -76,7 +76,7 @@ header {
 .radio-inputs {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     top: 170px;
     width: 500px;
     justify-content: center;
@@ -318,6 +318,25 @@ header {
 .lang-short-info {
     font-size: 15px;
 }
+
+.lang_hidden_info {
+    display: none;
+    font-size: 15px;
+    height: auto;
+}
+
+.lang_info_extend {
+    position: relative;
+    cursor: pointer;
+    font-size: 40px;
+    border: 2px black solid;
+}
+
+.lang_info_extend:hover {
+    color: rgb(255, 187, 0);
+}
+
+
 
 .lang_link:hover {
     color: rgb(255, 187, 0);
@@ -691,7 +710,8 @@ header {
         font-size: 18px;
     }
 
-    .lang-short-info {
+    .lang-short-info,
+    .lang_hidden_info {
         font-size: 15px;
     }
 
@@ -775,7 +795,8 @@ header {
         font-size: 15px;
     }
 
-    .lang-short-info {
+    .lang-short-info,
+    .lang_hidden_info {
         font-size: 13px;
     }
 
@@ -872,7 +893,8 @@ header {
         font-size: 10px;
     }
 
-    .lang-short-info {
+    .lang-short-info,
+    .lang_hidden_info {
         font-size: 10px;
     }
 
@@ -963,7 +985,9 @@ header {
 }
 
 @media (max-width: 340px) {
-    .lang-short-info {
+
+    .lang-short-info,
+    .lang_hidden_info {
         font-size: 8px;
         display: none;
     }
