@@ -54,7 +54,7 @@ header {
     color: rgb(255, 187, 0);
 }
 
-#languages-button:hover{
+#languages-button:hover {
     color: rgb(255, 187, 0);
 }
 
@@ -76,7 +76,7 @@ header {
 .radio-inputs {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     top: 170px;
     width: 500px;
     justify-content: center;
@@ -216,8 +216,6 @@ header {
     width: 100%;
 }
 
-
-
 #p1 {
     position: relative;
     width: 100%;
@@ -262,7 +260,6 @@ header {
     justify-content: center;
 }
 
-
 #lang-details {
     position: relative;
     width: 80%;
@@ -271,7 +268,6 @@ header {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
 
 #lang-details h1 {
     text-align: center;
@@ -282,24 +278,27 @@ header {
 .language {
     display: flex;
     margin-bottom: 20px;
-    height: 180px;
+    height: auto;
     width: 80%;
     position: relative;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
 .language img {
+    position: relative;
     border: 3px solid rgba(57, 57, 59, 0.934);
     width: 200px;
-    height: 150px;
-    margin-right: 20px;
-    object-fit: cover;
+    height: 100%;
+    margin-right: 10px;
+    flex-basis: 25%;
     border-radius: 10px;
 }
 
 .language-description {
-    margin-top: 20px;
+    position: relative;
+    flex-basis: 75%;
     color: black;
     width: 80%;
     word-wrap: normal;
@@ -317,6 +316,24 @@ header {
 
 .lang-short-info {
     font-size: 15px;
+}
+
+.lang_hidden_info {
+    display: none;
+    font-size: 15px;
+    height: auto;
+}
+
+.lang_info_extend {
+    position: relative;
+
+    cursor: pointer;
+    font-size: 40px;
+}
+
+
+.lang_info_extend:hover {
+    color: rgb(255, 187, 0);
 }
 
 .lang_link:hover {
@@ -691,13 +708,13 @@ header {
         font-size: 18px;
     }
 
-    .lang-short-info {
+    .lang-short-info,
+    .lang_hidden_info {
         font-size: 15px;
     }
 
     .language {
         width: 90%;
-        height: 125px;
     }
 
     .language-description {
@@ -775,13 +792,13 @@ header {
         font-size: 15px;
     }
 
-    .lang-short-info {
+    .lang-short-info,
+    .lang_hidden_info {
         font-size: 13px;
     }
 
     .language img {
         width: 100px;
-        height: 75px;
     }
 
     .language {
@@ -872,7 +889,8 @@ header {
         font-size: 10px;
     }
 
-    .lang-short-info {
+    .lang-short-info,
+    .lang_hidden_info {
         font-size: 10px;
     }
 
@@ -963,7 +981,9 @@ header {
 }
 
 @media (max-width: 340px) {
-    .lang-short-info {
+
+    .lang-short-info,
+    .lang_hidden_info {
         font-size: 8px;
         display: none;
     }

@@ -2,6 +2,7 @@ import firebaseFunctions from "./firebase_init.js";
 const { database, analytics, auth, app, set, ref, update, get, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } = firebaseFunctions;
 var isuser = true;
 
+
 function deactivateLinks() {
     const links = document.getElementsByClassName('lang_link');
     for (let i = 0; i < links.length; i++) {

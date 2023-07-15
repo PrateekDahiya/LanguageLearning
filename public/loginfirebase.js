@@ -29,7 +29,8 @@ signup.addEventListener('click', (e) => {
                 division: "Beginner",
                 difficult: null,
                 goal: 10,
-                word_count: 0
+                word_count: 0,
+                journey_database: []
             });
             show_mbox("User Created Successfully.");
             empty_form();

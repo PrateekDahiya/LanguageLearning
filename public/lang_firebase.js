@@ -7,9 +7,11 @@ window.is_loggedin = () => {
     auth.onAuthStateChanged(function (user) {
         if (user) {
             console.log("User LoggedIn");
+            return true;
         } else {
             console.log("User not logged in");
             isuser = false;
+            return false;
         }
     });
 };
@@ -52,6 +54,7 @@ window.send_lang_div = (a) => {
 window.send_atword = (a) => {
 
     let atword = 0;
+    let journey_database = JSON.parse(localStorage.getItem("journey_database"));
     if (typeof (a) != 'undefined') {
         atword = a;
     }
@@ -59,7 +62,8 @@ window.send_atword = (a) => {
         if (user) {
             var dataRef = ref(database, "users/" + user.uid);
             var updatedData = {
-                atword: atword
+                atword: atword,
+                journey_database: journey_database
             };
             update(dataRef, updatedData);
         } else {
@@ -158,7 +162,11 @@ function reset_last_update(crnt_date) {
 }
 
 
-
+window.get_journey_database = () => {
+    fetchData("journey_database", function (result) {
+        localStorage.setItem("journey_database") = JSON.stringify(result);
+    });
+}
 
 
 

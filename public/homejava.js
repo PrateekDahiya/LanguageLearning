@@ -49,8 +49,26 @@ function goto_diff() {
 
 
 
+function checkindatabase(language, division, atword) {
+    var data = JSON.parse(localStorage.getItem("journey_database"));
+    var thisarray = [language, division, atword];
+    var index = data.findIndex((arr) => arr[0] === thisarray[0] && arr[1] === thisarray[1]);
+    if (index === -1) {
+        return [language, division, atword];
+    }
+    else {
+        return data[index];
+    }
+}
+
 function goto(b, diviv = "1", atword = 0) {
     let a;
+    let divisionsname = ["Beginner", "Moderate", "Advance"];
+    if (atword === 0 && b != "Difficult Words") {
+        let arrayreq = checkindatabase(b, divisionsname[parseInt(diviv) - 1], atword);
+        atword = arrayreq[2];
+    }
+
     switch (b) {
         case "chinese":
             a = "1" + String(diviv);
@@ -81,14 +99,12 @@ function goto(b, diviv = "1", atword = 0) {
             break;
         case "Difficult Words":
             a = "100";
-            break;
         default:
             break;
     }
     let link = "language.html?langid=" + String(a) + "&atword=" + String(atword);
     open(link, "_self");
 }
-
 
 function continuej_to() {
     let got_lang_div = [String(document.getElementById("crnt_lang").innerHTML), String(document.getElementById("crnt_level").innerHTML)];

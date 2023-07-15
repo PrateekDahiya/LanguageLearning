@@ -24,8 +24,27 @@ function hideList() {
     radioinputs.style.display = "none";
 }
 
+function checkindatabase(lang, division, atword) {
+    var data = JSON.parse(localStorage.getItem("journey_database"));
+    var thisarray = [lang, division, atword];
+    var index = data.findIndex((arr) => arr[0] === thisarray[0] && arr[1] === thisarray[1]);
+    if (index === -1) {
+        return [lang, division, atword];
+    }
+    else {
+        return data[index];
+    }
+}
+
 function goto(b, diviv = "1", atword = 0) {
     let a;
+    let divisionsname = ["Beginner", "Moderate", "Advance"];
+
+    if (atword === 0) {
+        let arrayreq = checkindatabase(b, divisionsname[parseInt(diviv) - 1], atword);
+        atword = arrayreq[2];
+    }
+
     switch (b) {
         case "chinese":
             a = "1" + String(diviv);
@@ -171,17 +190,22 @@ function glow_title() {
 
 
 function show_hidden_info() {
-    var containers = document.getElementsByClassName('language-description');
+    var containers = document.getElementsByClassName('language');
     for (var i = 0; i < containers.length; i++) {
         var container = containers[i];
         var button = container.getElementsByClassName('lang_info_extend')[0];
         var text = 'lang_hidden_info';
+
         button.addEventListener('click', function () {
-            this.parentNode.getElementsByClassName(text)[0].display = 'block';
-            this.parentNode.getElementsByClassName("lang-short-info")[0].display = 'none';
+            var parent = this.parentNode;
+            parent.style.height = 'auto';
+            this.style.display = "none";
+            parent.getElementsByClassName(text)[0].style.display = 'block';
+            parent.getElementsByClassName("lang-short-info")[0].style.display = 'none';
         });
     }
 }
+show_hidden_info();
 
 
 

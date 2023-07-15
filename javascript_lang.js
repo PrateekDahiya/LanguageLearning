@@ -326,6 +326,7 @@ function adjust_layout_words() {
     else if (div_num == 2) {
         document.getElementById('Adv_div').style.border = "2px solid black";
     }
+    journey_data_management(language, divtext[div_num], i);
 }
 
 adjust_layout_words();
@@ -436,9 +437,26 @@ function chng_div(n) {
     open(link, "_parent");
 }
 
+function checkindatabase(language, division, atword) {
+    var data = JSON.parse(localStorage.getItem("journey_database"));
+    var thisarray = [language, division, atword];
+    var index = data.findIndex((arr) => arr[0] === thisarray[0] && arr[1] === thisarray[1]);
+    if (index === -1) {
+        return [language, division, atword];
+    }
+    else {
+        return data[index];
+    }
+}
 
 function goto(b, diviv = "1", atword = 0) {
     let a;
+    let divisionsname = ["Beginner", "Moderate", "Advance"];
+    if (atword === 0) {
+        let arrayreq = checkindatabase(b, divisionsname[parseInt(diviv) - 1], atword);
+        atword = arrayreq[2];
+    }
+
     switch (b) {
         case "chinese":
             a = "1" + String(diviv);
@@ -588,5 +606,25 @@ function send_atwordloop() {
     }, 50);
 }
 
+function journey_data_management(language, division, atword) {
+    if (!checkLSV("journey_database")) {
+        if (is_loggedin) {
+            get_journey_database();
+        }
+        else {
+            localStorage.setItem("journey_database", JSON.stringify([]));
+        }
+    }
+    var data = JSON.parse(localStorage.getItem("journey_database"));
+    var thisarray = [language, division, atword];
+    var index = data.findIndex((arr) => arr[0] === thisarray[0] && arr[1] === thisarray[1]);
+    if (index === -1) {
+        data.push(thisarray);
+    }
+    else {
+        data[index][2] = atword;
+    }
+    localStorage.setItem("journey_database", JSON.stringify(data));
+}
 
 
