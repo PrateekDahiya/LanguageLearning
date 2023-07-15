@@ -613,7 +613,7 @@ function send_atwordloop() {
 
 function journey_data_management(language, division, atword) {
     if (!checkLSV("journey_database")) {
-        if (is_loggedin) {
+        if (is_loggedin()) {
             get_journey_database();
         }
         else {
