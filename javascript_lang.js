@@ -6,7 +6,7 @@ var language;
 var wordsarr;
 var i = 0;
 i = atword;
-var divtext = ['Beginner', 'Moderate', 'Advanced', 'Hard'];
+var divtext = ['Beginner', 'Moderate', 'Advance', 'Hard'];
 var speak_lang;
 
 
