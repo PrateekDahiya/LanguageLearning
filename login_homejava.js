@@ -25,15 +25,20 @@ function hideList() {
 }
 
 function checkindatabase(lang, division, atword) {
-    var data = JSON.parse(localStorage.getItem("journey_database"));
-    var thisarray = [lang, division, atword];
-    var index = data.findIndex((arr) => arr[0] === thisarray[0] && arr[1] === thisarray[1]);
-    if (index === -1) {
+    if (localStorage.getItem("journey_database") !== null) {
+        var data = JSON.parse(localStorage.getItem("journey_database"));
+        var thisarray = [lang, division, atword];
+        var index = data.findIndex((arr) => arr[0] === thisarray[0] && arr[1] === thisarray[1]);
+        if (index === -1) {
+            return [lang, division, atword];
+        }
+        else {
+            return data[index];
+        }
+    } else {
         return [lang, division, atword];
     }
-    else {
-        return data[index];
-    }
+
 }
 
 function goto(b, diviv = "1", atword = 0) {
