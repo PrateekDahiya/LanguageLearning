@@ -134,13 +134,12 @@
             <br>
             <span id="crnt_lang">&nbsp;</span>
             <hr style="height: 40px;border-color: transparent;">
-            You have done
+            At word
             <br>
             <span id="crnt_atword">&nbsp;</span>
             <br>
-            <p style="position: relative;left: 50px;">Words</p>
             <div id="continue_lang_btn"
-                onclick="document.getElementById('crnt_lang').innerHTML == 'Difficult Words' && document.getElementById('diff_count_num').innerHTML == '0'?console.log('Deactivated Button'):goto('Difficult Words')">
+                onclick="document.getElementById('crnt_lang').innerHTML == 'Difficult Words' && document.getElementById('diff_count_num').innerHTML == '0' ? (document.getElementsByClassName('radio-inputs')[0].style.display='flex') : continuej_to();">
                 Continue Your journey
             </div>
         </div>

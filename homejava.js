@@ -113,6 +113,7 @@ function goto(b, diviv = "1", atword = 0) {
 }
 
 function continuej_to() {
+
     let got_lang_div = [String(document.getElementById("crnt_lang").innerHTML), String(document.getElementById("crnt_level").innerHTML)];
     let divnumber;
     switch (String(got_lang_div[1])) {
@@ -133,6 +134,5 @@ function continuej_to() {
             break;
     }
     let atwordfromhtml = document.getElementById("crnt_atword").innerHTML;
-
     goto(got_lang_div[0], String(divnumber), String(atwordfromhtml));
 };
