@@ -9,27 +9,30 @@
 body {
     background-image: url("Images/lingovese.png");
     background-size: cover;
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    margin-left: 150px;
+
 }
 
 #lingoverseimg {
     position: absolute;
+    top: 30px;
+    left: 130px;
     color: transparent;
-    top: 40px;
-    width: 210px;
+    width: 200px;
     height: 40px;
     cursor: pointer;
 }
 
-#forms{
+#forms {
+    position: relative;
     margin-top: 150px;
+    left: 150px;
 }
 
 #heading {
     position: relative;
-
+    width: 550px;
     font-size: 70px;
 }
 
@@ -64,6 +67,7 @@ br {
     width: 350px;
     height: 35px;
     border-bottom: 2px black solid;
+    font-size: 15px;
 }
 
 input:-webkit-autofill {
@@ -90,9 +94,14 @@ input.custom-autofill {
     border: none;
     color: rgb(255, 187, 0);
     cursor: pointer;
-    font-size: 18px;
     font-weight: bold;
-    padding: 10px 20px;
+    width: 80%;
+    height: 45px;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 
 .submit-btn:hover {
@@ -109,16 +118,6 @@ input.custom-autofill {
     padding-bottom: 30px;
 }
 
-.submit-btn {
-    width: 80%;
-    height: 45px;
-    border-radius: 8px;
-    font-size: 15px;
-    padding: 5px;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    justify-content: center;
-}
 
 .message {
     font-size: 15px;
@@ -205,7 +204,13 @@ input.custom-autofill {
 
     body {
         background-image: none;
-        margin-left: 60px;
+        position: relative;
+    }
+
+    #forms {
+        position: relative;
+        left: 20%;
+
     }
 
     #lingoverseimg {
@@ -213,7 +218,9 @@ input.custom-autofill {
         text-decoration: none;
         font-size: 25px;
         font-weight: 800;
-
+        top: -50px;
+        position: relative;
+        left: 0px;
     }
 
     #heading {
@@ -239,6 +246,19 @@ input.custom-autofill {
 
     .form-group input:not([type="submit"]) {
         width: 300px;
+        font-size: 14px;
+    }
+
+    #pp {
+        font-size: 12px;
+    }
+
+    .submit-btn {
+        font-size: 13px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        width: 80%;
+        height: 40px;
     }
 
     #message_box {
@@ -251,6 +271,9 @@ input.custom-autofill {
 
     /* Styles for screens smaller than 480px */
 
+    /* #forms {
+        margin-left: 20px;
+    } */
 
     #heading {
         width: 300px;
@@ -266,6 +289,38 @@ input.custom-autofill {
         margin-top: 100px;
     }
 
+    .form-group {
+        width: 300px;
+    }
+
+    .form-group input:not([type="submit"]) {
+        width: 250px;
+        font-size: 12px;
+    }
+
+    #pp {
+        font-size: 10px;
+    }
+
+    .submit-btn {
+        font-size: 11px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 35px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+
+    .toggletext {
+        text-decoration: none;
+        color: rgb(255, 187, 0);
+        cursor: pointer;
+        font-size: 13px;
+    }
+
     #message_box {
         width: 300px;
         height: 166.66px;
@@ -273,5 +328,58 @@ input.custom-autofill {
 
     #ok_message_btn {
         bottom: -70%;
+    }
+}
+
+@media (max-width: 368px) {
+
+    /* #forms {
+        margin-left: 20px;
+    } */
+
+    #heading {
+        width: 250px;
+        font-size: 30px;
+    }
+
+    #heading2 {
+        width: 260px;
+        font-size: 12px;
+    }
+
+    #forms {
+        margin-top: 100px;
+    }
+
+    .form-group {
+        width: 260px;
+    }
+
+    .form-group input:not([type="submit"]) {
+        width: 210px;
+        font-size: 10px;
+    }
+
+    #pp {
+        font-size: 8px;
+    }
+
+    .submit-btn {
+        font-size: 10px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        width: 80%;
+        height: 30px;
+    }
+
+    .message {
+        font-size: 10px;
+    }
+
+    .toggletext {
+        text-decoration: none;
+        color: rgb(255, 187, 0);
+        cursor: pointer;
+        font-size: 10px;
     }
 }

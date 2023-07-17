@@ -22,7 +22,6 @@
 </head>
 
 <body onload="is_loggedin()">
-    <a id="lingoverseimg" href="index.html">LingoVerse</a>
     <div id="click-protector">
         <div id="message_box">
             <div id="message_text">Nothing To show in this Message!</div>
@@ -32,6 +31,7 @@
         </div>
     </div>
     <div id="forms">
+        <a id="lingoverseimg" href="index.html">LingoVerse</a>
         <h1 id="heading">Welcome to Lingoverse.</h1>
         <h2 id="heading2">Your Journey Begins Here</h2>
         <div class="form-group" id="login-form">
@@ -72,7 +72,7 @@
                 <br>
                 <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password">
                 <br>
-                <h5>By Signing up you agree to the <a href="privacy_policy.html">Privacy Policy</a>.</h5>
+                <h5 id="pp">By Signing up you agree to the <a href="privacy_policy.html">Privacy Policy</a>.</h5>
                 <input type="submit" id="signup" class="submit-btn" value="Register">
                 <p class="message">
                     Already registered?
