@@ -11,29 +11,28 @@ body {
     background-size: cover;
     /* background-attachment: fixed; */
     background-repeat: no-repeat;
+    margin-left: 150px;
 }
 
 #lingoverseimg {
     position: absolute;
     color: transparent;
-    left: 150px;
     top: 40px;
     width: 210px;
     height: 40px;
     cursor: pointer;
 }
 
-#heading {
-    margin-top: 100px;
-    margin-left: 150px;
-    font-size: 70px;
-    width: 550px;
+#forms{
+    margin-top: 150px;
 }
 
-#heading2 {
-    margin-left: 150px;
-    width: 550px;
+#heading {
+    position: relative;
+
+    font-size: 70px;
 }
+
 
 
 br {
@@ -45,9 +44,7 @@ br {
     position: relative;
     width: 400px;
     height: 300px;
-    margin: 20px;
     line-height: 35px;
-    margin-left: 150px;
 }
 
 ::placeholder {
@@ -206,29 +203,42 @@ input.custom-autofill {
     /* Styles for screens smaller than 768px */
 
 
-    body{
+    body {
         background-image: none;
-        background: linear-gradient("blue","red");
+        margin-left: 60px;
     }
 
-    #lingoverseimg{
+    #lingoverseimg {
         color: rgb(255, 187, 0);
         text-decoration: none;
         font-size: 25px;
         font-weight: 800;
-    }
-    #heading{
-        font-size: 60px;
+
     }
 
-    #heading2{
+    #heading {
+        font-size: 60px;
+        width: 440px;
+    }
+
+    #heading2 {
         font-size: 19px;
+        width: 440px;
     }
 
     #forms {
         position: relative;
-        left: 50%;
-        transform: translate(-50%, 0);
+        margin-top: 150px;
+        /* left: 50%;
+        transform: translate(-50%, 0); */
+    }
+
+    .form-group {
+        width: 350px;
+    }
+
+    .form-group input:not([type="submit"]) {
+        width: 300px;
     }
 
     #message_box {
@@ -241,16 +251,19 @@ input.custom-autofill {
 
     /* Styles for screens smaller than 480px */
 
-    #heading{
+
+    #heading {
+        width: 300px;
         font-size: 40px;
     }
 
-    #heading2{
+    #heading2 {
+        width: 300px;
         font-size: 15px;
     }
 
     #forms {
-        margin-top: 150px;
+        margin-top: 100px;
     }
 
     #message_box {
