@@ -1,12 +1,9 @@
+// const { functionsV2Origin } = require("firebase-tools/lib/api");
+
 var headto;
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get('mode');
 
-setInterval(hide_loading, 3000);
-function hide_loading() {
-    document.getElementById('loading-back').style.display = "none";
-    document.getElementById('loading').style.display = "none";
-}
 
 if (mode == 'login') {
     toggleForm('L');
