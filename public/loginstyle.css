@@ -87,7 +87,9 @@ input.custom-autofill {
     outline: none;
 }
 
-
+#linechange {
+    display: none;
+}
 
 .submit-btn {
     background-color: rgba(22, 21, 31, 0.934);
@@ -269,6 +271,11 @@ input.custom-autofill {
 }
 
 @media (max-width: 570px) {
+
+    #lingoverseimg {
+        font-size: 20px;
+    }
+
     #heading {
         font-size: 40px;
         width: 350px;
@@ -295,6 +302,9 @@ input.custom-autofill {
         margin-left: 20px;
     } */
 
+    #lingoverseimg {
+        font-size: 15px;
+    }
     #heading {
         width: 300px;
         font-size: 40px;
@@ -359,6 +369,9 @@ input.custom-autofill {
         margin-left: 20px;
     } */
 
+    #lingoverseimg {
+        font-size: 10px;
+    }
     #heading {
         width: 200px;
         font-size: 25px;
@@ -371,12 +384,16 @@ input.custom-autofill {
 
     #forms {
         margin-top: 100px;
-        margin-left: 10%;
-        width: 260px;
+        margin-left: 15%;
+        width: 200px;
     }
 
     .form-group {
-        width: 260px;
+        width: 200px;
+    }
+
+    #linechange {
+        display: block;
     }
 
     .form-group input:not([type="submit"]) {
