@@ -11,13 +11,12 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-
 }
 
 #lingoverseimg {
     position: absolute;
-    top: 30px;
-    left: 130px;
+    top: -110px;
+    left: -10px;
     color: transparent;
     width: 200px;
     height: 40px;
@@ -209,7 +208,8 @@ input.custom-autofill {
 
     #forms {
         position: relative;
-        left: 20%;
+        margin-left: 20%;
+        left: 0;
 
     }
 
@@ -236,8 +236,6 @@ input.custom-autofill {
     #forms {
         position: relative;
         margin-top: 150px;
-        /* left: 50%;
-        transform: translate(-50%, 0); */
     }
 
     .form-group {
@@ -266,6 +264,24 @@ input.custom-autofill {
         height: 222.22px;
     }
 }
+
+@media (max-width: 570px) {
+    #heading {
+        font-size: 40px;
+        width: 350px;
+    }
+
+    #heading2 {
+        font-size: 19px;
+        width: 350px;
+    }
+
+    #forms {
+        position: relative;
+        margin-top: 150px;
+    }
+}
+
 
 @media (max-width: 480px) {
 
@@ -338,17 +354,18 @@ input.custom-autofill {
     } */
 
     #heading {
-        width: 250px;
-        font-size: 30px;
+        width: 200px;
+        font-size: 25px;
     }
 
     #heading2 {
-        width: 260px;
+        width: 200px;
         font-size: 12px;
     }
 
     #forms {
         margin-top: 100px;
+        margin-left: 10%;
     }
 
     .form-group {
