@@ -27,6 +27,7 @@ body {
     position: relative;
     margin-top: 150px;
     left: 150px;
+    width: 500px;
 }
 
 #heading {
@@ -120,6 +121,7 @@ input.custom-autofill {
 
 .message {
     font-size: 15px;
+    line-height: 20px;
 }
 
 #reset-pass-menu {
@@ -210,6 +212,7 @@ input.custom-autofill {
         position: relative;
         margin-left: 20%;
         left: 0;
+        width: 440px;
 
     }
 
@@ -279,6 +282,7 @@ input.custom-autofill {
     #forms {
         position: relative;
         margin-top: 150px;
+        width: 350px;
     }
 }
 
@@ -303,6 +307,7 @@ input.custom-autofill {
 
     #forms {
         margin-top: 100px;
+        width: 300px;
     }
 
     .form-group {
@@ -328,6 +333,7 @@ input.custom-autofill {
 
     .message {
         font-size: 13px;
+        line-height: 15px;
     }
 
     .toggletext {
@@ -366,6 +372,7 @@ input.custom-autofill {
     #forms {
         margin-top: 100px;
         margin-left: 10%;
+        width: 260px;
     }
 
     .form-group {
