@@ -1,11 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
-const langid = urlParams.get('langid');
-const atword = parseInt(urlParams.get('atword'));
+var langid = urlParams.get('langid');
+var atword = parseInt(urlParams.get('atword'));
 var div_num;
 var language;
 var wordsarr;
 var i = 0;
-i = atword;
 var divtext = ['Beginner', 'Moderate', 'Advance', 'Hard'];
 var speak_lang;
 
@@ -249,6 +248,13 @@ function identify_lang() {
             break;
 
         default:
+            div_num = 0;
+            langid = '11';
+            language = 'chinese';
+            speak_lang = "zh";
+            wordsarr = chinese_Beg;
+            document.title = "LingoVerse-Chinese Beginner";
+            atword = 0;
             break;
     }
     document.getElementById("Lang_name").innerHTML = String(language[0]).toUpperCase() + String(language).slice(1,) + " Learning" + " (" + String(divtext[div_num]) + ")";
@@ -259,6 +265,7 @@ identify_lang();
 
 
 // Language description in console
+i = atword;
 console.log("Its", language, "at", "division", divtext[div_num]);
 
 
