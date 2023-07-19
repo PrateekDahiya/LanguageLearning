@@ -17,6 +17,7 @@
         * {
             margin: 0;
             font-family: "Bruno Ace SC", sans-serif;
+            word-wrap: break-word;
         }
 
         body {
@@ -35,6 +36,15 @@
 
         p {
             margin-bottom: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         ul {
@@ -56,11 +66,47 @@
             background-color: #ebebeb;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        #lingoverseimg {
+            position: relative;
+            font-size: 25px;
+            color: rgb(255, 187, 0);
+            width: 200px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 670px) {
+            body {
+                margin: 40px 10px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            a {
+                font-size: 15px;
+            }
+
+            p {
+                margin-bottom: 5px;
+                font-size: 15px;
+            }
+
+            ul {
+                font-size: 15px;
+            }
+
+            #lingoverseimg {
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
-
+    <a id="lingoverseimg" href="/">LingoVerse</a>
     <h2><strong>Terms and Conditions</strong></h2>
 
     <p>Welcome to LingoVerse!</p>

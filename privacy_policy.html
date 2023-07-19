@@ -20,7 +20,6 @@
     body {
       background: linear-gradient(to bottom, #f2f2f2, #e8e8e8);
       color: black;
-      font-family: Arial, sans-serif;
       margin: 40px 100px;
     }
 
@@ -42,6 +41,7 @@
 
     h2,
     p {
+      word-wrap: break-word;
       border: 1px solid #ccc;
       padding: 10px;
       background-color: #f5f5f5;
@@ -104,10 +104,107 @@
     .highlight {
       background-color: #ffffcc;
     }
+
+    #lingoverseimg {
+      position: relative;
+      font-size: 25px;
+      /* top: -110px;
+      left: -10px; */
+      color: rgb(255, 187, 0);
+      width: 200px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 670px) {
+      body {
+        margin: 40px 10px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+      a{
+        font-size: 15px;
+      }
+
+      p {
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+
+      ul {
+        font-size: 15px;
+      }
+      #lingoverseimg {
+        font-size: 15px;
+      }
+      table {
+        display: none;
+      }
+
+      #data-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #data-list li {
+        margin-bottom: 10px;
+      }
+    }
   </style>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const table = document.getElementById('data-table');
+      const list = document.getElementById('data-list');
+
+      function createListItems() {
+        const rows = table.querySelectorAll('tr');
+        for (let i = 1; i < rows.length; i++) {
+          const row = rows[i];
+          const category = row.querySelector('td:nth-child(1)').textContent;
+          const examples = row.querySelector('td:nth-child(2)').textContent;
+          const collected = row.querySelector('td:nth-child(3)').textContent;
+
+          const listItem = document.createElement('li');
+          const categoryParagraph = document.createElement('p');
+          const examplesParagraph = document.createElement('p');
+          const collectedParagraph = document.createElement('p');
+
+          categoryParagraph.textContent = category;
+          examplesParagraph.textContent = examples;
+          collectedParagraph.textContent = collected;
+
+          listItem.appendChild(categoryParagraph);
+          listItem.appendChild(examplesParagraph);
+          listItem.appendChild(collectedParagraph);
+
+          list.appendChild(listItem);
+        }
+      }
+
+      function handleResize() {
+        if (window.innerWidth < 670) {
+          table.style.display = 'none';
+          list.innerHTML = '';
+          createListItems();
+        } else {
+          table.style.display = 'table';
+          list.innerHTML = '';
+        }
+      }
+
+      handleResize();
+
+      window.addEventListener('resize', handleResize);
+    });
+
+  </script>
 </head>
 
 <body>
+  <a id="lingoverseimg" href="/">LingoVerse</a>
   <h2>PRIVACY POLICY</h2>
   <p>Last updated July 19, 2023</p>
   <p>
@@ -599,7 +696,7 @@
     <strong>What categories of personal information do we collect?</strong>
   </p>
 
-  <table>
+  <table id="data-table">
     <tr>
       <th>Category</th>
       <th>Examples</th>
@@ -670,6 +767,7 @@
       <td></td>
     </tr>
   </table>
+  <ul id="data-list"></ul>
 
   <p>
     We will use and retain the collected personal information as needed to provide the Services or for specific

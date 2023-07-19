@@ -36,7 +36,15 @@ body {
     font-size: 70px;
 }
 
+a {
+    color: rgb(255, 187, 0);
+    text-decoration: none;
+}
 
+a:visited {
+    text-decoration: none;
+    color: rgb(255, 187, 0);
+}
 
 br {
     height: 10px;
@@ -305,6 +313,7 @@ input.custom-autofill {
     #lingoverseimg {
         font-size: 15px;
     }
+
     #heading {
         width: 300px;
         font-size: 40px;
@@ -372,6 +381,7 @@ input.custom-autofill {
     #lingoverseimg {
         font-size: 10px;
     }
+
     #heading {
         width: 200px;
         font-size: 25px;
