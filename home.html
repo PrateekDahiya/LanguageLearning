@@ -19,7 +19,7 @@
         content="LingoVerse: Unlock Your Language Potential. Learn languages with ease through interactive lessons, immersive exercises, and personalized learning plans. Explore a world of diverse languages and cultures, and enhance your communication skills effortlessly with LingoVerse.">
 </head>
 
-<body onload="updateElements();is_loggedin()">
+<body onload="updateElements()">
     <!-- Common Header -->
     <header>
         <div id="topline">
@@ -133,11 +133,11 @@
         <div id="current_lang">
             You are Currently Learning
             <br>
-            <span id="crnt_lang">&nbsp;</span>
+            <span id="crnt_lang">hindi</span>
             <hr style="height: 40px;border-color: transparent;">
             At word
             <br>
-            <span id="crnt_atword">&nbsp;</span>
+            <span id="crnt_atword">3</span>
             <br>
             <div id="continue_lang_btn"
                 onclick="document.getElementById('crnt_lang').innerHTML == 'Difficult Words' && document.getElementById('diff_count_num').innerHTML == '0' ? (document.getElementsByClassName('radio-inputs')[0].style.display='flex') : continuej_to();">
@@ -147,16 +147,16 @@
         <div id="current_div">
             You are Currently At Level
             <br>
-            <span id="crnt_level">&nbsp;</span>
+            <span id="crnt_level">Advance</span>
         </div>
         <div id="word_goal">
             <div id="ur_goal_txt">
                 Your Word Goal is:
             </div>
             <img id="edit_btn" src="Images/edit.png" onclick="word_goal_win()" width="25px">
-            <span id="crnt_goal_value">&nbsp;</span>
+            <span id="crnt_goal_value">10</span>
             <div id="wrd_done_txt">Words Done Today:</div>
-            <div id="word_num">&nbsp;</div>
+            <div id="word_num">User Offline</div>
             <div id="set_wrd_goal">
                 <img src="Images/goal.png" width="150px">
                 <div id="close_btn" onclick="close_word_goal_win()">

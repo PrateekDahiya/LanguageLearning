@@ -44,7 +44,6 @@ function checkindatabase(lang, division, atword) {
 function goto(b, diviv = "1", atword = 0) {
     let a;
     let divisionsname = ["Beginner", "Moderate", "Advance"];
-
     if (atword === 0) {
         let arrayreq = checkindatabase(b, divisionsname[parseInt(diviv) - 1], atword);
         atword = arrayreq[2];
@@ -77,6 +76,18 @@ function goto(b, diviv = "1", atword = 0) {
             break;
         case "tamil":
             a = "9" + String(diviv);
+            break;
+        case "turkish":
+            a = "10" + String(diviv);
+            break;
+        case "portuguese":
+            a = "11" + String(diviv);
+            break;
+        case "indonesian":
+            a = "12" + String(diviv);
+            break;
+        case "italian":
+            a = "13" + String(diviv);
             break;
 
         default:
@@ -199,14 +210,21 @@ function show_hidden_info() {
     for (var i = 0; i < containers.length; i++) {
         var container = containers[i];
         var button = container.getElementsByClassName('lang_info_extend')[0];
-        var text = 'lang_hidden_info';
 
         button.addEventListener('click', function () {
             var parent = this.parentNode;
             parent.style.height = 'auto';
-            this.style.display = "none";
-            parent.getElementsByClassName(text)[0].style.display = 'block';
-            parent.getElementsByClassName("lang-short-info")[0].style.display = 'none';
+            let shortinfo = parent.getElementsByClassName("lang-short-info")[0];
+            let hiddeninfo = parent.getElementsByClassName('lang_hidden_info')[0];
+            if (window.getComputedStyle(shortinfo).display == 'none') {
+                hiddeninfo.style.display = 'none';
+                shortinfo.style.display = 'block';
+            }
+            else if (window.getComputedStyle(shortinfo).display == 'block') {
+                hiddeninfo.style.display = 'block';
+                shortinfo.style.display = 'none';
+            }
+
         });
     }
 }
