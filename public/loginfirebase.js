@@ -1,5 +1,5 @@
 import firebaseFunctions from "./firebase_init.js";
-const { database, analytics, auth, app, set, ref, update, get, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail, updateEmail, sendEmailVerification } = firebaseFunctions;
+const { database, analytics, auth, app, set, ref, update, get, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail, updateEmail, sendEmailVerification, firestore, doc, setDoc, updateDoc, addDoc, collection, arrayUnion, arrayRemove, increment, getDoc } = firebaseFunctions;
 
 function empty_form() {
     document.getElementById('fullname').value = "";
@@ -32,6 +32,23 @@ signup.addEventListener('click', (e) => {
                 word_count: 0,
                 journey_database: []
             });
+            const Ref = doc(firestore, "Users", user.uid);
+            setDoc(Ref, {
+                Name: name,
+                username: username,
+                email: email,
+                last_login: 0,
+                language: {
+                    language: "Hindi",
+                    division: "Beginner",
+                    difficult: null,
+                    goal: 10,
+                    word_count: 0,
+                },
+                journey_database: []
+            }, { merge: true });
+
+
             show_mbox("User Created Successfully.");
             empty_form();
         })
@@ -40,6 +57,8 @@ signup.addEventListener('click', (e) => {
             const errorMessage = error.message;
             show_mbox("Error Code: " + errorCode + "<br>" + "Error: " + errorMessage);
         });
+
+
 });
 
 function auto_login() {
@@ -76,7 +95,12 @@ login.addEventListener('click', (e) => {
             update(ref(database, "users/" + user.uid), {
                 last_login: dt,
             });
-            open("home.html", "_self");
+
+            const Ref = doc(firestore, "Users", user.uid);
+            setDoc(Ref, {
+                last_login: dt
+            }, { merge: true });
+
         })
         .catch((error) => {
             const errorCode = error.code;

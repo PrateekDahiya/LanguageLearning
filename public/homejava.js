@@ -1,6 +1,5 @@
 
-
-setInterval(hide_loading, 4000);
+setTimeout(() => { hide_loading(); }, 4000);
 function hide_loading() {
     document.getElementById('loading-back').style.display = "none";
     document.getElementById('loading').style.display = "none";
@@ -30,8 +29,11 @@ function hideList() {
 
 
 function diff_count() {
-    var difflength = JSON.parse(localStorage.getItem("difficult")).length;
-    document.getElementById("diff_count_num").innerHTML = difflength;
+    if (is_loggedin()) {
+        var difflength = JSON.parse(localStorage.getItem("difficult")).length;
+        document.getElementById("diff_count_num").innerHTML = difflength;
+    }
+
 }
 
 
@@ -69,7 +71,7 @@ function checkindatabase(lang, division, atword) {
 function goto(b, diviv = "1", atword = 0) {
     let a;
     let divisionsname = ["Beginner", "Moderate", "Advance"];
-    if (atword === 0 && b != "Difficult Words") {
+    if (atword === 0) {
         let arrayreq = checkindatabase(b, divisionsname[parseInt(diviv) - 1], atword);
         atword = arrayreq[2];
     }
@@ -102,16 +104,25 @@ function goto(b, diviv = "1", atword = 0) {
         case "tamil":
             a = "9" + String(diviv);
             break;
-        case "Difficult Words":
-            a = "100";
+        case "turkish":
+            a = "10" + String(diviv);
             break;
+        case "portuguese":
+            a = "11" + String(diviv);
+            break;
+        case "indonesian":
+            a = "12" + String(diviv);
+            break;
+        case "italian":
+            a = "13" + String(diviv);
+            break;
+
         default:
             break;
     }
     let link = "language.html?langid=" + String(a) + "&atword=" + String(atword);
     open(link, "_self");
 }
-
 function continuej_to() {
 
     let got_lang_div = [String(document.getElementById("crnt_lang").innerHTML), String(document.getElementById("crnt_level").innerHTML)];

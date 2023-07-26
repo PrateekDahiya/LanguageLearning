@@ -1,14 +1,12 @@
 const urlParams = new URLSearchParams(window.location.search);
-const langid = urlParams.get('langid');
-const atword = parseInt(urlParams.get('atword'));
+var langid = urlParams.get('langid');
+var atword = parseInt(urlParams.get('atword'));
 var div_num;
 var language;
 var wordsarr;
 var i = 0;
-i = atword;
 var divtext = ['Beginner', 'Moderate', 'Advance', 'Hard'];
 var speak_lang;
-
 
 // Loading Page
 setInterval(hide_loading, 1000);
@@ -46,6 +44,20 @@ let spanish_Adv = [[' Hello, how are you?', ' Hola, ¿cómo estás? '], [' I lik
 let tamil_Beg = [[' Hello', 'vaṇakkam', 'வணக்கம் '], [' Sorry', 'aṇmai yil', 'அண்மையில் '], [' Thank you', 'naṉṟi', 'நன்றி '], [" Let's go", 'pōkkuvōm', 'போக்குவோம் '], [" Let's enjoy", 'makiluvōm', 'மகிழுவோம் '], [' I agree', 'taṅgik koṇṭēn', 'தங்கிக் கொண்டேன் '], [' Avoid', 'vilakiyavai', 'விலகியவை '], [" Don't stop", 'aṭikkāthē', 'அடிக்காதே '], [' I know', 'teriyum', 'தெரியும் '], [' No', 'illai', 'இல்லை '], [' Okay', 'sari', 'சரி '], [" Let's welcome", 'vantukollōm', 'வந்துகொள்ளோம் '], [' Guests', 'kūṭiyavarkaḷ', 'கூடியவர்கள் '], [' Lunch', 'parutti', 'பருத்தி '], [' Cooking', 'samaiyal', 'சமையல் '], [' Cleanliness', 'sutham', 'சுத்தம் '], [' Mealtime', 'kaḻikkum nēram', 'கழிக்கும் நேரம் '], [' Small', 'siṟumi', 'சிறுமி '], [' Big', 'periya', 'பெரிய '], [' Life growth', 'vāḻkai vaḷarpup', 'வாழ்க்கை வளர்ப்பு '], [' Tamil', 'tamiḻ', 'தமிழ் '], [' Happiness', 'makilcci', 'மகிழ்ச்சி '], [' Attention', 'kavanam', 'கவனம் '], [' Opinion', 'karuttu', 'கருத்து '], [' Hand washing time', 'kaikaḷai kaṭṭum nēram', 'கைகளை கட்டும் நேரம் '], [' Food', 'uṇavu', 'உணவு '], [' Mother tongue', 'tāy moḻi', 'தாய்மொழி '], [' Nickname', 'piriyātha peyar', 'பிரியாத பெயர் ']];
 let tamil_Mod = [[' Hello', 'vaṇakkam', 'வணக்கம் '], [' Where are you going?', 'eṅku pōgirīrkal?', 'எங்கு போகிறீர்கள்? '], [' My name is a wonderful name', 'en pēru arumaiyāna pēr', 'என் பேரு அருமையான பேர் '], [' How old are you?', 'nīṅkal evvaḷavu vāḻkaiyil irukkiṟīrkaḷ?', 'நீங்கள் எவ்வளவு வாழ்க்கையில் இருக்கிறீர்கள்? '], [' I speak Tamil', 'nāṉ tamiḻ pēsugiṟēṉ', 'நான் தமிழ் பேசுகிறேன் '], [' I need help', 'enakku udhavi tayakkam pōṉṟadhu', 'எனக்கு உதவி தயக்கம் போன்றது '], [' I have lost weight', 'nāṉ uṭal eṭai kuṟaittēṉ', 'நான் உடல் எடை குறைத்தேன் '], [' Do you know how to speak Tamil?', 'nīṅkal tamiḻil pēsuvadhu teriyumā?', 'நீங்கள் தமிழில் பேசுவது தெரியுமா? '], [' I want you to have a good day', 'nāṉ nīṅkaḷukku nalla nāḷ kūṭṭāka irukka vēṇṭum', 'நான் நீங்களுக்கு நல்ல நாள் கூட்டாக இருக்க வேண்டும் '], [' Where should I go', 'eṅku pōka vēṇṭum?', 'எங்கு போக வேண்டும்? '], [' What food should I give my mom to eat?', 'En ammā sāppiṭa vēṇṭiya uṇavu enna?', 'என் அம்மா சாப்பிட வேண்டிய உணவு என்ன? '], [' Where are you going?', 'Nī eṅku pōkiṟāy?', 'நீ எங்கு போகிறாய்? '], [' He will come to see.', 'Avaṉ pārka cellum', 'அவன் பார்க்க செல்லும். '], [' I am here.', 'Nāṉ iṅkē irukkiṟēṉ', 'நான் இங்கே இருக்கிறேன். '], [' I need to give you a message.', 'Nāṉ uṉakku toṭarpu koṭukka vēṇṭum', 'நான் உனக்கு தொடர்பு கொடுக்க வேண்டும். '], [' What is your name?', 'Uṅkaḷ peyar enna?', 'உங்கள் பெயர் என்ன? '], [' I was not born in this country.', 'Nāṉ sontha nāṭṭil piṟanthadhu eṅkum illai', 'நான் சொந்த நாட்டில் பிறந்தது எங்கும் இல்லை. '], [' Can I speak to you?', 'Uṉṉiṭam solla muṭiyumā?', 'உன்னிடம் சொல்ல முடியுமா? '], [' Why did you come?', 'Nī edhukku vandhirukkiṟāy?', 'நீ எதுக்கு வந்திருக்கிறாய்? '], [' I already know that person.', 'Anth pērai nān aṟinthu koṇṭē irukkiṟēn', 'அந்த பேரை நான் அறிந்து கொண்டே இருக்கிறேன். ']];
 let tamil_Adv = [[' I am coming to our town.', 'Engaḷ ūrukku varugireṉ', 'எங்கள் ஊருக்கு வருகிறேன் '], [' Your thoughts are in my heart.', 'En manathil uṅgaḷ ninaiṉkal uḷḷaṉa', 'என் மனதில் உங்கள் நினைவுகள் உள்ளன '], [' She is coming to my house.', 'Avaḷ eṉ vīṭṭil varugiṟāḷ', 'அவள் என் வீட்டில் வருகிறாள் '], [' Your love fills my life.', 'En uyiriṉattai uṉ kādal niṟaikkiraṯu', 'என் உயிரினத்தை உன் காதல் நிறைக்கிறது '], [' I am trying to tell you what I have known so far.', 'Nāṉ ituvarai aṟintadhai uṅkaḷukku solla muyaṟcikkiṟēṉ', 'நான் இதுவரை அறிந்ததை உங்களுக்கு சொல்ல முயற்சிக்கிறேன் '], [' Can you write in Tamil?', 'Tamilil urai ezhutha mudiyuma?', 'தமிழில் உரை எழுத முடியுமா? '], [' I am sure.', 'Nān kattāyam koவடிthukkoவடிṉṟukkiṟēṉ', 'நான் கட்டாயம் கொடுத்துக்கொண்டிருக்கிறேன். '], [' He loves me with anger.', 'Avar kōpamudan ennai nēchikkiṟār', 'அவர் கோபமுடன் என்னை நேசிக்கிறார். '], [' You cannot keep me from sleeping.', 'Nīṅkaḷ ennai uṟangat tavirkka muṭiyātu', 'நீங்கள் என்னை உறங்கத் தவிர்க்க முடியாது. '], [' His dehydration has continued until death.', 'Avar maraṇam tuṭikkum varai paricukaḷiṉ nīrttēkkam celuttirukkiṟadhu', 'அவர் மரணம் துடிக்கும் வரை பரிசுகளின் நீர்த்தேக்கம் செலுத்தியிருக்கிறது. '], [' We must not delay anywhere.', 'Eṅkum turattik kākka vēṇṭām', 'எங்கும் துரத்திக் காக்க வேண்டாம். '], [' I am thinking of ways to act.', 'Nān naṭantukolla veṇṭiya muṟaikaḷai niṉaikkirēṉ', 'நான் நடந்துகொள்ள வேண்டிய முறைகளை நினைக்கிறேன். '], [' You are calling many good people.', 'Nī palar nallavargalai aḻaikkiṟāy', 'நீ பலர் நல்லவர்களை அழைக்கிறாய். ']];
+let turkish_Beg = [['Hello', 'Merhaba'], ['Thank you', 'Teşekkür ederim'], ['Yes', 'Evet'], ['No', 'Hayır'], ['Please', 'Lütfen'], ["Excuse me/I'm sorry", 'Affedersiniz'], ['Water', 'Su'], ['Food', 'Yemek'], ['Book', 'Kitap'], ['School', 'Okul'], ['Table', 'Masa'], ['Chair', 'Sandalye'], ['Window', 'Pencere'], ['Door', 'Kapı'], ['Car', 'Araba'], ['Sun', 'Güneş'], ['Moon', 'Ay'], ['Sea', 'Deniz'], ['Mountain', 'Dağ'], ['Red', 'Kırmızı'], ['Blue', 'Mavi'], ['Green', 'Yeşil'], ['Cat', 'Kedi'], ['Dog', 'Köpek'], ['Friend', 'Arkadaş'], ['Family', 'Aile'], ['House', 'Ev'], ['Turkey', 'Türkiye'], ['Beautiful', 'Güzel'], ['Happy', 'Mutlu']];
+let turkish_Mod = [['Hello! How are you?', 'Merhaba! Nasılsınız?'], ['Thank you for your help.', 'Teşekkür ederim yardımınız için.'], ['Excuse me, where is the restroom?', 'Affedersiniz, tuvalet nerede?'], ['Can you give me some water, please?', 'Lütfen biraz su verebilir misiniz?'], ['I really like Turkish food.', 'Türk yemeklerini çok seviyorum.'], ['I would like to order a coffee, please.', 'Bir kahve sipariş etmek istiyorum, lütfen.'], ['My friend is Turkish.', 'Arkadaşım Türk.'], ['I am reading an interesting book right now.', 'Şu anda ilginç bir kitap okuyorum.'], ["School starts at eight o'clock.", 'Okul saat sekizde başlıyor.'], ['This is my table.', 'Bu benim masam.'], ['I have a comfortable chair.', 'Rahat bir sandalyem var.'], ['The window is open.', 'Pencere açık.'], ['The door is closed.', 'Kapı kapalı.'], ['I have a red car.', 'Kırmızı bir arabam var.'], ['Today is a sunny day.', 'Bugün güneşli bir gün.'], ['The moon is beautiful tonight.', 'Ay bu gece güzel.'], ['I like to go to the sea.', 'Denize gitmeyi seviyorum.'], ['I like to hike in the mountains.', 'Dağlarda yürümeyi seviyorum.'], ['The cat is soft and cute.', 'Kedi yumuşak ve sevimli.']];
+let turkish_Adv = [['I have been learning Turkish for many years and now I can speak fluently.', 'Türkçeyi birçok yıl boyunca öğrendim ve şimdi akıcı bir şekilde konuşabiliyorum.'], ['During my trip to Turkey, I learned many common expressions.', "Türkiye'ye yaptığım seyahat sırasında, birçok yaygın ifade öğrendim."], ['Turkish culture is rich with history and diverse traditions.', 'Türk kültürü tarihi ve çeşitli gelenekleri ile zengin.'], ["I read a Turkish literature book and really liked the author's style.", 'Bir Türk edebiyatı kitabı okudum ve yazarın tarzını gerçekten beğendim.'], ['I attended a Turkish dance course and now I can perform traditional dances.', 'Türk dansları kursuna katıldım ve şimdi geleneksel danslar yapabiliyorum.'], ['While in Turkey, I made many friendly and kind friends.', "Türkiye'deyken birçok arkadaş cana yakın ve kibardı."], ['Listening to Turkish music is enjoyable with its captivating and uplifting rhythms.', 'Türk müziğini dinlemek, beni etkileyen ve canlandıran ritimleriyle keyifli.'], ['I admire Turkish art and architecture for their beauty and uniqueness.', 'Türk sanatını ve mimarisini, güzellikleri ve özgünlükleri nedeniyle takdir ediyorum.'], ['Turkish language has many interesting dialects, which enriches the cultural diversity of the country.', 'Türkçe pek çok ilginç diyalekse sahip, bu da ülkenin kültürel çeşitliliğini zenginleştiriyor.'], ['I hope to better understand Turkish culture and engage more with the local community.', 'Türk kültürünü daha iyi anlamayı ve yerel toplulukla daha çok etkileşimde bulunmayı umuyorum.']];
+let portuguese_Beg = [['Hello', 'Olá'], ['Thank you (for male/female)', 'Obrigado/Obrigada'], ['Yes', 'Sim'], ['No', 'Não'], ['Please', 'Por favor'], ["Excuse me/I'm sorry (for male/female)", 'Desculpe/Desculpa'], ['Water', 'Água'], ['Food', 'Comida'], ['Book', 'Livro'], ['School', 'Escola'], ['Table', 'Mesa'], ['Chair', 'Cadeira'], ['Window', 'Janela'], ['Door', 'Porta'], ['Car', 'Carro'], ['Sun', 'Sol'], ['Moon', 'Lua'], ['Sea', 'Mar'], ['Mountain', 'Montanha'], ['Red', 'Vermelho'], ['Blue', 'Azul'], ['Green', 'Verde'], ['Cat', 'Gato'], ['Dog', 'Cachorro'], ['Friend (male/female)', 'Amigo/Amiga'], ['Family', 'Família'], ['House', 'Casa'], ['Brazil', 'Brasil'], ['Beautiful (for male/female)', 'Bonito/Bonita'], ['Happy', 'Feliz']];
+let portuguese_Mod = [['Hello! How are you?', 'Olá! Como vai?'], ['Thank you for the help.', 'Obrigado pela ajuda.'], ['Excuse me, where is the bathroom?', 'Desculpe, onde fica o banheiro?'], ['Can you give me some water, please?', 'Você pode me dar um pouco de água, por favor?'], ['I really like Brazilian food.', 'Eu gosto muito da comida brasileira.'], ['I would like to order a coffee, please.', 'Eu gostaria de pedir um café, por favor.'], ['My friend is Brazilian.', 'Meu amigo é brasileiro.'], ['I am reading an interesting book.', 'Estou lendo um livro interessante.'], ["School starts at eight o'clock.", 'A escola começa às oito horas.'], ['This is my table.', 'Esta é minha mesa.'], ['I have a comfortable chair.', 'Eu tenho uma cadeira confortável.'], ['The window is open.', 'A janela está aberta.'], ['The door is closed.', 'A porta está fechada.'], ['I have a red car.', 'Eu tenho um carro vermelho.'], ['Today the sun is shining.', 'Hoje o sol está brilhando.'], ['The moon is beautiful tonight.', 'A lua está bonita esta noite.'], ['I like to go to the beach.', 'Eu gosto de ir à praia.'], ['I like to go hiking in the mountains.', 'Eu gosto de fazer trilhas na montanha.'], ['The cat is soft and cute.', 'O gato é macio e fofo.'], ['My dog is playful.', 'Meu cachorro é brincalhão.']];
+let portuguese_Adv = [['I have been studying Portuguese for many years and now I can speak fluently.', 'Eu tenho estudado português por muitos anos e agora posso falar fluentemente.'], ['During my trip to Brazil, I learned many common expressions.', 'Durante minha viagem ao Brasil, aprendi muitas expressões comuns.'], ['Brazilian culture is rich in history and diverse traditions.', 'A cultura brasileira é rica em história e tradições diversas.'], ["I read a Brazilian literature book and really enjoyed the author's style.", 'Eu li um livro de literatura brasileira e realmente gostei do estilo do autor.'], ['I attended a Brazilian dance course and now I can dance traditional rhythms.', 'Eu participei de um curso de dança brasileira e agora posso dançar ritmos tradicionais.'], ['While in Brazil, I made friends with many friendly and kind people.', 'Enquanto estava no Brasil, fiz amizade com muitas pessoas amigáveis e gentis.'], ['I enjoy listening to Brazilian music because it has catchy and lively rhythms.', 'Eu gosto de ouvir música brasileira porque ela tem ritmos cativantes e animados.'], ['I admire Brazilian art and architecture for their beauty and uniqueness.', 'Eu admiro a arte e a arquitetura brasileira por sua beleza e originalidade.'], ['Portuguese language has many interesting dialects, which enriches the cultural diversity of the country.', 'A língua portuguesa possui muitos dialetos interessantes, o que enriquece a diversidade cultural do país.'], ['I hope to understand Brazilian culture better and engage more with the local community.', 'Eu espero compreender melhor a cultura brasileira e me envolver mais com a comunidade local.']];
+let indonesian_Beg = [['Good morning', 'Selamat pagi'], ['Good afternoon', 'Selamat siang'], ['Good evening/Good night', 'Selamat malam'], ['Thank you', 'Terima kasih'], ['Yes', 'Ya'], ['No', 'Tidak'], ['Please', 'Tolong'], ['Sorry/Excuse me', 'Maaf'], ['Water', 'Air'], ['Food', 'Makanan'], ['Book', 'Buku'], ['School', 'Sekolah'], ['Table', 'Meja'], ['Chair', 'Kursi'], ['Window', 'Jendela'], ['Door', 'Pintu'], ['Car', 'Mobil'], ['Sun', 'Matahari'], ['Moon', 'Bulan'], ['Sea', 'Laut'], ['Mountain', 'Gunung'], ['Red', 'Merah'], ['Blue', 'Biru'], ['Green', 'Hijau'], ['Cat', 'Kucing'], ['Dog', 'Anjing'], ['Friend', 'Teman'], ['Family', 'Keluarga'], ['House', 'Rumah'], ['Indonesia', 'Indonesia']];
+let indonesian_Mod = [['Good morning! How are you?', 'Selamat pagi! Apa kabar?'], ['Thank you for your help.', 'Terima kasih atas bantuannya.'], ['Excuse me, where is the restroom?', 'Maaf, di mana kamar kecil?'], ['Can I have some water, please?', 'Bolehkah saya minta air, tolong?'], ['I like Indonesian food.', 'Saya suka makanan Indonesia.'], ['I would like to order coffee, please.', 'Saya ingin memesan kopi, tolong.'], ['My friend is Indonesian.', 'Teman saya adalah orang Indonesia.'], ['I am reading an interesting book.', 'Saya sedang membaca buku yang menarik.'], ["School starts at eight o'clock.", 'Sekolah dimulai pukul delapan.'], ['This is my table.', 'Ini adalah meja saya.'], ['I have a comfortable chair.', 'Saya memiliki kursi yang nyaman.'], ['This window is open.', 'Jendela ini terbuka.'], ['That door is closed.', 'Pintu itu tertutup.'], ['I have a red car.', 'Saya memiliki mobil merah.'], ['Today the sun is shining brightly.', 'Hari ini matahari bersinar cerah.'], ['The moon is beautiful tonight.', 'Bulan indah malam ini.'], ['I like to go to the beach.', 'Saya suka pergi ke pantai.'], ['I enjoy hiking in the mountains.', 'Saya senang hiking di gunung.'], ['The cat is soft and cute.', 'Kucing itu lembut dan lucu.'], ['My dog is full of energy.', 'Anjing saya penuh semangat.']];
+let indonesian_Adv = [['I have been studying Indonesian for years and now I can speak fluently.', 'Saya telah belajar bahasa Indonesia selama bertahun tahun dan sekarang saya bisa berbicara lancar.'], ['During my trip to Indonesia, I learned many new vocabulary words.', 'Selama perjalanan saya ke Indonesia, saya belajar banyak kosakata baru.'], ['Indonesian culture is rich with unique customs and traditions.', 'Budaya Indonesia kaya dengan adat istiadat dan tradisi yang unik.'], ["I have read a complex Indonesian novel, but it's an interesting challenge.", 'Saya telah membaca sebuah novel Indonesia yang kompleks, tetapi ini merupakan tantangan menarik.'], ['I attended an Indonesian dance course and now I can dance traditional dances.', 'Saya menghadiri kursus tari Indonesia dan sekarang saya bisa menari tari daerah.'], ['While in Indonesia, I made friends with many friendly and kind people.', 'Saat di Indonesia, saya berteman dengan banyak orang yang ramah dan baik hati.'], ['I enjoy listening to Indonesian music because it has a unique and uplifting rhythm.', 'Saya senang mendengarkan musik Indonesia karena memiliki irama yang khas dan menggembirakan.'], ['I admire Indonesian arts and crafts for their beauty and exceptional creativity.', 'Saya mengagumi seni dan kerajinan Indonesia karena memiliki keindahan dan kreativitas yang luar biasa.'], ['Indonesian language has many interesting dialects that add to the cultural diversity of the country.', 'Bahasa Indonesia memiliki banyak dialek yang menarik dan menambahkan keanekaragaman budaya negara ini.'], ['I hope to gain a deeper understanding of Indonesian culture and engage more with the local community.', 'Saya berharap bisa memahami budaya Indonesia lebih mendalam dan terlibat dalam kehidupan masyarakat lokal.']];
+let italian_Beg = [['Hello/Hi', 'Ciao'], ['Thank you', 'Grazie'], ['Yes', 'Sì'], ['No', 'No'], ['Please', 'Per favore'], ["Excuse me/I'm sorry", 'Scusa/Scusami'], ['Water', 'Acqua'], ['Coffee', 'Caffè'], ['Bread', 'Pane'], ['Cheese', 'Formaggio'], ['Pizza', 'Pizza'], ['Ice cream', 'Gelato'], ['Friend (male/female)', 'Amico/Amica'], ['Book', 'Libro'], ['School', 'Scuola'], ['Table', 'Tavolo'], ['Chair', 'Sedia'], ['Window', 'Finestra'], ['Door', 'Porta'], ['Car', 'Auto'], ['Sun', 'Sole'], ['Moon', 'Luna'], ['Sea', 'Mare'], ['Mountain', 'Montagna'], ['Red', 'Rosso'], ['Blue', 'Blu'], ['Green', 'Verde'], ['Cat', 'Gatto'], ['Dog', 'Cane'], ['Family', 'Famiglia']];
+let italian_Mod = [['Hello! How are you?', 'Ciao! Come stai?'], ['Thank you for the help.', "Grazie per l'aiuto."], ['Excuse me, where is the bathroom?', "Scusa, dov'è il bagno?"], ['Can I have a glass of water, please?', "Posso avere un bicchiere d'acqua, per favore?"], ['I really like Italian pizza.', 'Mi piace molto la pizza italiana.'], ['I would like a coffee, please.', 'Vorrei un caffè, per favore.'], ['My friend is Italian.', 'La mia amica è italiana.'], ['I am reading an interesting book.', 'Sto leggendo un libro interessante.'], ["School starts at eight o'clock.", 'La scuola inizia alle otto.'], ['This is my table.', 'Questo è il mio tavolo.'], ['I have a comfortable chair.', 'Ho una sedia comoda.'], ['The window is open.', 'La finestra è aperta.'], ['The door is closed.', 'La porta è chiusa.'], ['I have a red car.', 'Ho una macchina rossa.'], ['Today the sun is shining.', 'Oggi il sole splende.'], ['The moon is beautiful tonight.', 'La luna è bella stasera.'], ['I like to go to the beach.', 'Mi piace andare al mare.'], ['I like to go hiking in the mountains.', 'Mi piace fare escursioni in montagna.'], ['The cat is soft and cute.', 'Il gatto è morbido e carino.'], ['My dog is playful.', 'Il mio cane è giocoso.']];
+let italian_Adv = [['I have studied Italian for many years, and now I can speak fluently.', 'Ho studiato italiano per molti anni e ora posso parlare fluentemente.'], ['During my trip to Italy, I learned many common expressions.', 'Durante il mio viaggio in Italia, ho imparato molte espressioni comuni.'], ['Italian culture is rich in history and traditions.', 'La cultura italiana è ricca di storia e tradizioni.'], ["I read a book of Italian literature, and I really enjoyed the author's style.", "Ho letto un libro di letteratura italiana e ho apprezzato molto lo stile dell'autore."], ['I took part in an Italian cooking class and learned to prepare delicious Italian dishes.', 'Ho partecipato a un corso di cucina italiana e ho imparato a preparare deliziosi piatti italiani.'], ['During my stay in Italy, I made friends with many friendly people.', 'Durante il mio soggiorno in Italia, ho fatto amicizia con molte persone simpatiche.'], ['Italian music has a unique charm, and I enjoy listening to it.', 'La musica italiana ha un fascino unico e mi piace ascoltarla.'], ['I visited many historical places in Italy and was fascinated by their beauty.', 'Ho visitato molti luoghi storici in Italia e sono rimasto affascinato dalla loro bellezza.'], ['I took Italian dance lessons, and now I can dance the tarantella.', 'Ho preso lezioni di danza italiana, e ora posso ballare la tarantella.'], ["I am reading a complex Italian novel, but it's an interesting challenge.", 'Sto leggendo un romanzo italiano molto complesso, ma è una sfida interessante.']];
+
+
 
 
 function identify_lang() {
@@ -55,197 +67,283 @@ function identify_lang() {
             language = 'chinese';
             speak_lang = "zh";
             wordsarr = chinese_Beg;
-            document.title = "LingoVerse-Chinese Beginner";
+            document.title = "LingoVerse Chinese Beginner Language";
             break;
         case "12":
             div_num = 1;
             language = 'chinese';
             speak_lang = "zh";
             wordsarr = chinese_Mod;
-            document.title = "LingoVerse-Chinese Moderate";
+            document.title = "LingoVerse Chinese Moderate Language";
             break;
         case "13":
             div_num = 2;
             language = 'chinese';
             speak_lang = "zh";
             wordsarr = chinese_Adv;
-            document.title = "LingoVerse-Chinese Advanced";
+            document.title = "LingoVerse Chinese Advanced Language";
             break;
         case "21":
             div_num = 0;
             language = 'french';
             speak_lang = "fr";
             wordsarr = french_Beg;
-            document.title = "LingoVerse-French Beginner";
+            document.title = "LingoVerse French Beginner Language";
             break;
         case "22":
             div_num = 1;
             language = 'french';
             speak_lang = "fr";
             wordsarr = french_Mod;
-            document.title = "LingoVerse-French Moderate";
+            document.title = "LingoVerse French Moderate Language";
             break;
         case "23":
             div_num = 2;
             language = 'french';
             speak_lang = "fr";
             wordsarr = french_Adv;
-            document.title = "LingoVerse-French Advanced";
+            document.title = "LingoVerse French Advanced Language";
             break;
         case "31":
             div_num = 0;
             language = 'german';
             speak_lang = "de";
             wordsarr = german_Beg;
-            document.title = "LingoVerse-German Beginner";
+            document.title = "LingoVerse German Beginner Language";
             break;
         case "32":
             div_num = 1;
             language = 'german';
             speak_lang = "de";
             wordsarr = german_Mod;
-            document.title = "LingoVerse-German Moderate";
+            document.title = "LingoVerse German Moderate Language";
             break;
         case "33":
             div_num = 2;
             language = 'german';
             speak_lang = "de";
             wordsarr = german_Adv;
-            document.title = "LingoVerse-German Advanced";
+            document.title = "LingoVerse German Advanced Language";
             break;
         case "41":
             div_num = 0;
             language = 'hindi';
             speak_lang = "hi";
             wordsarr = hindi_Beg;
-            document.title = "LingoVerse-Hindi Beginner";
+            document.title = "LingoVerse Hindi Beginner Language";
             break;
         case "42":
             div_num = 1;
             language = 'hindi';
             speak_lang = "hi";
             wordsarr = hindi_Mod;
-            document.title = "LingoVerse-Hindi Moderate";
+            document.title = "LingoVerse Hindi Moderate Language";
             break;
         case "43":
             div_num = 2;
             language = 'hindi';
             speak_lang = "hi";
             wordsarr = hindi_Adv;
-            document.title = "LingoVerse-Hindi Advanced";
+            document.title = "LingoVerse Hindi Advanced Language";
             break;
         case "51":
             div_num = 0;
             language = 'japanese';
             speak_lang = "ja";
             wordsarr = japanese_Beg;
-            document.title = "LingoVerse-Japanese Beginner";
+            document.title = "LingoVerse Japanese Beginner Language";
             break;
         case "52":
             div_num = 1;
             language = 'japanese';
             speak_lang = "ja";
             wordsarr = japanese_Mod;
-            document.title = "LingoVerse-Japanese Moderate";
+            document.title = "LingoVerse Japanese Moderate Language";
             break;
         case "53":
             div_num = 2;
             language = 'japanese';
             speak_lang = "ja";
             wordsarr = japanese_Adv;
-            document.title = "LingoVerse-Japanese Advanced";
+            document.title = "LingoVerse Japanese Advanced Language";
             break;
         case "61":
             div_num = 0;
             language = 'korean';
             speak_lang = "ko";
             wordsarr = korean_Beg;
-            document.title = "LingoVerse-Korean Beginner";
+            document.title = "LingoVerse Korean Beginner Language";
             break;
         case "62":
             div_num = 1;
             language = 'korean';
             speak_lang = "ko";
             wordsarr = korean_Mod;
-            document.title = "LingoVerse-Korean Moderate";
+            document.title = "LingoVerse Korean Moderate Language";
             break;
         case "63":
             div_num = 2;
             language = 'korean';
             speak_lang = "ko";
             wordsarr = korean_Adv;
-            document.title = "LingoVerse-Korean Advanced";
+            document.title = "LingoVerse Korean Advanced Language";
             break;
         case "71":
             div_num = 0;
             language = 'russian';
             speak_lang = "ru";
             wordsarr = russian_Beg;
-            document.title = "LingoVerse-Russian Beginner";
+            document.title = "LingoVerse Russian Beginner Language";
             break;
         case "72":
             div_num = 1;
             language = 'russian';
             speak_lang = "ru";
             wordsarr = russian_Mod;
-            document.title = "LingoVerse-Russian Moderate";
+            document.title = "LingoVerse Russian Moderate Language";
             break;
         case "73":
             div_num = 2;
             language = 'russian';
             speak_lang = "ru";
             wordsarr = russian_Adv;
-            document.title = "LingoVerse-Russian Advanced";
+            document.title = "LingoVerse Russian Advanced Language";
             break;
         case "81":
             div_num = 0;
             language = 'spanish';
             speak_lang = "es";
             wordsarr = spanish_Beg;
-            document.title = "LingoVerse-Spanish Beginner";
+            document.title = "LingoVerse Spanish Beginner Language";
             break;
         case "82":
             div_num = 1;
             language = 'spanish';
             speak_lang = "es";
             wordsarr = spanish_Mod;
-            document.title = "LingoVerse-Spanish Moderate";
+            document.title = "LingoVerse Spanish Moderate Language";
             break;
         case "83":
             div_num = 2;
             language = 'spanish';
             speak_lang = "es";
             wordsarr = spanish_Adv;
-            document.title = "LingoVerse-Spanish Advanced";
+            document.title = "LingoVerse Spanish Advanced Language";
             break;
         case "91":
             div_num = 0;
             language = 'tamil';
             speak_lang = "ta";
             wordsarr = tamil_Beg;
-            document.title = "LingoVerse-Tamil Beginner";
+            document.title = "LingoVerse Tamil Beginner Language";
             break;
         case "92":
             div_num = 1;
             language = 'tamil';
             speak_lang = "ta";
             wordsarr = tamil_Mod;
-            document.title = "LingoVerse-Tamil Moderate";
+            document.title = "LingoVerse Tamil Moderate Language";
             break;
         case "93":
             div_num = 2;
             language = 'tamil';
             speak_lang = "ta";
             wordsarr = tamil_Adv;
-            document.title = "LingoVerse-Tamil Advanced";
+            document.title = "LingoVerse Tamil Advanced Language";
             break;
-        case "100":
-            let arrayis = JSON.parse(localStorage.getItem("difficult"));
-            div_num = 3;
-            language = 'Difficult Words';
-            wordsarr = arrayis;
-            document.title = "LingoVerse-Difficult Words";
-            document.getElementById("change_division_menu").style.display = "none";
+        case "101":
+            div_num = 0;
+            language = 'turkish';
+            speak_lang = "tr";
+            wordsarr = turkish_Beg;
+            document.title = "LingoVerse Turkish Beginner Language";
+            break;
+        case "102":
+            div_num = 1;
+            language = 'turkish';
+            speak_lang = "tr";
+            wordsarr = turkish_Mod;
+            document.title = "LingoVerse Turkish Moderate Language";
+            break;
+        case "103":
+            div_num = 2;
+            language = 'turkish';
+            speak_lang = "tr";
+            wordsarr = turkish_Adv;
+            document.title = "LingoVerse Turkish Advanced Language";
+            break;
+        case "111":
+            div_num = 0;
+            language = 'portuguese';
+            speak_lang = "pt";
+            wordsarr = portuguese_Beg;
+            document.title = "LingoVerse Portuguese Beginner Language";
+            break;
+        case "112":
+            div_num = 1;
+            language = 'portuguese';
+            speak_lang = "pt";
+            wordsarr = portuguese_Mod;
+            document.title = "LingoVerse Portuguese Moderate Language";
+            break;
+        case "113":
+            div_num = 2;
+            language = 'portuguese';
+            speak_lang = "pt";
+            wordsarr = portuguese_Adv;
+            document.title = "LingoVerse Portuguese Advanced Language";
+            break;
+        case "121":
+            div_num = 0;
+            language = 'indonesian';
+            speak_lang = "id";
+            wordsarr = indonesian_Beg;
+            document.title = "LingoVerse Indonesian Beginner Language";
+            break;
+        case "122":
+            div_num = 1;
+            language = 'indonesian';
+            speak_lang = "id";
+            wordsarr = indonesian_Mod;
+            document.title = "LingoVerse Indonesian Moderate Language";
+            break;
+        case "123":
+            div_num = 2;
+            language = 'indonesian';
+            speak_lang = "id";
+            wordsarr = indonesian_Adv;
+            document.title = "LingoVerse Indonesian Advanced Language";
+            break;
+        case "131":
+            div_num = 0;
+            language = 'italian';
+            speak_lang = "it";
+            wordsarr = italian_Beg;
+            document.title = "LingoVerse Italian Beginner Language";
+            break;
+        case "132":
+            div_num = 1;
+            language = 'italian';
+            speak_lang = "it";
+            wordsarr = italian_Mod;
+            document.title = "LingoVerse Italian Moderate Language";
+            break;
+        case "133":
+            div_num = 2;
+            language = 'italian';
+            speak_lang = "it";
+            wordsarr = italian_Adv;
+            document.title = "LingoVerse Italian Advanced Language";
+            break;
+
+        case null:
+            div_num = 0;
+            langid = '11';
+            language = 'chinese';
+            speak_lang = "zh";
+            wordsarr = chinese_Beg;
+            document.title = "LingoVerse Chinese Beginner Languagl̥e";
+            atword = 0;
             break;
 
         default:
@@ -259,6 +357,7 @@ identify_lang();
 
 
 // Language description in console
+i = atword;
 console.log("Its", language, "at", "division", divtext[div_num]);
 
 
@@ -433,8 +532,7 @@ function backword() {
 
 // For Changing Division
 function chng_div(n) {
-    let link = String("language.html?" + "langid=" + String(langid[0]) + String(n + 1) + "&atword=0");
-    open(link, "_parent");
+    goto(language,n+1);
 }
 
 function checkindatabase(lang, division, atword) {
@@ -489,6 +587,18 @@ function goto(b, diviv = "1", atword = 0) {
             break;
         case "tamil":
             a = "9" + String(diviv);
+            break;
+        case "turkish":
+            a = "10" + String(diviv);
+            break;
+        case "portuguese":
+            a = "11" + String(diviv);
+            break;
+        case "indonesian":
+            a = "12" + String(diviv);
+            break;
+        case "italian":
+            a = "13" + String(diviv);
             break;
 
         default:
@@ -555,8 +665,6 @@ function addtodiff() {
             localStorage.setItem("difficult", JSON.stringify(diff_arr));
             console.log("Item removed!");
         }
-
-
     }
 }
 
@@ -589,7 +697,6 @@ function uncheck_diff() {
             document.getElementById('checkbox').checked = false;
         }
     }
-
 
 }
 

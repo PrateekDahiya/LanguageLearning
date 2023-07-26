@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
 import { getDatabase, set, ref, update, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail ,updateEmail, sendEmailVerification} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail, updateEmail, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, updateDoc, addDoc, collection, arrayUnion, arrayRemove, increment, getDoc } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDh4XjShuxTvJMM_HVl1AajvRsfpqN2Hdw",
@@ -18,6 +19,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
 const auth = getAuth();
+const firestore = getFirestore(app);
 
 const firebaseFunctions = {
     database,
@@ -32,7 +34,17 @@ const firebaseFunctions = {
     signInWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
-    sendPasswordResetEmail
+    sendPasswordResetEmail,
+    firestore,
+    doc,
+    setDoc,
+    updateDoc,
+    addDoc,
+    collection,
+    arrayUnion,
+    arrayRemove,
+    increment,
+    getDoc
 };
 
 export default firebaseFunctions;
