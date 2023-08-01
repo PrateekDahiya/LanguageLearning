@@ -59,7 +59,6 @@ let italian_Adv = [['I have studied Italian for many years, and now I can speak 
 
 
 
-
 function identify_lang() {
     switch (langid) {
         case "11":
