@@ -22,10 +22,10 @@ window.is_loggedin = () => {
     auth.onAuthStateChanged(function (user) {
         if (user) {
             console.log("User LoggedIn");
-            // open("home.html", "_self");
+            open("home.html", "_self");
         } else {
             console.log("User not logged in");
-            // document.getElementById("nav_linksa").style.display = "none";
+            document.getElementById("nav_linksa").style.display = "none";
             isuser = false;
             align_strtlearn();
             deactivateLinks();
