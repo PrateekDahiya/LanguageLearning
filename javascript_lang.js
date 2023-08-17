@@ -250,6 +250,12 @@ function identify_lang() {
             wordsarr = tamil_Adv;
             document.title = "LingoVerse Tamil Advanced Language";
             break;
+        case "100":
+            div_num = 3;
+            language = 'Difficult Words';
+            wordsarr = JSON.parse(localStorage.difficult);
+            document.title = "LingoVerse Difficult Words";
+            break;
         case "101":
             div_num = 0;
             language = 'turkish';
@@ -414,6 +420,12 @@ function adjust_layout_words() {
     document.getElementById("Mod_div").innerHTML = divtext[1];
     document.getElementById("Adv_div").innerHTML = divtext[2];
 
+    // Hiding Div menu in case of difficult words
+    if (language == "Difficult Words") {
+        document.getElementById("change_division_menu").style.display = "None";
+    }
+
+
     // Adding border to current Div
     if (div_num == 0) {
         document.getElementById('Beg_div').style.border = "2px solid black";
@@ -531,7 +543,7 @@ function backword() {
 
 // For Changing Division
 function chng_div(n) {
-    goto(language,n+1);
+    goto(language, n + 1);
 }
 
 function checkindatabase(lang, division, atword) {
@@ -613,7 +625,6 @@ function addtodiff() {
     if (!checkLSV('difficult')) {
         localStorage.setItem('difficult', JSON.stringify([]));
     }
-
     let diff_var = JSON.parse(localStorage.difficult);
     let diff_arr = diff_var;
     let z;
@@ -634,7 +645,9 @@ function addtodiff() {
     if (document.getElementById("checkbox").checked) {
         if (diff_var != []) {
             if (!diff_var.some(arr => JSON.stringify(arr) === JSON.stringify(z))) {
+                console.log("before: " + diff_arr);
                 diff_arr.push(z);
+                console.log("After: " + diff_arr);
                 localStorage.setItem("difficult", JSON.stringify(diff_arr));
                 console.log("Iteam added!");
             }

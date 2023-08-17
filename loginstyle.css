@@ -17,10 +17,11 @@ body {
     position: absolute;
     top: -110px;
     left: -10px;
-    color: transparent;
-    width: 200px;
-    height: 40px;
+    color: rgb(255, 187, 0);
+    /* width: 200px;
+    height: 40px; */
     cursor: pointer;
+    font-size: 40px;
 }
 
 #forms {

@@ -3,7 +3,6 @@ setTimeout(() => { hide_loading(); }, 4000);
 function hide_loading() {
     document.getElementById('loading-back').style.display = "none";
     document.getElementById('loading').style.display = "none";
-    diff_count();
 }
 let containerlist = document.getElementById("container_list");
 let radioinputs = document.getElementsByClassName("radio-inputs")[0];
@@ -17,6 +16,7 @@ radioinputs.addEventListener("mouseout", function () {
     b = setTimeout(hideList, 1000);
 });
 
+
 function showList() {
     radioinputs.style.display = "flex";
     clearTimeout(a);
@@ -26,13 +26,13 @@ function showList() {
 function hideList() {
     radioinputs.style.display = "none";
 }
-
+diff_count();
 
 function diff_count() {
-    if (is_loggedin()) {
-        var difflength = JSON.parse(localStorage.getItem("difficult")).length;
-        document.getElementById("diff_count_num").innerHTML = difflength;
-    }
+
+    var difflength = JSON.parse(localStorage.getItem("difficult")).length;
+    document.getElementById("diff_count_num").innerHTML = difflength;
+    console.log("Diff count: ", difflength);
 
 }
 
@@ -116,7 +116,9 @@ function goto(b, diviv = "1", atword = 0) {
         case "italian":
             a = "13" + String(diviv);
             break;
-
+        case "Difficult Words":
+            a = "100";
+            break;
         default:
             break;
     }
