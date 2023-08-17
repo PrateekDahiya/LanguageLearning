@@ -118,6 +118,7 @@ function goto(b, diviv = "1", atword = 0) {
             break;
         case "Difficult Words":
             a = "100";
+            atword = 0;
             break;
         default:
             break;
