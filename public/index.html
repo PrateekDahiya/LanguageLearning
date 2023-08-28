@@ -21,7 +21,7 @@
 </head>
 
 <body onload="glow_title();is_loggedin()">
-    <header>
+    <header id="header">
         <div id="topline">
             <div id="login">
                 <a href="login.html?mode=login" target="_self">
@@ -192,7 +192,7 @@
                     <span id="title_name10">E</span>
                 </div>
                 <br>
-                <div id="slogan">Unlock the Power of Language with Lingoverse</div>
+                <div id="slogan" class="hidden-slogen-animation">Unlock the Power of Language with Lingoverse</div>
                 <a href="login.html?mode=register" class="startlearning">
                     <button id="strtlearn2">
                         <span class="boxs2">
@@ -205,7 +205,7 @@
         <div id="p2">
             <div id="lang-details">
                 <h1>Languages</h1>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/India.jpg" alt="Hindi">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('hindi')" target="_self">Hindi</a>
@@ -225,7 +225,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/China.jpg" alt="Chinese">
                     <div class="language-description">
                         <a class="lang_link" href="language.html?langid=11&atword=0" target="_self">Chinese</a>
@@ -252,7 +252,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/Japan.jpg" alt="Japanese">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('japanese')" target="_self">Japanese</a>
@@ -271,7 +271,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/France.jpg" lt="French">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('french')" target="_self">French</a>
@@ -300,7 +300,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/Germany.jpg" alt="German">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('german')" target="_self">German</a>
@@ -327,7 +327,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/tamil.png" alt="Tamil">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('tamil')" target="_self">Tamil</a>
@@ -350,7 +350,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/Spain.jpg" alt="Spanish">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('spanish')" target="_self">Spanish</a>
@@ -374,7 +374,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/Russia.jpg" alt="Russian">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('russian')" target="_self">Russian</a>
@@ -398,7 +398,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/Korea.jpg" alt="Korean">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('korean')" target="_self">Korean</a>
@@ -422,7 +422,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/Turkey.jpg" alt="Turkish">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('turkish')" target="_self">Turkish</a>
@@ -457,7 +457,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/Portugal.jpg" alt="Portuguese">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('portuguese')" target="_self">Portuguese</a>
@@ -493,7 +493,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/Indonesia.jpg" alt="Indonesian">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('indonesian')" target="_self">Indonesian</a>
@@ -528,7 +528,7 @@
                         <span class="lang_info_extend">^</span>
                     </div>
                 </div>
-                <div class="language">
+                <div class="language hidden-lang-info">
                     <img src="Images/Flags/Italy.jpg" alt="Italian">
                     <div class="language-description">
                         <a class="lang_link" onclick="goto('italian')" target="_self">Italian</a>
@@ -568,7 +568,7 @@
             <h1 id="p3_head">Why you'll love learning with LingoVerse</h1>
             <div id="container_prop">
                 <div id="left_prop">
-                    <div class="prope" id="prope_1">
+                    <div class="prope hidden-prope-animation" id="prope_1">
                         <div class="prop_heading">
                             <img class="prop_img" src="Images/prop_icons/fire-solid.svg">
                             <p>Effective and efficient</p>
@@ -580,7 +580,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="prope" id="prope_2">
+                    <div class="prope hidden-prope-animation" id="prope_2">
                         <div class="prop_heading">
                             <img class="prop_img" src="Images/prop_icons/circle-check-solid.svg">
                             <p>Personalized learning</p>
@@ -597,7 +597,7 @@
                     <img src="Images/prop_icons/prop_image.svg">
                 </div>
                 <div id="right_prop">
-                    <div class="prope" id="prope_3">
+                    <div class="prope hidden-prope-animation" id="prope_3">
                         <div class="prop_heading">
                             <img class="prop_img" src="Images/prop_icons/crown-solid.svg">
                             <p>
@@ -611,7 +611,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="prope" id="prope_4">
+                    <div class="prope hidden-prope-animation" id="prope_4">
                         <div class="prop_heading">
                             <img class="prop_img" src="Images/prop_icons/hat-cowboy-solid.svg">
                             <p>
@@ -667,14 +667,11 @@
         <div id="p5"></div>
         <div id="p4">
             <div class="container">
-
                 <div class="container-block">
-                    <p class="text-blk head-text">
-                        Me
-                    </p>
-                    <!-- <div class="responsive-cell-block"></div> -->
                     <div class="card">
-
+                        <p class="text-blk head-text">
+                            Me
+                        </p>
                         <div class="image-box">
                             <img class="member-image" src="Images/Prateek.jpg">
                         </div>
@@ -707,95 +704,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="container-block">
-                    <div class="responsive-cell-block"></div>
-                    <div class="card">
-                        <div class="image-box">
-                            <img class="member-image" src="Images/Amit.jpg">
-                        </div>
-                        <p class="text-blk membe-name">
-                            Amit Kumar
-                        </p>
-                        <p class="text-blk member-position">
-                            Vice- President
-                        </p>
-                        <p class="text-blk feature-text">
-                            Layout Manager and text position and alignment.
-                        </p>
-                        <div class="social-icons">
-                            <a href="https://twitter.com/amitrai4988" target="_blank">
-                                <img class="twitter-icon" src="Images/icons8-twitter-50.png">
-                            </a>
-                            <a href="https://instagram.com/amitrai4988?igshid=NTc4MTlwNjQ2YQ==" target="_blank">
-                                <img class="instagram-icon" src="Images/icons8-instagram-50.png">
-                            </a>
-                            <a href="https://www.linkedin.com/in/amit-kumar-767b51259" target="_blank">
-                                <img class="linkedin-icon" src="Images/icons8-linkedin-50.png">
-                                <a href="https://github.com/amitrai4988" target="_blank">
-                                    <img class="github-icon" src="Images/icons8-github-50.png">
-                                </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-block">
-                    <div class="responsive-cell-block"></div>
-                    <div class="card">
-                        <div class="image-box">
-                            <img class="member-image" src="Images/Abdul.jpg">
-                        </div>
-                        <p class="text-blk membe-name">
-                            Abdul Aaziz
-                        </p>
-                        <p class="text-blk member-position">
-                            Sr Manager
-                        </p>
-                        <p class="text-blk feature-text">
-                            Designing and Photography
-                        </p>
-                        <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/abdulaziz-shaikh-783700278/" target="_blank">
-                                <img class="linkedin-icon" src="Images/icons8-linkedin-50.png">
-                            </a>
-                            <a href="https://github.com/noobcoder3068" target="_blank">
-                                <img class="github-icon" src="Images/icons8-github-50.png">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-block">
-                    <div class="responsive-cell-block"></div>
-                    <div class="card">
-                        <div class="image-box">
-                            <img class="member-image" src="Images/Anup.jpg">
-                        </div>
-                        <p class="text-blk membe-name">
-                            Anup Yadav
-                        </p>
-                        <p class="text-blk member-position">
-                            Jr Manager
-                        </p>
-                        <p class="text-blk feature-text">
-                            Basic Layout and Designer.
-                        </p>
-                        <div class="social-icons">
-                            <a href="" target="_blank">
-                                <img class="twitter-icon" src="Images/icons8-twitter-50.png">
-                            </a>
-                            <a href="" target="_blank">
-                                <img class="facebook-icon" src="Images/icons8-facebook-50.png">
-                            </a>
-                            <a href="" target="_blank">
-                                <img class="instagram-icon" src="Images/icons8-instagram-50.png">
-                            </a>
-                            <a href="" target="_blank">
-                                <img class="linkedin-icon" src="Images/icons8-linkedin-50.png">
-                            </a>
-                            <a href="" target="_blank">
-                                <img class="github-icon" src="Images/icons8-github-50.png">
-                            </a>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>

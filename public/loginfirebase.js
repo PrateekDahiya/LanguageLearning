@@ -47,10 +47,9 @@ signup.addEventListener('click', (e) => {
                 },
                 journey_database: []
             }, { merge: true });
-
-
+            
             show_mbox("User Created Successfully.");
-            empty_form();
+            open("login.html?mode=login","_self");
         })
         .catch((error) => {
             const errorCode = error.code;

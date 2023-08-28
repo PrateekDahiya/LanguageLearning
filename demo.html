@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Language Menu */
+
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: rgba(22, 21, 31, 0.934);
+        }
+        #strtjourney{
+            color: rgb(255, 187, 0);
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px
+        }
+
+        #chooselang{
+
+        }
+        .clang-inputs {
+            position: relative;
+            justify-content: center;
+            /* height: 710px; */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center;
+            margin: 0 5px;
+            border-radius: 25px;
+            padding: 4px;
+            z-index: 2;
+        }
+
+        .clang-inputs label {
+            flex-basis: 20%;
+            padding: 6px;
+            align-content: center;
+        }
+
+
+        .clang-input:checked+.clang-tile {
+            border-color: #2260ff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            color: #2260ff;
+        }
+
+
+        .clang-input:hover+.clang-tile {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 187, 0);
+        }
+
+
+        .clang-tile {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            min-height: 130px;
+            border-radius: 0.5rem;
+            background-color: transparent;
+            transition: 0.15s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 3;
+            left: 50%;
+            transform: translate(-50%, 0);
+
+        }
+
+
+        .clang-icon img {
+            position: relative;
+            top: 5px;
+            width: 7rem;
+        }
+
+        .clang-label {
+            color: rgb(255, 187, 0);
+            transition: 0.375s ease;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .clang-input {
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            width: 1px;
+        }
+
+        #container_list {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="chooselang">
+        <h2 id="strtjourney">Select A Language to Start <br>Your LingoVerse Journey</h2>
+        <div class="clang-inputs">
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('hindi')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/India.jpg">
+                    </span>
+                    <span class="clang-label">Hindi</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('french')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/France.jpg">
+                    </span>
+                    <span class="clang-label">French</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('japanese')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/Japan.jpg">
+                    </span>
+                    <span class="clang-label">Japanese</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('chinese')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/China.jpg">
+                    </span>
+                    <span class="clang-label">Chinese</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('spanish')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/Spain.jpg">
+                    </span>
+                    <span class="clang-label">Spanish</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('tamil')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/tamil.png">
+                    </span>
+                    <span class="clang-label">Tamil</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('german')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/Germany.jpg">
+                    </span>
+                    <span class="clang-label">German</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('korean')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/Korea.jpg">
+                    </span>
+                    <span class="clang-label">Korean</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('russian')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/Russia.jpg">
+                    </span>
+                    <span class="clang-label">Russian</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('turkish')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/Turkey.jpg">
+                    </span>
+                    <span class="clang-label">Turkish</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('portuguese')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/Portugal.jpg">
+                    </span>
+                    <span class="clang-label">Portuguese</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('indonesian')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/Indonesia.jpg">
+                    </span>
+                    <span class="clang-label">Indonesian</span>
+                </span>
+            </label>
+            <label>
+                <input class="clang-input" type="radio" name="engine">
+                <span class="clang-tile" onclick="goto('italian')">
+                    <span class="clang-icon">
+                        <img class="flags" src="Images/Flags/Italy.jpg">
+                    </span>
+                    <span class="clang-label">Italian</span>
+                </span>
+            </label>
+        </div>
+
+    </div>
+</body>
+
+</html>

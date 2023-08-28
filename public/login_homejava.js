@@ -230,11 +230,54 @@ function show_hidden_info() {
 }
 show_hidden_info();
 
+// Some animations on scroll :)
+
+const observer1 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+        else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-lang-info');
+        }
+        else {
+            entry.target.classList.remove('show-lang-info');
+        }
+    });
+});
+
+const hiddenElements1 = document.querySelectorAll('.hidden-lang-info');
+const hiddenElements2 = document.querySelectorAll('.hidden-slogen-animation');
+const hiddenElements3 = document.querySelectorAll('.hidden-prope-animation');
+hiddenElements1.forEach((el) => observer2.observe(el));
+hiddenElements2.forEach((el) => observer1.observe(el));
+hiddenElements3.forEach((el) => observer1.observe(el));
 
 
+// Scrolling effects scrolling down or up
 
+let prevScrollPos = window.scrollY;
+const navbar = document.getElementById("header");
 
+window.onscroll = function () {
+    const currentScrollPos = window.scrollY;
 
+    // Check if scrolling down
+    if (prevScrollPos > currentScrollPos) {
+        navbar.style.top = "0";
+    } else {
+        navbar.style.top = "-50px";
+    }
 
+    prevScrollPos = currentScrollPos;
+};
 
 
