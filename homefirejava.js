@@ -54,7 +54,6 @@ function fetchData(a, callback) {
 }
 window.updateElements = () => {
     send_diff();
-    setInterval(function () {
         fetchData("division", function (result) {
             document.getElementById("crnt_level").innerHTML = result;
             division = result;
@@ -72,7 +71,6 @@ window.updateElements = () => {
         fetchData("atword", function (result) {
             document.getElementById("crnt_atword").innerHTML = result;
         });
-    }, 1000);
 
 };
 function send_diff() {
@@ -103,5 +101,7 @@ window.goal = (a) => {
         }
 
     });
+    close_word_goal_win();
+    updateElements();
 };
 

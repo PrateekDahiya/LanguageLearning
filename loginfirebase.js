@@ -15,47 +15,59 @@ signup.addEventListener('click', (e) => {
     var email = document.getElementById("email").value;
     var username = document.getElementById("use").value;
     var password = document.getElementById("pass").value;
+    var passconfirm = document.getElementById("confirm-password").value;
     var name = document.getElementById("fullname").value;
+    var startlang = document.getElementById("startlangmenu").value;
+    var agreetotnc = document.getElementById("checkboxtnc_pp");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var isvalidmail = emailRegex.test(email);
 
-    createUserWithEmailAndPassword(auth, email, password, name)
-        .then((userCredential) => {
-            const user = userCredential.user;
+    if (email === "" || username === "" || password === "" || passconfirm === "" || name === "") {
+        show_mbox("User Details cannot be empty.");
 
-            set(ref(database, "users/" + user.uid), {
-                name: name,
-                username: username,
-                email: email,
-                language: "Hindi",
-                division: "Beginner",
-                difficult: null,
-                goal: 10,
-                word_count: 0,
-                journey_database: []
-            });
-            const Ref = doc(firestore, "Users", user.uid);
-            setDoc(Ref, {
-                Name: name,
-                username: username,
-                email: email,
-                last_login: 0,
-                language: {
-                    language: "Hindi",
+    }
+    else if (!isvalidmail) {
+        show_mbox("Enter a Valid Email Address.");
+
+    }
+    else if (password != passconfirm) {
+        show_mbox("Recheck Password: Password and Confirm Password are not same.");
+    }
+    else if (startlang === "Selectlang") {
+        show_mbox("Please Select Language to Continue.");
+    }
+    else if (!agreetotnc.checked) {
+        show_mbox("Agree to T&C and Privacy Policy to Continue.");
+    }
+    else {
+        createUserWithEmailAndPassword(auth, email, password, name)
+            .then((userCredential) => {
+                const user = userCredential.user;
+
+                set(ref(database, "users/" + user.uid), {
+                    name: name,
+                    username: username,
+                    email: email,
+                    language: startlang,
                     division: "Beginner",
-                    difficult: null,
-                    goal: 10,
+                    atword: 0,
+                    difficult: "",
+                    goal: 20,
                     word_count: 0,
-                },
-                journey_database: []
-            }, { merge: true });
-            
-            show_mbox("User Created Successfully.");
-            open("login.html?mode=login","_self");
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            show_mbox("Error Code: " + errorCode + "<br>" + "Error: " + errorMessage);
-        });
+                    journey_database: []
+                });
+
+                show_mbox("User Created Successfully. You will be redirected to home page in few seconds.");
+                setTimeout(() => { open("login.html?mode=login", "_self"); }, 2000);
+
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                show_mbox("Error Code: " + errorCode + "<br>" + "Error: " + errorMessage);
+            });
+    }
+
 
 
 });
@@ -94,11 +106,6 @@ login.addEventListener('click', (e) => {
             update(ref(database, "users/" + user.uid), {
                 last_login: dt,
             });
-
-            const Ref = doc(firestore, "Users", user.uid);
-            setDoc(Ref, {
-                last_login: dt
-            }, { merge: true });
 
         })
         .catch((error) => {

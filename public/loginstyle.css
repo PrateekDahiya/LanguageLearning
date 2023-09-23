@@ -15,18 +15,18 @@ body {
 
 #lingoverseimg {
     position: absolute;
-    top: -110px;
+    top: -60px;
     left: -10px;
     color: rgb(255, 187, 0);
     /* width: 200px;
     height: 40px; */
     cursor: pointer;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 #forms {
     position: relative;
-    margin-top: 150px;
+    margin-top: 100px;
     left: 150px;
     width: 500px;
 }
@@ -34,7 +34,10 @@ body {
 #heading {
     position: relative;
     width: 550px;
-    font-size: 70px;
+    font-size: 45px;
+}
+#heading2{
+    font-size: 25px;
 }
 
 a {
@@ -59,7 +62,8 @@ br {
     line-height: 35px;
 }
 
-::placeholder {
+::placeholder,
+.form-group select {
     color: blue;
     font-weight: 800;
 }
@@ -70,7 +74,8 @@ br {
     display: none;
 }
 
-.form-group input:not([type="submit"]) {
+.form-group input:not([type="submit"]):not([type="checkbox"]),
+.form-group select {
     border: none;
     background-color: transparent;
     width: 350px;
@@ -92,13 +97,16 @@ input.custom-autofill {
 }
 
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus {
     outline: none;
 }
 
 #linechange {
     display: none;
 }
+
+
 
 .submit-btn {
     background-color: rgba(22, 21, 31, 0.934);
@@ -224,13 +232,12 @@ input.custom-autofill {
         margin-left: 20%;
         left: 0;
         width: 440px;
-
     }
 
     #lingoverseimg {
         color: rgb(255, 187, 0);
         text-decoration: none;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 800;
         top: -50px;
         position: relative;
@@ -238,31 +245,37 @@ input.custom-autofill {
     }
 
     #heading {
-        font-size: 60px;
+        font-size: 30px;
         width: 440px;
     }
 
     #heading2 {
-        font-size: 19px;
+        font-size: 15px;
         width: 440px;
     }
 
     #forms {
         position: relative;
-        margin-top: 150px;
+        margin-top: 100px;
     }
 
     .form-group {
         width: 350px;
     }
 
-    .form-group input:not([type="submit"]) {
+    .form-group input:not([type="submit"]):not([type="checkbox"]),
+    .form-group select {
         width: 300px;
         font-size: 14px;
     }
 
     #pp {
         font-size: 12px;
+    }
+    #checkboxtnc_pp{
+        margin-top: 12px;
+        width: 12px;
+        height: 12px;
     }
 
     .submit-btn {
@@ -286,18 +299,18 @@ input.custom-autofill {
     }
 
     #heading {
-        font-size: 40px;
+        font-size: 30px;
         width: 350px;
     }
 
     #heading2 {
-        font-size: 19px;
+        font-size: 15px;
         width: 350px;
     }
 
     #forms {
         position: relative;
-        margin-top: 150px;
+        margin-top: 100px;
         width: 350px;
     }
 }
@@ -334,13 +347,19 @@ input.custom-autofill {
         width: 300px;
     }
 
-    .form-group input:not([type="submit"]) {
+    .form-group input:not([type="submit"]):not([type="checkbox"]),
+    .form-group select {
         width: 250px;
         font-size: 12px;
     }
 
     #pp {
         font-size: 10px;
+    }
+    #checkboxtnc_pp{
+        margin-top: 10px;
+        width: 10px;
+        height: 10px;
     }
 
     .submit-btn {
@@ -395,7 +414,7 @@ input.custom-autofill {
 
     #forms {
         margin-top: 100px;
-        margin-left: 15%;
+        margin-left: 10%;
         width: 200px;
     }
 
@@ -407,13 +426,19 @@ input.custom-autofill {
         display: block;
     }
 
-    .form-group input:not([type="submit"]) {
+    .form-group input:not([type="submit"]):not([type="checkbox"]),
+    .form-group select {
         width: 210px;
         font-size: 10px;
     }
 
     #pp {
         font-size: 8px;
+    }
+    #checkboxtnc_pp{
+        margin-top: 8px;
+        width: 8px;
+        height: 8px;
     }
 
     .submit-btn {
