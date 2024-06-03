@@ -24,8 +24,31 @@ function hideList() {
     radioinputs.style.display = "none";
 }
 
+function checkindatabase(lang, division, atword) {
+    if (localStorage.getItem("journey_database") !== null) {
+        var data = JSON.parse(localStorage.getItem("journey_database"));
+        var thisarray = [lang, division, atword];
+        var index = data.findIndex((arr) => arr[0] === thisarray[0] && arr[1] === thisarray[1]);
+        if (index === -1) {
+            return [lang, division, atword];
+        }
+        else {
+            return data[index];
+        }
+    } else {
+        return [lang, division, atword];
+    }
+
+}
+
 function goto(b, diviv = "1", atword = 0) {
     let a;
+    let divisionsname = ["Beginner", "Moderate", "Advance"];
+    if (atword === 0) {
+        let arrayreq = checkindatabase(b, divisionsname[parseInt(diviv) - 1], atword);
+        atword = arrayreq[2];
+    }
+
     switch (b) {
         case "chinese":
             a = "1" + String(diviv);
@@ -54,13 +77,61 @@ function goto(b, diviv = "1", atword = 0) {
         case "tamil":
             a = "9" + String(diviv);
             break;
-
+        case "turkish":
+            a = "10" + String(diviv);
+            break;
+        case "portuguese":
+            a = "11" + String(diviv);
+            break;
+        case "indonesian":
+            a = "12" + String(diviv);
+            break;
+        case "italian":
+            a = "13" + String(diviv);
+            break;
+        case "arabic":
+            a = "14" + String(diviv);
+            break;
+        case "danish":
+            a = "15" + String(diviv);
+            break;
+        case "dutch":
+            a = "16" + String(diviv);
+            break;
+        case "greek":
+            a = "17" + String(diviv);
+            break;
+        case "icelandic":
+            a = "18" + String(diviv);
+            break;
+        case "mongolian":
+            a = "19" + String(diviv);
+            break;
+        case "norwegian":
+            a = "20" + String(diviv);
+            break;
+        case "polish":
+            a = "21" + String(diviv);
+            break;
+        case "vietnamese":
+            a = "22" + String(diviv);
+            break;
+        case "slovenian":
+            a = "23" + String(diviv);
+            break;
+        case "swedish":
+            a = "24" + String(diviv);
+            break;
+        case "yoruba":
+            a = "25" + String(diviv);
+            break;
         default:
             break;
     }
     let link = "language.html?langid=" + String(a) + "&atword=" + String(atword);
     open(link, "_self");
 }
+
 
 
 function glow_title() {
@@ -168,3 +239,81 @@ function glow_title() {
         }
     }, 100);
 }
+
+
+function show_hidden_info() {
+    var containers = document.getElementsByClassName('language');
+    for (var i = 0; i < containers.length; i++) {
+        var container = containers[i];
+        var button = container.getElementsByClassName('lang_info_extend')[0];
+
+        button.addEventListener('click', function () {
+            var parent = this.parentNode;
+            parent.style.height = 'auto';
+            let shortinfo = parent.getElementsByClassName("lang-short-info")[0];
+            let hiddeninfo = parent.getElementsByClassName('lang_hidden_info')[0];
+            if (window.getComputedStyle(shortinfo).display == 'none') {
+                hiddeninfo.style.display = 'none';
+                shortinfo.style.display = 'block';
+            }
+            else if (window.getComputedStyle(shortinfo).display == 'block') {
+                hiddeninfo.style.display = 'block';
+                shortinfo.style.display = 'none';
+            }
+
+        });
+    }
+}
+show_hidden_info();
+
+// Some animations on scroll :)
+
+const observer1 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+        else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-lang-info');
+        }
+        else {
+            entry.target.classList.remove('show-lang-info');
+        }
+    });
+});
+
+const hiddenElements1 = document.querySelectorAll('.hidden-lang-info');
+const hiddenElements2 = document.querySelectorAll('.hidden-slogen-animation');
+const hiddenElements3 = document.querySelectorAll('.hidden-prope-animation');
+hiddenElements1.forEach((el) => observer2.observe(el));
+hiddenElements2.forEach((el) => observer1.observe(el));
+hiddenElements3.forEach((el) => observer1.observe(el));
+
+
+// Scrolling effects scrolling down or up
+
+let prevScrollPos = window.scrollY;
+const navbar = document.getElementById("header");
+
+window.onscroll = function () {
+    const currentScrollPos = window.scrollY;
+
+    // Check if scrolling down
+    if (prevScrollPos > currentScrollPos) {
+        navbar.style.top = "0";
+    } else {
+        navbar.style.top = "-50px";
+    }
+
+    prevScrollPos = currentScrollPos;
+};
+
+
