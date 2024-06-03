@@ -27,6 +27,7 @@ window.is_loggedin = () => {
             document.getElementById("nav_linksa").style.display = "none";
             isuser = false;
             align_strtlearn();
+            console.log("Login to Continue.");
             deactivateLinks();
         }
     });

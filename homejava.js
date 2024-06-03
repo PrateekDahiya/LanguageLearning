@@ -116,6 +116,42 @@ function goto(b, diviv = "1", atword = 0) {
         case "italian":
             a = "13" + String(diviv);
             break;
+        case "arabic":
+            a = "14" + String(diviv);
+            break;
+        case "danish":
+            a = "15" + String(diviv);
+            break;
+        case "dutch":
+            a = "16" + String(diviv);
+            break;
+        case "greek":
+            a = "17" + String(diviv);
+            break;
+        case "icelandic":
+            a = "18" + String(diviv);
+            break;
+        case "mongolian":
+            a = "19" + String(diviv);
+            break;
+        case "norwegian":
+            a = "20" + String(diviv);
+            break;
+        case "polish":
+            a = "21" + String(diviv);
+            break;
+        case "vietnamese":
+            a = "22" + String(diviv);
+            break;
+        case "slovenian":
+            a = "23" + String(diviv);
+            break;
+        case "swedish":
+            a = "24" + String(diviv);
+            break;
+        case "yoruba":
+            a = "25" + String(diviv);
+            break;
         case "Difficult Words":
             a = "100";
             atword = 0;

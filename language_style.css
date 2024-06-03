@@ -48,9 +48,10 @@ header {
     color: white;
 }
 
-#languages-button:hover{
+#languages-button:hover {
     color: rgb(255, 187, 0);
 }
+
 #home:hover {
     color: rgb(255, 187, 0);
 }
@@ -75,16 +76,18 @@ header {
     right: 0;
     top: 170px;
     width: 500px;
+    height: 400px;
     justify-content: center;
     align-items: end;
     display: none;
     flex-wrap: wrap;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 5px;
     background-color: rgba(22, 21, 31, 0.934);
     border-radius: 25px;
     padding: 4px;
     z-index: 2;
+    overflow-y: scroll;
 }
 
 .radio-inputs label {

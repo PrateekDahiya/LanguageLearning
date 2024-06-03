@@ -87,26 +87,30 @@ header {
 
 /* Language Menu */
 
+
+
 .radio-inputs {
     position: absolute;
     right: 0;
     top: 170px;
     width: 500px;
+    height: 400px;
     justify-content: center;
     align-items: end;
     display: none;
     flex-wrap: wrap;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 5px;
     background-color: rgba(22, 21, 31, 0.934);
     border-radius: 25px;
     padding: 4px;
     z-index: 2;
+    overflow-y: scroll;
 }
 
 .radio-inputs label {
     flex-basis: 50%;
-    max-width: 50%;
+    max-width: 60%;
     padding: 6px;
     box-sizing: border-box;
 }
@@ -162,6 +166,7 @@ header {
 
 #container_list {
     cursor: pointer;
+
 }
 
 
